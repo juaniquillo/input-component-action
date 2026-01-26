@@ -1,0 +1,20 @@
+{
+    "name": "juaniquillo/input-component-action",
+    "description": "Form input component creation and management action for Crud Assistant",
+    "license": "MIT",
+    "homepage": "https://github.com/juaniquillo/input-component-action",
+    "autoload": {
+        "psr-4": {
+            "Juaniquillo\\InputComponentAction\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Juaniquillo",
+            "email": "juaniquillo@gmail.com"
+        }
+    ],
+    "require": {
+        "spatie/laravel-package-tools": "^1.92"
+    }
+}
