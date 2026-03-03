@@ -1,0 +1,27 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Juaniquillo\InputComponentAction\Groups;
+
+use Juaniquillo\BackendComponents\Contracts\BackendComponent;
+use Juaniquillo\BackendComponents\Contracts\ContentComponent;
+use Juaniquillo\InputComponentAction\Concerns\HasWrapper;
+use Juaniquillo\InputComponentAction\Concerns\IsInputGroup;
+use Juaniquillo\InputComponentAction\Contracts\InputGroup;
+use Juaniquillo\InputComponentAction\Utilities\Support;
+
+class SoleInputGroup implements InputGroup
+{
+    use HasWrapper,
+        IsInputGroup;
+
+    public function getGroup(): BackendComponent|ContentComponent
+    {
+        $wrapper = $this->getWrapperComponent() ?? Support::getCollectionWrapper();
+
+        $input = $this->getInputComponent();
+
+        return $wrapper->setContent($input);
+    }
+}
