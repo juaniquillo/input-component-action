@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Juaniquillo\InputComponentAction\Concerns;
 
+use Closure;
 use Juaniquillo\BackendComponents\Contracts\CompoundComponent;
 use Juaniquillo\BackendComponents\Contracts\StaticBuilder;
-use Closure;
 
 trait IsComponentBag
 {

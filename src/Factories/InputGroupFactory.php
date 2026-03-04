@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Juaniquillo\InputComponentAction\Factories;
 
 use Juaniquillo\BackendComponents\Contracts\BackendComponent;

@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Juaniquillo\InputComponentAction\Contracts;
 
+use Closure;
 use Juaniquillo\BackendComponents\Contracts\CompoundComponent;
 use Juaniquillo\BackendComponents\Contracts\StaticBuilder;
-use Closure;
 
 interface ComponentBag
 {

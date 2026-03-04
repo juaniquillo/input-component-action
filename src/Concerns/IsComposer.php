@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Juaniquillo\InputComponentAction\Concerns;
 
 use BackedEnum;
+use Closure;
 use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Contracts\ContentComponent;
 use Juaniquillo\BackendComponents\Enums\ComponentEnum;
@@ -14,7 +15,6 @@ use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
 use Juaniquillo\InputComponentAction\Recipes\InputComponentRecipe;
 use Juaniquillo\InputComponentAction\Utilities\Support;
-use Closure;
 
 trait IsComposer
 {

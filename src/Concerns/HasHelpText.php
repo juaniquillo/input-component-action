@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Juaniquillo\InputComponentAction\Concerns;
 
+use Composers\HelpTextComposer;
 use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Contracts\ContentComponent;
 use Juaniquillo\BackendComponents\Contracts\ThemeComponent;
 use Juaniquillo\InputComponentAction\Utilities\Support;
-use Composers\HelpTextComposer;
 
 trait HasHelpText
 {

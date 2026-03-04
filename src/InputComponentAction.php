@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Juaniquillo\InputComponentAction;
 
 use Exception;
-use IteratorAggregate;
 use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Contracts\ContentComponent;
 use Juaniquillo\BackendComponents\Contracts\ThemeComponent;
@@ -60,7 +59,6 @@ final class InputComponentAction implements ActionInterface
         $this->output->meta = new DataContainer;
     }
 
-    
     public static function make(array $values = [], array $errors = []): static
     {
         return new self(values: $values, errors: $errors);

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Juaniquillo\InputComponentAction\Groups;
 
+use Exception;
 use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Contracts\ContentComponent;
 use Juaniquillo\InputComponentAction\Concerns\HasError;
@@ -12,7 +13,6 @@ use Juaniquillo\InputComponentAction\Concerns\HasWrapper;
 use Juaniquillo\InputComponentAction\Concerns\IsInputGroup;
 use Juaniquillo\InputComponentAction\Contracts\InputGroup;
 use Juaniquillo\InputComponentAction\Utilities\Support;
-use Exception;
 
 class LabelContainerGroup implements InputGroup
 {
