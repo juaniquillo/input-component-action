@@ -14,6 +14,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         array (
           'closure' => 'Closure',
           'thememanager' => 'Juaniquillo\\BackendComponents\\Contracts\\ThemeManager',
+          'componentenum' => 'Juaniquillo\\BackendComponents\\Enums\\ComponentEnum',
           'isrecipe' => 'Juaniquillo\\CrudAssistant\\Concerns\\IsRecipe',
           'recipeinterface' => 'Juaniquillo\\CrudAssistant\\Contracts\\RecipeInterface',
           'attributebag' => 'Juaniquillo\\InputComponentAction\\Contracts\\AttributeBag',
@@ -454,6 +455,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         array (
           'closure' => 'Closure',
           'thememanager' => 'Juaniquillo\\BackendComponents\\Contracts\\ThemeManager',
+          'componentenum' => 'Juaniquillo\\BackendComponents\\Enums\\ComponentEnum',
           'isrecipe' => 'Juaniquillo\\CrudAssistant\\Concerns\\IsRecipe',
           'recipeinterface' => 'Juaniquillo\\CrudAssistant\\Contracts\\RecipeInterface',
           'attributebag' => 'Juaniquillo\\InputComponentAction\\Contracts\\AttributeBag',
@@ -496,7 +498,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     1 => 
     array (
-      'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php' => '837961c3d77932edcaa5246456835bf296e2bd77a83cd820e749b1e121445419',
+      'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php' => '5f9142bc0cf8616aa0583dcf3a0e5c3588ff9ad9b4091cd83e567a4898d36a1d',
       'C:\\Users\\juani\\Code\\packages\\input-component-action\\vendor\\composer\\..\\juaniquillo\\crud-assistant\\src\\Concerns\\IsRecipe.php' => 'e096af44fcf1f1c615eed12132a193d668194d19c97232609eded5900100992e',
     ),
   ),

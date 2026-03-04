@@ -2137,197 +2137,6 @@ return [
 	'projectExtensionFiles' => array (
 ),
 	'errorsCallback' => static function (): array { return array (
-  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\ErrorComposer.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe::$errorType.',
-       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php (in context of class Juaniquillo\\InputComponentAction\\Composers\\ErrorComposer)',
-       'line' => 83,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\ErrorComposer.php',
-       'traitFilePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php',
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 83,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
-  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\HelpTextComposer.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe::$helpTextType.',
-       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\HelpTextComposer.php',
-       'line' => 41,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\HelpTextComposer.php',
-       'traitFilePath' => NULL,
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 41,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    1 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe::$errorType.',
-       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php (in context of class Composers\\HelpTextComposer)',
-       'line' => 83,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\HelpTextComposer.php',
-       'traitFilePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php',
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 83,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
-  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\InputComposer.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Call to an undefined static method Juaniquillo\\InputComponentAction\\Utilities\\Support::initGroup().',
-       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\InputComposer.php',
-       'line' => 189,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\InputComposer.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 189,
-       'nodeType' => 'PhpParser\\Node\\Expr\\StaticCall',
-       'identifier' => 'staticMethod.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    1 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe::$errorType.',
-       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php (in context of class Juaniquillo\\InputComponentAction\\Composers\\InputComposer)',
-       'line' => 83,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\InputComposer.php',
-       'traitFilePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php',
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 83,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
-  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\LabelComposer.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe::$errorType.',
-       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php (in context of class Juaniquillo\\InputComponentAction\\Composers\\LabelComposer)',
-       'line' => 83,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\LabelComposer.php',
-       'traitFilePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php',
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 83,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
-  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\WrapperComposer.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Access to an undefined property Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe::$errorType.',
-       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php (in context of class Juaniquillo\\InputComponentAction\\Composers\\WrapperComposer)',
-       'line' => 83,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\WrapperComposer.php',
-       'traitFilePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php',
-       'tip' => 'Learn more: <fg=cyan>https://phpstan.org/blog/solving-phpstan-access-to-undefined-property</>',
-       'nodeLine' => 83,
-       'nodeType' => 'PhpParser\\Node\\Expr\\PropertyFetch',
-       'identifier' => 'property.notFound',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
-  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Factories\\InputGroupFactory.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Parameter $defaultThemeManager of method Juaniquillo\\InputComponentAction\\Factories\\InputGroupFactory::initGroup() has invalid type Juaniquillo\\InputComponentAction\\Contracts\\ThemeManager.',
-       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Factories\\InputGroupFactory.php',
-       'line' => 29,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Factories\\InputGroupFactory.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 24,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'parameter.trait',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
-  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\InputComponentAction.php' => 
-  array (
-    0 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Property Juaniquillo\\InputComponentAction\\InputComponentAction::$defaultThemeManager has invalid type Juaniquillo\\InputComponentAction\\Contracts\\ThemeManager.',
-       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\InputComponentAction.php',
-       'line' => 40,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\InputComponentAction.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 40,
-       'nodeType' => 'PHPStan\\Node\\ClassPropertyNode',
-       'identifier' => 'property.trait',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-    1 => 
-    \PHPStan\Analyser\Error::__set_state(array(
-       'message' => 'Parameter $defaultThemeManager of method Juaniquillo\\InputComponentAction\\InputComponentAction::setThemeManager() has invalid type Juaniquillo\\InputComponentAction\\Contracts\\ThemeManager.',
-       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\InputComponentAction.php',
-       'line' => 67,
-       'canBeIgnored' => true,
-       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\InputComponentAction.php',
-       'traitFilePath' => NULL,
-       'tip' => NULL,
-       'nodeLine' => 67,
-       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
-       'identifier' => 'parameter.trait',
-       'metadata' => 
-      array (
-      ),
-       'fixedErrorDiff' => NULL,
-    )),
-  ),
 ); },
 	'locallyIgnoredErrorsCallback' => static function (): array { return array (
 ); },
@@ -2671,7 +2480,7 @@ return [
           0 => 'Juaniquillo\\BackendComponents\\MainBackendComponent',
         ),
         1 => 'setAttribute',
-        2 => 85,
+        2 => 86,
       ),
       1 => 
       array (
@@ -2680,7 +2489,7 @@ return [
           0 => 'Juaniquillo\\BackendComponents\\MainBackendComponent',
         ),
         1 => 'setAttribute',
-        2 => 89,
+        2 => 90,
       ),
       2 => 
       array (
@@ -2689,7 +2498,7 @@ return [
           0 => 'Juaniquillo\\BackendComponents\\MainBackendComponent',
         ),
         1 => 'setThemes',
-        2 => 93,
+        2 => 94,
       ),
       3 => 
       array (
@@ -2698,7 +2507,7 @@ return [
           0 => 'Juaniquillo\\BackendComponents\\MainBackendComponent',
         ),
         1 => 'setContent',
-        2 => 97,
+        2 => 98,
       ),
       4 => 
       array (
@@ -2707,7 +2516,7 @@ return [
           0 => 'Juaniquillo\\BackendComponents\\MainBackendComponent',
         ),
         1 => 'setContents',
-        2 => 101,
+        2 => 102,
       ),
       5 => 
       array (
@@ -2716,7 +2525,7 @@ return [
           0 => 'Juaniquillo\\BackendComponents\\MainBackendComponent',
         ),
         1 => 'setContent',
-        2 => 106,
+        2 => 107,
       ),
       6 => 
       array (
@@ -2725,7 +2534,7 @@ return [
           0 => 'Juaniquillo\\BackendComponents\\MainBackendComponent',
         ),
         1 => 'setAttribute',
-        2 => 108,
+        2 => 109,
       ),
       7 => 
       array (
@@ -2734,7 +2543,7 @@ return [
           0 => 'Juaniquillo\\BackendComponents\\MainBackendComponent',
         ),
         1 => 'setAttributes',
-        2 => 121,
+        2 => 122,
       ),
     ),
     'PHPStan\\Rules\\Traits\\TraitUseCollector' => 
@@ -3139,17 +2948,6 @@ return [
       ),
     ),
   ),
-  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\ThemeManager.php' => 
-  array (
-    'PHPStan\\Rules\\Traits\\TraitDeclarationCollector' => 
-    array (
-      0 => 
-      array (
-        0 => 'Juaniquillo\\InputComponentAction\\Contracts\\ThemeManager',
-        1 => 7,
-      ),
-    ),
-  ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\DefaultInputGroup.php' => 
   array (
     'PHPStan\\Rules\\DeadCode\\PossiblyPureMethodCallCollector' => 
@@ -3519,7 +3317,7 @@ return [
   ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\InputComposer.php' => 
   array (
-    'fileHash' => 'd2dad910916f86c9518b0556f89589405241ae100de1478aa4dc8da4810b6283',
+    'fileHash' => 'bc2e3f9eef5c8ab0ca8395f46468278002347b94ecdd08db952f28da8f82c567',
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\DefaultInputGroup.php',
@@ -4192,15 +3990,6 @@ return [
       15 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Utilities\\Support.php',
     ),
   ),
-  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\ThemeManager.php' => 
-  array (
-    'fileHash' => '71e27dd30b2824bace5d5183f5d8160fda2f7f9a6988b83893ef886d53b7c708',
-    'dependentFiles' => 
-    array (
-      0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Factories\\InputGroupFactory.php',
-      1 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\InputComponentAction.php',
-    ),
-  ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\ValueManager.php' => 
   array (
     'fileHash' => 'ca3dbeb62447722c421903407837632661aa1724fea8293c50cbe93e2c0b60a8',
@@ -4283,10 +4072,11 @@ return [
   ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Factories\\InputGroupFactory.php' => 
   array (
-    'fileHash' => '735e2837215e11159afb1630368f57500e96a50e5852721b27ac48e94d12b078',
+    'fileHash' => 'd15a4934fd310c5fcd9bedf40cca75bc7de8dd218f61fc4a4a4158665de3a350',
     'dependentFiles' => 
     array (
-      0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\InputComponentAction.php',
+      0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\InputComposer.php',
+      1 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\InputComponentAction.php',
     ),
   ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\DefaultInputGroup.php' => 
@@ -4327,7 +4117,7 @@ return [
   ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\InputComponentAction.php' => 
   array (
-    'fileHash' => 'a631ecffcec4de98893b33c3b0ccc8061c970a6c58ef4d3db6d5930d985aa1f5',
+    'fileHash' => '325d0e7eb24828ace6cf6494867a02797fdc3b9d79ab6b0cba9d911f9727b31a',
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php',
@@ -4359,7 +4149,7 @@ return [
   ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php' => 
   array (
-    'fileHash' => '837961c3d77932edcaa5246456835bf296e2bd77a83cd820e749b1e121445419',
+    'fileHash' => '5f9142bc0cf8616aa0583dcf3a0e5c3588ff9ad9b4091cd83e567a4898d36a1d',
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\ErrorComposer.php',
@@ -8084,26 +7874,6 @@ return [
       ),
     )),
   ),
-  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\ThemeManager.php' => 
-  array (
-    0 => 
-    \PHPStan\Dependency\ExportedNode\ExportedTraitNode::__set_state(array(
-       'name' => 'Juaniquillo\\InputComponentAction\\Contracts\\ThemeManager',
-       'phpDoc' => NULL,
-       'usedTraits' => 
-      array (
-      ),
-       'traitUseAdaptations' => 
-      array (
-      ),
-       'statements' => 
-      array (
-      ),
-       'attributes' => 
-      array (
-      ),
-    )),
-  ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\ValueManager.php' => 
   array (
     0 => 
@@ -8551,7 +8321,7 @@ return [
             4 => 
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
                'name' => 'defaultThemeManager',
-               'type' => '?Juaniquillo\\InputComponentAction\\Contracts\\ThemeManager',
+               'type' => '?Juaniquillo\\BackendComponents\\Contracts\\ThemeManager',
                'byRef' => false,
                'variadic' => false,
                'hasDefault' => true,
@@ -8990,7 +8760,7 @@ return [
             0 => 
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
                'name' => 'defaultThemeManager',
-               'type' => 'Juaniquillo\\InputComponentAction\\Contracts\\ThemeManager',
+               'type' => 'Juaniquillo\\BackendComponents\\Contracts\\ThemeManager',
                'byRef' => false,
                'variadic' => false,
                'hasDefault' => false,
@@ -9688,6 +9458,7 @@ return [
             array (
               'closure' => 'Closure',
               'thememanager' => 'Juaniquillo\\BackendComponents\\Contracts\\ThemeManager',
+              'componentenum' => 'Juaniquillo\\BackendComponents\\Enums\\ComponentEnum',
               'isrecipe' => 'Juaniquillo\\CrudAssistant\\Concerns\\IsRecipe',
               'recipeinterface' => 'Juaniquillo\\CrudAssistant\\Contracts\\RecipeInterface',
               'attributebag' => 'Juaniquillo\\InputComponentAction\\Contracts\\AttributeBag',
@@ -10012,6 +9783,61 @@ return [
             )),
             24 => 
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'wrapperType',
+               'type' => 'string|Juaniquillo\\BackendComponents\\Enums\\ComponentEnum|null|null',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => true,
+               'attributes' => 
+              array (
+              ),
+            )),
+            25 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'labelType',
+               'type' => 'string|Juaniquillo\\BackendComponents\\Enums\\ComponentEnum|null|null',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => true,
+               'attributes' => 
+              array (
+              ),
+            )),
+            26 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'inputType',
+               'type' => 'string|Juaniquillo\\BackendComponents\\Enums\\ComponentEnum|null|null',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => true,
+               'attributes' => 
+              array (
+              ),
+            )),
+            27 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'errorType',
+               'type' => 'string|Juaniquillo\\BackendComponents\\Enums\\ComponentEnum|null|null',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => true,
+               'attributes' => 
+              array (
+              ),
+            )),
+            28 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'helpTextType',
+               'type' => 'string|Juaniquillo\\BackendComponents\\Enums\\ComponentEnum|null|null',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => true,
+               'attributes' => 
+              array (
+              ),
+            )),
+            29 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
                'name' => 'checkable',
                'type' => 'bool',
                'byRef' => false,
@@ -10021,7 +9847,7 @@ return [
               array (
               ),
             )),
-            25 => 
+            30 => 
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
                'name' => 'selectable',
                'type' => 'bool',

@@ -95,7 +95,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\InputComposer.php' => 
     array (
-      0 => 'd2dad910916f86c9518b0556f89589405241ae100de1478aa4dc8da4810b6283',
+      0 => 'bc2e3f9eef5c8ab0ca8395f46468278002347b94ecdd08db952f28da8f82c567',
       1 => 
       array (
         0 => 'juaniquillo\\inputcomponentaction\\composers\\inputcomposer',
@@ -837,20 +837,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
       ),
     ),
-    'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\ThemeManager.php' => 
-    array (
-      0 => '71e27dd30b2824bace5d5183f5d8160fda2f7f9a6988b83893ef886d53b7c708',
-      1 => 
-      array (
-        0 => 'juaniquillo\\inputcomponentaction\\contracts\\thememanager',
-      ),
-      2 => 
-      array (
-      ),
-      3 => 
-      array (
-      ),
-    ),
     'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\ValueManager.php' => 
     array (
       0 => 'ca3dbeb62447722c421903407837632661aa1724fea8293c50cbe93e2c0b60a8',
@@ -934,7 +920,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Factories\\InputGroupFactory.php' => 
     array (
-      0 => '735e2837215e11159afb1630368f57500e96a50e5852721b27ac48e94d12b078',
+      0 => 'd15a4934fd310c5fcd9bedf40cca75bc7de8dd218f61fc4a4a4158665de3a350',
       1 => 
       array (
         0 => 'juaniquillo\\inputcomponentaction\\factories\\inputgroupfactory',
@@ -1024,7 +1010,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\InputComponentAction.php' => 
     array (
-      0 => 'a631ecffcec4de98893b33c3b0ccc8061c970a6c58ef4d3db6d5930d985aa1f5',
+      0 => '325d0e7eb24828ace6cf6494867a02797fdc3b9d79ab6b0cba9d911f9727b31a',
       1 => 
       array (
         0 => 'juaniquillo\\inputcomponentaction\\inputcomponentaction',
@@ -1101,7 +1087,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php' => 
     array (
-      0 => '837961c3d77932edcaa5246456835bf296e2bd77a83cd820e749b1e121445419',
+      0 => '5f9142bc0cf8616aa0583dcf3a0e5c3588ff9ad9b4091cd83e567a4898d36a1d',
       1 => 
       array (
         0 => 'juaniquillo\\inputcomponentaction\\recipes\\inputcomponentrecipe',

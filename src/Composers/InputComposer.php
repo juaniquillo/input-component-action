@@ -21,6 +21,7 @@ use Juaniquillo\InputComponentAction\Contracts\LabelTheme;
 use Juaniquillo\InputComponentAction\Contracts\ThemeBag;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
 use Juaniquillo\InputComponentAction\Contracts\WrapperTheme;
+use Juaniquillo\InputComponentAction\Factories\InputGroupFactory;
 use Juaniquillo\InputComponentAction\Recipes\InputComponentRecipe;
 use Juaniquillo\InputComponentAction\Utilities\Support;
 
@@ -186,7 +187,7 @@ final class InputComposer implements ComponentComposer
         InputGroup $defaultInputGroup,
         ?InputInterface $parent = null,
     ): BackendComponent {
-        return Support::initGroup(
+        return InputGroupFactory::initGroup(
             input: $input,
             recipe: $recipe,
             values: $this->values,
