@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Juaniquillo\InputComponentAction\Recipes;
 
+use BackedEnum;
 use Closure;
 use Juaniquillo\BackendComponents\Contracts\ThemeManager;
-use Juaniquillo\BackendComponents\Enums\ComponentEnum;
 use Juaniquillo\CrudAssistant\Concerns\IsRecipe;
 use Juaniquillo\CrudAssistant\Contracts\RecipeInterface;
 use Juaniquillo\InputComponentAction\Contracts\AttributeBag;
@@ -71,11 +71,11 @@ final class InputComponentRecipe implements RecipeInterface
         public readonly bool $disableError = false,
         public readonly bool $disableHelpText = false,
 
-        public readonly string|ComponentEnum|null $wrapperType = null,
-        public readonly string|ComponentEnum|null $labelType = null,
-        public readonly string|ComponentEnum|null $inputType = null,
-        public readonly string|ComponentEnum|null $errorType = null,
-        public readonly string|ComponentEnum|null $helpTextType = null,
+        public readonly string|BackedEnum|null $wrapperType = null,
+        public readonly string|BackedEnum|null $labelType = null,
+        public readonly string|BackedEnum|null $inputType = null,
+        public readonly string|BackedEnum|null $errorType = null,
+        public readonly string|BackedEnum|null $helpTextType = null,
 
         /**
          * Select menu, checkbox of radiobox
