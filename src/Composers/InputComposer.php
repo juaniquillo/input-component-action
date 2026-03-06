@@ -49,7 +49,7 @@ final class InputComposer implements ComponentComposer
 
         $recipe = $this->recipe;
         $inputType = $this->resolveInputType($recipe);
-        $themeManager = $recipe->themeManager ?? $this->themeManager;
+        $themeManager = $this->themeManager;
         $valueResolver = $this->values;
 
         /**
@@ -65,9 +65,9 @@ final class InputComposer implements ComponentComposer
         /**
          * Access
          */
-        $attributes = $recipe->attributeBag?->getInputAttributes() ?? null;
-        $theme = $recipe->themeBag?->getInputTheme() ?? $this->themeBag?->getInputTheme();
-        $callback = $recipe->hookBag?->getInputHook() ?? null;
+        $attributes = $recipe->getAttributeBag()?->getInputAttributes() ?? null;
+        $theme = $recipe->getThemeBag()?->getInputTheme() ?? $this->themeBag?->getInputTheme();
+        $callback = $recipe->getHookBag()?->getInputHook() ?? null;
 
         $value = (string) $valueResolver->resolve($input, $recipe);
         $name = $this->resolveInputName($input, $recipe);
@@ -82,11 +82,11 @@ final class InputComposer implements ComponentComposer
         /**
          * Default attributes
          */
-        if (! $recipe->disableDefaultNameAttribute) {
+        if (! $recipe->getDisableBag()?->disableDefaultNameAttribute()) {
             $component->setAttribute('name', $name);
         }
 
-        if (! $recipe->disableDefaultIdAttribute) {
+        if (! $recipe->getDisableBag()?->disableDefaultIdAttribute()) {
             $component->setAttribute('id', $id);
         }
 
@@ -94,7 +94,7 @@ final class InputComposer implements ComponentComposer
             $component->setThemes($theme);
         }
 
-        if ($recipe->labelAsInputContent) {
+        if ($recipe->labelAsInputContent()) {
             $component->setContent($input->getLabel());
         }
 
@@ -102,8 +102,8 @@ final class InputComposer implements ComponentComposer
             $component->setContents($subComponents);
         }
 
-        if (! $recipe->disableInputValue) {
-            if ($recipe->valueAsInputContent) {
+        if (! $recipe->getDisableBag()?->disableInputValue()) {
+            if ($recipe->valueAsInputContent()) {
                 $component->setContent($value);
             } else {
                 $component->setAttribute('value', $value);
@@ -160,22 +160,22 @@ final class InputComposer implements ComponentComposer
 
     public function addCheckableAndSelectableAttribute(InputInterface $input, InputComponentRecipe $recipe, BackendComponent $component, ValueManager $valueResolver, ?string $value = null): void
     {
-        if ($recipe->checkable || $recipe->selectable) {
+        if ($recipe->isCheckable() || $recipe->isSelectable()) {
 
             $isSelected = false;
 
-            if ($recipe->useParentValue && $this->parent) {
+            if ($recipe->useParentValue() && $this->parent) {
                 $parentValue = $valueResolver->resolve($this->parent, Support::getRecipe($this->parent));
                 $isSelected = $value == $parentValue;
             } else {
                 $isSelected = $valueResolver->resolve($input, $recipe, true);
             }
 
-            if ($recipe->selectable && $isSelected) {
+            if ($recipe->isSelectable() && $isSelected) {
                 $component->setAttribute('selected', 'selected');
             }
 
-            if ($recipe->checkable && $isSelected) {
+            if ($recipe->isCheckable() && $isSelected) {
                 $component->setAttribute('checked', 'checked');
             }
         }

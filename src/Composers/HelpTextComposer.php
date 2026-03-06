@@ -37,19 +37,19 @@ class HelpTextComposer
 
         $recipe = $this->recipe;
 
-        $helpText = $recipe->helpText;
-        $componentType = $recipe->helpTextType ?? ComponentEnum::DIV;
+        $helpText = $recipe->getHelpText();
+        $componentType = $recipe->getHelpTextType() ?? ComponentEnum::DIV;
         $inputType = $this->resolveInputType($recipe);
-        $callback = $recipe->hookBag?->getInputHook() ?? null;
+        $callback = $recipe->getHookBag()?->getInputHook() ?? null;
 
-        $attributes = $recipe->attributeBag?->getHelpTextAttributes() ?? null;
-        $theme = $recipe->themeBag?->getHelpTextTheme() ?? $this->themeBag?->getHelpTextTheme();
+        $attributes = $recipe->getAttributeBag()?->getHelpTextAttributes() ?? null;
+        $theme = $recipe->getThemeBag()?->getHelpTextTheme() ?? $this->themeBag?->getHelpTextTheme();
 
         $attributes = $this->resolveArrayClosure(value: $attributes, input: $input, type: $inputType);
         $themes = $this->resolveArrayClosure(value: $theme, input: $input, type: $inputType);
         $helpText = $this->resolveStringClosure(input: $input, stringClosure: $helpText);
 
-        $themeManager = $recipe->themeManager ?? $this->themeManager;
+        $themeManager = $this->themeManager;
 
         $component = new MainBackendComponent($componentType, $themeManager);
 
@@ -65,7 +65,7 @@ class HelpTextComposer
             $component->setContent($helpText);
         }
 
-        $callback = $recipe->hookBag ?? new DefaultHookBag;
+        $callback = $recipe->getHookBag() ?? new DefaultHookBag;
         $component = $this->resolveComponentHook(
             component: $component,
             closure: $callback->getHelpTextHook(),

@@ -7,6 +7,7 @@ namespace Juaniquillo\InputComponentAction\Factories;
 use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Contracts\ThemeManager;
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
+use Juaniquillo\InputComponentAction\Bags\DefaultThemeBag;
 use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
 use Juaniquillo\InputComponentAction\Contracts\ErrorTheme;
 use Juaniquillo\InputComponentAction\Contracts\HelpTextTheme;
@@ -31,16 +32,23 @@ final class InputGroupFactory
         ThemeBag|WrapperTheme|LabelTheme|ErrorTheme|HelpTextTheme|null $defaultThemeBag = null,
         ?InputInterface $parent = null): BackendComponent
     {
-        $group = $recipe->inputGroup ?? $defaultInputGroup ?? new DefaultInputGroup;
+        $group = $recipe->getInputGroup() ?? $defaultInputGroup ?? new DefaultInputGroup;
 
         $group = $group->inject(
             input: $input,
             recipe: $recipe,
             values: $values,
             errors: $errors,
+            /**
+             * Resolve Theme Manager once
+             */
             themeManager: $defaultThemeManager ?? Support::resolveThemeManager($recipe),
+
+            /**
+             * Other are resolved inside the composer, but we need to pass the default 
+             */
             defaultInputGroup: $defaultInputGroup ?? new DefaultInputGroup,
-            defaultThemeBag: Support::resolveThemeBag($recipe, $defaultThemeBag),
+            defaultThemeBag: $defaultThemeBag ?? new DefaultThemeBag,
         );
 
         if ($parent) {

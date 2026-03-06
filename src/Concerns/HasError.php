@@ -16,7 +16,7 @@ trait HasError
     {
         $recipe = Support::getRecipe($this->input);
 
-        if ($recipe->disableError) {
+        if ($recipe->getDisableBag()?->disableError()) {
             return null;
         }
 

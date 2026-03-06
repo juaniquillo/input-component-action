@@ -27,7 +27,7 @@ final class DefaultErrorManager implements ErrorManager
 
         $name = $input->getName();
 
-        $recipeError = $recipe->inputError;
+        $recipeError = $recipe->getInputError();
         $errorDefault = $errors[$name] ?? null;
         $error = null;
 

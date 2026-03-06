@@ -51,36 +51,36 @@ trait IsComposer
 
     private static function resolveInputName(InputInterface $input, InputComponentRecipe $recipe, ?array $attributes = null): ?string
     {
-        $attributes ??= $recipe->attributeBag?->getInputAttributes() ?? null;
+        $attributes ??= $recipe->getAttributeBag()?->getInputAttributes() ?? null;
 
         return $attributes['name'] ?? $input->getName();
     }
 
     private static function resolveInputId(InputInterface $input, InputComponentRecipe $recipe, ?array $attributes = null): ?string
     {
-        $attributes ??= $recipe->attributeBag?->getInputAttributes() ?? null;
+        $attributes ??= $recipe->getAttributeBag()?->getInputAttributes() ?? null;
 
         return $attributes['id'] ?? $input->getName();
     }
 
     private function resolveWrapperType(InputComponentRecipe|RecipeInterface|null $recipe): string|ComponentEnum
     {
-        return $recipe->wrapperType ?? ComponentEnum::DIV;
+        return $recipe?->getWrapperType() ?? ComponentEnum::DIV;
     }
 
     private function resolveLabelType(InputComponentRecipe|RecipeInterface|null $recipe): string|ComponentEnum
     {
-        return $recipe->labelType ?? ComponentEnum::LABEL;
+        return $recipe?->getLabelType() ?? ComponentEnum::LABEL;
     }
 
     private function resolveInputType(InputComponentRecipe|RecipeInterface|null $recipe): string|ComponentEnum
     {
-        return $recipe->inputType ?? ComponentEnum::TEXT_INPUT;
+        return $recipe?->getInputType() ?? ComponentEnum::TEXT_INPUT;
     }
 
     private function resolveErrorType(?InputComponentRecipe $recipe): string|ComponentEnum
     {
-        return $recipe->errorType ?? ComponentEnum::PARAGRAPH;
+        return $recipe?->getErrorType() ?? ComponentEnum::PARAGRAPH;
     }
 
     private function resolveComponentHook(

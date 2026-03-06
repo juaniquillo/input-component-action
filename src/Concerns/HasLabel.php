@@ -16,7 +16,7 @@ trait HasLabel
     {
         $recipe = Support::getRecipe($this->input);
 
-        if ($recipe->disableLabel) {
+        if ($recipe->getDisableBag()?->disableLabel()) {
             return null;
         }
 

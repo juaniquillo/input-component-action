@@ -16,7 +16,7 @@ trait HasWrapper
     {
         $recipe = Support::getRecipe($this->input);
 
-        if ($recipe->disableWrapper) {
+        if ($recipe->getDisableBag()?->disableWrapper()) {
             return null;
         }
 

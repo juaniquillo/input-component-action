@@ -16,7 +16,7 @@ trait HasHelpText
     {
         $recipe = Support::getRecipe($this->input);
 
-        if ($recipe->helpText === null) {
+        if ($recipe->getDisableBag()?->disableHelpText() || $recipe->getHelpText() === null) {
             return null;
         }
 

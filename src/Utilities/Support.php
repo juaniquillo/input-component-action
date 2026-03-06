@@ -31,12 +31,12 @@ final class Support
 
     public static function resolveThemeManager(RecipeInterface $recipe, $defaultThemeManager = null): ThemeManager
     {
-        return $recipe->defaultThemeManager ?? $defaultThemeManager ?? new LocalThemeManager;
+        return $recipe->getThemeManager() ?? $defaultThemeManager ?? new LocalThemeManager;
     }
 
     public static function resolveThemeBag(RecipeInterface $recipe, ThemeBag|WrapperTheme|LabelTheme|ErrorTheme|HelpTextTheme|null $defaultThemeBag = null): ThemeBag
     {
-        return $recipe->defaultThemeBag ?? $defaultThemeBag ?? new DefaultThemeBag;
+        return $recipe->getThemeBag() ?? $defaultThemeBag ?? new DefaultThemeBag;
     }
 
     public static function isClosure(mixed $value): bool

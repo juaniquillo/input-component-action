@@ -182,7 +182,7 @@ final class InputComponentAction implements ActionInterface
 
     public function getValueManager(?InputComponentRecipe $recipe): ValueManager
     {
-        $bag = $recipe->valueBag ?? $this->valueBag ?? new DefaultValueManager;
+        $bag = $recipe?->getValueBag() ?? $this->valueBag ?? new DefaultValueManager;
 
         return $bag->setValues($this->values)
             ->setModel($this->model);
@@ -190,7 +190,7 @@ final class InputComponentAction implements ActionInterface
 
     public function getErrorManager(?InputComponentRecipe $recipe): ErrorManager
     {
-        $bag = $recipe->errorBag ?? $this->errorBag ?? new DefaultErrorManager;
+        $bag = $recipe?->getErrorBag() ?? $this->errorBag ?? new DefaultErrorManager;
 
         return $bag->setErrors($this->errors);
     }

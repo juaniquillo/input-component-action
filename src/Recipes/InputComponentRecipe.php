@@ -9,8 +9,10 @@ use Closure;
 use Juaniquillo\BackendComponents\Contracts\ThemeManager;
 use Juaniquillo\CrudAssistant\Concerns\IsRecipe;
 use Juaniquillo\CrudAssistant\Contracts\RecipeInterface;
+use Juaniquillo\InputComponentAction\Concerns\IsInputComponentRecipe;
 use Juaniquillo\InputComponentAction\Contracts\AttributeBag;
 use Juaniquillo\InputComponentAction\Contracts\ComponentBag;
+use Juaniquillo\InputComponentAction\Contracts\ComposerDisableBag;
 use Juaniquillo\InputComponentAction\Contracts\ErrorAttributes;
 use Juaniquillo\InputComponentAction\Contracts\ErrorHook;
 use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
@@ -33,55 +35,60 @@ use Juaniquillo\InputComponentAction\InputComponentAction;
 final class InputComponentRecipe implements RecipeInterface
 {
     use IsRecipe;
+    use IsInputComponentRecipe;
 
     /** @var class-string */
     protected $action = InputComponentAction::class;
 
     public function __construct(
-
-        public readonly ?InputGroup $inputGroup = null,
-
-        public readonly ?ThemeManager $themeManager = null,
-
-        public readonly ?ComponentBag $componentBag = null,
-        public readonly AttributeBag|WrapperAttributes|LabelAttributes|ErrorAttributes|HelpTextAttributes|null $attributeBag = null,
-        public readonly ThemeBag|WrapperTheme|LabelTheme|ErrorTheme|HelpTextTheme|null $themeBag = null,
-        public readonly HookBag|WrapperHook|LabelHook|ErrorHook|HelpTextHook|null $hookBag = null,
-
-        public readonly ?ValueManager $valueBag = null,
-        public readonly ?ErrorManager $errorBag = null,
-
-        public readonly string|int|Closure|null $inputValue = null,
-        public readonly bool $useParentValue = false,
-        public readonly string|Closure|null $inputError = null,
-
-        public readonly string|Closure|null $label = null,
-        public readonly bool $labelAsInputContent = false,
-        public readonly bool $emptyLabel = false,
-        public readonly bool $valueAsInputContent = false,
-        public readonly string|Closure|null $helpText = null,
-
-        public readonly bool $disableInputValue = false,
-        public readonly bool $disableDefaultNameAttribute = false,
-        public readonly bool $disableDefaultIdAttribute = false,
-        public readonly bool $disableDefaultForAttribute = false,
-
-        public readonly bool $disableWrapper = false,
-        public readonly bool $disableLabel = false,
-        public readonly bool $disableError = false,
-        public readonly bool $disableHelpText = false,
-
-        public readonly string|BackedEnum|null $wrapperType = null,
-        public readonly string|BackedEnum|null $labelType = null,
-        public readonly string|BackedEnum|null $inputType = null,
-        public readonly string|BackedEnum|null $errorType = null,
-        public readonly string|BackedEnum|null $helpTextType = null,
-
-        /**
-         * Select menu, checkbox of radiobox
-         */
-        public readonly bool $checkable = false,
-        public readonly bool $selectable = false,
-
-    ) {}
+        ?InputGroup $inputGroup = null,
+        ?ThemeManager $themeManager = null,
+        ?ComponentBag $componentBag = null,
+        AttributeBag|WrapperAttributes|LabelAttributes|ErrorAttributes|HelpTextAttributes|null $attributeBag = null,
+        ThemeBag|WrapperTheme|LabelTheme|ErrorTheme|HelpTextTheme|null $themeBag = null,
+        HookBag|WrapperHook|LabelHook|ErrorHook|HelpTextHook|null $hookBag = null,
+        ?ValueManager $valueBag = null,
+        ?ErrorManager $errorBag = null,
+        ?ComposerDisableBag $disableBag = null,
+        string|int|Closure|null $inputValue = null,
+        bool $useParentValue = false,
+        string|Closure|null $inputError = null,
+        string|Closure|null $label = null,
+        bool $labelAsInputContent = false,
+        bool $emptyLabel = false,
+        bool $valueAsInputContent = false,
+        string|Closure|null $helpText = null,
+        string|BackedEnum|null $wrapperType = null,
+        string|BackedEnum|null $labelType = null,
+        string|BackedEnum|null $inputType = null,
+        string|BackedEnum|null $errorType = null,
+        string|BackedEnum|null $helpTextType = null,
+        bool $checkable = false,
+        bool $selectable = false,
+    ) {
+        $this->inputGroup = $inputGroup;
+        $this->themeManager = $themeManager;
+        $this->componentBag = $componentBag;
+        $this->attributeBag = $attributeBag;
+        $this->themeBag = $themeBag;
+        $this->hookBag = $hookBag;
+        $this->valueBag = $valueBag;
+        $this->errorBag = $errorBag;
+        $this->disableBag = $disableBag;
+        $this->inputValue = $inputValue;
+        $this->useParentValue = $useParentValue;
+        $this->inputError = $inputError;
+        $this->label = $label;
+        $this->labelAsInputContent = $labelAsInputContent;
+        $this->emptyLabel = $emptyLabel;
+        $this->valueAsInputContent = $valueAsInputContent;
+        $this->helpText = $helpText;
+        $this->wrapperType = $wrapperType;
+        $this->labelType = $labelType;
+        $this->inputType = $inputType;
+        $this->errorType = $errorType;
+        $this->helpTextType = $helpTextType;
+        $this->checkable = $checkable;
+        $this->selectable = $selectable;
+    }
 }

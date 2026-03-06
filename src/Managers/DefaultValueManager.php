@@ -46,7 +46,7 @@ final class DefaultValueManager implements ValueManager
             return $values[$name];
         }
 
-        $recipeValue = $recipe->inputValue;
+        $recipeValue = $recipe->getInputValue();
         $modelValue = null;
 
         $modelValue = $model->{$name} ?? null;

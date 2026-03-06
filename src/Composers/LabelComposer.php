@@ -37,8 +37,8 @@ final class LabelComposer implements ComponentComposer
         $recipe = $this->recipe;
 
         $name = $input->getName();
-        $label = $recipe->label ?? $input->getLabel();
-        $themeManager = $recipe->themeManager ?? $this->themeManager;
+        $label = $recipe->getLabel() ?? $input->getLabel();
+        $themeManager = $this->themeManager;
 
         $componentType = $this->resolveLabelType($recipe);
 
@@ -48,17 +48,17 @@ final class LabelComposer implements ComponentComposer
 
         $inputType = $this->resolveInputType($recipe);
 
-        $attributes = $recipe->attributeBag?->getLabelAttributes();
-        $theme = $recipe->themeBag?->getLabelTheme() ?? $this->themeBag?->getLabelTheme();
+        $attributes = $recipe->getAttributeBag()?->getLabelAttributes();
+        $theme = $recipe->getThemeBag()?->getLabelTheme() ?? $this->themeBag?->getLabelTheme();
 
         $attributes = $this->resolveArrayClosure(value: $attributes, input: $input, type: $inputType);
         $themes = $this->resolveArrayClosure(value: $theme, input: $input, type: $inputType);
 
-        if (! $recipe->emptyLabel) {
+        if (! $recipe->isEmptyLabel()) {
             $component->setContent($label);
         }
 
-        if (! $recipe->disableDefaultForAttribute) {
+        if (! $recipe->getDisableBag()?->disableDefaultForAttribute()) {
             $component->setAttribute('for', $name);
         }
 
@@ -70,7 +70,7 @@ final class LabelComposer implements ComponentComposer
             $component->setThemes($themes);
         }
 
-        $callback = $recipe->hookBag ?? new DefaultHookBag;
+        $callback = $recipe->getHookBag() ?? new DefaultHookBag;
         $component = $this->resolveComponentHook(
             component: $component,
             closure: $callback->getLabelHook(),
