@@ -44,6 +44,7 @@ final class LabelComposer implements ComponentComposer
 
         $label = $this->resolveStringClosure($input, $label);
 
+        /** @todo Use new component bag to resolve component */
         $component = new MainBackendComponent($componentType, $themeManager);
 
         $inputType = $this->resolveInputType($recipe);

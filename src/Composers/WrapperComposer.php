@@ -36,7 +36,8 @@ final class WrapperComposer implements ComponentComposer
         $recipe = Support::getRecipe($input);
         $componentType = $this->resolveWrapperType($recipe);
         $themeManager = $this->themeManager;
-
+        
+        /** @todo Use new component bag to resolve component */
         $component = new MainBackendComponent($componentType, $themeManager);
 
         $inputType = $this->resolveInputType($recipe);

@@ -41,6 +41,7 @@ final class ErrorComposer implements ComponentComposer
         $componentType = $this->resolveErrorType($recipe);
         $themeManager = $this->themeManager;
 
+        /** @todo Use new component bag to resolve component */
         $component = new MainBackendComponent($componentType, $themeManager);
 
         $inputType = $this->resolveInputType($recipe);

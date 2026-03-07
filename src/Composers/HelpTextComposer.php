@@ -51,6 +51,7 @@ class HelpTextComposer
 
         $themeManager = $this->themeManager;
 
+        /** @todo Use new component bag to resolve component */
         $component = new MainBackendComponent($componentType, $themeManager);
 
         if ($attributes) {

@@ -1,11 +1,11 @@
 <?php
 
-namespace Bags;
+namespace Juaniquillo\InputComponentAction\Bags;
 
 use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Contracts\CompoundComponent;
 
-final class ComponentBag
+final class DefaultComponentBag
 {
     /** 
      * @var CompoundComponent|BackendComponent|class-string{CompoundComponent|BackendComponent}|null

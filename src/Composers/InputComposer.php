@@ -52,9 +52,7 @@ final class InputComposer implements ComponentComposer
         $themeManager = $this->themeManager;
         $valueResolver = $this->values;
 
-        /**
-         * Init component
-         */
+        /** @todo Use new component bag to resolve component */
         $component = new MainBackendComponent($inputType, $themeManager);
 
         /**
