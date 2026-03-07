@@ -9,7 +9,7 @@ use Closure;
 use Juaniquillo\BackendComponents\Contracts\ThemeManager;
 use Juaniquillo\InputComponentAction\Contracts\AttributeBag;
 use Juaniquillo\InputComponentAction\Contracts\ComponentBag;
-use Juaniquillo\InputComponentAction\Contracts\ComposerDisableBag;
+use Juaniquillo\InputComponentAction\Contracts\DisableBag;
 use Juaniquillo\InputComponentAction\Contracts\ErrorAttributes;
 use Juaniquillo\InputComponentAction\Contracts\ErrorDisable;
 use Juaniquillo\InputComponentAction\Contracts\ErrorHook;
@@ -52,7 +52,7 @@ trait IsInputComponentRecipe
 
     private ?ErrorManager $errorBag = null;
 
-    private ?ComposerDisableBag $disableBag = null;
+    private ?DisableBag $disableBag = null;
 
     private string|int|Closure|null $inputValue = null;
 
@@ -284,12 +284,12 @@ trait IsInputComponentRecipe
         return $this;
     }
 
-    public function getDisableBag(): ComposerDisableBag|WrapperDisable|LabelDisable|ErrorDisable|HelpTextDisable|InputDisable|null
+    public function getDisableBag(): DisableBag|WrapperDisable|LabelDisable|ErrorDisable|HelpTextDisable|InputDisable|null
     {
         return $this->disableBag;
     }
 
-    public function setDisableBag(ComposerDisableBag|WrapperDisable|LabelDisable|ErrorDisable|HelpTextDisable|InputDisable|null $disableBag): self
+    public function setDisableBag(DisableBag|WrapperDisable|LabelDisable|ErrorDisable|HelpTextDisable|InputDisable|null $disableBag): self
     {
         $this->disableBag = $disableBag;
 

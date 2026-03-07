@@ -12,7 +12,7 @@ use Juaniquillo\CrudAssistant\Contracts\RecipeInterface;
 use Juaniquillo\InputComponentAction\Concerns\IsInputComponentRecipe;
 use Juaniquillo\InputComponentAction\Contracts\AttributeBag;
 use Juaniquillo\InputComponentAction\Contracts\ComponentBag;
-use Juaniquillo\InputComponentAction\Contracts\ComposerDisableBag;
+use Juaniquillo\InputComponentAction\Contracts\DisableBag;
 use Juaniquillo\InputComponentAction\Contracts\ErrorAttributes;
 use Juaniquillo\InputComponentAction\Contracts\ErrorHook;
 use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
@@ -49,20 +49,20 @@ final class InputComponentRecipe implements RecipeInterface
         HookBag|WrapperHook|LabelHook|ErrorHook|HelpTextHook|null $hookBag = null,
         ?ValueManager $valueBag = null,
         ?ErrorManager $errorBag = null,
-        ?ComposerDisableBag $disableBag = null,
+        ?DisableBag $disableBag = null,
         string|int|Closure|null $inputValue = null,
-        bool $useParentValue = false,
         string|Closure|null $inputError = null,
         string|Closure|null $label = null,
-        bool $labelAsInputContent = false,
-        bool $emptyLabel = false,
-        bool $valueAsInputContent = false,
-        string|Closure|null $helpText = null,
         string|BackedEnum|null $wrapperType = null,
         string|BackedEnum|null $labelType = null,
         string|BackedEnum|null $inputType = null,
         string|BackedEnum|null $errorType = null,
         string|BackedEnum|null $helpTextType = null,
+        bool $useParentValue = false,
+        bool $labelAsInputContent = false,
+        bool $emptyLabel = false,
+        bool $valueAsInputContent = false,
+        string|Closure|null $helpText = null,
         bool $checkable = false,
         bool $selectable = false,
     ) {

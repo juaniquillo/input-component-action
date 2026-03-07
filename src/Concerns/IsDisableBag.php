@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Juaniquillo\InputComponentAction\Concerns;
 
-trait IsComposerDisableBag
+trait IsDisableBag
 {
     use HasErrorDisable,
         HasHelpTextDisable,
