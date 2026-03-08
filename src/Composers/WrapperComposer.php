@@ -15,6 +15,7 @@ use Juaniquillo\InputComponentAction\Concerns\IsComposer;
 use Juaniquillo\InputComponentAction\Contracts\ComponentComposer;
 use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
+use Juaniquillo\InputComponentAction\Contracts\WrapperComponent;
 use Juaniquillo\InputComponentAction\Contracts\WrapperTheme;
 use Juaniquillo\InputComponentAction\Utilities\Support;
 
@@ -37,8 +38,12 @@ final class WrapperComposer implements ComponentComposer
         $componentType = $this->resolveWrapperType($recipe);
         $themeManager = $this->themeManager;
         
-        /** @todo Use new component bag to resolve component */
-        $component = new MainBackendComponent($componentType, $themeManager);
+        $bag = $recipe->getComponentBag();
+        $component = Support::resolveComponent(
+            component: ($bag instanceof WrapperComponent) ? $bag->getWrapperComponent() : null,
+            type: $componentType,
+            themeManager: $themeManager
+        );
 
         $inputType = $this->resolveInputType($recipe);
 

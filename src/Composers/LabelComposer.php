@@ -14,9 +14,11 @@ use Juaniquillo\InputComponentAction\Bags\DefaultHookBag;
 use Juaniquillo\InputComponentAction\Concerns\IsComposer;
 use Juaniquillo\InputComponentAction\Contracts\ComponentComposer;
 use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
+use Juaniquillo\InputComponentAction\Contracts\LabelComponent;
 use Juaniquillo\InputComponentAction\Contracts\LabelTheme;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
 use Juaniquillo\InputComponentAction\Recipes\InputComponentRecipe;
+use Juaniquillo\InputComponentAction\Utilities\Support;
 
 final class LabelComposer implements ComponentComposer
 {
@@ -44,8 +46,12 @@ final class LabelComposer implements ComponentComposer
 
         $label = $this->resolveStringClosure($input, $label);
 
-        /** @todo Use new component bag to resolve component */
-        $component = new MainBackendComponent($componentType, $themeManager);
+        $bag = $recipe->getComponentBag();
+        $component = Support::resolveComponent(
+            component: ($bag instanceof LabelComponent) ? $bag->getLabelComponent() : null,
+            type: $componentType,
+            themeManager: $themeManager
+        );
 
         $inputType = $this->resolveInputType($recipe);
 

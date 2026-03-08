@@ -7,9 +7,11 @@ namespace Juaniquillo\InputComponentAction\Utilities;
 use Closure;
 use Juaniquillo\BackendComponents\Builders\ComponentBuilder;
 use Juaniquillo\BackendComponents\Contracts\BackendComponent;
+use Juaniquillo\BackendComponents\Contracts\CompoundComponent;
 use Juaniquillo\BackendComponents\Contracts\ContentComponent;
 use Juaniquillo\BackendComponents\Contracts\ThemeManager;
 use Juaniquillo\BackendComponents\Enums\ComponentEnum;
+use Juaniquillo\BackendComponents\MainBackendComponent;
 use Juaniquillo\BackendComponents\Themes\LocalThemeManager;
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
 use Juaniquillo\CrudAssistant\Contracts\RecipeInterface;
@@ -29,14 +31,30 @@ final class Support
         return $input->getRecipes()[InputComponentAction::getIdentifier()] ?? new InputComponentRecipe;
     }
 
-    public static function resolveThemeManager(RecipeInterface $recipe, $defaultThemeManager = null): ThemeManager
+    public static function resolveThemeManager(RecipeInterface|InputComponentRecipe $recipe, $defaultThemeManager = null): ThemeManager
     {
         return $recipe->getThemeManager() ?? $defaultThemeManager ?? new LocalThemeManager;
     }
 
-    public static function resolveThemeBag(RecipeInterface $recipe, ThemeBag|WrapperTheme|LabelTheme|ErrorTheme|HelpTextTheme|null $defaultThemeBag = null): ThemeBag
+    public static function resolveThemeBag(RecipeInterface|InputComponentRecipe $recipe, ThemeBag|WrapperTheme|LabelTheme|ErrorTheme|HelpTextTheme|null $defaultThemeBag = null): ThemeBag
     {
         return $recipe->getThemeBag() ?? $defaultThemeBag ?? new DefaultThemeBag;
+    }
+
+    public static function resolveComponent(
+        Closure|CompoundComponent|BackendComponent|string|null $component,
+        mixed $type,
+        ThemeManager $themeManager
+    ): mixed {
+        if ($component instanceof Closure) {
+            return $component($type, $themeManager);
+        }
+
+        if (is_string($component) && class_exists($component)) {
+            return new $component($type, $themeManager);
+        }
+
+        return $component ?? new MainBackendComponent($type, $themeManager);
     }
 
     public static function isClosure(mixed $value): bool

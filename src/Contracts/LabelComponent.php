@@ -9,9 +9,9 @@ use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Contracts\CompoundComponent;
 use Juaniquillo\BackendComponents\Contracts\StaticBuilder;
 
-interface ComponentBag
+interface LabelComponent
 {
-    public function setInputComponent(Closure|CompoundComponent|BackendComponent|string $inputComponent): static;
+    public function setLabelComponent(Closure|CompoundComponent|BackendComponent|string $labelComponent): static;
 
-    public function getInputComponent(): Closure|CompoundComponent|BackendComponent|string|null;
+    public function getLabelComponent(): Closure|CompoundComponent|BackendComponent|string|null;
 }

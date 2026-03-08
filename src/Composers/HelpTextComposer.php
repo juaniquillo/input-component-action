@@ -2,21 +2,22 @@
 
 declare(strict_types=1);
 
-namespace Composers;
+namespace Juaniquillo\InputComponentAction\Composers;
 
 use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Contracts\ContentComponent;
 use Juaniquillo\BackendComponents\Contracts\ThemeComponent;
 use Juaniquillo\BackendComponents\Contracts\ThemeManager;
 use Juaniquillo\BackendComponents\Enums\ComponentEnum;
-use Juaniquillo\BackendComponents\MainBackendComponent;
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
 use Juaniquillo\InputComponentAction\Bags\DefaultHookBag;
 use Juaniquillo\InputComponentAction\Concerns\IsComposer;
 use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
+use Juaniquillo\InputComponentAction\Contracts\HelpTextComponent;
 use Juaniquillo\InputComponentAction\Contracts\HelpTextTheme;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
 use Juaniquillo\InputComponentAction\Recipes\InputComponentRecipe;
+use Juaniquillo\InputComponentAction\Utilities\Support;
 
 class HelpTextComposer
 {
@@ -51,8 +52,12 @@ class HelpTextComposer
 
         $themeManager = $this->themeManager;
 
-        /** @todo Use new component bag to resolve component */
-        $component = new MainBackendComponent($componentType, $themeManager);
+        $bag = $recipe->getComponentBag();
+        $component = Support::resolveComponent(
+            component: ($bag instanceof HelpTextComponent) ? $bag->getHelpTextComponent() : null,
+            type: $componentType,
+            themeManager: $themeManager
+        );
 
         if ($attributes) {
             $component->setAttributes($attributes);

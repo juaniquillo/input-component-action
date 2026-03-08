@@ -40,7 +40,7 @@ trait IsInputComponentRecipe
 
     private ?ThemeManager $themeManager = null;
 
-    private ?ComponentBag $componentBag = null;
+    private ComponentBag|WrapperComponent|LabelComponent|ErrorComponent|HelpTextComponent|null $componentBag = null;
 
     private AttributeBag|WrapperAttributes|LabelAttributes|ErrorAttributes|HelpTextAttributes|null $attributeBag = null;
 
@@ -116,12 +116,12 @@ trait IsInputComponentRecipe
         return $this;
     }
 
-    public function getComponentBag(): ?ComponentBag
+    public function getComponentBag(): ComponentBag|WrapperComponent|LabelComponent|ErrorComponent|HelpTextComponent|null
     {
         return $this->componentBag;
     }
 
-    public function setComponentBag(?ComponentBag $componentBag): self
+    public function setComponentBag(ComponentBag|WrapperComponent|LabelComponent|ErrorComponent|HelpTextComponent|null $componentBag): self
     {
         $this->componentBag = $componentBag;
 

@@ -8,15 +8,16 @@ use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Contracts\ContentComponent;
 use Juaniquillo\BackendComponents\Contracts\ThemeComponent;
 use Juaniquillo\BackendComponents\Contracts\ThemeManager;
-use Juaniquillo\BackendComponents\MainBackendComponent;
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
 use Juaniquillo\InputComponentAction\Bags\DefaultHookBag;
 use Juaniquillo\InputComponentAction\Concerns\IsComposer;
 use Juaniquillo\InputComponentAction\Contracts\ComponentComposer;
+use Juaniquillo\InputComponentAction\Contracts\ErrorComponent;
 use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
 use Juaniquillo\InputComponentAction\Contracts\ErrorTheme;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
 use Juaniquillo\InputComponentAction\Recipes\InputComponentRecipe;
+use Juaniquillo\InputComponentAction\Utilities\Support;
 
 final class ErrorComposer implements ComponentComposer
 {
@@ -41,8 +42,12 @@ final class ErrorComposer implements ComponentComposer
         $componentType = $this->resolveErrorType($recipe);
         $themeManager = $this->themeManager;
 
-        /** @todo Use new component bag to resolve component */
-        $component = new MainBackendComponent($componentType, $themeManager);
+        $bag = $recipe->getComponentBag();
+        $component = Support::resolveComponent(
+            component: ($bag instanceof ErrorComponent) ? $bag->getErrorComponent() : null,
+            type: $componentType,
+            themeManager: $themeManager
+        );
 
         $inputType = $this->resolveInputType($recipe);
 

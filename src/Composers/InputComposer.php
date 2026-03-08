@@ -52,8 +52,12 @@ final class InputComposer implements ComponentComposer
         $themeManager = $this->themeManager;
         $valueResolver = $this->values;
 
-        /** @todo Use new component bag to resolve component */
-        $component = new MainBackendComponent($inputType, $themeManager);
+        $bag = $recipe->getComponentBag();
+        $component = Support::resolveComponent(
+            component: $bag?->getInputComponent(),
+            type: $inputType,
+            themeManager: $themeManager
+        );
 
         /**
          * SubComponents

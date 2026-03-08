@@ -9,9 +9,9 @@ use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Contracts\CompoundComponent;
 use Juaniquillo\BackendComponents\Contracts\StaticBuilder;
 
-interface ComponentBag
+interface HelpTextComponent
 {
-    public function setInputComponent(Closure|CompoundComponent|BackendComponent|string $inputComponent): static;
+    public function setHelpTextComponent(Closure|CompoundComponent|BackendComponent|string $helpTextComponent): static;
 
-    public function getInputComponent(): Closure|CompoundComponent|BackendComponent|string|null;
+    public function getHelpTextComponent(): Closure|CompoundComponent|BackendComponent|string|null;
 }
