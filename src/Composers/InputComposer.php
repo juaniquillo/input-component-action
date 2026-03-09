@@ -8,18 +8,22 @@ use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Contracts\ContentComponent;
 use Juaniquillo\BackendComponents\Contracts\ThemeComponent;
 use Juaniquillo\BackendComponents\Contracts\ThemeManager;
-use Juaniquillo\BackendComponents\MainBackendComponent;
 use Juaniquillo\CrudAssistant\Contracts\InputCollectionInterface;
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
 use Juaniquillo\InputComponentAction\Concerns\IsComposer;
+use Juaniquillo\InputComponentAction\Contracts\ComponentBag;
 use Juaniquillo\InputComponentAction\Contracts\ComponentComposer;
+use Juaniquillo\InputComponentAction\Contracts\ErrorComponent;
 use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
 use Juaniquillo\InputComponentAction\Contracts\ErrorTheme;
+use Juaniquillo\InputComponentAction\Contracts\HelpTextComponent;
 use Juaniquillo\InputComponentAction\Contracts\HelpTextTheme;
 use Juaniquillo\InputComponentAction\Contracts\InputGroup;
+use Juaniquillo\InputComponentAction\Contracts\LabelComponent;
 use Juaniquillo\InputComponentAction\Contracts\LabelTheme;
 use Juaniquillo\InputComponentAction\Contracts\ThemeBag;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
+use Juaniquillo\InputComponentAction\Contracts\WrapperComponent;
 use Juaniquillo\InputComponentAction\Contracts\WrapperTheme;
 use Juaniquillo\InputComponentAction\Factories\InputGroupFactory;
 use Juaniquillo\InputComponentAction\Recipes\InputComponentRecipe;
@@ -37,6 +41,7 @@ final class InputComposer implements ComponentComposer
         private ?ValueManager $values,
         private ?ErrorManager $errors,
         private ThemeBag|WrapperTheme|LabelTheme|ErrorTheme|HelpTextTheme|null $themeBag = null,
+        private ComponentBag|WrapperComponent|LabelComponent|ErrorComponent|HelpTextComponent|null $componentBag = null,
     ) {}
 
     public function build(): BackendComponent|ContentComponent|ThemeComponent
@@ -52,9 +57,9 @@ final class InputComposer implements ComponentComposer
         $themeManager = $this->themeManager;
         $valueResolver = $this->values;
 
-        $bag = $recipe->getComponentBag();
+        $bag = Support::resolveComponentBag($recipe, $this->componentBag);
         $component = Support::resolveComponent(
-            component: $bag?->getInputComponent(),
+            component: $bag->getInputComponent(),
             type: $inputType,
             themeManager: $themeManager
         );

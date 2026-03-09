@@ -21,10 +21,10 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultComponentBag.php' => 
     array (
-      0 => '2675d30bfb32219f6d4eb262b49650d23eb193714b440f0a553315dbbae9b9fd',
+      0 => 'fc8ce0e1f7d8b4e30c26ead4bf473ac5bc7e9a1aba33e98cfe6a451711bb54e8',
       1 => 
       array (
-        0 => 'bags\\defaultcomponentbag',
+        0 => 'juaniquillo\\inputcomponentaction\\bags\\defaultcomponentbag',
       ),
       2 => 
       array (
@@ -63,7 +63,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\ErrorComposer.php' => 
     array (
-      0 => '15d58dcc33ccf18cefcf8fdec0cb5bce6537d2a7eb84580f467c4fc4abbb1bcd',
+      0 => '266c5edf7a060502dc8e59405d6fa124d5ae6d555b7e018122535dca26915348',
       1 => 
       array (
         0 => 'juaniquillo\\inputcomponentaction\\composers\\errorcomposer',
@@ -79,15 +79,15 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\HelpTextComposer.php' => 
     array (
-      0 => 'f386da031656767473770c91c8feef0c935892cbeedd1383f9ba2c93ba20e800',
+      0 => 'ca005a74627a8e52f99ebd5777e82c181fb3180bb8871ad8682657ecb913bb18',
       1 => 
       array (
-        0 => 'composers\\helptextcomposer',
+        0 => 'juaniquillo\\inputcomponentaction\\composers\\helptextcomposer',
       ),
       2 => 
       array (
-        0 => 'composers\\__construct',
-        1 => 'composers\\build',
+        0 => 'juaniquillo\\inputcomponentaction\\composers\\__construct',
+        1 => 'juaniquillo\\inputcomponentaction\\composers\\build',
       ),
       3 => 
       array (
@@ -95,7 +95,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\InputComposer.php' => 
     array (
-      0 => 'bc2e3f9eef5c8ab0ca8395f46468278002347b94ecdd08db952f28da8f82c567',
+      0 => '6b9bda4035193f478d1760b88eca3f90902fc563e55dea951ef594eceeb7ddfd',
       1 => 
       array (
         0 => 'juaniquillo\\inputcomponentaction\\composers\\inputcomposer',
@@ -115,7 +115,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\LabelComposer.php' => 
     array (
-      0 => '6049fc3b026400c0bf70ce013e20e176f6dbaaa45559a99c21ec94e5d7df04f4',
+      0 => '4b5b17a5d3dc70f5f876490c1bb6ee6aaa99821efd718f247de94164615178c9',
       1 => 
       array (
         0 => 'juaniquillo\\inputcomponentaction\\composers\\labelcomposer',
@@ -131,7 +131,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\WrapperComposer.php' => 
     array (
-      0 => '869d44250b3675781be88c4f7e6adc3f474b2a8c901c81ba5e0f6bb0e73ab363',
+      0 => '0e7ecb849d11c78e43be5a1d2d545080d16d56a8cb31bf0843d69acac8eec247',
       1 => 
       array (
         0 => 'juaniquillo\\inputcomponentaction\\composers\\wrappercomposer',
@@ -147,7 +147,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasError.php' => 
     array (
-      0 => 'ece95320be25af37dde08728f3245b1378b18247a32a400200d0a1c5ccc3f985',
+      0 => 'e487cc85f6c8487c3bfefa7b15dbbbce9e82663ce33c83b6b30c5c0bc4cc1d3e',
       1 => 
       array (
         0 => 'juaniquillo\\inputcomponentaction\\concerns\\haserror',
@@ -210,7 +210,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasHelpText.php' => 
     array (
-      0 => '6fe4a623a3dde7e83f0604a81097b9b7a25edec43320cd85bd1c1ff19fd82a41',
+      0 => '19ad24ca35eeae837919aadf9b260814e7c72ace1a98318d8aa95aa729f1350a',
       1 => 
       array (
         0 => 'juaniquillo\\inputcomponentaction\\concerns\\hashelptext',
@@ -273,7 +273,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasLabel.php' => 
     array (
-      0 => '92b7367b2279863f51ee87d55985ea657388e32de8759e9d8a6473c2d4efd726',
+      0 => '6637adca2e9ac6d3779bbdcad41f1463c7bb0a67ccf83ea26484fcd380497fe5',
       1 => 
       array (
         0 => 'juaniquillo\\inputcomponentaction\\concerns\\haslabel',
@@ -336,7 +336,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasWrapper.php' => 
     array (
-      0 => '20b7ebdf7b618086d86623f57a0c4d65db3585b2b98fa42028888633ffa0d968',
+      0 => '777c5fcb86e14eb13e7e2e50f68d3c93db88877a219f53ea4b36fd08bcef05f9',
       1 => 
       array (
         0 => 'juaniquillo\\inputcomponentaction\\concerns\\haswrapper',
@@ -415,7 +415,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComponentBag.php' => 
     array (
-      0 => '84a23fdb903bb76e99063a8396ab2660d941d90ffabe46f75c3534aecd8d4f25',
+      0 => '34f21015b9e0f380bc65928e79579cd54b0a0d500c58490a8158b4a813534cd0',
       1 => 
       array (
         0 => 'juaniquillo\\inputcomponentaction\\concerns\\iscomponentbag',
@@ -431,7 +431,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php' => 
     array (
-      0 => '9d024960c96e88db6167e813c85ea6c84d1fcc5e0c91965dd5c60db58c91afe7',
+      0 => '46d4ff11949e1a5fc384f280ff33e89abcb860d62de298173229efa5a852c3b6',
       1 => 
       array (
         0 => 'juaniquillo\\inputcomponentaction\\concerns\\iscomposer',
@@ -471,7 +471,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsInputGroup.php' => 
     array (
-      0 => '956be72413bfbf0ad5438c76e65c06a38f2d909391e0e78aceea5cf9e3ecc3a0',
+      0 => 'd76544896f987acfcac3f75e09e847884943d172180d3c3f6ee8181215d37999',
       1 => 
       array (
         0 => 'juaniquillo\\inputcomponentaction\\concerns\\isinputgroup',
@@ -550,7 +550,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\ComponentBag.php' => 
     array (
-      0 => '9175eabc4986c35be8d4cfa992f43d33b21a208a1b2eed027a2692fa8cdf5d0e',
+      0 => '1f071f053a03adc45f95a7e84746722d981a8bfcbe6f773be03304ad21001780',
       1 => 
       array (
         0 => 'juaniquillo\\inputcomponentaction\\contracts\\componentbag',
@@ -591,22 +591,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
         0 => 'juaniquillo\\inputcomponentaction\\contracts\\seterrorattributes',
         1 => 'juaniquillo\\inputcomponentaction\\contracts\\geterrorattributes',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\ErrorBuilder.php' => 
-    array (
-      0 => '6e96efcb703543fb73c1afd8d328a7796ff347d7e85060c8b95cd97513001b7a',
-      1 => 
-      array (
-        0 => 'juaniquillo\\inputcomponentaction\\contracts\\errorbuilder',
-      ),
-      2 => 
-      array (
-        0 => 'juaniquillo\\inputcomponentaction\\contracts\\seterrorbuilder',
-        1 => 'juaniquillo\\inputcomponentaction\\contracts\\geterrorbuilder',
       ),
       3 => 
       array (
@@ -676,22 +660,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
       ),
     ),
-    'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\HelpTextBuilder.php' => 
-    array (
-      0 => '7fcb9437b32dd7f8960a02cdc75443064dc8414e4a13db6d9c50da04228f72e0',
-      1 => 
-      array (
-        0 => 'juaniquillo\\inputcomponentaction\\contracts\\helptextbuilder',
-      ),
-      2 => 
-      array (
-        0 => 'juaniquillo\\inputcomponentaction\\contracts\\sethelptextbuilder',
-        1 => 'juaniquillo\\inputcomponentaction\\contracts\\gethelptextbuilder',
-      ),
-      3 => 
-      array (
-      ),
-    ),
     'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\HelpTextHook.php' => 
     array (
       0 => '176ef1d4c66ce53ea04ad57bf9d2209625ece7d2ff6e55219548f026f667ab25',
@@ -742,7 +710,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\InputGroup.php' => 
     array (
-      0 => 'd55f3f8fb63a9a51087acbf4f8ba9dfcb570f6bd79ea3aad3180a12d86ee970e',
+      0 => '70209d4bfcabf123257a1106f1fc063e6ff0aba891115115e779a4afff5ce138',
       1 => 
       array (
         0 => 'juaniquillo\\inputcomponentaction\\contracts\\inputgroup',
@@ -768,22 +736,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
         0 => 'juaniquillo\\inputcomponentaction\\contracts\\setlabelattributes',
         1 => 'juaniquillo\\inputcomponentaction\\contracts\\getlabelattributes',
-      ),
-      3 => 
-      array (
-      ),
-    ),
-    'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\LabelBuilder.php' => 
-    array (
-      0 => 'ab3c90a2a5805473096c3cdbabc33c90c2e111a8cc4b96b18394447feb7b700c',
-      1 => 
-      array (
-        0 => 'juaniquillo\\inputcomponentaction\\contracts\\labelbuilder',
-      ),
-      2 => 
-      array (
-        0 => 'juaniquillo\\inputcomponentaction\\contracts\\setlabelbuilder',
-        1 => 'juaniquillo\\inputcomponentaction\\contracts\\getlabelbuilder',
       ),
       3 => 
       array (
@@ -870,22 +822,6 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
       array (
       ),
     ),
-    'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\WrapperBuilder.php' => 
-    array (
-      0 => 'aea97c8df2fa435eaec5249bc64fa15722ea85bc7ef391725958defd8dd0b94f',
-      1 => 
-      array (
-        0 => 'juaniquillo\\inputcomponentaction\\contracts\\wrapperbuilder',
-      ),
-      2 => 
-      array (
-        0 => 'juaniquillo\\inputcomponentaction\\contracts\\setwrapperbuilder',
-        1 => 'juaniquillo\\inputcomponentaction\\contracts\\getwrapperbuilder',
-      ),
-      3 => 
-      array (
-      ),
-    ),
     'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\WrapperHook.php' => 
     array (
       0 => '2bc262de13640de84547ae3368823480564e9fd836a44297e14d0a6c3cb37822',
@@ -920,7 +856,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Factories\\InputGroupFactory.php' => 
     array (
-      0 => 'd15a4934fd310c5fcd9bedf40cca75bc7de8dd218f61fc4a4a4158665de3a350',
+      0 => '6a9984336b1c883939d9cdc5a16314c928ea0f447748e8855b82cb9d12413805',
       1 => 
       array (
         0 => 'juaniquillo\\inputcomponentaction\\factories\\inputgroupfactory',
@@ -1010,7 +946,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\InputComponentAction.php' => 
     array (
-      0 => '325d0e7eb24828ace6cf6494867a02797fdc3b9d79ab6b0cba9d911f9727b31a',
+      0 => '32435cbb2a8a67b94bd1727fc306ddaeb260b4673889ad9a098c39cd0ad032e8',
       1 => 
       array (
         0 => 'juaniquillo\\inputcomponentaction\\inputcomponentaction',
@@ -1022,16 +958,17 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         2 => 'juaniquillo\\inputcomponentaction\\setthememanager',
         3 => 'juaniquillo\\inputcomponentaction\\setdefaultinputgroup',
         4 => 'juaniquillo\\inputcomponentaction\\setdefaultthemebag',
-        5 => 'juaniquillo\\inputcomponentaction\\setmodel',
-        6 => 'juaniquillo\\inputcomponentaction\\setvaluemanager',
-        7 => 'juaniquillo\\inputcomponentaction\\seterrormanager',
-        8 => 'juaniquillo\\inputcomponentaction\\execute',
-        9 => 'juaniquillo\\inputcomponentaction\\resolveinputs',
-        10 => 'juaniquillo\\inputcomponentaction\\getinputgroup',
-        11 => 'juaniquillo\\inputcomponentaction\\getwrapper',
-        12 => 'juaniquillo\\inputcomponentaction\\getvaluemanager',
-        13 => 'juaniquillo\\inputcomponentaction\\geterrormanager',
-        14 => 'juaniquillo\\inputcomponentaction\\cleanup',
+        5 => 'juaniquillo\\inputcomponentaction\\setdefaultcomponentbag',
+        6 => 'juaniquillo\\inputcomponentaction\\setmodel',
+        7 => 'juaniquillo\\inputcomponentaction\\setvaluemanager',
+        8 => 'juaniquillo\\inputcomponentaction\\seterrormanager',
+        9 => 'juaniquillo\\inputcomponentaction\\execute',
+        10 => 'juaniquillo\\inputcomponentaction\\resolveinputs',
+        11 => 'juaniquillo\\inputcomponentaction\\getinputgroup',
+        12 => 'juaniquillo\\inputcomponentaction\\getwrapper',
+        13 => 'juaniquillo\\inputcomponentaction\\getvaluemanager',
+        14 => 'juaniquillo\\inputcomponentaction\\geterrormanager',
+        15 => 'juaniquillo\\inputcomponentaction\\cleanup',
       ),
       3 => 
       array (
@@ -1054,7 +991,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Managers\\DefaultErrorManager.php' => 
     array (
-      0 => '047625961d829e5c6371111ffb377f83f4eee3b56132bedc62ca4eb084092071',
+      0 => '4ba5d289fd7c887508c120806d161ef9758611cdd4ed1a1bc23d22c6b421e82b',
       1 => 
       array (
         0 => 'juaniquillo\\inputcomponentaction\\managers\\defaulterrormanager',
@@ -1070,7 +1007,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Managers\\DefaultValueManager.php' => 
     array (
-      0 => 'f474c84c4a097385b0e77129dd5f7284a2339ebf15ec53d7953bbb59ac38588e',
+      0 => '596c27e332900ac1e25136c44c6be4254ebe76c01fb60c41063826d8c82c6417',
       1 => 
       array (
         0 => 'juaniquillo\\inputcomponentaction\\managers\\defaultvaluemanager',
@@ -1087,7 +1024,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php' => 
     array (
-      0 => '5f9142bc0cf8616aa0583dcf3a0e5c3588ff9ad9b4091cd83e567a4898d36a1d',
+      0 => '51bad6769f399a037838185179ac075a8390a75b05ae68c69c9cb7ce82750e32',
       1 => 
       array (
         0 => 'juaniquillo\\inputcomponentaction\\recipes\\inputcomponentrecipe',
@@ -1102,7 +1039,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Utilities\\Support.php' => 
     array (
-      0 => 'e117005d4b29879d7839f336cb8db041198b64256fbe58cc5aad64582de01df3',
+      0 => '97a7cd1e2c3838354d325587c236fd8d199ccc9e1531409208c02224964ff78f',
       1 => 
       array (
         0 => 'juaniquillo\\inputcomponentaction\\utilities\\support',
@@ -1112,8 +1049,415 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         0 => 'juaniquillo\\inputcomponentaction\\utilities\\getrecipe',
         1 => 'juaniquillo\\inputcomponentaction\\utilities\\resolvethememanager',
         2 => 'juaniquillo\\inputcomponentaction\\utilities\\resolvethemebag',
-        3 => 'juaniquillo\\inputcomponentaction\\utilities\\isclosure',
-        4 => 'juaniquillo\\inputcomponentaction\\utilities\\getcollectionwrapper',
+        3 => 'juaniquillo\\inputcomponentaction\\utilities\\resolvecomponentbag',
+        4 => 'juaniquillo\\inputcomponentaction\\utilities\\resolvecomponent',
+        5 => 'juaniquillo\\inputcomponentaction\\utilities\\isclosure',
+        6 => 'juaniquillo\\inputcomponentaction\\utilities\\getcollectionwrapper',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultDisableBag.php' => 
+    array (
+      0 => 'c41b3dd29778c77f71e69c75ca7f013192977ff73835cf8af590e6feb0dd5149',
+      1 => 
+      array (
+        0 => 'juaniquillo\\inputcomponentaction\\bags\\defaultdisablebag',
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasErrorComponent.php' => 
+    array (
+      0 => '4f5de53162a76693e8fd63d95095b389af54f343bc3874b36d1f2c0a9cecabdf',
+      1 => 
+      array (
+        0 => 'juaniquillo\\inputcomponentaction\\concerns\\haserrorcomponent',
+      ),
+      2 => 
+      array (
+        0 => 'juaniquillo\\inputcomponentaction\\concerns\\seterrorcomponent',
+        1 => 'juaniquillo\\inputcomponentaction\\concerns\\geterrorcomponent',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasErrorDisable.php' => 
+    array (
+      0 => '3747861098bb4f8b068788944a6de50059894dc6f34bf0523cb02c99d5ca4d0f',
+      1 => 
+      array (
+        0 => 'juaniquillo\\inputcomponentaction\\concerns\\haserrordisable',
+      ),
+      2 => 
+      array (
+        0 => 'juaniquillo\\inputcomponentaction\\concerns\\setdisableerror',
+        1 => 'juaniquillo\\inputcomponentaction\\concerns\\disableerror',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasHelpTextComponent.php' => 
+    array (
+      0 => '168d551d8ed4c75cefe7adaa3683566075f9420013fb1c47ad304323af8af53e',
+      1 => 
+      array (
+        0 => 'juaniquillo\\inputcomponentaction\\concerns\\hashelptextcomponent',
+      ),
+      2 => 
+      array (
+        0 => 'juaniquillo\\inputcomponentaction\\concerns\\sethelptextcomponent',
+        1 => 'juaniquillo\\inputcomponentaction\\concerns\\gethelptextcomponent',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasHelpTextDisable.php' => 
+    array (
+      0 => '7086c93b9bda564197e2a96ce40660d64219a1d2ba6af580d4e53553819a1f72',
+      1 => 
+      array (
+        0 => 'juaniquillo\\inputcomponentaction\\concerns\\hashelptextdisable',
+      ),
+      2 => 
+      array (
+        0 => 'juaniquillo\\inputcomponentaction\\concerns\\setdisablehelptext',
+        1 => 'juaniquillo\\inputcomponentaction\\concerns\\disablehelptext',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasInputDisable.php' => 
+    array (
+      0 => 'cb3d4ed35a92213623d793d438e5b96e17e692b7296aecd2b14e61aa50721062',
+      1 => 
+      array (
+        0 => 'juaniquillo\\inputcomponentaction\\concerns\\hasinputdisable',
+      ),
+      2 => 
+      array (
+        0 => 'juaniquillo\\inputcomponentaction\\concerns\\setdisableinputvalue',
+        1 => 'juaniquillo\\inputcomponentaction\\concerns\\disableinputvalue',
+        2 => 'juaniquillo\\inputcomponentaction\\concerns\\setdisabledefaultnameattribute',
+        3 => 'juaniquillo\\inputcomponentaction\\concerns\\disabledefaultnameattribute',
+        4 => 'juaniquillo\\inputcomponentaction\\concerns\\setdisabledefaultidattribute',
+        5 => 'juaniquillo\\inputcomponentaction\\concerns\\disabledefaultidattribute',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasLabelComponent.php' => 
+    array (
+      0 => '5b7d4dc3927b8718b16ef817a7205ff6347a051bb4d846b2037cf406003753fd',
+      1 => 
+      array (
+        0 => 'juaniquillo\\inputcomponentaction\\concerns\\haslabelcomponent',
+      ),
+      2 => 
+      array (
+        0 => 'juaniquillo\\inputcomponentaction\\concerns\\setlabelcomponent',
+        1 => 'juaniquillo\\inputcomponentaction\\concerns\\getlabelcomponent',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasLabelDisable.php' => 
+    array (
+      0 => '5ce5b2505e57372febd9b750c7c9700d9945b6051446dd0b7c0c6980ae92c55f',
+      1 => 
+      array (
+        0 => 'juaniquillo\\inputcomponentaction\\concerns\\haslabeldisable',
+      ),
+      2 => 
+      array (
+        0 => 'juaniquillo\\inputcomponentaction\\concerns\\setdisablelabel',
+        1 => 'juaniquillo\\inputcomponentaction\\concerns\\disablelabel',
+        2 => 'juaniquillo\\inputcomponentaction\\concerns\\setdisabledefaultforattribute',
+        3 => 'juaniquillo\\inputcomponentaction\\concerns\\disabledefaultforattribute',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasWrapperComponent.php' => 
+    array (
+      0 => '1360206706b5dcdad963ad4c82073ede7655c5d449ddd32e2eee3e10cc9e03f4',
+      1 => 
+      array (
+        0 => 'juaniquillo\\inputcomponentaction\\concerns\\haswrappercomponent',
+      ),
+      2 => 
+      array (
+        0 => 'juaniquillo\\inputcomponentaction\\concerns\\setwrappercomponent',
+        1 => 'juaniquillo\\inputcomponentaction\\concerns\\getwrappercomponent',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasWrapperDisable.php' => 
+    array (
+      0 => 'e94bbea0f473985bf43e034219d9e379cbb002e4ac8afbade5490840fae52746',
+      1 => 
+      array (
+        0 => 'juaniquillo\\inputcomponentaction\\concerns\\haswrapperdisable',
+      ),
+      2 => 
+      array (
+        0 => 'juaniquillo\\inputcomponentaction\\concerns\\setdisablewrapper',
+        1 => 'juaniquillo\\inputcomponentaction\\concerns\\disablewrapper',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsDisableBag.php' => 
+    array (
+      0 => '6bc10427029858948bea74c5ba49e6b43d3d18e889b16065a91ba5b6cfb01008',
+      1 => 
+      array (
+        0 => 'juaniquillo\\inputcomponentaction\\concerns\\isdisablebag',
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsInputComponentRecipe.php' => 
+    array (
+      0 => '9d89a82717b620addc4e37ea5145e4a93a1a65ff080ca1b2579e1f9ad2c988ff',
+      1 => 
+      array (
+        0 => 'juaniquillo\\inputcomponentaction\\concerns\\isinputcomponentrecipe',
+      ),
+      2 => 
+      array (
+        0 => 'juaniquillo\\inputcomponentaction\\concerns\\make',
+        1 => 'juaniquillo\\inputcomponentaction\\concerns\\getinputgroup',
+        2 => 'juaniquillo\\inputcomponentaction\\concerns\\setinputgroup',
+        3 => 'juaniquillo\\inputcomponentaction\\concerns\\getthememanager',
+        4 => 'juaniquillo\\inputcomponentaction\\concerns\\setthememanager',
+        5 => 'juaniquillo\\inputcomponentaction\\concerns\\getcomponentbag',
+        6 => 'juaniquillo\\inputcomponentaction\\concerns\\setcomponentbag',
+        7 => 'juaniquillo\\inputcomponentaction\\concerns\\getattributebag',
+        8 => 'juaniquillo\\inputcomponentaction\\concerns\\setattributebag',
+        9 => 'juaniquillo\\inputcomponentaction\\concerns\\getthemebag',
+        10 => 'juaniquillo\\inputcomponentaction\\concerns\\setthemebag',
+        11 => 'juaniquillo\\inputcomponentaction\\concerns\\gethookbag',
+        12 => 'juaniquillo\\inputcomponentaction\\concerns\\sethookbag',
+        13 => 'juaniquillo\\inputcomponentaction\\concerns\\getvaluebag',
+        14 => 'juaniquillo\\inputcomponentaction\\concerns\\setvaluebag',
+        15 => 'juaniquillo\\inputcomponentaction\\concerns\\geterrorbag',
+        16 => 'juaniquillo\\inputcomponentaction\\concerns\\seterrorbag',
+        17 => 'juaniquillo\\inputcomponentaction\\concerns\\getinputvalue',
+        18 => 'juaniquillo\\inputcomponentaction\\concerns\\setinputvalue',
+        19 => 'juaniquillo\\inputcomponentaction\\concerns\\useparentvalue',
+        20 => 'juaniquillo\\inputcomponentaction\\concerns\\setuseparentvalue',
+        21 => 'juaniquillo\\inputcomponentaction\\concerns\\getinputerror',
+        22 => 'juaniquillo\\inputcomponentaction\\concerns\\setinputerror',
+        23 => 'juaniquillo\\inputcomponentaction\\concerns\\getlabel',
+        24 => 'juaniquillo\\inputcomponentaction\\concerns\\setlabel',
+        25 => 'juaniquillo\\inputcomponentaction\\concerns\\labelasinputcontent',
+        26 => 'juaniquillo\\inputcomponentaction\\concerns\\setlabelasinputcontent',
+        27 => 'juaniquillo\\inputcomponentaction\\concerns\\isemptylabel',
+        28 => 'juaniquillo\\inputcomponentaction\\concerns\\setemptylabel',
+        29 => 'juaniquillo\\inputcomponentaction\\concerns\\valueasinputcontent',
+        30 => 'juaniquillo\\inputcomponentaction\\concerns\\setvalueasinputcontent',
+        31 => 'juaniquillo\\inputcomponentaction\\concerns\\gethelptext',
+        32 => 'juaniquillo\\inputcomponentaction\\concerns\\sethelptext',
+        33 => 'juaniquillo\\inputcomponentaction\\concerns\\getdisablebag',
+        34 => 'juaniquillo\\inputcomponentaction\\concerns\\setdisablebag',
+        35 => 'juaniquillo\\inputcomponentaction\\concerns\\getwrappertype',
+        36 => 'juaniquillo\\inputcomponentaction\\concerns\\setwrappertype',
+        37 => 'juaniquillo\\inputcomponentaction\\concerns\\getlabeltype',
+        38 => 'juaniquillo\\inputcomponentaction\\concerns\\setlabeltype',
+        39 => 'juaniquillo\\inputcomponentaction\\concerns\\getinputtype',
+        40 => 'juaniquillo\\inputcomponentaction\\concerns\\setinputtype',
+        41 => 'juaniquillo\\inputcomponentaction\\concerns\\geterrortype',
+        42 => 'juaniquillo\\inputcomponentaction\\concerns\\seterrortype',
+        43 => 'juaniquillo\\inputcomponentaction\\concerns\\gethelptexttype',
+        44 => 'juaniquillo\\inputcomponentaction\\concerns\\sethelptexttype',
+        45 => 'juaniquillo\\inputcomponentaction\\concerns\\ischeckable',
+        46 => 'juaniquillo\\inputcomponentaction\\concerns\\setcheckable',
+        47 => 'juaniquillo\\inputcomponentaction\\concerns\\isselectable',
+        48 => 'juaniquillo\\inputcomponentaction\\concerns\\setselectable',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\DisableBag.php' => 
+    array (
+      0 => '7dee51b13bc9ea98e05019e79f9bae8d513890dd618eb0ef59def1959b69fdd3',
+      1 => 
+      array (
+        0 => 'juaniquillo\\inputcomponentaction\\contracts\\disablebag',
+      ),
+      2 => 
+      array (
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\ErrorComponent.php' => 
+    array (
+      0 => 'd8f55b728ed4cc0f8d6897478cb59bc0d13cf96e03a78613d3feda435ed7f498',
+      1 => 
+      array (
+        0 => 'juaniquillo\\inputcomponentaction\\contracts\\errorcomponent',
+      ),
+      2 => 
+      array (
+        0 => 'juaniquillo\\inputcomponentaction\\contracts\\seterrorcomponent',
+        1 => 'juaniquillo\\inputcomponentaction\\contracts\\geterrorcomponent',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\ErrorDisable.php' => 
+    array (
+      0 => 'a4a5e66e38ea94ea83dc8968570cda81fb2f538fcff11b1d552ae323938d50ec',
+      1 => 
+      array (
+        0 => 'juaniquillo\\inputcomponentaction\\contracts\\errordisable',
+      ),
+      2 => 
+      array (
+        0 => 'juaniquillo\\inputcomponentaction\\contracts\\setdisableerror',
+        1 => 'juaniquillo\\inputcomponentaction\\contracts\\disableerror',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\HelpTextComponent.php' => 
+    array (
+      0 => '1c8198991d26ee414c0b377c62af4f18e5d5ece968b93b9fd3e2593684d79d13',
+      1 => 
+      array (
+        0 => 'juaniquillo\\inputcomponentaction\\contracts\\helptextcomponent',
+      ),
+      2 => 
+      array (
+        0 => 'juaniquillo\\inputcomponentaction\\contracts\\sethelptextcomponent',
+        1 => 'juaniquillo\\inputcomponentaction\\contracts\\gethelptextcomponent',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\HelpTextDisable.php' => 
+    array (
+      0 => '85b479cc671b604715b066ddfae5bd07b2a5b94de2ae2e979321b4ba69003dc8',
+      1 => 
+      array (
+        0 => 'juaniquillo\\inputcomponentaction\\contracts\\helptextdisable',
+      ),
+      2 => 
+      array (
+        0 => 'juaniquillo\\inputcomponentaction\\contracts\\setdisablehelptext',
+        1 => 'juaniquillo\\inputcomponentaction\\contracts\\disablehelptext',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\InputDisable.php' => 
+    array (
+      0 => 'bb10665621e323010e343b547a7b217e7036718a61f719547795e93c2de9ea1b',
+      1 => 
+      array (
+        0 => 'juaniquillo\\inputcomponentaction\\contracts\\inputdisable',
+      ),
+      2 => 
+      array (
+        0 => 'juaniquillo\\inputcomponentaction\\contracts\\setdisableinputvalue',
+        1 => 'juaniquillo\\inputcomponentaction\\contracts\\disableinputvalue',
+        2 => 'juaniquillo\\inputcomponentaction\\contracts\\setdisabledefaultnameattribute',
+        3 => 'juaniquillo\\inputcomponentaction\\contracts\\disabledefaultnameattribute',
+        4 => 'juaniquillo\\inputcomponentaction\\contracts\\setdisabledefaultidattribute',
+        5 => 'juaniquillo\\inputcomponentaction\\contracts\\disabledefaultidattribute',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\LabelComponent.php' => 
+    array (
+      0 => 'fdc85a56d85e98a46f0de6b5b4be15b5801be14b989c7702765c02a8ef7985a9',
+      1 => 
+      array (
+        0 => 'juaniquillo\\inputcomponentaction\\contracts\\labelcomponent',
+      ),
+      2 => 
+      array (
+        0 => 'juaniquillo\\inputcomponentaction\\contracts\\setlabelcomponent',
+        1 => 'juaniquillo\\inputcomponentaction\\contracts\\getlabelcomponent',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\LabelDisable.php' => 
+    array (
+      0 => '3994273bc8aa281c03848c235273144c6658a990cfd71e7984dd9f0fc4504dce',
+      1 => 
+      array (
+        0 => 'juaniquillo\\inputcomponentaction\\contracts\\labeldisable',
+      ),
+      2 => 
+      array (
+        0 => 'juaniquillo\\inputcomponentaction\\contracts\\setdisablelabel',
+        1 => 'juaniquillo\\inputcomponentaction\\contracts\\disablelabel',
+        2 => 'juaniquillo\\inputcomponentaction\\contracts\\setdisabledefaultforattribute',
+        3 => 'juaniquillo\\inputcomponentaction\\contracts\\disabledefaultforattribute',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\WrapperComponent.php' => 
+    array (
+      0 => '69d0592dcc6220c2748453c508ce08426959444d39365e1ad3c0d2b1a292d633',
+      1 => 
+      array (
+        0 => 'juaniquillo\\inputcomponentaction\\contracts\\wrappercomponent',
+      ),
+      2 => 
+      array (
+        0 => 'juaniquillo\\inputcomponentaction\\contracts\\setwrappercomponent',
+        1 => 'juaniquillo\\inputcomponentaction\\contracts\\getwrappercomponent',
+      ),
+      3 => 
+      array (
+      ),
+    ),
+    'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\WrapperDisable.php' => 
+    array (
+      0 => '0128a4862609452fad2bf19276a45f861f7960b2f2b41d7b5d233fa77da54c33',
+      1 => 
+      array (
+        0 => 'juaniquillo\\inputcomponentaction\\contracts\\wrapperdisable',
+      ),
+      2 => 
+      array (
+        0 => 'juaniquillo\\inputcomponentaction\\contracts\\setdisablewrapper',
+        1 => 'juaniquillo\\inputcomponentaction\\contracts\\disablewrapper',
       ),
       3 => 
       array (

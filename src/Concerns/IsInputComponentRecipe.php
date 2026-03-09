@@ -32,7 +32,6 @@ use Juaniquillo\InputComponentAction\Contracts\WrapperAttributes;
 use Juaniquillo\InputComponentAction\Contracts\WrapperDisable;
 use Juaniquillo\InputComponentAction\Contracts\WrapperHook;
 use Juaniquillo\InputComponentAction\Contracts\WrapperTheme;
-use Juaniquillo\InputComponentAction\InputComponentAction;
 
 trait IsInputComponentRecipe
 {
@@ -89,7 +88,7 @@ trait IsInputComponentRecipe
 
     public static function make(): self
     {
-        return new self();
+        return new self;
     }
 
     public function getInputGroup(): ?InputGroup

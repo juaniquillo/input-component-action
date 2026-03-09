@@ -38,8 +38,8 @@ use Juaniquillo\InputComponentAction\InputComponentAction;
 
 final class InputComponentRecipe implements RecipeInterface
 {
-    use IsRecipe;
     use IsInputComponentRecipe;
+    use IsRecipe;
 
     /** @var class-string */
     protected $action = InputComponentAction::class;

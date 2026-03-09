@@ -2,7 +2,7 @@
 
 // odsl-C:\Users\juani\Code\packages\input-component-action\src\Utilities\Support.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Juaniquillo\InputComponentAction\Utilities\Support
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-6.65.0.9-8.4.16-e117005d4b29879d7839f336cb8db041198b64256fbe58cc5aad64582de01df3',
+   'variableKey' => 'v2-6.65.0.9-8.4.16-97a7cd1e2c3838354d325587c236fd8d199ccc9e1531409208c02224964ff78f',
    'data' => 
   array (
     'locatedSource' => 
@@ -26,8 +26,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     'attributes' => 
     array (
     ),
-    'startLine' => 25,
-    'endLine' => 51,
+    'startLine' => 32,
+    'endLine' => 82,
     'startColumn' => 1,
     'endColumn' => 1,
     'parentClassName' => NULL,
@@ -69,8 +69,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 27,
-            'endLine' => 27,
+            'startLine' => 34,
+            'endLine' => 34,
             'startColumn' => 38,
             'endColumn' => 58,
             'parameterIndex' => 0,
@@ -91,8 +91,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         array (
         ),
         'docComment' => NULL,
-        'startLine' => 27,
-        'endLine' => 30,
+        'startLine' => 34,
+        'endLine' => 37,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -117,11 +117,30 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'default' => NULL,
             'type' => 
             array (
-              'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
+              'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionUnionType',
               'data' => 
               array (
-                'name' => 'Juaniquillo\\CrudAssistant\\Contracts\\RecipeInterface',
-                'isIdentifier' => false,
+                'types' => 
+                array (
+                  0 => 
+                  array (
+                    'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
+                    'data' => 
+                    array (
+                      'name' => 'Juaniquillo\\CrudAssistant\\Contracts\\RecipeInterface',
+                      'isIdentifier' => false,
+                    ),
+                  ),
+                  1 => 
+                  array (
+                    'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
+                    'data' => 
+                    array (
+                      'name' => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+                      'isIdentifier' => false,
+                    ),
+                  ),
+                ),
               ),
             ),
             'isVariadic' => false,
@@ -130,10 +149,10 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 32,
-            'endLine' => 32,
+            'startLine' => 39,
+            'endLine' => 39,
             'startColumn' => 48,
-            'endColumn' => 70,
+            'endColumn' => 91,
             'parameterIndex' => 0,
             'isOptional' => false,
           ),
@@ -145,12 +164,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
               'code' => 'null',
               'attributes' => 
               array (
-                'startLine' => 32,
-                'endLine' => 32,
-                'startTokenPos' => 167,
-                'startFilePos' => 1372,
-                'endTokenPos' => 167,
-                'endFilePos' => 1375,
+                'startLine' => 39,
+                'endLine' => 39,
+                'startTokenPos' => 204,
+                'startFilePos' => 1830,
+                'endTokenPos' => 204,
+                'endFilePos' => 1833,
               ),
             ),
             'type' => NULL,
@@ -160,10 +179,10 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 32,
-            'endLine' => 32,
-            'startColumn' => 73,
-            'endColumn' => 99,
+            'startLine' => 39,
+            'endLine' => 39,
+            'startColumn' => 94,
+            'endColumn' => 120,
             'parameterIndex' => 1,
             'isOptional' => true,
           ),
@@ -182,8 +201,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         array (
         ),
         'docComment' => NULL,
-        'startLine' => 32,
-        'endLine' => 35,
+        'startLine' => 39,
+        'endLine' => 42,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -208,11 +227,30 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'default' => NULL,
             'type' => 
             array (
-              'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
+              'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionUnionType',
               'data' => 
               array (
-                'name' => 'Juaniquillo\\CrudAssistant\\Contracts\\RecipeInterface',
-                'isIdentifier' => false,
+                'types' => 
+                array (
+                  0 => 
+                  array (
+                    'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
+                    'data' => 
+                    array (
+                      'name' => 'Juaniquillo\\CrudAssistant\\Contracts\\RecipeInterface',
+                      'isIdentifier' => false,
+                    ),
+                  ),
+                  1 => 
+                  array (
+                    'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
+                    'data' => 
+                    array (
+                      'name' => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+                      'isIdentifier' => false,
+                    ),
+                  ),
+                ),
               ),
             ),
             'isVariadic' => false,
@@ -221,10 +259,10 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 37,
-            'endLine' => 37,
+            'startLine' => 44,
+            'endLine' => 44,
             'startColumn' => 44,
-            'endColumn' => 66,
+            'endColumn' => 87,
             'parameterIndex' => 0,
             'isOptional' => false,
           ),
@@ -236,12 +274,12 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
               'code' => 'null',
               'attributes' => 
               array (
-                'startLine' => 37,
-                'endLine' => 37,
-                'startTokenPos' => 223,
-                'startFilePos' => 1649,
-                'endTokenPos' => 223,
-                'endFilePos' => 1652,
+                'startLine' => 44,
+                'endLine' => 44,
+                'startTokenPos' => 264,
+                'startFilePos' => 2126,
+                'endTokenPos' => 264,
+                'endFilePos' => 2129,
               ),
             ),
             'type' => 
@@ -314,10 +352,10 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 37,
-            'endLine' => 37,
-            'startColumn' => 69,
-            'endColumn' => 154,
+            'startLine' => 44,
+            'endLine' => 44,
+            'startColumn' => 90,
+            'endColumn' => 175,
             'parameterIndex' => 1,
             'isOptional' => true,
           ),
@@ -336,8 +374,388 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         array (
         ),
         'docComment' => NULL,
-        'startLine' => 37,
-        'endLine' => 40,
+        'startLine' => 44,
+        'endLine' => 47,
+        'startColumn' => 5,
+        'endColumn' => 5,
+        'couldThrow' => false,
+        'isClosure' => false,
+        'isGenerator' => false,
+        'isVariadic' => false,
+        'modifiers' => 17,
+        'namespace' => 'Juaniquillo\\InputComponentAction\\Utilities',
+        'declaringClassName' => 'Juaniquillo\\InputComponentAction\\Utilities\\Support',
+        'implementingClassName' => 'Juaniquillo\\InputComponentAction\\Utilities\\Support',
+        'currentClassName' => 'Juaniquillo\\InputComponentAction\\Utilities\\Support',
+        'aliasName' => NULL,
+      ),
+      'resolveComponentBag' => 
+      array (
+        'name' => 'resolveComponentBag',
+        'parameters' => 
+        array (
+          'recipe' => 
+          array (
+            'name' => 'recipe',
+            'default' => NULL,
+            'type' => 
+            array (
+              'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionUnionType',
+              'data' => 
+              array (
+                'types' => 
+                array (
+                  0 => 
+                  array (
+                    'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
+                    'data' => 
+                    array (
+                      'name' => 'Juaniquillo\\CrudAssistant\\Contracts\\RecipeInterface',
+                      'isIdentifier' => false,
+                    ),
+                  ),
+                  1 => 
+                  array (
+                    'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
+                    'data' => 
+                    array (
+                      'name' => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+                      'isIdentifier' => false,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            'isVariadic' => false,
+            'byRef' => false,
+            'isPromoted' => false,
+            'attributes' => 
+            array (
+            ),
+            'startLine' => 49,
+            'endLine' => 49,
+            'startColumn' => 48,
+            'endColumn' => 91,
+            'parameterIndex' => 0,
+            'isOptional' => false,
+          ),
+          'defaultComponentBag' => 
+          array (
+            'name' => 'defaultComponentBag',
+            'default' => 
+            array (
+              'code' => 'null',
+              'attributes' => 
+              array (
+                'startLine' => 49,
+                'endLine' => 49,
+                'startTokenPos' => 324,
+                'startFilePos' => 2436,
+                'endTokenPos' => 324,
+                'endFilePos' => 2439,
+              ),
+            ),
+            'type' => 
+            array (
+              'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionUnionType',
+              'data' => 
+              array (
+                'types' => 
+                array (
+                  0 => 
+                  array (
+                    'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
+                    'data' => 
+                    array (
+                      'name' => 'Juaniquillo\\InputComponentAction\\Contracts\\ComponentBag',
+                      'isIdentifier' => false,
+                    ),
+                  ),
+                  1 => 
+                  array (
+                    'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
+                    'data' => 
+                    array (
+                      'name' => 'Juaniquillo\\InputComponentAction\\Contracts\\WrapperComponent',
+                      'isIdentifier' => false,
+                    ),
+                  ),
+                  2 => 
+                  array (
+                    'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
+                    'data' => 
+                    array (
+                      'name' => 'Juaniquillo\\InputComponentAction\\Contracts\\LabelComponent',
+                      'isIdentifier' => false,
+                    ),
+                  ),
+                  3 => 
+                  array (
+                    'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
+                    'data' => 
+                    array (
+                      'name' => 'Juaniquillo\\InputComponentAction\\Contracts\\ErrorComponent',
+                      'isIdentifier' => false,
+                    ),
+                  ),
+                  4 => 
+                  array (
+                    'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
+                    'data' => 
+                    array (
+                      'name' => 'Juaniquillo\\InputComponentAction\\Contracts\\HelpTextComponent',
+                      'isIdentifier' => false,
+                    ),
+                  ),
+                  5 => 
+                  array (
+                    'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
+                    'data' => 
+                    array (
+                      'name' => 'null',
+                      'isIdentifier' => true,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            'isVariadic' => false,
+            'byRef' => false,
+            'isPromoted' => false,
+            'attributes' => 
+            array (
+            ),
+            'startLine' => 49,
+            'endLine' => 49,
+            'startColumn' => 94,
+            'endColumn' => 203,
+            'parameterIndex' => 1,
+            'isOptional' => true,
+          ),
+        ),
+        'returnsReference' => false,
+        'returnType' => 
+        array (
+          'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
+          'data' => 
+          array (
+            'name' => 'Juaniquillo\\InputComponentAction\\Contracts\\ComponentBag',
+            'isIdentifier' => false,
+          ),
+        ),
+        'attributes' => 
+        array (
+        ),
+        'docComment' => NULL,
+        'startLine' => 49,
+        'endLine' => 52,
+        'startColumn' => 5,
+        'endColumn' => 5,
+        'couldThrow' => false,
+        'isClosure' => false,
+        'isGenerator' => false,
+        'isVariadic' => false,
+        'modifiers' => 17,
+        'namespace' => 'Juaniquillo\\InputComponentAction\\Utilities',
+        'declaringClassName' => 'Juaniquillo\\InputComponentAction\\Utilities\\Support',
+        'implementingClassName' => 'Juaniquillo\\InputComponentAction\\Utilities\\Support',
+        'currentClassName' => 'Juaniquillo\\InputComponentAction\\Utilities\\Support',
+        'aliasName' => NULL,
+      ),
+      'resolveComponent' => 
+      array (
+        'name' => 'resolveComponent',
+        'parameters' => 
+        array (
+          'component' => 
+          array (
+            'name' => 'component',
+            'default' => NULL,
+            'type' => 
+            array (
+              'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionUnionType',
+              'data' => 
+              array (
+                'types' => 
+                array (
+                  0 => 
+                  array (
+                    'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
+                    'data' => 
+                    array (
+                      'name' => 'Closure',
+                      'isIdentifier' => false,
+                    ),
+                  ),
+                  1 => 
+                  array (
+                    'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
+                    'data' => 
+                    array (
+                      'name' => 'string',
+                      'isIdentifier' => true,
+                    ),
+                  ),
+                  2 => 
+                  array (
+                    'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
+                    'data' => 
+                    array (
+                      'name' => 'null',
+                      'isIdentifier' => true,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            'isVariadic' => false,
+            'byRef' => false,
+            'isPromoted' => false,
+            'attributes' => 
+            array (
+            ),
+            'startLine' => 55,
+            'endLine' => 55,
+            'startColumn' => 9,
+            'endColumn' => 38,
+            'parameterIndex' => 0,
+            'isOptional' => false,
+          ),
+          'type' => 
+          array (
+            'name' => 'type',
+            'default' => NULL,
+            'type' => 
+            array (
+              'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
+              'data' => 
+              array (
+                'name' => 'mixed',
+                'isIdentifier' => true,
+              ),
+            ),
+            'isVariadic' => false,
+            'byRef' => false,
+            'isPromoted' => false,
+            'attributes' => 
+            array (
+            ),
+            'startLine' => 56,
+            'endLine' => 56,
+            'startColumn' => 9,
+            'endColumn' => 19,
+            'parameterIndex' => 1,
+            'isOptional' => false,
+          ),
+          'themeManager' => 
+          array (
+            'name' => 'themeManager',
+            'default' => NULL,
+            'type' => 
+            array (
+              'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
+              'data' => 
+              array (
+                'name' => 'Juaniquillo\\BackendComponents\\Contracts\\ThemeManager',
+                'isIdentifier' => false,
+              ),
+            ),
+            'isVariadic' => false,
+            'byRef' => false,
+            'isPromoted' => false,
+            'attributes' => 
+            array (
+            ),
+            'startLine' => 57,
+            'endLine' => 57,
+            'startColumn' => 9,
+            'endColumn' => 34,
+            'parameterIndex' => 2,
+            'isOptional' => false,
+          ),
+          'default' => 
+          array (
+            'name' => 'default',
+            'default' => 
+            array (
+              'code' => 'null',
+              'attributes' => 
+              array (
+                'startLine' => 58,
+                'endLine' => 58,
+                'startTokenPos' => 391,
+                'startFilePos' => 2744,
+                'endTokenPos' => 391,
+                'endFilePos' => 2747,
+              ),
+            ),
+            'type' => 
+            array (
+              'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionUnionType',
+              'data' => 
+              array (
+                'types' => 
+                array (
+                  0 => 
+                  array (
+                    'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
+                    'data' => 
+                    array (
+                      'name' => 'Closure',
+                      'isIdentifier' => false,
+                    ),
+                  ),
+                  1 => 
+                  array (
+                    'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
+                    'data' => 
+                    array (
+                      'name' => 'string',
+                      'isIdentifier' => true,
+                    ),
+                  ),
+                  2 => 
+                  array (
+                    'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
+                    'data' => 
+                    array (
+                      'name' => 'null',
+                      'isIdentifier' => true,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            'isVariadic' => false,
+            'byRef' => false,
+            'isPromoted' => false,
+            'attributes' => 
+            array (
+            ),
+            'startLine' => 58,
+            'endLine' => 58,
+            'startColumn' => 9,
+            'endColumn' => 43,
+            'parameterIndex' => 3,
+            'isOptional' => true,
+          ),
+        ),
+        'returnsReference' => false,
+        'returnType' => 
+        array (
+          'class' => 'PHPStan\\BetterReflection\\Reflection\\ReflectionNamedType',
+          'data' => 
+          array (
+            'name' => 'mixed',
+            'isIdentifier' => true,
+          ),
+        ),
+        'attributes' => 
+        array (
+        ),
+        'docComment' => NULL,
+        'startLine' => 54,
+        'endLine' => 71,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -375,8 +793,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
             'attributes' => 
             array (
             ),
-            'startLine' => 42,
-            'endLine' => 42,
+            'startLine' => 73,
+            'endLine' => 73,
             'startColumn' => 38,
             'endColumn' => 49,
             'parameterIndex' => 0,
@@ -397,8 +815,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         array (
         ),
         'docComment' => NULL,
-        'startLine' => 42,
-        'endLine' => 45,
+        'startLine' => 73,
+        'endLine' => 76,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,
@@ -451,8 +869,8 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
         array (
         ),
         'docComment' => NULL,
-        'startLine' => 47,
-        'endLine' => 50,
+        'startLine' => 78,
+        'endLine' => 81,
         'startColumn' => 5,
         'endColumn' => 5,
         'couldThrow' => false,

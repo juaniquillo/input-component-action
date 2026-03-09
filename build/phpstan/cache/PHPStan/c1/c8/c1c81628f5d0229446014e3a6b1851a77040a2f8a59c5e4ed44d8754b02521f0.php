@@ -88,7 +88,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     1 => 
     array (
-      'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Managers\\DefaultErrorManager.php' => '047625961d829e5c6371111ffb377f83f4eee3b56132bedc62ca4eb084092071',
+      'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Managers\\DefaultErrorManager.php' => '4ba5d289fd7c887508c120806d161ef9758611cdd4ed1a1bc23d22c6b421e82b',
     ),
   ),
 ));

@@ -2,7 +2,7 @@
 
 // odsl-C:\Users\juani\Code\packages\input-component-action\src\Concerns\IsComposer.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Juaniquillo\InputComponentAction\Concerns\IsComposer
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-6.65.0.9-8.4.16-9d024960c96e88db6167e813c85ea6c84d1fcc5e0c91965dd5c60db58c91afe7',
+   'variableKey' => 'v2-6.65.0.9-8.4.16-46d4ff11949e1a5fc384f280ff33e89abcb860d62de298173229efa5a852c3b6',
    'data' => 
   array (
     'locatedSource' => 
@@ -787,10 +787,10 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
               array (
                 'startLine' => 59,
                 'endLine' => 59,
-                'startTokenPos' => 384,
-                'startFilePos' => 1906,
-                'endTokenPos' => 384,
-                'endFilePos' => 1909,
+                'startTokenPos' => 386,
+                'startFilePos' => 1911,
+                'endTokenPos' => 386,
+                'endFilePos' => 1914,
               ),
             ),
             'type' => 
@@ -1444,10 +1444,10 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
               array (
                 'startLine' => 91,
                 'endLine' => 91,
-                'startTokenPos' => 608,
-                'startFilePos' => 2987,
-                'endTokenPos' => 608,
-                'endFilePos' => 2990,
+                'startTokenPos' => 620,
+                'startFilePos' => 3021,
+                'endTokenPos' => 620,
+                'endFilePos' => 3024,
               ),
             ),
             'type' => 
@@ -1501,10 +1501,10 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
               array (
                 'startLine' => 92,
                 'endLine' => 92,
-                'startTokenPos' => 618,
-                'startFilePos' => 3025,
-                'endTokenPos' => 618,
-                'endFilePos' => 3028,
+                'startTokenPos' => 630,
+                'startFilePos' => 3059,
+                'endTokenPos' => 630,
+                'endFilePos' => 3062,
               ),
             ),
             'type' => 

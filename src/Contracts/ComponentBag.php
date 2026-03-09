@@ -5,13 +5,10 @@ declare(strict_types=1);
 namespace Juaniquillo\InputComponentAction\Contracts;
 
 use Closure;
-use Juaniquillo\BackendComponents\Contracts\BackendComponent;
-use Juaniquillo\BackendComponents\Contracts\CompoundComponent;
-use Juaniquillo\BackendComponents\Contracts\StaticBuilder;
 
 interface ComponentBag
 {
-    public function setInputComponent(Closure|CompoundComponent|BackendComponent|string $inputComponent): static;
+    public function setInputComponent(Closure|string $inputComponent): static;
 
-    public function getInputComponent(): Closure|CompoundComponent|BackendComponent|string|null;
+    public function getInputComponent(): Closure|string|null;
 }

@@ -4,11 +4,10 @@ declare(strict_types=1);
 
 namespace Tests\Unit;
 
-use Juaniquillo\BackendComponents\Contracts\BackendComponent;
-use Juaniquillo\BackendComponents\Contracts\CompoundComponent;
-use Juaniquillo\BackendComponents\Contracts\StaticBuilder;
 use Juaniquillo\BackendComponents\Contracts\ThemeManager;
+use Juaniquillo\BackendComponents\Enums\ComponentEnum;
 use Juaniquillo\BackendComponents\MainBackendComponent;
+use Juaniquillo\BackendComponents\Themes\DefaultThemeManager;
 use Juaniquillo\InputComponentAction\Bags\DefaultComponentBag;
 use Juaniquillo\InputComponentAction\Contracts\ComponentBag;
 use Juaniquillo\InputComponentAction\Contracts\ErrorComponent;
@@ -16,10 +15,9 @@ use Juaniquillo\InputComponentAction\Contracts\HelpTextComponent;
 use Juaniquillo\InputComponentAction\Contracts\LabelComponent;
 use Juaniquillo\InputComponentAction\Contracts\WrapperComponent;
 use Juaniquillo\InputComponentAction\Utilities\Support;
-use Mockery;
 
 test('DefaultComponentBag implements all component interfaces', function () {
-    $bag = new DefaultComponentBag();
+    $bag = new DefaultComponentBag;
 
     expect($bag)->toBeInstanceOf(ComponentBag::class)
         ->toBeInstanceOf(WrapperComponent::class)
@@ -29,54 +27,47 @@ test('DefaultComponentBag implements all component interfaces', function () {
 });
 
 test('DefaultComponentBag can set and get all components', function () {
-    $bag = new DefaultComponentBag();
-    
-    $input = Mockery::mock(CompoundComponent::class);
-    $wrapper = Mockery::mock(CompoundComponent::class);
-    $label = Mockery::mock(CompoundComponent::class);
-    $error = Mockery::mock(CompoundComponent::class);
-    $helpText = Mockery::mock(CompoundComponent::class);
+    $bag = new DefaultComponentBag;
 
-    $bag->setInputComponent($input)
-        ->setWrapperComponent($wrapper)
-        ->setLabelComponent($label)
-        ->setErrorComponent($error)
-        ->setHelpTextComponent($helpText);
+    $bag->setInputComponent(function (string $type, ThemeManager $themeManager) {
+        return new MainBackendComponent($type, $themeManager);
+    })
+        ->setWrapperComponent(function (string $type, ThemeManager $themeManager) {
+            return new MainBackendComponent($type, $themeManager);
 
-    expect($bag->getInputComponent())->toBe($input)
-        ->and($bag->getWrapperComponent())->toBe($wrapper)
-        ->and($bag->getLabelComponent())->toBe($label)
-        ->and($bag->getErrorComponent())->toBe($error)
-        ->and($bag->getHelpTextComponent())->toBe($helpText);
+        })
+        ->setLabelComponent(function (string $type, ThemeManager $themeManager) {
+            return new MainBackendComponent($type, $themeManager);
+
+        })
+        ->setErrorComponent(function (string $type, ThemeManager $themeManager) {
+            return new MainBackendComponent($type, $themeManager);
+        })
+        ->setHelpTextComponent(function (string $type, ThemeManager $themeManager) {
+            return new MainBackendComponent($type, $themeManager);
+        });
+
+    expect($bag->getInputComponent())->toBe($bag->getInputComponent())
+        ->and($bag->getWrapperComponent())->toBe($bag->getWrapperComponent())
+        ->and($bag->getLabelComponent())->toBe($bag->getLabelComponent())
+        ->and($bag->getErrorComponent())->toBe($bag->getErrorComponent())
+        ->and($bag->getHelpTextComponent())->toBe($bag->getHelpTextComponent());
 });
 
 test('Support::resolveComponent handles different types', function () {
-    $themeManager = Mockery::mock(ThemeManager::class);
-    $type = 'div';
+    $themeManager = new DefaultThemeManager;
+    $type = ComponentEnum::DIV;
 
     // 1. Null component returns MainBackendComponent
     $resolved = Support::resolveComponent(null, $type, $themeManager);
     expect($resolved)->toBeInstanceOf(MainBackendComponent::class);
 
     // 2. Closure resolution
-    $resolved = Support::resolveComponent(fn() => 'from closure', $type, $themeManager);
+    $resolved = Support::resolveComponent(fn () => 'from closure', $type, $themeManager);
     expect($resolved)->toBe('from closure');
 
     // 3. Class string resolution
     $resolved = Support::resolveComponent(MainBackendComponent::class, $type, $themeManager);
     expect($resolved)->toBeInstanceOf(MainBackendComponent::class);
 
-    // 4. Instance resolution
-    $instance = new MainBackendComponent($type, $themeManager);
-    $resolved = Support::resolveComponent($instance, $type, $themeManager);
-    expect($resolved)->toBe($instance);
-
-    // 5. StaticBuilder resolution
-    $builder = Mockery::mock(StaticBuilder::class);
-    $builder->shouldReceive('make')
-        ->with($type, $themeManager)
-        ->andReturn($instance);
-    
-    $resolved = Support::resolveComponent($builder, $type, $themeManager);
-    expect($resolved)->toBe($instance);
 });

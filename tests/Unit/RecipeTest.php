@@ -19,7 +19,7 @@ test('it can be initialized with a disable bag', function (): void {
 });
 
 test('it can set and get a disable bag', function (): void {
-    $recipe = new InputComponentRecipe();
+    $recipe = new InputComponentRecipe;
     $disableBag = new DefaultDisableBag;
 
     $recipe->setDisableBag($disableBag);

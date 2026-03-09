@@ -2,7 +2,7 @@
 
 // odsl-C:\Users\juani\Code\packages\input-component-action\src\Concerns\HasWrapper.php-PHPStan\BetterReflection\Reflection\ReflectionClass-Juaniquillo\InputComponentAction\Concerns\HasWrapper
 return \PHPStan\Cache\CacheItem::__set_state(array(
-   'variableKey' => 'v2-6.65.0.9-8.4.16-20b7ebdf7b618086d86623f57a0c4d65db3585b2b98fa42028888633ffa0d968',
+   'variableKey' => 'v2-6.65.0.9-8.4.16-777c5fcb86e14eb13e7e2e50f68d3c93db88877a219f53ea4b36fd08bcef05f9',
    'data' => 
   array (
     'locatedSource' => 

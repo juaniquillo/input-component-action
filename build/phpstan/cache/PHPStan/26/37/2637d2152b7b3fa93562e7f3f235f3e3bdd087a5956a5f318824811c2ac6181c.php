@@ -189,7 +189,7 @@ return \PHPStan\Cache\CacheItem::__set_state(array(
     ),
     1 => 
     array (
-      'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Managers\\DefaultValueManager.php' => 'f474c84c4a097385b0e77129dd5f7284a2339ebf15ec53d7953bbb59ac38588e',
+      'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Managers\\DefaultValueManager.php' => '596c27e332900ac1e25136c44c6be4254ebe76c01fb60c41063826d8c82c6417',
     ),
   ),
 ));

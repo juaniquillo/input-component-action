@@ -8,7 +8,6 @@ use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Contracts\ContentComponent;
 use Juaniquillo\BackendComponents\Contracts\ThemeComponent;
 use Juaniquillo\BackendComponents\Contracts\ThemeManager;
-use Juaniquillo\BackendComponents\MainBackendComponent;
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
 use Juaniquillo\InputComponentAction\Bags\DefaultHookBag;
 use Juaniquillo\InputComponentAction\Concerns\IsComposer;
@@ -29,6 +28,7 @@ final class WrapperComposer implements ComponentComposer
         private ?ValueManager $values = null,
         private ?ErrorManager $errors = null,
         private ?WrapperTheme $themeBag = null,
+        private ComponentBag|WrapperComponent|LabelComponent|ErrorComponent|HelpTextComponent|null $componentBag = null,
     ) {}
 
     public function build(): BackendComponent|ContentComponent|ThemeComponent
@@ -37,8 +37,8 @@ final class WrapperComposer implements ComponentComposer
         $recipe = Support::getRecipe($input);
         $componentType = $this->resolveWrapperType($recipe);
         $themeManager = $this->themeManager;
-        
-        $bag = $recipe->getComponentBag();
+
+        $bag = Support::resolveComponentBag($recipe, $this->componentBag);
         $component = Support::resolveComponent(
             component: ($bag instanceof WrapperComponent) ? $bag->getWrapperComponent() : null,
             type: $componentType,

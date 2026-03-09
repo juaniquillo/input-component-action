@@ -20,6 +20,7 @@ interface InputGroup
         ValueManager $values,
         ErrorManager $errors,
         ThemeBag|WrapperTheme|LabelTheme|ErrorTheme|HelpTextTheme|null $defaultThemeBag = null,
+        ComponentBag|WrapperComponent|LabelComponent|ErrorComponent|HelpTextComponent|null $defaultComponentBag = null,
     ): static;
 
     public function getGroup(): BackendComponent|ContentComponent;

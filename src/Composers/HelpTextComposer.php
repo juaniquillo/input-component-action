@@ -12,10 +12,14 @@ use Juaniquillo\BackendComponents\Enums\ComponentEnum;
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
 use Juaniquillo\InputComponentAction\Bags\DefaultHookBag;
 use Juaniquillo\InputComponentAction\Concerns\IsComposer;
+use Juaniquillo\InputComponentAction\Contracts\ComponentBag;
+use Juaniquillo\InputComponentAction\Contracts\ErrorComponent;
 use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
 use Juaniquillo\InputComponentAction\Contracts\HelpTextComponent;
 use Juaniquillo\InputComponentAction\Contracts\HelpTextTheme;
+use Juaniquillo\InputComponentAction\Contracts\LabelComponent;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
+use Juaniquillo\InputComponentAction\Contracts\WrapperComponent;
 use Juaniquillo\InputComponentAction\Recipes\InputComponentRecipe;
 use Juaniquillo\InputComponentAction\Utilities\Support;
 
@@ -30,6 +34,7 @@ class HelpTextComposer
         private ?ValueManager $values = null,
         private ?ErrorManager $errors = null,
         private ?HelpTextTheme $themeBag = null,
+        private ComponentBag|WrapperComponent|LabelComponent|ErrorComponent|HelpTextComponent|null $componentBag = null,
     ) {}
 
     public function build(): BackendComponent|ContentComponent|ThemeComponent
@@ -52,7 +57,7 @@ class HelpTextComposer
 
         $themeManager = $this->themeManager;
 
-        $bag = $recipe->getComponentBag();
+        $bag = Support::resolveComponentBag($recipe, $this->componentBag);
         $component = Support::resolveComponent(
             component: ($bag instanceof HelpTextComponent) ? $bag->getHelpTextComponent() : null,
             type: $componentType,

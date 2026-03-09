@@ -8,7 +8,6 @@ use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Contracts\ContentComponent;
 use Juaniquillo\BackendComponents\Contracts\ThemeComponent;
 use Juaniquillo\BackendComponents\Contracts\ThemeManager;
-use Juaniquillo\BackendComponents\MainBackendComponent;
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
 use Juaniquillo\InputComponentAction\Bags\DefaultHookBag;
 use Juaniquillo\InputComponentAction\Concerns\IsComposer;
@@ -31,6 +30,7 @@ final class LabelComposer implements ComponentComposer
         private ?ValueManager $values = null,
         private ?ErrorManager $errors = null,
         private ?LabelTheme $themeBag = null,
+        private ComponentBag|WrapperComponent|LabelComponent|ErrorComponent|HelpTextComponent|null $componentBag = null,
     ) {}
 
     public function build(): BackendComponent|ContentComponent|ThemeComponent
@@ -46,7 +46,7 @@ final class LabelComposer implements ComponentComposer
 
         $label = $this->resolveStringClosure($input, $label);
 
-        $bag = $recipe->getComponentBag();
+        $bag = Support::resolveComponentBag($recipe, $this->componentBag);
         $component = Support::resolveComponent(
             component: ($bag instanceof LabelComponent) ? $bag->getLabelComponent() : null,
             type: $componentType,

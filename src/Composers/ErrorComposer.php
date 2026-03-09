@@ -30,6 +30,7 @@ final class ErrorComposer implements ComponentComposer
         private ?ValueManager $values = null,
         private ?ErrorManager $errors = null,
         private ?ErrorTheme $themeBag = null,
+        private ComponentBag|WrapperComponent|LabelComponent|ErrorComponent|HelpTextComponent|null $componentBag = null,
     ) {}
 
     public function build(): BackendComponent|ContentComponent|ThemeComponent
@@ -42,7 +43,7 @@ final class ErrorComposer implements ComponentComposer
         $componentType = $this->resolveErrorType($recipe);
         $themeManager = $this->themeManager;
 
-        $bag = $recipe->getComponentBag();
+        $bag = Support::resolveComponentBag($recipe, $this->componentBag);
         $component = Support::resolveComponent(
             component: ($bag instanceof ErrorComponent) ? $bag->getErrorComponent() : null,
             type: $componentType,

@@ -1,7 +1,7 @@
 <?php declare(strict_types = 1);
 
 return [
-	'lastFullAnalysisTime' => 1772640949,
+	'lastFullAnalysisTime' => 1773073699,
 	'meta' => array (
   'cacheVersion' => 'v12-linesToIgnore',
   'phpstanVersion' => '2.1.40',
@@ -20,7 +20,7 @@ return [
   ),
   'composerLocks' => 
   array (
-    'C:/Users/juani/Code/packages/input-component-action/composer.lock' => '2841d5f304bf6490104776bc23c34f27c752612bc7c669c1196c0190d7fa7c00',
+    'C:/Users/juani/Code/packages/input-component-action/composer.lock' => 'f4838053fa17b338391a68817b6838ea49f7191a0947dcece5f8f60170df48e6',
   ),
   'composerInstalled' => 
   array (
@@ -2137,6 +2137,1016 @@ return [
 	'projectExtensionFiles' => array (
 ),
 	'errorsCallback' => static function (): array { return array (
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\ErrorComposer.php' => 
+  array (
+    0 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Parameter $componentBag of method Juaniquillo\\InputComponentAction\\Composers\\ErrorComposer::__construct() has invalid type Juaniquillo\\InputComponentAction\\Composers\\ComponentBag.',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\ErrorComposer.php',
+       'line' => 33,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\ErrorComposer.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 26,
+       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
+       'identifier' => 'class.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    1 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Parameter $componentBag of method Juaniquillo\\InputComponentAction\\Composers\\ErrorComposer::__construct() has invalid type Juaniquillo\\InputComponentAction\\Composers\\HelpTextComponent.',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\ErrorComposer.php',
+       'line' => 33,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\ErrorComposer.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 26,
+       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
+       'identifier' => 'class.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    2 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Parameter $componentBag of method Juaniquillo\\InputComponentAction\\Composers\\ErrorComposer::__construct() has invalid type Juaniquillo\\InputComponentAction\\Composers\\LabelComponent.',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\ErrorComposer.php',
+       'line' => 33,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\ErrorComposer.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 26,
+       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
+       'identifier' => 'class.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    3 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Parameter $componentBag of method Juaniquillo\\InputComponentAction\\Composers\\ErrorComposer::__construct() has invalid type Juaniquillo\\InputComponentAction\\Composers\\WrapperComponent.',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\ErrorComposer.php',
+       'line' => 33,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\ErrorComposer.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 26,
+       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
+       'identifier' => 'class.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    4 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Property Juaniquillo\\InputComponentAction\\Composers\\ErrorComposer::$componentBag has unknown class Juaniquillo\\InputComponentAction\\Composers\\ComponentBag as its type.',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\ErrorComposer.php',
+       'line' => 33,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\ErrorComposer.php',
+       'traitFilePath' => NULL,
+       'tip' => 'Learn more at https://phpstan.org/user-guide/discovering-symbols',
+       'nodeLine' => 33,
+       'nodeType' => 'PHPStan\\Node\\ClassPropertyNode',
+       'identifier' => 'class.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    5 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Property Juaniquillo\\InputComponentAction\\Composers\\ErrorComposer::$componentBag has unknown class Juaniquillo\\InputComponentAction\\Composers\\HelpTextComponent as its type.',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\ErrorComposer.php',
+       'line' => 33,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\ErrorComposer.php',
+       'traitFilePath' => NULL,
+       'tip' => 'Learn more at https://phpstan.org/user-guide/discovering-symbols',
+       'nodeLine' => 33,
+       'nodeType' => 'PHPStan\\Node\\ClassPropertyNode',
+       'identifier' => 'class.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    6 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Property Juaniquillo\\InputComponentAction\\Composers\\ErrorComposer::$componentBag has unknown class Juaniquillo\\InputComponentAction\\Composers\\LabelComponent as its type.',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\ErrorComposer.php',
+       'line' => 33,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\ErrorComposer.php',
+       'traitFilePath' => NULL,
+       'tip' => 'Learn more at https://phpstan.org/user-guide/discovering-symbols',
+       'nodeLine' => 33,
+       'nodeType' => 'PHPStan\\Node\\ClassPropertyNode',
+       'identifier' => 'class.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    7 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Property Juaniquillo\\InputComponentAction\\Composers\\ErrorComposer::$componentBag has unknown class Juaniquillo\\InputComponentAction\\Composers\\WrapperComponent as its type.',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\ErrorComposer.php',
+       'line' => 33,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\ErrorComposer.php',
+       'traitFilePath' => NULL,
+       'tip' => 'Learn more at https://phpstan.org/user-guide/discovering-symbols',
+       'nodeLine' => 33,
+       'nodeType' => 'PHPStan\\Node\\ClassPropertyNode',
+       'identifier' => 'class.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    8 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Call to an undefined method Juaniquillo\\CrudAssistant\\Contracts\\RecipeInterface::getWrapperType().',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php (in context of class Juaniquillo\\InputComponentAction\\Composers\\ErrorComposer)',
+       'line' => 68,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\ErrorComposer.php',
+       'traitFilePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php',
+       'tip' => NULL,
+       'nodeLine' => 68,
+       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
+       'identifier' => 'method.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    9 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Call to an undefined method Juaniquillo\\CrudAssistant\\Contracts\\RecipeInterface::getLabelType().',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php (in context of class Juaniquillo\\InputComponentAction\\Composers\\ErrorComposer)',
+       'line' => 73,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\ErrorComposer.php',
+       'traitFilePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php',
+       'tip' => NULL,
+       'nodeLine' => 73,
+       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
+       'identifier' => 'method.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    10 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Call to an undefined method Juaniquillo\\CrudAssistant\\Contracts\\RecipeInterface::getInputType().',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php (in context of class Juaniquillo\\InputComponentAction\\Composers\\ErrorComposer)',
+       'line' => 78,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\ErrorComposer.php',
+       'traitFilePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php',
+       'tip' => NULL,
+       'nodeLine' => 78,
+       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
+       'identifier' => 'method.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+  ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\HelpTextComposer.php' => 
+  array (
+    0 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Call to an undefined method Juaniquillo\\CrudAssistant\\Contracts\\RecipeInterface::getWrapperType().',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php (in context of class Juaniquillo\\InputComponentAction\\Composers\\HelpTextComposer)',
+       'line' => 68,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\HelpTextComposer.php',
+       'traitFilePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php',
+       'tip' => NULL,
+       'nodeLine' => 68,
+       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
+       'identifier' => 'method.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    1 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Call to an undefined method Juaniquillo\\CrudAssistant\\Contracts\\RecipeInterface::getLabelType().',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php (in context of class Juaniquillo\\InputComponentAction\\Composers\\HelpTextComposer)',
+       'line' => 73,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\HelpTextComposer.php',
+       'traitFilePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php',
+       'tip' => NULL,
+       'nodeLine' => 73,
+       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
+       'identifier' => 'method.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    2 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Call to an undefined method Juaniquillo\\CrudAssistant\\Contracts\\RecipeInterface::getInputType().',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php (in context of class Juaniquillo\\InputComponentAction\\Composers\\HelpTextComposer)',
+       'line' => 78,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\HelpTextComposer.php',
+       'traitFilePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php',
+       'tip' => NULL,
+       'nodeLine' => 78,
+       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
+       'identifier' => 'method.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+  ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\InputComposer.php' => 
+  array (
+    0 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Call to an undefined method Juaniquillo\\CrudAssistant\\Contracts\\RecipeInterface::getWrapperType().',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php (in context of class Juaniquillo\\InputComponentAction\\Composers\\InputComposer)',
+       'line' => 68,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\InputComposer.php',
+       'traitFilePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php',
+       'tip' => NULL,
+       'nodeLine' => 68,
+       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
+       'identifier' => 'method.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    1 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Call to an undefined method Juaniquillo\\CrudAssistant\\Contracts\\RecipeInterface::getLabelType().',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php (in context of class Juaniquillo\\InputComponentAction\\Composers\\InputComposer)',
+       'line' => 73,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\InputComposer.php',
+       'traitFilePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php',
+       'tip' => NULL,
+       'nodeLine' => 73,
+       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
+       'identifier' => 'method.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    2 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Call to an undefined method Juaniquillo\\CrudAssistant\\Contracts\\RecipeInterface::getInputType().',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php (in context of class Juaniquillo\\InputComponentAction\\Composers\\InputComposer)',
+       'line' => 78,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\InputComposer.php',
+       'traitFilePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php',
+       'tip' => NULL,
+       'nodeLine' => 78,
+       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
+       'identifier' => 'method.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+  ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\LabelComposer.php' => 
+  array (
+    0 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Parameter $componentBag of method Juaniquillo\\InputComponentAction\\Composers\\LabelComposer::__construct() has invalid type Juaniquillo\\InputComponentAction\\Composers\\ComponentBag.',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\LabelComposer.php',
+       'line' => 33,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\LabelComposer.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 26,
+       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
+       'identifier' => 'class.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    1 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Parameter $componentBag of method Juaniquillo\\InputComponentAction\\Composers\\LabelComposer::__construct() has invalid type Juaniquillo\\InputComponentAction\\Composers\\ErrorComponent.',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\LabelComposer.php',
+       'line' => 33,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\LabelComposer.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 26,
+       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
+       'identifier' => 'class.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    2 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Parameter $componentBag of method Juaniquillo\\InputComponentAction\\Composers\\LabelComposer::__construct() has invalid type Juaniquillo\\InputComponentAction\\Composers\\HelpTextComponent.',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\LabelComposer.php',
+       'line' => 33,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\LabelComposer.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 26,
+       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
+       'identifier' => 'class.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    3 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Parameter $componentBag of method Juaniquillo\\InputComponentAction\\Composers\\LabelComposer::__construct() has invalid type Juaniquillo\\InputComponentAction\\Composers\\WrapperComponent.',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\LabelComposer.php',
+       'line' => 33,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\LabelComposer.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 26,
+       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
+       'identifier' => 'class.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    4 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Property Juaniquillo\\InputComponentAction\\Composers\\LabelComposer::$componentBag has unknown class Juaniquillo\\InputComponentAction\\Composers\\ComponentBag as its type.',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\LabelComposer.php',
+       'line' => 33,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\LabelComposer.php',
+       'traitFilePath' => NULL,
+       'tip' => 'Learn more at https://phpstan.org/user-guide/discovering-symbols',
+       'nodeLine' => 33,
+       'nodeType' => 'PHPStan\\Node\\ClassPropertyNode',
+       'identifier' => 'class.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    5 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Property Juaniquillo\\InputComponentAction\\Composers\\LabelComposer::$componentBag has unknown class Juaniquillo\\InputComponentAction\\Composers\\ErrorComponent as its type.',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\LabelComposer.php',
+       'line' => 33,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\LabelComposer.php',
+       'traitFilePath' => NULL,
+       'tip' => 'Learn more at https://phpstan.org/user-guide/discovering-symbols',
+       'nodeLine' => 33,
+       'nodeType' => 'PHPStan\\Node\\ClassPropertyNode',
+       'identifier' => 'class.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    6 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Property Juaniquillo\\InputComponentAction\\Composers\\LabelComposer::$componentBag has unknown class Juaniquillo\\InputComponentAction\\Composers\\HelpTextComponent as its type.',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\LabelComposer.php',
+       'line' => 33,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\LabelComposer.php',
+       'traitFilePath' => NULL,
+       'tip' => 'Learn more at https://phpstan.org/user-guide/discovering-symbols',
+       'nodeLine' => 33,
+       'nodeType' => 'PHPStan\\Node\\ClassPropertyNode',
+       'identifier' => 'class.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    7 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Property Juaniquillo\\InputComponentAction\\Composers\\LabelComposer::$componentBag has unknown class Juaniquillo\\InputComponentAction\\Composers\\WrapperComponent as its type.',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\LabelComposer.php',
+       'line' => 33,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\LabelComposer.php',
+       'traitFilePath' => NULL,
+       'tip' => 'Learn more at https://phpstan.org/user-guide/discovering-symbols',
+       'nodeLine' => 33,
+       'nodeType' => 'PHPStan\\Node\\ClassPropertyNode',
+       'identifier' => 'class.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    8 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Call to an undefined method Juaniquillo\\CrudAssistant\\Contracts\\RecipeInterface::getWrapperType().',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php (in context of class Juaniquillo\\InputComponentAction\\Composers\\LabelComposer)',
+       'line' => 68,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\LabelComposer.php',
+       'traitFilePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php',
+       'tip' => NULL,
+       'nodeLine' => 68,
+       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
+       'identifier' => 'method.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    9 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Call to an undefined method Juaniquillo\\CrudAssistant\\Contracts\\RecipeInterface::getLabelType().',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php (in context of class Juaniquillo\\InputComponentAction\\Composers\\LabelComposer)',
+       'line' => 73,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\LabelComposer.php',
+       'traitFilePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php',
+       'tip' => NULL,
+       'nodeLine' => 73,
+       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
+       'identifier' => 'method.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    10 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Call to an undefined method Juaniquillo\\CrudAssistant\\Contracts\\RecipeInterface::getInputType().',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php (in context of class Juaniquillo\\InputComponentAction\\Composers\\LabelComposer)',
+       'line' => 78,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\LabelComposer.php',
+       'traitFilePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php',
+       'tip' => NULL,
+       'nodeLine' => 78,
+       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
+       'identifier' => 'method.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+  ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\WrapperComposer.php' => 
+  array (
+    0 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Parameter $componentBag of method Juaniquillo\\InputComponentAction\\Composers\\WrapperComposer::__construct() has invalid type Juaniquillo\\InputComponentAction\\Composers\\ComponentBag.',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\WrapperComposer.php',
+       'line' => 31,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\WrapperComposer.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 25,
+       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
+       'identifier' => 'class.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    1 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Parameter $componentBag of method Juaniquillo\\InputComponentAction\\Composers\\WrapperComposer::__construct() has invalid type Juaniquillo\\InputComponentAction\\Composers\\ErrorComponent.',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\WrapperComposer.php',
+       'line' => 31,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\WrapperComposer.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 25,
+       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
+       'identifier' => 'class.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    2 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Parameter $componentBag of method Juaniquillo\\InputComponentAction\\Composers\\WrapperComposer::__construct() has invalid type Juaniquillo\\InputComponentAction\\Composers\\HelpTextComponent.',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\WrapperComposer.php',
+       'line' => 31,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\WrapperComposer.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 25,
+       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
+       'identifier' => 'class.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    3 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Parameter $componentBag of method Juaniquillo\\InputComponentAction\\Composers\\WrapperComposer::__construct() has invalid type Juaniquillo\\InputComponentAction\\Composers\\LabelComponent.',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\WrapperComposer.php',
+       'line' => 31,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\WrapperComposer.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 25,
+       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
+       'identifier' => 'class.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    4 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Property Juaniquillo\\InputComponentAction\\Composers\\WrapperComposer::$componentBag has unknown class Juaniquillo\\InputComponentAction\\Composers\\ComponentBag as its type.',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\WrapperComposer.php',
+       'line' => 31,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\WrapperComposer.php',
+       'traitFilePath' => NULL,
+       'tip' => 'Learn more at https://phpstan.org/user-guide/discovering-symbols',
+       'nodeLine' => 31,
+       'nodeType' => 'PHPStan\\Node\\ClassPropertyNode',
+       'identifier' => 'class.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    5 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Property Juaniquillo\\InputComponentAction\\Composers\\WrapperComposer::$componentBag has unknown class Juaniquillo\\InputComponentAction\\Composers\\ErrorComponent as its type.',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\WrapperComposer.php',
+       'line' => 31,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\WrapperComposer.php',
+       'traitFilePath' => NULL,
+       'tip' => 'Learn more at https://phpstan.org/user-guide/discovering-symbols',
+       'nodeLine' => 31,
+       'nodeType' => 'PHPStan\\Node\\ClassPropertyNode',
+       'identifier' => 'class.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    6 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Property Juaniquillo\\InputComponentAction\\Composers\\WrapperComposer::$componentBag has unknown class Juaniquillo\\InputComponentAction\\Composers\\HelpTextComponent as its type.',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\WrapperComposer.php',
+       'line' => 31,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\WrapperComposer.php',
+       'traitFilePath' => NULL,
+       'tip' => 'Learn more at https://phpstan.org/user-guide/discovering-symbols',
+       'nodeLine' => 31,
+       'nodeType' => 'PHPStan\\Node\\ClassPropertyNode',
+       'identifier' => 'class.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    7 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Property Juaniquillo\\InputComponentAction\\Composers\\WrapperComposer::$componentBag has unknown class Juaniquillo\\InputComponentAction\\Composers\\LabelComponent as its type.',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\WrapperComposer.php',
+       'line' => 31,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\WrapperComposer.php',
+       'traitFilePath' => NULL,
+       'tip' => 'Learn more at https://phpstan.org/user-guide/discovering-symbols',
+       'nodeLine' => 31,
+       'nodeType' => 'PHPStan\\Node\\ClassPropertyNode',
+       'identifier' => 'class.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    8 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Call to an undefined method Juaniquillo\\CrudAssistant\\Contracts\\RecipeInterface::getWrapperType().',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php (in context of class Juaniquillo\\InputComponentAction\\Composers\\WrapperComposer)',
+       'line' => 68,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\WrapperComposer.php',
+       'traitFilePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php',
+       'tip' => NULL,
+       'nodeLine' => 68,
+       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
+       'identifier' => 'method.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    9 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Call to an undefined method Juaniquillo\\CrudAssistant\\Contracts\\RecipeInterface::getLabelType().',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php (in context of class Juaniquillo\\InputComponentAction\\Composers\\WrapperComposer)',
+       'line' => 73,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\WrapperComposer.php',
+       'traitFilePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php',
+       'tip' => NULL,
+       'nodeLine' => 73,
+       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
+       'identifier' => 'method.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    10 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Call to an undefined method Juaniquillo\\CrudAssistant\\Contracts\\RecipeInterface::getInputType().',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php (in context of class Juaniquillo\\InputComponentAction\\Composers\\WrapperComposer)',
+       'line' => 78,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\WrapperComposer.php',
+       'traitFilePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php',
+       'tip' => NULL,
+       'nodeLine' => 78,
+       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
+       'identifier' => 'method.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+  ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\LabelHelpTextInputErrorGroup.php' => 
+  array (
+    0 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Instantiated class Composers\\HelpTextComposer not found.',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasHelpText.php (in context of class Juaniquillo\\InputComponentAction\\Groups\\LabelHelpTextInputErrorGroup)',
+       'line' => 23,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\LabelHelpTextInputErrorGroup.php',
+       'traitFilePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasHelpText.php',
+       'tip' => 'Learn more at https://phpstan.org/user-guide/discovering-symbols',
+       'nodeLine' => 23,
+       'nodeType' => 'PhpParser\\Node\\Expr\\New_',
+       'identifier' => 'class.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    1 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Call to method setParent() on an unknown class Composers\\HelpTextComposer.',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasHelpText.php (in context of class Juaniquillo\\InputComponentAction\\Groups\\LabelHelpTextInputErrorGroup)',
+       'line' => 33,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\LabelHelpTextInputErrorGroup.php',
+       'traitFilePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasHelpText.php',
+       'tip' => 'Learn more at https://phpstan.org/user-guide/discovering-symbols',
+       'nodeLine' => 33,
+       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
+       'identifier' => 'class.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    2 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Call to method build() on an unknown class Composers\\HelpTextComposer.',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasHelpText.php (in context of class Juaniquillo\\InputComponentAction\\Groups\\LabelHelpTextInputErrorGroup)',
+       'line' => 36,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\LabelHelpTextInputErrorGroup.php',
+       'traitFilePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasHelpText.php',
+       'tip' => 'Learn more at https://phpstan.org/user-guide/discovering-symbols',
+       'nodeLine' => 36,
+       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
+       'identifier' => 'class.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+  ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php' => 
+  array (
+    0 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Property Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe::$componentBag has unknown class Juaniquillo\\InputComponentAction\\Concerns\\ErrorComponent as its type.',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsInputComponentRecipe.php (in context of class Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe)',
+       'line' => 42,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php',
+       'traitFilePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsInputComponentRecipe.php',
+       'tip' => 'Learn more at https://phpstan.org/user-guide/discovering-symbols',
+       'nodeLine' => 42,
+       'nodeType' => 'PHPStan\\Node\\ClassPropertyNode',
+       'identifier' => 'class.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    1 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Property Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe::$componentBag has unknown class Juaniquillo\\InputComponentAction\\Concerns\\HelpTextComponent as its type.',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsInputComponentRecipe.php (in context of class Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe)',
+       'line' => 42,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php',
+       'traitFilePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsInputComponentRecipe.php',
+       'tip' => 'Learn more at https://phpstan.org/user-guide/discovering-symbols',
+       'nodeLine' => 42,
+       'nodeType' => 'PHPStan\\Node\\ClassPropertyNode',
+       'identifier' => 'class.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    2 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Property Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe::$componentBag has unknown class Juaniquillo\\InputComponentAction\\Concerns\\LabelComponent as its type.',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsInputComponentRecipe.php (in context of class Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe)',
+       'line' => 42,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php',
+       'traitFilePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsInputComponentRecipe.php',
+       'tip' => 'Learn more at https://phpstan.org/user-guide/discovering-symbols',
+       'nodeLine' => 42,
+       'nodeType' => 'PHPStan\\Node\\ClassPropertyNode',
+       'identifier' => 'class.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    3 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Property Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe::$componentBag has unknown class Juaniquillo\\InputComponentAction\\Concerns\\WrapperComponent as its type.',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsInputComponentRecipe.php (in context of class Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe)',
+       'line' => 42,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php',
+       'traitFilePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsInputComponentRecipe.php',
+       'tip' => 'Learn more at https://phpstan.org/user-guide/discovering-symbols',
+       'nodeLine' => 42,
+       'nodeType' => 'PHPStan\\Node\\ClassPropertyNode',
+       'identifier' => 'class.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    4 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Method Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe::getComponentBag() has invalid return type Juaniquillo\\InputComponentAction\\Concerns\\ErrorComponent.',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsInputComponentRecipe.php (in context of class Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe)',
+       'line' => 118,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php',
+       'traitFilePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsInputComponentRecipe.php',
+       'tip' => NULL,
+       'nodeLine' => 118,
+       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
+       'identifier' => 'class.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    5 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Method Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe::getComponentBag() has invalid return type Juaniquillo\\InputComponentAction\\Concerns\\HelpTextComponent.',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsInputComponentRecipe.php (in context of class Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe)',
+       'line' => 118,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php',
+       'traitFilePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsInputComponentRecipe.php',
+       'tip' => NULL,
+       'nodeLine' => 118,
+       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
+       'identifier' => 'class.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    6 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Method Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe::getComponentBag() has invalid return type Juaniquillo\\InputComponentAction\\Concerns\\LabelComponent.',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsInputComponentRecipe.php (in context of class Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe)',
+       'line' => 118,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php',
+       'traitFilePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsInputComponentRecipe.php',
+       'tip' => NULL,
+       'nodeLine' => 118,
+       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
+       'identifier' => 'class.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    7 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Method Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe::getComponentBag() has invalid return type Juaniquillo\\InputComponentAction\\Concerns\\WrapperComponent.',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsInputComponentRecipe.php (in context of class Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe)',
+       'line' => 118,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php',
+       'traitFilePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsInputComponentRecipe.php',
+       'tip' => NULL,
+       'nodeLine' => 118,
+       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
+       'identifier' => 'class.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    8 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Parameter $componentBag of method Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe::setComponentBag() has invalid type Juaniquillo\\InputComponentAction\\Concerns\\ErrorComponent.',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsInputComponentRecipe.php (in context of class Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe)',
+       'line' => 123,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php',
+       'traitFilePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsInputComponentRecipe.php',
+       'tip' => NULL,
+       'nodeLine' => 123,
+       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
+       'identifier' => 'class.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    9 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Parameter $componentBag of method Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe::setComponentBag() has invalid type Juaniquillo\\InputComponentAction\\Concerns\\HelpTextComponent.',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsInputComponentRecipe.php (in context of class Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe)',
+       'line' => 123,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php',
+       'traitFilePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsInputComponentRecipe.php',
+       'tip' => NULL,
+       'nodeLine' => 123,
+       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
+       'identifier' => 'class.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    10 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Parameter $componentBag of method Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe::setComponentBag() has invalid type Juaniquillo\\InputComponentAction\\Concerns\\LabelComponent.',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsInputComponentRecipe.php (in context of class Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe)',
+       'line' => 123,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php',
+       'traitFilePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsInputComponentRecipe.php',
+       'tip' => NULL,
+       'nodeLine' => 123,
+       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
+       'identifier' => 'class.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    11 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Parameter $componentBag of method Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe::setComponentBag() has invalid type Juaniquillo\\InputComponentAction\\Concerns\\WrapperComponent.',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsInputComponentRecipe.php (in context of class Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe)',
+       'line' => 123,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php',
+       'traitFilePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsInputComponentRecipe.php',
+       'tip' => NULL,
+       'nodeLine' => 123,
+       'nodeType' => 'PHPStan\\Node\\InClassMethodNode',
+       'identifier' => 'class.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    12 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Property Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe::$disableBag (Juaniquillo\\InputComponentAction\\Contracts\\DisableBag|null) does not accept Juaniquillo\\InputComponentAction\\Contracts\\ErrorDisable|Juaniquillo\\InputComponentAction\\Contracts\\HelpTextDisable|Juaniquillo\\InputComponentAction\\Contracts\\InputDisable|Juaniquillo\\InputComponentAction\\Contracts\\LabelDisable|Juaniquillo\\InputComponentAction\\Contracts\\WrapperDisable|null.',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsInputComponentRecipe.php (in context of class Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe)',
+       'line' => 293,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php',
+       'traitFilePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsInputComponentRecipe.php',
+       'tip' => NULL,
+       'nodeLine' => 293,
+       'nodeType' => 'PHPStan\\Node\\PropertyAssignNode',
+       'identifier' => 'assign.propertyType',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+  ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Utilities\\Support.php' => 
+  array (
+    0 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Call to an undefined method Juaniquillo\\CrudAssistant\\Contracts\\RecipeInterface::getThemeManager().',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Utilities\\Support.php',
+       'line' => 41,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Utilities\\Support.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 41,
+       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
+       'identifier' => 'method.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    1 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Call to an undefined method Juaniquillo\\CrudAssistant\\Contracts\\RecipeInterface::getThemeBag().',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Utilities\\Support.php',
+       'line' => 46,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Utilities\\Support.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 46,
+       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
+       'identifier' => 'method.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+    2 => 
+    \PHPStan\Analyser\Error::__set_state(array(
+       'message' => 'Call to an undefined method Juaniquillo\\CrudAssistant\\Contracts\\RecipeInterface::getComponentBag().',
+       'file' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Utilities\\Support.php',
+       'line' => 51,
+       'canBeIgnored' => true,
+       'filePath' => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Utilities\\Support.php',
+       'traitFilePath' => NULL,
+       'tip' => NULL,
+       'nodeLine' => 51,
+       'nodeType' => 'PhpParser\\Node\\Expr\\MethodCall',
+       'identifier' => 'method.notFound',
+       'metadata' => 
+      array (
+      ),
+       'fixedErrorDiff' => NULL,
+    )),
+  ),
 ); },
 	'locallyIgnoredErrorsCallback' => static function (): array { return array (
 ); },
@@ -2198,16 +3208,113 @@ return [
     array (
       0 => 
       array (
-        0 => 'Bags\\DefaultComponentBag',
+        0 => 'Juaniquillo\\InputComponentAction\\Bags\\DefaultComponentBag',
+        1 => 'getErrorComponent',
+        2 => 'Juaniquillo\\InputComponentAction\\Bags\\DefaultComponentBag',
+      ),
+      1 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Bags\\DefaultComponentBag',
+        1 => 'getHelpTextComponent',
+        2 => 'Juaniquillo\\InputComponentAction\\Bags\\DefaultComponentBag',
+      ),
+      2 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Bags\\DefaultComponentBag',
+        1 => 'getLabelComponent',
+        2 => 'Juaniquillo\\InputComponentAction\\Bags\\DefaultComponentBag',
+      ),
+      3 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Bags\\DefaultComponentBag',
+        1 => 'getWrapperComponent',
+        2 => 'Juaniquillo\\InputComponentAction\\Bags\\DefaultComponentBag',
+      ),
+      4 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Bags\\DefaultComponentBag',
         1 => 'getInputComponent',
-        2 => 'Bags\\DefaultComponentBag',
+        2 => 'Juaniquillo\\InputComponentAction\\Bags\\DefaultComponentBag',
       ),
     ),
     'PHPStan\\Rules\\Traits\\TraitUseCollector' => 
     array (
       0 => 
       array (
-        0 => 'Juaniquillo\\InputComponentAction\\Concerns\\IsComponentBag',
+        0 => 'Juaniquillo\\InputComponentAction\\Concerns\\HasErrorComponent',
+        1 => 'Juaniquillo\\InputComponentAction\\Concerns\\HasHelpTextComponent',
+        2 => 'Juaniquillo\\InputComponentAction\\Concerns\\HasLabelComponent',
+        3 => 'Juaniquillo\\InputComponentAction\\Concerns\\HasWrapperComponent',
+        4 => 'Juaniquillo\\InputComponentAction\\Concerns\\IsComponentBag',
+      ),
+    ),
+  ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultDisableBag.php' => 
+  array (
+    'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Bags\\DefaultDisableBag',
+        1 => 'disableError',
+        2 => 'Juaniquillo\\InputComponentAction\\Bags\\DefaultDisableBag',
+      ),
+      1 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Bags\\DefaultDisableBag',
+        1 => 'disableHelpText',
+        2 => 'Juaniquillo\\InputComponentAction\\Bags\\DefaultDisableBag',
+      ),
+      2 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Bags\\DefaultDisableBag',
+        1 => 'disableInputValue',
+        2 => 'Juaniquillo\\InputComponentAction\\Bags\\DefaultDisableBag',
+      ),
+      3 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Bags\\DefaultDisableBag',
+        1 => 'disableDefaultNameAttribute',
+        2 => 'Juaniquillo\\InputComponentAction\\Bags\\DefaultDisableBag',
+      ),
+      4 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Bags\\DefaultDisableBag',
+        1 => 'disableDefaultIdAttribute',
+        2 => 'Juaniquillo\\InputComponentAction\\Bags\\DefaultDisableBag',
+      ),
+      5 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Bags\\DefaultDisableBag',
+        1 => 'disableLabel',
+        2 => 'Juaniquillo\\InputComponentAction\\Bags\\DefaultDisableBag',
+      ),
+      6 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Bags\\DefaultDisableBag',
+        1 => 'disableDefaultForAttribute',
+        2 => 'Juaniquillo\\InputComponentAction\\Bags\\DefaultDisableBag',
+      ),
+      7 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Bags\\DefaultDisableBag',
+        1 => 'disableWrapper',
+        2 => 'Juaniquillo\\InputComponentAction\\Bags\\DefaultDisableBag',
+      ),
+    ),
+    'PHPStan\\Rules\\Traits\\TraitUseCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Concerns\\IsDisableBag',
+      ),
+      1 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Concerns\\HasErrorDisable',
+        1 => 'Juaniquillo\\InputComponentAction\\Concerns\\HasHelpTextDisable',
+        2 => 'Juaniquillo\\InputComponentAction\\Concerns\\HasInputDisable',
+        3 => 'Juaniquillo\\InputComponentAction\\Concerns\\HasLabelDisable',
+        4 => 'Juaniquillo\\InputComponentAction\\Concerns\\HasWrapperDisable',
       ),
     ),
   ),
@@ -2311,54 +3418,6 @@ return [
     array (
       0 => 'Juaniquillo\\InputComponentAction\\Composers\\ErrorComposer',
     ),
-    'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
-    array (
-      0 => 
-      array (
-        0 => 'Juaniquillo\\InputComponentAction\\Composers\\ErrorComposer',
-        1 => 'resolveWrapperType',
-        2 => 'Juaniquillo\\InputComponentAction\\Composers\\ErrorComposer',
-      ),
-      1 => 
-      array (
-        0 => 'Juaniquillo\\InputComponentAction\\Composers\\ErrorComposer',
-        1 => 'resolveLabelType',
-        2 => 'Juaniquillo\\InputComponentAction\\Composers\\ErrorComposer',
-      ),
-      2 => 
-      array (
-        0 => 'Juaniquillo\\InputComponentAction\\Composers\\ErrorComposer',
-        1 => 'resolveInputType',
-        2 => 'Juaniquillo\\InputComponentAction\\Composers\\ErrorComposer',
-      ),
-      3 => 
-      array (
-        0 => 'Juaniquillo\\InputComponentAction\\Composers\\ErrorComposer',
-        1 => 'resolveErrorType',
-        2 => 'Juaniquillo\\InputComponentAction\\Composers\\ErrorComposer',
-      ),
-    ),
-    'PHPStan\\Rules\\DeadCode\\PossiblyPureMethodCallCollector' => 
-    array (
-      0 => 
-      array (
-        0 => 
-        array (
-          0 => 'Juaniquillo\\BackendComponents\\MainBackendComponent',
-        ),
-        1 => 'setContent',
-        2 => 53,
-      ),
-      1 => 
-      array (
-        0 => 
-        array (
-          0 => 'Juaniquillo\\BackendComponents\\MainBackendComponent',
-        ),
-        1 => 'setThemes',
-        2 => 57,
-      ),
-    ),
     'PHPStan\\Rules\\Traits\\TraitUseCollector' => 
     array (
       0 => 
@@ -2371,64 +3430,7 @@ return [
   array (
     'PHPStan\\Rules\\DeadCode\\ConstructorWithoutImpurePointsCollector' => 
     array (
-      0 => 'Composers\\HelpTextComposer',
-    ),
-    'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
-    array (
-      0 => 
-      array (
-        0 => 'Composers\\HelpTextComposer',
-        1 => 'resolveWrapperType',
-        2 => 'Composers\\HelpTextComposer',
-      ),
-      1 => 
-      array (
-        0 => 'Composers\\HelpTextComposer',
-        1 => 'resolveLabelType',
-        2 => 'Composers\\HelpTextComposer',
-      ),
-      2 => 
-      array (
-        0 => 'Composers\\HelpTextComposer',
-        1 => 'resolveInputType',
-        2 => 'Composers\\HelpTextComposer',
-      ),
-      3 => 
-      array (
-        0 => 'Composers\\HelpTextComposer',
-        1 => 'resolveErrorType',
-        2 => 'Composers\\HelpTextComposer',
-      ),
-    ),
-    'PHPStan\\Rules\\DeadCode\\PossiblyPureMethodCallCollector' => 
-    array (
-      0 => 
-      array (
-        0 => 
-        array (
-          0 => 'Juaniquillo\\BackendComponents\\MainBackendComponent',
-        ),
-        1 => 'setAttributes',
-        2 => 57,
-      ),
-      1 => 
-      array (
-        0 => 
-        array (
-          0 => 'Juaniquillo\\BackendComponents\\MainBackendComponent',
-        ),
-        1 => 'setThemes',
-        2 => 61,
-      ),
-      2 => 
-      array (
-        0 => 
-        array (
-          0 => 'Juaniquillo\\BackendComponents\\MainBackendComponent',
-        ),
-        1 => 'setContent',
-        2 => 65,
-      ),
+      0 => 'Juaniquillo\\InputComponentAction\\Composers\\HelpTextComposer',
     ),
     'PHPStan\\Rules\\Traits\\TraitUseCollector' => 
     array (
@@ -2444,108 +3446,6 @@ return [
     array (
       0 => 'Juaniquillo\\InputComponentAction\\Composers\\InputComposer',
     ),
-    'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
-    array (
-      0 => 
-      array (
-        0 => 'Juaniquillo\\InputComponentAction\\Composers\\InputComposer',
-        1 => 'resolveWrapperType',
-        2 => 'Juaniquillo\\InputComponentAction\\Composers\\InputComposer',
-      ),
-      1 => 
-      array (
-        0 => 'Juaniquillo\\InputComponentAction\\Composers\\InputComposer',
-        1 => 'resolveLabelType',
-        2 => 'Juaniquillo\\InputComponentAction\\Composers\\InputComposer',
-      ),
-      2 => 
-      array (
-        0 => 'Juaniquillo\\InputComponentAction\\Composers\\InputComposer',
-        1 => 'resolveInputType',
-        2 => 'Juaniquillo\\InputComponentAction\\Composers\\InputComposer',
-      ),
-      3 => 
-      array (
-        0 => 'Juaniquillo\\InputComponentAction\\Composers\\InputComposer',
-        1 => 'resolveErrorType',
-        2 => 'Juaniquillo\\InputComponentAction\\Composers\\InputComposer',
-      ),
-    ),
-    'PHPStan\\Rules\\DeadCode\\PossiblyPureMethodCallCollector' => 
-    array (
-      0 => 
-      array (
-        0 => 
-        array (
-          0 => 'Juaniquillo\\BackendComponents\\MainBackendComponent',
-        ),
-        1 => 'setAttribute',
-        2 => 86,
-      ),
-      1 => 
-      array (
-        0 => 
-        array (
-          0 => 'Juaniquillo\\BackendComponents\\MainBackendComponent',
-        ),
-        1 => 'setAttribute',
-        2 => 90,
-      ),
-      2 => 
-      array (
-        0 => 
-        array (
-          0 => 'Juaniquillo\\BackendComponents\\MainBackendComponent',
-        ),
-        1 => 'setThemes',
-        2 => 94,
-      ),
-      3 => 
-      array (
-        0 => 
-        array (
-          0 => 'Juaniquillo\\BackendComponents\\MainBackendComponent',
-        ),
-        1 => 'setContent',
-        2 => 98,
-      ),
-      4 => 
-      array (
-        0 => 
-        array (
-          0 => 'Juaniquillo\\BackendComponents\\MainBackendComponent',
-        ),
-        1 => 'setContents',
-        2 => 102,
-      ),
-      5 => 
-      array (
-        0 => 
-        array (
-          0 => 'Juaniquillo\\BackendComponents\\MainBackendComponent',
-        ),
-        1 => 'setContent',
-        2 => 107,
-      ),
-      6 => 
-      array (
-        0 => 
-        array (
-          0 => 'Juaniquillo\\BackendComponents\\MainBackendComponent',
-        ),
-        1 => 'setAttribute',
-        2 => 109,
-      ),
-      7 => 
-      array (
-        0 => 
-        array (
-          0 => 'Juaniquillo\\BackendComponents\\MainBackendComponent',
-        ),
-        1 => 'setAttributes',
-        2 => 122,
-      ),
-    ),
     'PHPStan\\Rules\\Traits\\TraitUseCollector' => 
     array (
       0 => 
@@ -2560,72 +3460,6 @@ return [
     array (
       0 => 'Juaniquillo\\InputComponentAction\\Composers\\LabelComposer',
     ),
-    'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
-    array (
-      0 => 
-      array (
-        0 => 'Juaniquillo\\InputComponentAction\\Composers\\LabelComposer',
-        1 => 'resolveWrapperType',
-        2 => 'Juaniquillo\\InputComponentAction\\Composers\\LabelComposer',
-      ),
-      1 => 
-      array (
-        0 => 'Juaniquillo\\InputComponentAction\\Composers\\LabelComposer',
-        1 => 'resolveLabelType',
-        2 => 'Juaniquillo\\InputComponentAction\\Composers\\LabelComposer',
-      ),
-      2 => 
-      array (
-        0 => 'Juaniquillo\\InputComponentAction\\Composers\\LabelComposer',
-        1 => 'resolveInputType',
-        2 => 'Juaniquillo\\InputComponentAction\\Composers\\LabelComposer',
-      ),
-      3 => 
-      array (
-        0 => 'Juaniquillo\\InputComponentAction\\Composers\\LabelComposer',
-        1 => 'resolveErrorType',
-        2 => 'Juaniquillo\\InputComponentAction\\Composers\\LabelComposer',
-      ),
-    ),
-    'PHPStan\\Rules\\DeadCode\\PossiblyPureMethodCallCollector' => 
-    array (
-      0 => 
-      array (
-        0 => 
-        array (
-          0 => 'Juaniquillo\\BackendComponents\\MainBackendComponent',
-        ),
-        1 => 'setContent',
-        2 => 58,
-      ),
-      1 => 
-      array (
-        0 => 
-        array (
-          0 => 'Juaniquillo\\BackendComponents\\MainBackendComponent',
-        ),
-        1 => 'setAttribute',
-        2 => 62,
-      ),
-      2 => 
-      array (
-        0 => 
-        array (
-          0 => 'Juaniquillo\\BackendComponents\\MainBackendComponent',
-        ),
-        1 => 'setAttributes',
-        2 => 66,
-      ),
-      3 => 
-      array (
-        0 => 
-        array (
-          0 => 'Juaniquillo\\BackendComponents\\MainBackendComponent',
-        ),
-        1 => 'setThemes',
-        2 => 70,
-      ),
-    ),
     'PHPStan\\Rules\\Traits\\TraitUseCollector' => 
     array (
       0 => 
@@ -2639,54 +3473,6 @@ return [
     'PHPStan\\Rules\\DeadCode\\ConstructorWithoutImpurePointsCollector' => 
     array (
       0 => 'Juaniquillo\\InputComponentAction\\Composers\\WrapperComposer',
-    ),
-    'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
-    array (
-      0 => 
-      array (
-        0 => 'Juaniquillo\\InputComponentAction\\Composers\\WrapperComposer',
-        1 => 'resolveWrapperType',
-        2 => 'Juaniquillo\\InputComponentAction\\Composers\\WrapperComposer',
-      ),
-      1 => 
-      array (
-        0 => 'Juaniquillo\\InputComponentAction\\Composers\\WrapperComposer',
-        1 => 'resolveLabelType',
-        2 => 'Juaniquillo\\InputComponentAction\\Composers\\WrapperComposer',
-      ),
-      2 => 
-      array (
-        0 => 'Juaniquillo\\InputComponentAction\\Composers\\WrapperComposer',
-        1 => 'resolveInputType',
-        2 => 'Juaniquillo\\InputComponentAction\\Composers\\WrapperComposer',
-      ),
-      3 => 
-      array (
-        0 => 'Juaniquillo\\InputComponentAction\\Composers\\WrapperComposer',
-        1 => 'resolveErrorType',
-        2 => 'Juaniquillo\\InputComponentAction\\Composers\\WrapperComposer',
-      ),
-    ),
-    'PHPStan\\Rules\\DeadCode\\PossiblyPureMethodCallCollector' => 
-    array (
-      0 => 
-      array (
-        0 => 
-        array (
-          0 => 'Juaniquillo\\BackendComponents\\MainBackendComponent',
-        ),
-        1 => 'setThemes',
-        2 => 52,
-      ),
-      1 => 
-      array (
-        0 => 
-        array (
-          0 => 'Juaniquillo\\BackendComponents\\MainBackendComponent',
-        ),
-        1 => 'setContent',
-        2 => 56,
-      ),
     ),
     'PHPStan\\Rules\\Traits\\TraitUseCollector' => 
     array (
@@ -2715,6 +3501,28 @@ return [
       array (
         0 => 'Juaniquillo\\InputComponentAction\\Concerns\\HasErrorAttributes',
         1 => 9,
+      ),
+    ),
+  ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasErrorComponent.php' => 
+  array (
+    'PHPStan\\Rules\\Traits\\TraitDeclarationCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Concerns\\HasErrorComponent',
+        1 => 9,
+      ),
+    ),
+  ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasErrorDisable.php' => 
+  array (
+    'PHPStan\\Rules\\Traits\\TraitDeclarationCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Concerns\\HasErrorDisable',
+        1 => 7,
       ),
     ),
   ),
@@ -2762,6 +3570,28 @@ return [
       ),
     ),
   ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasHelpTextComponent.php' => 
+  array (
+    'PHPStan\\Rules\\Traits\\TraitDeclarationCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Concerns\\HasHelpTextComponent',
+        1 => 9,
+      ),
+    ),
+  ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasHelpTextDisable.php' => 
+  array (
+    'PHPStan\\Rules\\Traits\\TraitDeclarationCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Concerns\\HasHelpTextDisable',
+        1 => 7,
+      ),
+    ),
+  ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasHelpTextHook.php' => 
   array (
     'PHPStan\\Rules\\Traits\\TraitDeclarationCollector' => 
@@ -2784,6 +3614,17 @@ return [
       ),
     ),
   ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasInputDisable.php' => 
+  array (
+    'PHPStan\\Rules\\Traits\\TraitDeclarationCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Concerns\\HasInputDisable',
+        1 => 7,
+      ),
+    ),
+  ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasLabel.php' => 
   array (
     'PHPStan\\Rules\\Traits\\TraitDeclarationCollector' => 
@@ -2803,6 +3644,28 @@ return [
       array (
         0 => 'Juaniquillo\\InputComponentAction\\Concerns\\HasLabelAttributes',
         1 => 9,
+      ),
+    ),
+  ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasLabelComponent.php' => 
+  array (
+    'PHPStan\\Rules\\Traits\\TraitDeclarationCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Concerns\\HasLabelComponent',
+        1 => 9,
+      ),
+    ),
+  ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasLabelDisable.php' => 
+  array (
+    'PHPStan\\Rules\\Traits\\TraitDeclarationCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Concerns\\HasLabelDisable',
+        1 => 7,
       ),
     ),
   ),
@@ -2850,6 +3713,28 @@ return [
       ),
     ),
   ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasWrapperComponent.php' => 
+  array (
+    'PHPStan\\Rules\\Traits\\TraitDeclarationCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Concerns\\HasWrapperComponent',
+        1 => 9,
+      ),
+    ),
+  ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasWrapperDisable.php' => 
+  array (
+    'PHPStan\\Rules\\Traits\\TraitDeclarationCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Concerns\\HasWrapperDisable',
+        1 => 7,
+      ),
+    ),
+  ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasWrapperHook.php' => 
   array (
     'PHPStan\\Rules\\Traits\\TraitDeclarationCollector' => 
@@ -2890,7 +3775,7 @@ return [
       0 => 
       array (
         0 => 'Juaniquillo\\InputComponentAction\\Concerns\\IsComponentBag',
-        1 => 11,
+        1 => 9,
       ),
     ),
   ),
@@ -2905,6 +3790,17 @@ return [
       ),
     ),
   ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsDisableBag.php' => 
+  array (
+    'PHPStan\\Rules\\Traits\\TraitDeclarationCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Concerns\\IsDisableBag',
+        1 => 7,
+      ),
+    ),
+  ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsHookBag.php' => 
   array (
     'PHPStan\\Rules\\Traits\\TraitDeclarationCollector' => 
@@ -2916,6 +3812,17 @@ return [
       ),
     ),
   ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsInputComponentRecipe.php' => 
+  array (
+    'PHPStan\\Rules\\Traits\\TraitDeclarationCollector' => 
+    array (
+      0 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Concerns\\IsInputComponentRecipe',
+        1 => 36,
+      ),
+    ),
+  ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsInputGroup.php' => 
   array (
     'PHPStan\\Rules\\Traits\\TraitDeclarationCollector' => 
@@ -2923,7 +3830,7 @@ return [
       0 => 
       array (
         0 => 'Juaniquillo\\InputComponentAction\\Concerns\\IsInputGroup',
-        1 => 23,
+        1 => 28,
       ),
     ),
   ),
@@ -2986,7 +3893,7 @@ return [
           0 => 'Juaniquillo\\InputComponentAction\\Composers\\InputComposer',
         ),
         1 => 'setParent',
-        2 => 81,
+        2 => 91,
       ),
     ),
     'PHPStan\\Rules\\Traits\\TraitUseCollector' => 
@@ -3038,7 +3945,7 @@ return [
           0 => 'Juaniquillo\\InputComponentAction\\Composers\\InputComposer',
         ),
         1 => 'setParent',
-        2 => 81,
+        2 => 91,
       ),
     ),
     'PHPStan\\Rules\\Traits\\TraitUseCollector' => 
@@ -3090,7 +3997,7 @@ return [
           0 => 'Juaniquillo\\InputComponentAction\\Composers\\InputComposer',
         ),
         1 => 'setParent',
-        2 => 81,
+        2 => 91,
       ),
     ),
     'PHPStan\\Rules\\Traits\\TraitUseCollector' => 
@@ -3121,7 +4028,7 @@ return [
       array (
         0 => 
         array (
-          0 => 'Composers\\HelpTextComposer',
+          0 => 'Juaniquillo\\InputComponentAction\\Composers\\LabelComposer',
         ),
         1 => 'setParent',
         2 => 33,
@@ -3130,28 +4037,19 @@ return [
       array (
         0 => 
         array (
-          0 => 'Juaniquillo\\InputComponentAction\\Composers\\LabelComposer',
-        ),
-        1 => 'setParent',
-        2 => 33,
-      ),
-      3 => 
-      array (
-        0 => 
-        array (
           0 => 'Juaniquillo\\InputComponentAction\\Composers\\WrapperComposer',
         ),
         1 => 'setParent',
         2 => 32,
       ),
-      4 => 
+      3 => 
       array (
         0 => 
         array (
           0 => 'Juaniquillo\\InputComponentAction\\Composers\\InputComposer',
         ),
         1 => 'setParent',
-        2 => 81,
+        2 => 91,
       ),
     ),
     'PHPStan\\Rules\\Traits\\TraitUseCollector' => 
@@ -3186,7 +4084,7 @@ return [
           0 => 'Juaniquillo\\InputComponentAction\\Composers\\InputComposer',
         ),
         1 => 'setParent',
-        2 => 81,
+        2 => 91,
       ),
     ),
     'PHPStan\\Rules\\Traits\\TraitUseCollector' => 
@@ -3218,7 +4116,7 @@ return [
           0 => 'Juaniquillo\\CrudAssistant\\DataContainer',
         ),
         1 => 'set',
-        2 => 121,
+        2 => 135,
       ),
     ),
     'PHPStan\\Rules\\Traits\\TraitUseCollector' => 
@@ -3231,13 +4129,160 @@ return [
   ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php' => 
   array (
-    'PHPStan\\Rules\\DeadCode\\ConstructorWithoutImpurePointsCollector' => 
+    'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
     array (
-      0 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+      0 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+        1 => 'getInputGroup',
+        2 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+      ),
+      1 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+        1 => 'getThemeManager',
+        2 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+      ),
+      2 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+        1 => 'getComponentBag',
+        2 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+      ),
+      3 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+        1 => 'getAttributeBag',
+        2 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+      ),
+      4 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+        1 => 'getThemeBag',
+        2 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+      ),
+      5 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+        1 => 'getHookBag',
+        2 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+      ),
+      6 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+        1 => 'getValueBag',
+        2 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+      ),
+      7 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+        1 => 'getErrorBag',
+        2 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+      ),
+      8 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+        1 => 'getInputValue',
+        2 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+      ),
+      9 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+        1 => 'useParentValue',
+        2 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+      ),
+      10 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+        1 => 'getInputError',
+        2 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+      ),
+      11 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+        1 => 'getLabel',
+        2 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+      ),
+      12 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+        1 => 'labelAsInputContent',
+        2 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+      ),
+      13 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+        1 => 'isEmptyLabel',
+        2 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+      ),
+      14 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+        1 => 'valueAsInputContent',
+        2 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+      ),
+      15 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+        1 => 'getHelpText',
+        2 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+      ),
+      16 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+        1 => 'getDisableBag',
+        2 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+      ),
+      17 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+        1 => 'getWrapperType',
+        2 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+      ),
+      18 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+        1 => 'getLabelType',
+        2 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+      ),
+      19 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+        1 => 'getInputType',
+        2 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+      ),
+      20 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+        1 => 'getErrorType',
+        2 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+      ),
+      21 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+        1 => 'getHelpTextType',
+        2 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+      ),
+      22 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+        1 => 'isCheckable',
+        2 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+      ),
+      23 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+        1 => 'isSelectable',
+        2 => 'Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+      ),
     ),
     'PHPStan\\Rules\\Traits\\TraitUseCollector' => 
     array (
       0 => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Concerns\\IsInputComponentRecipe',
+      ),
+      1 => 
       array (
         0 => 'Juaniquillo\\CrudAssistant\\Concerns\\IsRecipe',
       ),
@@ -3248,12 +4293,6 @@ return [
     'PHPStan\\Rules\\DeadCode\\MethodWithoutImpurePointsCollector' => 
     array (
       0 => 
-      array (
-        0 => 'Juaniquillo\\InputComponentAction\\Utilities\\Support',
-        1 => 'resolveThemeBag',
-        2 => 'Juaniquillo\\InputComponentAction\\Utilities\\Support',
-      ),
-      1 => 
       array (
         0 => 'Juaniquillo\\InputComponentAction\\Utilities\\Support',
         1 => 'isClosure',
@@ -3272,7 +4311,16 @@ return [
   ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultComponentBag.php' => 
   array (
-    'fileHash' => '2675d30bfb32219f6d4eb262b49650d23eb193714b440f0a553315dbbae9b9fd',
+    'fileHash' => 'fc8ce0e1f7d8b4e30c26ead4bf473ac5bc7e9a1aba33e98cfe6a451711bb54e8',
+    'dependentFiles' => 
+    array (
+      0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Factories\\InputGroupFactory.php',
+      1 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Utilities\\Support.php',
+    ),
+  ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultDisableBag.php' => 
+  array (
+    'fileHash' => 'c41b3dd29778c77f71e69c75ca7f013192977ff73835cf8af590e6feb0dd5149',
     'dependentFiles' => 
     array (
     ),
@@ -3293,12 +4341,13 @@ return [
     'fileHash' => '140d74fcab6a51bdc3e51a33daab391da223a40d5e2b562429dc4cffb885dace',
     'dependentFiles' => 
     array (
-      0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Utilities\\Support.php',
+      0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Factories\\InputGroupFactory.php',
+      1 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Utilities\\Support.php',
     ),
   ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\ErrorComposer.php' => 
   array (
-    'fileHash' => '15d58dcc33ccf18cefcf8fdec0cb5bce6537d2a7eb84580f467c4fc4abbb1bcd',
+    'fileHash' => '266c5edf7a060502dc8e59405d6fa124d5ae6d555b7e018122535dca26915348',
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\DefaultInputGroup.php',
@@ -3309,15 +4358,14 @@ return [
   ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\HelpTextComposer.php' => 
   array (
-    'fileHash' => 'f386da031656767473770c91c8feef0c935892cbeedd1383f9ba2c93ba20e800',
+    'fileHash' => 'ca005a74627a8e52f99ebd5777e82c181fb3180bb8871ad8682657ecb913bb18',
     'dependentFiles' => 
     array (
-      0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\LabelHelpTextInputErrorGroup.php',
     ),
   ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\InputComposer.php' => 
   array (
-    'fileHash' => 'bc2e3f9eef5c8ab0ca8395f46468278002347b94ecdd08db952f28da8f82c567',
+    'fileHash' => '6b9bda4035193f478d1760b88eca3f90902fc563e55dea951ef594eceeb7ddfd',
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\DefaultInputGroup.php',
@@ -3329,7 +4377,7 @@ return [
   ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\LabelComposer.php' => 
   array (
-    'fileHash' => '6049fc3b026400c0bf70ce013e20e176f6dbaaa45559a99c21ec94e5d7df04f4',
+    'fileHash' => '4b5b17a5d3dc70f5f876490c1bb6ee6aaa99821efd718f247de94164615178c9',
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\DefaultInputGroup.php',
@@ -3340,7 +4388,7 @@ return [
   ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\WrapperComposer.php' => 
   array (
-    'fileHash' => '869d44250b3675781be88c4f7e6adc3f474b2a8c901c81ba5e0f6bb0e73ab363',
+    'fileHash' => '0e7ecb849d11c78e43be5a1d2d545080d16d56a8cb31bf0843d69acac8eec247',
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\DefaultInputGroup.php',
@@ -3353,7 +4401,7 @@ return [
   ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasError.php' => 
   array (
-    'fileHash' => 'ece95320be25af37dde08728f3245b1378b18247a32a400200d0a1c5ccc3f985',
+    'fileHash' => 'e487cc85f6c8487c3bfefa7b15dbbbce9e82663ce33c83b6b30c5c0bc4cc1d3e',
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Factories\\InputGroupFactory.php',
@@ -3382,6 +4430,32 @@ return [
       0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultAttributeBag.php',
     ),
   ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasErrorComponent.php' => 
+  array (
+    'fileHash' => '4f5de53162a76693e8fd63d95095b389af54f343bc3874b36d1f2c0a9cecabdf',
+    'dependentFiles' => 
+    array (
+      0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultComponentBag.php',
+      1 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Factories\\InputGroupFactory.php',
+      2 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Utilities\\Support.php',
+    ),
+    'usedTraitDependentFiles' => 
+    array (
+      0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultComponentBag.php',
+    ),
+  ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasErrorDisable.php' => 
+  array (
+    'fileHash' => '3747861098bb4f8b068788944a6de50059894dc6f34bf0523cb02c99d5ca4d0f',
+    'dependentFiles' => 
+    array (
+      0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultDisableBag.php',
+    ),
+    'usedTraitDependentFiles' => 
+    array (
+      0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultDisableBag.php',
+    ),
+  ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasErrorHook.php' => 
   array (
     'fileHash' => 'ca50c1810d37c3af6dbf6a48510d856481f21928b4c676986145381f1536c0bb',
@@ -3404,7 +4478,8 @@ return [
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultThemeBag.php',
-      1 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Utilities\\Support.php',
+      1 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Factories\\InputGroupFactory.php',
+      2 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Utilities\\Support.php',
     ),
     'usedTraitDependentFiles' => 
     array (
@@ -3413,7 +4488,7 @@ return [
   ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasHelpText.php' => 
   array (
-    'fileHash' => '6fe4a623a3dde7e83f0604a81097b9b7a25edec43320cd85bd1c1ff19fd82a41',
+    'fileHash' => '19ad24ca35eeae837919aadf9b260814e7c72ace1a98318d8aa95aa729f1350a',
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\LabelHelpTextInputErrorGroup.php',
@@ -3433,6 +4508,32 @@ return [
     'usedTraitDependentFiles' => 
     array (
       0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultAttributeBag.php',
+    ),
+  ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasHelpTextComponent.php' => 
+  array (
+    'fileHash' => '168d551d8ed4c75cefe7adaa3683566075f9420013fb1c47ad304323af8af53e',
+    'dependentFiles' => 
+    array (
+      0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultComponentBag.php',
+      1 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Factories\\InputGroupFactory.php',
+      2 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Utilities\\Support.php',
+    ),
+    'usedTraitDependentFiles' => 
+    array (
+      0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultComponentBag.php',
+    ),
+  ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasHelpTextDisable.php' => 
+  array (
+    'fileHash' => '7086c93b9bda564197e2a96ce40660d64219a1d2ba6af580d4e53553819a1f72',
+    'dependentFiles' => 
+    array (
+      0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultDisableBag.php',
+    ),
+    'usedTraitDependentFiles' => 
+    array (
+      0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultDisableBag.php',
     ),
   ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasHelpTextHook.php' => 
@@ -3457,16 +4558,29 @@ return [
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultThemeBag.php',
-      1 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Utilities\\Support.php',
+      1 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Factories\\InputGroupFactory.php',
+      2 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Utilities\\Support.php',
     ),
     'usedTraitDependentFiles' => 
     array (
       0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultThemeBag.php',
     ),
   ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasInputDisable.php' => 
+  array (
+    'fileHash' => 'cb3d4ed35a92213623d793d438e5b96e17e692b7296aecd2b14e61aa50721062',
+    'dependentFiles' => 
+    array (
+      0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultDisableBag.php',
+    ),
+    'usedTraitDependentFiles' => 
+    array (
+      0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultDisableBag.php',
+    ),
+  ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasLabel.php' => 
   array (
-    'fileHash' => '92b7367b2279863f51ee87d55985ea657388e32de8759e9d8a6473c2d4efd726',
+    'fileHash' => '6637adca2e9ac6d3779bbdcad41f1463c7bb0a67ccf83ea26484fcd380497fe5',
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Factories\\InputGroupFactory.php',
@@ -3495,6 +4609,32 @@ return [
       0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultAttributeBag.php',
     ),
   ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasLabelComponent.php' => 
+  array (
+    'fileHash' => '5b7d4dc3927b8718b16ef817a7205ff6347a051bb4d846b2037cf406003753fd',
+    'dependentFiles' => 
+    array (
+      0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultComponentBag.php',
+      1 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Factories\\InputGroupFactory.php',
+      2 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Utilities\\Support.php',
+    ),
+    'usedTraitDependentFiles' => 
+    array (
+      0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultComponentBag.php',
+    ),
+  ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasLabelDisable.php' => 
+  array (
+    'fileHash' => '5ce5b2505e57372febd9b750c7c9700d9945b6051446dd0b7c0c6980ae92c55f',
+    'dependentFiles' => 
+    array (
+      0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultDisableBag.php',
+    ),
+    'usedTraitDependentFiles' => 
+    array (
+      0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultDisableBag.php',
+    ),
+  ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasLabelHook.php' => 
   array (
     'fileHash' => '13be6a7e3732a24de040da0e3c3dffcd62a15e6375ddc0c3d49d87359f150c4b',
@@ -3517,7 +4657,8 @@ return [
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultThemeBag.php',
-      1 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Utilities\\Support.php',
+      1 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Factories\\InputGroupFactory.php',
+      2 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Utilities\\Support.php',
     ),
     'usedTraitDependentFiles' => 
     array (
@@ -3526,7 +4667,7 @@ return [
   ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasWrapper.php' => 
   array (
-    'fileHash' => '20b7ebdf7b618086d86623f57a0c4d65db3585b2b98fa42028888633ffa0d968',
+    'fileHash' => '777c5fcb86e14eb13e7e2e50f68d3c93db88877a219f53ea4b36fd08bcef05f9',
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Factories\\InputGroupFactory.php',
@@ -3557,6 +4698,32 @@ return [
       0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultAttributeBag.php',
     ),
   ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasWrapperComponent.php' => 
+  array (
+    'fileHash' => '1360206706b5dcdad963ad4c82073ede7655c5d449ddd32e2eee3e10cc9e03f4',
+    'dependentFiles' => 
+    array (
+      0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultComponentBag.php',
+      1 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Factories\\InputGroupFactory.php',
+      2 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Utilities\\Support.php',
+    ),
+    'usedTraitDependentFiles' => 
+    array (
+      0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultComponentBag.php',
+    ),
+  ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasWrapperDisable.php' => 
+  array (
+    'fileHash' => 'e94bbea0f473985bf43e034219d9e379cbb002e4ac8afbade5490840fae52746',
+    'dependentFiles' => 
+    array (
+      0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultDisableBag.php',
+    ),
+    'usedTraitDependentFiles' => 
+    array (
+      0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultDisableBag.php',
+    ),
+  ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasWrapperHook.php' => 
   array (
     'fileHash' => '5f1cb7fcca105d381c2c282e1ee6bf4b82d7b0890c6ea11383ddd838501ebeda',
@@ -3579,7 +4746,8 @@ return [
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultThemeBag.php',
-      1 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Utilities\\Support.php',
+      1 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Factories\\InputGroupFactory.php',
+      2 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Utilities\\Support.php',
     ),
     'usedTraitDependentFiles' => 
     array (
@@ -3600,10 +4768,12 @@ return [
   ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComponentBag.php' => 
   array (
-    'fileHash' => '84a23fdb903bb76e99063a8396ab2660d941d90ffabe46f75c3534aecd8d4f25',
+    'fileHash' => '34f21015b9e0f380bc65928e79579cd54b0a0d500c58490a8158b4a813534cd0',
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultComponentBag.php',
+      1 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Factories\\InputGroupFactory.php',
+      2 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Utilities\\Support.php',
     ),
     'usedTraitDependentFiles' => 
     array (
@@ -3612,7 +4782,7 @@ return [
   ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsComposer.php' => 
   array (
-    'fileHash' => '9d024960c96e88db6167e813c85ea6c84d1fcc5e0c91965dd5c60db58c91afe7',
+    'fileHash' => '46d4ff11949e1a5fc384f280ff33e89abcb860d62de298173229efa5a852c3b6',
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\ErrorComposer.php',
@@ -3636,6 +4806,18 @@ return [
       4 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\WrapperComposer.php',
     ),
   ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsDisableBag.php' => 
+  array (
+    'fileHash' => '6bc10427029858948bea74c5ba49e6b43d3d18e889b16065a91ba5b6cfb01008',
+    'dependentFiles' => 
+    array (
+      0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultDisableBag.php',
+    ),
+    'usedTraitDependentFiles' => 
+    array (
+      0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultDisableBag.php',
+    ),
+  ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsHookBag.php' => 
   array (
     'fileHash' => '123c332c19041c35498aff7030d8b10159544c34a9ee42beba1bf8bfb4ee4780',
@@ -3652,9 +4834,39 @@ return [
       0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultHookBag.php',
     ),
   ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsInputComponentRecipe.php' => 
+  array (
+    'fileHash' => '9d89a82717b620addc4e37ea5145e4a93a1a65ff080ca1b2579e1f9ad2c988ff',
+    'dependentFiles' => 
+    array (
+      0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\ErrorComposer.php',
+      1 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\HelpTextComposer.php',
+      2 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\InputComposer.php',
+      3 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\LabelComposer.php',
+      4 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\WrapperComposer.php',
+      5 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\ErrorManager.php',
+      6 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\InputGroup.php',
+      7 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\ValueManager.php',
+      8 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Factories\\InputGroupFactory.php',
+      9 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\DefaultInputGroup.php',
+      10 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\InputLabelErrorGroup.php',
+      11 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\LabelContainerGroup.php',
+      12 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\LabelHelpTextInputErrorGroup.php',
+      13 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\SoleInputGroup.php',
+      14 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\InputComponentAction.php',
+      15 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Managers\\DefaultErrorManager.php',
+      16 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Managers\\DefaultValueManager.php',
+      17 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php',
+      18 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Utilities\\Support.php',
+    ),
+    'usedTraitDependentFiles' => 
+    array (
+      0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php',
+    ),
+  ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsInputGroup.php' => 
   array (
-    'fileHash' => '956be72413bfbf0ad5438c76e65c06a38f2d909391e0e78aceea5cf9e3ecc3a0',
+    'fileHash' => 'd76544896f987acfcac3f75e09e847884943d172180d3c3f6ee8181215d37999',
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Factories\\InputGroupFactory.php',
@@ -3679,7 +4891,8 @@ return [
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultThemeBag.php',
-      1 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Utilities\\Support.php',
+      1 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Factories\\InputGroupFactory.php',
+      2 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Utilities\\Support.php',
     ),
     'usedTraitDependentFiles' => 
     array (
@@ -3717,11 +4930,25 @@ return [
   ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\ComponentBag.php' => 
   array (
-    'fileHash' => '9175eabc4986c35be8d4cfa992f43d33b21a208a1b2eed027a2692fa8cdf5d0e',
+    'fileHash' => '1f071f053a03adc45f95a7e84746722d981a8bfcbe6f773be03304ad21001780',
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultComponentBag.php',
-      1 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php',
+      1 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\ErrorComposer.php',
+      2 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\HelpTextComposer.php',
+      3 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\InputComposer.php',
+      4 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\LabelComposer.php',
+      5 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\WrapperComposer.php',
+      6 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\InputGroup.php',
+      7 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Factories\\InputGroupFactory.php',
+      8 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\DefaultInputGroup.php',
+      9 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\InputLabelErrorGroup.php',
+      10 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\LabelContainerGroup.php',
+      11 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\LabelHelpTextInputErrorGroup.php',
+      12 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\SoleInputGroup.php',
+      13 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\InputComponentAction.php',
+      14 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php',
+      15 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Utilities\\Support.php',
     ),
   ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\ComponentComposer.php' => 
@@ -3741,6 +4968,15 @@ return [
       9 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\InputComponentAction.php',
     ),
   ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\DisableBag.php' => 
+  array (
+    'fileHash' => '7dee51b13bc9ea98e05019e79f9bae8d513890dd618eb0ef59def1959b69fdd3',
+    'dependentFiles' => 
+    array (
+      0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultDisableBag.php',
+      1 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php',
+    ),
+  ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\ErrorAttributes.php' => 
   array (
     'fileHash' => 'dd609300ee69c393ccd17740eabf92cd5b9f6ceb697dd884100963123b22677b',
@@ -3755,11 +4991,42 @@ return [
       6 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php',
     ),
   ),
-  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\ErrorBuilder.php' => 
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\ErrorComponent.php' => 
   array (
-    'fileHash' => '6e96efcb703543fb73c1afd8d328a7796ff347d7e85060c8b95cd97513001b7a',
+    'fileHash' => 'd8f55b728ed4cc0f8d6897478cb59bc0d13cf96e03a78613d3feda435ed7f498',
     'dependentFiles' => 
     array (
+      0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultComponentBag.php',
+      1 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\ErrorComposer.php',
+      2 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\HelpTextComposer.php',
+      3 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\InputComposer.php',
+      4 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\InputGroup.php',
+      5 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Factories\\InputGroupFactory.php',
+      6 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\DefaultInputGroup.php',
+      7 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\InputLabelErrorGroup.php',
+      8 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\LabelContainerGroup.php',
+      9 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\LabelHelpTextInputErrorGroup.php',
+      10 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\SoleInputGroup.php',
+      11 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\InputComponentAction.php',
+      12 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php',
+      13 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Utilities\\Support.php',
+    ),
+  ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\ErrorDisable.php' => 
+  array (
+    'fileHash' => 'a4a5e66e38ea94ea83dc8968570cda81fb2f538fcff11b1d552ae323938d50ec',
+    'dependentFiles' => 
+    array (
+      0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultDisableBag.php',
+      1 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\InputComposer.php',
+      2 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\LabelComposer.php',
+      3 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\DisableBag.php',
+      4 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\DefaultInputGroup.php',
+      5 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\InputLabelErrorGroup.php',
+      6 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\LabelContainerGroup.php',
+      7 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\LabelHelpTextInputErrorGroup.php',
+      8 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\SoleInputGroup.php',
+      9 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php',
     ),
   ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\ErrorHook.php' => 
@@ -3835,11 +5102,41 @@ return [
       6 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php',
     ),
   ),
-  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\HelpTextBuilder.php' => 
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\HelpTextComponent.php' => 
   array (
-    'fileHash' => '7fcb9437b32dd7f8960a02cdc75443064dc8414e4a13db6d9c50da04228f72e0',
+    'fileHash' => '1c8198991d26ee414c0b377c62af4f18e5d5ece968b93b9fd3e2593684d79d13',
     'dependentFiles' => 
     array (
+      0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultComponentBag.php',
+      1 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\HelpTextComposer.php',
+      2 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\InputComposer.php',
+      3 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\InputGroup.php',
+      4 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Factories\\InputGroupFactory.php',
+      5 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\DefaultInputGroup.php',
+      6 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\InputLabelErrorGroup.php',
+      7 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\LabelContainerGroup.php',
+      8 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\LabelHelpTextInputErrorGroup.php',
+      9 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\SoleInputGroup.php',
+      10 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\InputComponentAction.php',
+      11 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php',
+      12 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Utilities\\Support.php',
+    ),
+  ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\HelpTextDisable.php' => 
+  array (
+    'fileHash' => '85b479cc671b604715b066ddfae5bd07b2a5b94de2ae2e979321b4ba69003dc8',
+    'dependentFiles' => 
+    array (
+      0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultDisableBag.php',
+      1 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\InputComposer.php',
+      2 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\LabelComposer.php',
+      3 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\DisableBag.php',
+      4 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\DefaultInputGroup.php',
+      5 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\InputLabelErrorGroup.php',
+      6 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\LabelContainerGroup.php',
+      7 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\LabelHelpTextInputErrorGroup.php',
+      8 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\SoleInputGroup.php',
+      9 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php',
     ),
   ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\HelpTextHook.php' => 
@@ -3893,9 +5190,26 @@ return [
       6 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php',
     ),
   ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\InputDisable.php' => 
+  array (
+    'fileHash' => 'bb10665621e323010e343b547a7b217e7036718a61f719547795e93c2de9ea1b',
+    'dependentFiles' => 
+    array (
+      0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultDisableBag.php',
+      1 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\InputComposer.php',
+      2 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\LabelComposer.php',
+      3 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\DisableBag.php',
+      4 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\DefaultInputGroup.php',
+      5 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\InputLabelErrorGroup.php',
+      6 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\LabelContainerGroup.php',
+      7 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\LabelHelpTextInputErrorGroup.php',
+      8 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\SoleInputGroup.php',
+      9 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php',
+    ),
+  ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\InputGroup.php' => 
   array (
-    'fileHash' => 'd55f3f8fb63a9a51087acbf4f8ba9dfcb570f6bd79ea3aad3180a12d86ee970e',
+    'fileHash' => '70209d4bfcabf123257a1106f1fc063e6ff0aba891115115e779a4afff5ce138',
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\InputComposer.php',
@@ -3923,11 +5237,42 @@ return [
       6 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php',
     ),
   ),
-  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\LabelBuilder.php' => 
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\LabelComponent.php' => 
   array (
-    'fileHash' => 'ab3c90a2a5805473096c3cdbabc33c90c2e111a8cc4b96b18394447feb7b700c',
+    'fileHash' => 'fdc85a56d85e98a46f0de6b5b4be15b5801be14b989c7702765c02a8ef7985a9',
     'dependentFiles' => 
     array (
+      0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultComponentBag.php',
+      1 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\HelpTextComposer.php',
+      2 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\InputComposer.php',
+      3 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\LabelComposer.php',
+      4 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\InputGroup.php',
+      5 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Factories\\InputGroupFactory.php',
+      6 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\DefaultInputGroup.php',
+      7 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\InputLabelErrorGroup.php',
+      8 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\LabelContainerGroup.php',
+      9 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\LabelHelpTextInputErrorGroup.php',
+      10 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\SoleInputGroup.php',
+      11 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\InputComponentAction.php',
+      12 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php',
+      13 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Utilities\\Support.php',
+    ),
+  ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\LabelDisable.php' => 
+  array (
+    'fileHash' => '3994273bc8aa281c03848c235273144c6658a990cfd71e7984dd9f0fc4504dce',
+    'dependentFiles' => 
+    array (
+      0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultDisableBag.php',
+      1 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\InputComposer.php',
+      2 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\LabelComposer.php',
+      3 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\DisableBag.php',
+      4 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\DefaultInputGroup.php',
+      5 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\InputLabelErrorGroup.php',
+      6 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\LabelContainerGroup.php',
+      7 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\LabelHelpTextInputErrorGroup.php',
+      8 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\SoleInputGroup.php',
+      9 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php',
     ),
   ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\LabelHook.php' => 
@@ -4026,11 +5371,42 @@ return [
       6 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php',
     ),
   ),
-  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\WrapperBuilder.php' => 
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\WrapperComponent.php' => 
   array (
-    'fileHash' => 'aea97c8df2fa435eaec5249bc64fa15722ea85bc7ef391725958defd8dd0b94f',
+    'fileHash' => '69d0592dcc6220c2748453c508ce08426959444d39365e1ad3c0d2b1a292d633',
     'dependentFiles' => 
     array (
+      0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultComponentBag.php',
+      1 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\HelpTextComposer.php',
+      2 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\InputComposer.php',
+      3 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\WrapperComposer.php',
+      4 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\InputGroup.php',
+      5 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Factories\\InputGroupFactory.php',
+      6 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\DefaultInputGroup.php',
+      7 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\InputLabelErrorGroup.php',
+      8 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\LabelContainerGroup.php',
+      9 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\LabelHelpTextInputErrorGroup.php',
+      10 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\SoleInputGroup.php',
+      11 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\InputComponentAction.php',
+      12 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php',
+      13 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Utilities\\Support.php',
+    ),
+  ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\WrapperDisable.php' => 
+  array (
+    'fileHash' => '0128a4862609452fad2bf19276a45f861f7960b2f2b41d7b5d233fa77da54c33',
+    'dependentFiles' => 
+    array (
+      0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultDisableBag.php',
+      1 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\InputComposer.php',
+      2 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\LabelComposer.php',
+      3 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\DisableBag.php',
+      4 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\DefaultInputGroup.php',
+      5 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\InputLabelErrorGroup.php',
+      6 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\LabelContainerGroup.php',
+      7 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\LabelHelpTextInputErrorGroup.php',
+      8 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Groups\\SoleInputGroup.php',
+      9 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php',
     ),
   ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\WrapperHook.php' => 
@@ -4072,7 +5448,7 @@ return [
   ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Factories\\InputGroupFactory.php' => 
   array (
-    'fileHash' => 'd15a4934fd310c5fcd9bedf40cca75bc7de8dd218f61fc4a4a4158665de3a350',
+    'fileHash' => '6a9984336b1c883939d9cdc5a16314c928ea0f447748e8855b82cb9d12413805',
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\InputComposer.php',
@@ -4117,7 +5493,7 @@ return [
   ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\InputComponentAction.php' => 
   array (
-    'fileHash' => '325d0e7eb24828ace6cf6494867a02797fdc3b9d79ab6b0cba9d911f9727b31a',
+    'fileHash' => '32435cbb2a8a67b94bd1727fc306ddaeb260b4673889ad9a098c39cd0ad032e8',
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php',
@@ -4133,7 +5509,7 @@ return [
   ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Managers\\DefaultErrorManager.php' => 
   array (
-    'fileHash' => '047625961d829e5c6371111ffb377f83f4eee3b56132bedc62ca4eb084092071',
+    'fileHash' => '4ba5d289fd7c887508c120806d161ef9758611cdd4ed1a1bc23d22c6b421e82b',
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\InputComponentAction.php',
@@ -4141,7 +5517,7 @@ return [
   ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Managers\\DefaultValueManager.php' => 
   array (
-    'fileHash' => 'f474c84c4a097385b0e77129dd5f7284a2339ebf15ec53d7953bbb59ac38588e',
+    'fileHash' => '596c27e332900ac1e25136c44c6be4254ebe76c01fb60c41063826d8c82c6417',
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\InputComponentAction.php',
@@ -4149,7 +5525,7 @@ return [
   ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Recipes\\InputComponentRecipe.php' => 
   array (
-    'fileHash' => '5f9142bc0cf8616aa0583dcf3a0e5c3588ff9ad9b4091cd83e567a4898d36a1d',
+    'fileHash' => '51bad6769f399a037838185179ac075a8390a75b05ae68c69c9cb7ce82750e32',
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\ErrorComposer.php',
@@ -4174,7 +5550,7 @@ return [
   ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Utilities\\Support.php' => 
   array (
-    'fileHash' => 'e117005d4b29879d7839f336cb8db041198b64256fbe58cc5aad64582de01df3',
+    'fileHash' => '97a7cd1e2c3838354d325587c236fd8d199ccc9e1531409208c02224964ff78f',
     'dependentFiles' => 
     array (
       0 => 'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Composers\\ErrorComposer.php',
@@ -4235,18 +5611,59 @@ return [
   array (
     0 => 
     \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'Bags\\DefaultComponentBag',
+       'name' => 'Juaniquillo\\InputComponentAction\\Bags\\DefaultComponentBag',
        'phpDoc' => NULL,
        'abstract' => false,
-       'final' => false,
+       'final' => true,
        'extends' => NULL,
        'implements' => 
       array (
         0 => 'Juaniquillo\\InputComponentAction\\Contracts\\ComponentBag',
+        1 => 'Juaniquillo\\InputComponentAction\\Contracts\\ErrorComponent',
+        2 => 'Juaniquillo\\InputComponentAction\\Contracts\\HelpTextComponent',
+        3 => 'Juaniquillo\\InputComponentAction\\Contracts\\LabelComponent',
+        4 => 'Juaniquillo\\InputComponentAction\\Contracts\\WrapperComponent',
       ),
        'usedTraits' => 
       array (
-        0 => 'Juaniquillo\\InputComponentAction\\Concerns\\IsComponentBag',
+        0 => 'Juaniquillo\\InputComponentAction\\Concerns\\HasErrorComponent',
+        1 => 'Juaniquillo\\InputComponentAction\\Concerns\\HasHelpTextComponent',
+        2 => 'Juaniquillo\\InputComponentAction\\Concerns\\HasLabelComponent',
+        3 => 'Juaniquillo\\InputComponentAction\\Concerns\\HasWrapperComponent',
+        4 => 'Juaniquillo\\InputComponentAction\\Concerns\\IsComponentBag',
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Bags\\DefaultDisableBag.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
+       'name' => 'Juaniquillo\\InputComponentAction\\Bags\\DefaultDisableBag',
+       'phpDoc' => NULL,
+       'abstract' => false,
+       'final' => true,
+       'extends' => NULL,
+       'implements' => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Contracts\\DisableBag',
+        1 => 'Juaniquillo\\InputComponentAction\\Contracts\\ErrorDisable',
+        2 => 'Juaniquillo\\InputComponentAction\\Contracts\\HelpTextDisable',
+        3 => 'Juaniquillo\\InputComponentAction\\Contracts\\InputDisable',
+        4 => 'Juaniquillo\\InputComponentAction\\Contracts\\LabelDisable',
+        5 => 'Juaniquillo\\InputComponentAction\\Contracts\\WrapperDisable',
+      ),
+       'usedTraits' => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Concerns\\IsDisableBag',
       ),
        'traitUseAdaptations' => 
       array (
@@ -4432,6 +5849,17 @@ return [
               array (
               ),
             )),
+            6 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'componentBag',
+               'type' => 'Juaniquillo\\InputComponentAction\\Composers\\ComponentBag|Juaniquillo\\InputComponentAction\\Composers\\WrapperComponent|Juaniquillo\\InputComponentAction\\Composers\\LabelComponent|Juaniquillo\\InputComponentAction\\Contracts\\ErrorComponent|Juaniquillo\\InputComponentAction\\Composers\\HelpTextComponent|null|null',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => true,
+               'attributes' => 
+              array (
+              ),
+            )),
           ),
            'attributes' => 
           array (
@@ -4465,7 +5893,7 @@ return [
   array (
     0 => 
     \PHPStan\Dependency\ExportedNode\ExportedClassNode::__set_state(array(
-       'name' => 'Composers\\HelpTextComposer',
+       'name' => 'Juaniquillo\\InputComponentAction\\Composers\\HelpTextComposer',
        'phpDoc' => NULL,
        'abstract' => false,
        'final' => false,
@@ -4554,6 +5982,17 @@ return [
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
                'name' => 'themeBag',
                'type' => '?Juaniquillo\\InputComponentAction\\Contracts\\HelpTextTheme',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => true,
+               'attributes' => 
+              array (
+              ),
+            )),
+            6 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'componentBag',
+               'type' => 'Juaniquillo\\InputComponentAction\\Contracts\\ComponentBag|Juaniquillo\\InputComponentAction\\Contracts\\WrapperComponent|Juaniquillo\\InputComponentAction\\Contracts\\LabelComponent|Juaniquillo\\InputComponentAction\\Contracts\\ErrorComponent|Juaniquillo\\InputComponentAction\\Contracts\\HelpTextComponent|null|null',
                'byRef' => false,
                'variadic' => false,
                'hasDefault' => true,
@@ -4695,6 +6134,17 @@ return [
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
                'name' => 'themeBag',
                'type' => 'Juaniquillo\\InputComponentAction\\Contracts\\ThemeBag|Juaniquillo\\InputComponentAction\\Contracts\\WrapperTheme|Juaniquillo\\InputComponentAction\\Contracts\\LabelTheme|Juaniquillo\\InputComponentAction\\Contracts\\ErrorTheme|Juaniquillo\\InputComponentAction\\Contracts\\HelpTextTheme|null|null',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => true,
+               'attributes' => 
+              array (
+              ),
+            )),
+            7 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'componentBag',
+               'type' => 'Juaniquillo\\InputComponentAction\\Contracts\\ComponentBag|Juaniquillo\\InputComponentAction\\Contracts\\WrapperComponent|Juaniquillo\\InputComponentAction\\Contracts\\LabelComponent|Juaniquillo\\InputComponentAction\\Contracts\\ErrorComponent|Juaniquillo\\InputComponentAction\\Contracts\\HelpTextComponent|null|null',
                'byRef' => false,
                'variadic' => false,
                'hasDefault' => true,
@@ -4963,6 +6413,17 @@ return [
               array (
               ),
             )),
+            6 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'componentBag',
+               'type' => 'Juaniquillo\\InputComponentAction\\Composers\\ComponentBag|Juaniquillo\\InputComponentAction\\Composers\\WrapperComponent|Juaniquillo\\InputComponentAction\\Contracts\\LabelComponent|Juaniquillo\\InputComponentAction\\Composers\\ErrorComponent|Juaniquillo\\InputComponentAction\\Composers\\HelpTextComponent|null|null',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => true,
+               'attributes' => 
+              array (
+              ),
+            )),
           ),
            'attributes' => 
           array (
@@ -5082,6 +6543,17 @@ return [
               array (
               ),
             )),
+            5 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'componentBag',
+               'type' => 'Juaniquillo\\InputComponentAction\\Composers\\ComponentBag|Juaniquillo\\InputComponentAction\\Contracts\\WrapperComponent|Juaniquillo\\InputComponentAction\\Composers\\LabelComponent|Juaniquillo\\InputComponentAction\\Composers\\ErrorComponent|Juaniquillo\\InputComponentAction\\Composers\\HelpTextComponent|null|null',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => true,
+               'attributes' => 
+              array (
+              ),
+            )),
           ),
            'attributes' => 
           array (
@@ -5185,6 +6657,140 @@ return [
            'final' => false,
            'static' => false,
            'returnType' => 'Closure|array|null',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasErrorComponent.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedTraitNode::__set_state(array(
+       'name' => 'Juaniquillo\\InputComponentAction\\Concerns\\HasErrorComponent',
+       'phpDoc' => NULL,
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setErrorComponent',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'static',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'errorComponent',
+               'type' => 'Closure|string',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getErrorComponent',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'Closure|string|null',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasErrorDisable.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedTraitNode::__set_state(array(
+       'name' => 'Juaniquillo\\InputComponentAction\\Concerns\\HasErrorDisable',
+       'phpDoc' => NULL,
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setDisableError',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'self',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'disableError',
+               'type' => 'bool',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => true,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'disableError',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'bool',
            'parameters' => 
           array (
           ),
@@ -5419,6 +7025,140 @@ return [
       ),
     )),
   ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasHelpTextComponent.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedTraitNode::__set_state(array(
+       'name' => 'Juaniquillo\\InputComponentAction\\Concerns\\HasHelpTextComponent',
+       'phpDoc' => NULL,
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setHelpTextComponent',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'static',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'helpTextComponent',
+               'type' => 'Closure|string',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getHelpTextComponent',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'Closure|string|null',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasHelpTextDisable.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedTraitNode::__set_state(array(
+       'name' => 'Juaniquillo\\InputComponentAction\\Concerns\\HasHelpTextDisable',
+       'phpDoc' => NULL,
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setDisableHelpText',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'self',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'disableHelpText',
+               'type' => 'bool',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => true,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'disableHelpText',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'bool',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasHelpTextHook.php' => 
   array (
     0 => 
@@ -5553,6 +7293,167 @@ return [
       ),
     )),
   ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasInputDisable.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedTraitNode::__set_state(array(
+       'name' => 'Juaniquillo\\InputComponentAction\\Concerns\\HasInputDisable',
+       'phpDoc' => NULL,
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setDisableInputValue',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'self',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'disableInputValue',
+               'type' => 'bool',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => true,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'disableInputValue',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'bool',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        2 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setDisableDefaultNameAttribute',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'self',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'disableDefaultNameAttribute',
+               'type' => 'bool',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => true,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        3 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'disableDefaultNameAttribute',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'bool',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        4 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setDisableDefaultIdAttribute',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'self',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'disableDefaultIdAttribute',
+               'type' => 'bool',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => true,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        5 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'disableDefaultIdAttribute',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'bool',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasLabel.php' => 
   array (
     0 => 
@@ -5627,6 +7528,187 @@ return [
            'final' => false,
            'static' => false,
            'returnType' => 'Closure|array|null',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasLabelComponent.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedTraitNode::__set_state(array(
+       'name' => 'Juaniquillo\\InputComponentAction\\Concerns\\HasLabelComponent',
+       'phpDoc' => NULL,
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setLabelComponent',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'static',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'labelComponent',
+               'type' => 'Closure|string',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getLabelComponent',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'Closure|string|null',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasLabelDisable.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedTraitNode::__set_state(array(
+       'name' => 'Juaniquillo\\InputComponentAction\\Concerns\\HasLabelDisable',
+       'phpDoc' => NULL,
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setDisableLabel',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'self',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'disableLabel',
+               'type' => 'bool',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => true,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'disableLabel',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'bool',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        2 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setDisableDefaultForAttribute',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'self',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'disableDefaultForAttribute',
+               'type' => 'bool',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => true,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        3 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'disableDefaultForAttribute',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'bool',
            'parameters' => 
           array (
           ),
@@ -5848,6 +7930,140 @@ return [
            'final' => false,
            'static' => false,
            'returnType' => 'Closure|array|null',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasWrapperComponent.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedTraitNode::__set_state(array(
+       'name' => 'Juaniquillo\\InputComponentAction\\Concerns\\HasWrapperComponent',
+       'phpDoc' => NULL,
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setWrapperComponent',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'static',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'wrapperComponent',
+               'type' => 'Closure|string',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getWrapperComponent',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'Closure|string|null',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\HasWrapperDisable.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedTraitNode::__set_state(array(
+       'name' => 'Juaniquillo\\InputComponentAction\\Concerns\\HasWrapperDisable',
+       'phpDoc' => NULL,
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setDisableWrapper',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'self',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'disableWrapper',
+               'type' => 'bool',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => true,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'disableWrapper',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'bool',
            'parameters' => 
           array (
           ),
@@ -6092,7 +8308,7 @@ return [
             0 => 
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
                'name' => 'inputComponent',
-               'type' => 'Closure|Juaniquillo\\BackendComponents\\Contracts\\CompoundComponent|Juaniquillo\\BackendComponents\\Contracts\\StaticBuilder',
+               'type' => 'Closure|string',
                'byRef' => false,
                'variadic' => false,
                'hasDefault' => false,
@@ -6115,7 +8331,7 @@ return [
            'abstract' => false,
            'final' => false,
            'static' => false,
-           'returnType' => 'Closure|Juaniquillo\\BackendComponents\\Contracts\\CompoundComponent|Juaniquillo\\BackendComponents\\Contracts\\StaticBuilder|null',
+           'returnType' => 'Closure|string|null',
            'parameters' => 
           array (
           ),
@@ -6178,6 +8394,31 @@ return [
       ),
     )),
   ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsDisableBag.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedTraitNode::__set_state(array(
+       'name' => 'Juaniquillo\\InputComponentAction\\Concerns\\IsDisableBag',
+       'phpDoc' => NULL,
+       'usedTraits' => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Concerns\\HasErrorDisable',
+        1 => 'Juaniquillo\\InputComponentAction\\Concerns\\HasHelpTextDisable',
+        2 => 'Juaniquillo\\InputComponentAction\\Concerns\\HasInputDisable',
+        3 => 'Juaniquillo\\InputComponentAction\\Concerns\\HasLabelDisable',
+        4 => 'Juaniquillo\\InputComponentAction\\Concerns\\HasWrapperDisable',
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsHookBag.php' => 
   array (
     0 => 
@@ -6234,6 +8475,1172 @@ return [
            'returnType' => '?Closure',
            'parameters' => 
           array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+       'attributes' => 
+      array (
+      ),
+    )),
+  ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Concerns\\IsInputComponentRecipe.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedTraitNode::__set_state(array(
+       'name' => 'Juaniquillo\\InputComponentAction\\Concerns\\IsInputComponentRecipe',
+       'phpDoc' => NULL,
+       'usedTraits' => 
+      array (
+      ),
+       'traitUseAdaptations' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'make',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => true,
+           'returnType' => 'self',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getInputGroup',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => '?Juaniquillo\\InputComponentAction\\Contracts\\InputGroup',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        2 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setInputGroup',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'self',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'inputGroup',
+               'type' => '?Juaniquillo\\InputComponentAction\\Contracts\\InputGroup',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        3 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getThemeManager',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => '?Juaniquillo\\BackendComponents\\Contracts\\ThemeManager',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        4 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setThemeManager',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'self',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'themeManager',
+               'type' => '?Juaniquillo\\BackendComponents\\Contracts\\ThemeManager',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        5 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getComponentBag',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'Juaniquillo\\InputComponentAction\\Contracts\\ComponentBag|Juaniquillo\\InputComponentAction\\Concerns\\WrapperComponent|Juaniquillo\\InputComponentAction\\Concerns\\LabelComponent|Juaniquillo\\InputComponentAction\\Concerns\\ErrorComponent|Juaniquillo\\InputComponentAction\\Concerns\\HelpTextComponent|null',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        6 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setComponentBag',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'self',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'componentBag',
+               'type' => 'Juaniquillo\\InputComponentAction\\Contracts\\ComponentBag|Juaniquillo\\InputComponentAction\\Concerns\\WrapperComponent|Juaniquillo\\InputComponentAction\\Concerns\\LabelComponent|Juaniquillo\\InputComponentAction\\Concerns\\ErrorComponent|Juaniquillo\\InputComponentAction\\Concerns\\HelpTextComponent|null',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        7 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getAttributeBag',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'Juaniquillo\\InputComponentAction\\Contracts\\AttributeBag|Juaniquillo\\InputComponentAction\\Contracts\\WrapperAttributes|Juaniquillo\\InputComponentAction\\Contracts\\LabelAttributes|Juaniquillo\\InputComponentAction\\Contracts\\ErrorAttributes|Juaniquillo\\InputComponentAction\\Contracts\\HelpTextAttributes|null',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        8 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setAttributeBag',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'self',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'attributeBag',
+               'type' => 'Juaniquillo\\InputComponentAction\\Contracts\\AttributeBag|Juaniquillo\\InputComponentAction\\Contracts\\WrapperAttributes|Juaniquillo\\InputComponentAction\\Contracts\\LabelAttributes|Juaniquillo\\InputComponentAction\\Contracts\\ErrorAttributes|Juaniquillo\\InputComponentAction\\Contracts\\HelpTextAttributes|null',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        9 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getThemeBag',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'Juaniquillo\\InputComponentAction\\Contracts\\ThemeBag|Juaniquillo\\InputComponentAction\\Contracts\\WrapperTheme|Juaniquillo\\InputComponentAction\\Contracts\\LabelTheme|Juaniquillo\\InputComponentAction\\Contracts\\ErrorTheme|Juaniquillo\\InputComponentAction\\Contracts\\HelpTextTheme|null',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        10 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setThemeBag',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'self',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'themeBag',
+               'type' => 'Juaniquillo\\InputComponentAction\\Contracts\\ThemeBag|Juaniquillo\\InputComponentAction\\Contracts\\WrapperTheme|Juaniquillo\\InputComponentAction\\Contracts\\LabelTheme|Juaniquillo\\InputComponentAction\\Contracts\\ErrorTheme|Juaniquillo\\InputComponentAction\\Contracts\\HelpTextTheme|null',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        11 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getHookBag',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'Juaniquillo\\InputComponentAction\\Contracts\\HookBag|Juaniquillo\\InputComponentAction\\Contracts\\WrapperHook|Juaniquillo\\InputComponentAction\\Contracts\\LabelHook|Juaniquillo\\InputComponentAction\\Contracts\\ErrorHook|Juaniquillo\\InputComponentAction\\Contracts\\HelpTextHook|null',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        12 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setHookBag',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'self',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'hookBag',
+               'type' => 'Juaniquillo\\InputComponentAction\\Contracts\\HookBag|Juaniquillo\\InputComponentAction\\Contracts\\WrapperHook|Juaniquillo\\InputComponentAction\\Contracts\\LabelHook|Juaniquillo\\InputComponentAction\\Contracts\\ErrorHook|Juaniquillo\\InputComponentAction\\Contracts\\HelpTextHook|null',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        13 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getValueBag',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => '?Juaniquillo\\InputComponentAction\\Contracts\\ValueManager',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        14 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setValueBag',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'self',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'valueBag',
+               'type' => '?Juaniquillo\\InputComponentAction\\Contracts\\ValueManager',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        15 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getErrorBag',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => '?Juaniquillo\\InputComponentAction\\Contracts\\ErrorManager',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        16 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setErrorBag',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'self',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'errorBag',
+               'type' => '?Juaniquillo\\InputComponentAction\\Contracts\\ErrorManager',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        17 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getInputValue',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'string|int|Closure|null',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        18 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setInputValue',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'self',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'inputValue',
+               'type' => 'string|int|Closure|null',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        19 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'useParentValue',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'bool',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        20 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setUseParentValue',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'self',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'useParentValue',
+               'type' => 'bool',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        21 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getInputError',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'string|Closure|null',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        22 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setInputError',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'self',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'inputError',
+               'type' => 'string|Closure|null',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        23 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getLabel',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'string|Closure|null',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        24 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setLabel',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'self',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'label',
+               'type' => 'string|Closure|null',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        25 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'labelAsInputContent',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'bool',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        26 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setLabelAsInputContent',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'self',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'labelAsInputContent',
+               'type' => 'bool',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        27 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'isEmptyLabel',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'bool',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        28 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setEmptyLabel',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'self',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'emptyLabel',
+               'type' => 'bool',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        29 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'valueAsInputContent',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'bool',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        30 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setValueAsInputContent',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'self',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'valueAsInputContent',
+               'type' => 'bool',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        31 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getHelpText',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'string|Closure|null',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        32 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setHelpText',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'self',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'helpText',
+               'type' => 'string|Closure|null',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        33 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getDisableBag',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'Juaniquillo\\InputComponentAction\\Contracts\\DisableBag|Juaniquillo\\InputComponentAction\\Contracts\\WrapperDisable|Juaniquillo\\InputComponentAction\\Contracts\\LabelDisable|Juaniquillo\\InputComponentAction\\Contracts\\ErrorDisable|Juaniquillo\\InputComponentAction\\Contracts\\HelpTextDisable|Juaniquillo\\InputComponentAction\\Contracts\\InputDisable|null',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        34 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setDisableBag',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'self',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'disableBag',
+               'type' => 'Juaniquillo\\InputComponentAction\\Contracts\\DisableBag|Juaniquillo\\InputComponentAction\\Contracts\\WrapperDisable|Juaniquillo\\InputComponentAction\\Contracts\\LabelDisable|Juaniquillo\\InputComponentAction\\Contracts\\ErrorDisable|Juaniquillo\\InputComponentAction\\Contracts\\HelpTextDisable|Juaniquillo\\InputComponentAction\\Contracts\\InputDisable|null',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        35 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getWrapperType',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'string|BackedEnum|null',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        36 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setWrapperType',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'self',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'wrapperType',
+               'type' => 'string|BackedEnum|null',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        37 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getLabelType',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'string|BackedEnum|null',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        38 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setLabelType',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'self',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'labelType',
+               'type' => 'string|BackedEnum|null',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        39 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getInputType',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'string|BackedEnum|null',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        40 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setInputType',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'self',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'inputType',
+               'type' => 'string|BackedEnum|null',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        41 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getErrorType',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'string|BackedEnum|null',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        42 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setErrorType',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'self',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'errorType',
+               'type' => 'string|BackedEnum|null',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        43 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'getHelpTextType',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'string|BackedEnum|null',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        44 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setHelpTextType',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'self',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'helpTextType',
+               'type' => 'string|BackedEnum|null',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        45 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'isCheckable',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'bool',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        46 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setCheckable',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'self',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'checkable',
+               'type' => 'bool',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        47 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'isSelectable',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'bool',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        48 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setSelectable',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'self',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'selectable',
+               'type' => 'bool',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
           ),
            'attributes' => 
           array (
@@ -6342,6 +9749,17 @@ return [
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
                'name' => 'defaultThemeBag',
                'type' => 'Juaniquillo\\InputComponentAction\\Contracts\\ThemeBag|Juaniquillo\\InputComponentAction\\Contracts\\WrapperTheme|Juaniquillo\\InputComponentAction\\Contracts\\LabelTheme|Juaniquillo\\InputComponentAction\\Contracts\\ErrorTheme|Juaniquillo\\InputComponentAction\\Contracts\\HelpTextTheme|null|null',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => true,
+               'attributes' => 
+              array (
+              ),
+            )),
+            7 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'defaultComponentBag',
+               'type' => 'Juaniquillo\\InputComponentAction\\Contracts\\ComponentBag|Juaniquillo\\InputComponentAction\\Contracts\\WrapperComponent|Juaniquillo\\InputComponentAction\\Contracts\\LabelComponent|Juaniquillo\\InputComponentAction\\Contracts\\ErrorComponent|Juaniquillo\\InputComponentAction\\Contracts\\HelpTextComponent|null|null',
                'byRef' => false,
                'variadic' => false,
                'hasDefault' => true,
@@ -6686,7 +10104,7 @@ return [
             0 => 
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
                'name' => 'inputComponent',
-               'type' => 'Closure|Juaniquillo\\BackendComponents\\Contracts\\CompoundComponent|Juaniquillo\\BackendComponents\\Contracts\\StaticBuilder',
+               'type' => 'Closure|string',
                'byRef' => false,
                'variadic' => false,
                'hasDefault' => false,
@@ -6709,7 +10127,7 @@ return [
            'abstract' => false,
            'final' => false,
            'static' => false,
-           'returnType' => 'Closure|Juaniquillo\\BackendComponents\\Contracts\\CompoundComponent|Juaniquillo\\BackendComponents\\Contracts\\StaticBuilder|null',
+           'returnType' => 'Closure|string|null',
            'parameters' => 
           array (
           ),
@@ -6781,6 +10199,25 @@ return [
       ),
     )),
   ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\DisableBag.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedInterfaceNode::__set_state(array(
+       'name' => 'Juaniquillo\\InputComponentAction\\Contracts\\DisableBag',
+       'phpDoc' => NULL,
+       'extends' => 
+      array (
+        0 => 'Juaniquillo\\InputComponentAction\\Contracts\\ErrorDisable',
+        1 => 'Juaniquillo\\InputComponentAction\\Contracts\\HelpTextDisable',
+        2 => 'Juaniquillo\\InputComponentAction\\Contracts\\InputDisable',
+        3 => 'Juaniquillo\\InputComponentAction\\Contracts\\LabelDisable',
+        4 => 'Juaniquillo\\InputComponentAction\\Contracts\\WrapperDisable',
+      ),
+       'statements' => 
+      array (
+      ),
+    )),
+  ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\ErrorAttributes.php' => 
   array (
     0 => 
@@ -6842,11 +10279,11 @@ return [
       ),
     )),
   ),
-  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\ErrorBuilder.php' => 
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\ErrorComponent.php' => 
   array (
     0 => 
     \PHPStan\Dependency\ExportedNode\ExportedInterfaceNode::__set_state(array(
-       'name' => 'Juaniquillo\\InputComponentAction\\Contracts\\ErrorBuilder',
+       'name' => 'Juaniquillo\\InputComponentAction\\Contracts\\ErrorComponent',
        'phpDoc' => NULL,
        'extends' => 
       array (
@@ -6855,7 +10292,7 @@ return [
       array (
         0 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'setErrorBuilder',
+           'name' => 'setErrorComponent',
            'phpDoc' => NULL,
            'byRef' => false,
            'public' => true,
@@ -6868,8 +10305,8 @@ return [
           array (
             0 => 
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'errorBuilder',
-               'type' => 'Juaniquillo\\BackendComponents\\Contracts\\StaticBuilder',
+               'name' => 'errorComponent',
+               'type' => 'Closure|string',
                'byRef' => false,
                'variadic' => false,
                'hasDefault' => false,
@@ -6884,7 +10321,7 @@ return [
         )),
         1 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'getErrorBuilder',
+           'name' => 'getErrorComponent',
            'phpDoc' => NULL,
            'byRef' => false,
            'public' => true,
@@ -6892,7 +10329,68 @@ return [
            'abstract' => false,
            'final' => false,
            'static' => false,
-           'returnType' => '?Juaniquillo\\BackendComponents\\Contracts\\StaticBuilder',
+           'returnType' => 'Closure|string|null',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+    )),
+  ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\ErrorDisable.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedInterfaceNode::__set_state(array(
+       'name' => 'Juaniquillo\\InputComponentAction\\Contracts\\ErrorDisable',
+       'phpDoc' => NULL,
+       'extends' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setDisableError',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'self',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'disableError',
+               'type' => 'bool',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => true,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'disableError',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'bool',
            'parameters' => 
           array (
           ),
@@ -7169,11 +10667,11 @@ return [
       ),
     )),
   ),
-  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\HelpTextBuilder.php' => 
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\HelpTextComponent.php' => 
   array (
     0 => 
     \PHPStan\Dependency\ExportedNode\ExportedInterfaceNode::__set_state(array(
-       'name' => 'Juaniquillo\\InputComponentAction\\Contracts\\HelpTextBuilder',
+       'name' => 'Juaniquillo\\InputComponentAction\\Contracts\\HelpTextComponent',
        'phpDoc' => NULL,
        'extends' => 
       array (
@@ -7182,7 +10680,7 @@ return [
       array (
         0 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'setHelpTextBuilder',
+           'name' => 'setHelpTextComponent',
            'phpDoc' => NULL,
            'byRef' => false,
            'public' => true,
@@ -7195,8 +10693,8 @@ return [
           array (
             0 => 
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'helpTextBuilder',
-               'type' => 'Juaniquillo\\BackendComponents\\Contracts\\StaticBuilder',
+               'name' => 'helpTextComponent',
+               'type' => 'Closure|string',
                'byRef' => false,
                'variadic' => false,
                'hasDefault' => false,
@@ -7211,7 +10709,7 @@ return [
         )),
         1 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'getHelpTextBuilder',
+           'name' => 'getHelpTextComponent',
            'phpDoc' => NULL,
            'byRef' => false,
            'public' => true,
@@ -7219,7 +10717,68 @@ return [
            'abstract' => false,
            'final' => false,
            'static' => false,
-           'returnType' => '?Juaniquillo\\BackendComponents\\Contracts\\StaticBuilder',
+           'returnType' => 'Closure|string|null',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+    )),
+  ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\HelpTextDisable.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedInterfaceNode::__set_state(array(
+       'name' => 'Juaniquillo\\InputComponentAction\\Contracts\\HelpTextDisable',
+       'phpDoc' => NULL,
+       'extends' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setDisableHelpText',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'self',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'disableHelpText',
+               'type' => 'bool',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => true,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'disableHelpText',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'bool',
            'parameters' => 
           array (
           ),
@@ -7413,6 +10972,161 @@ return [
       ),
     )),
   ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\InputDisable.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedInterfaceNode::__set_state(array(
+       'name' => 'Juaniquillo\\InputComponentAction\\Contracts\\InputDisable',
+       'phpDoc' => NULL,
+       'extends' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setDisableInputValue',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'self',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'disableInputValue',
+               'type' => 'bool',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => true,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'disableInputValue',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'bool',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        2 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setDisableDefaultNameAttribute',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'self',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'disableDefaultNameAttribute',
+               'type' => 'bool',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => true,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        3 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'disableDefaultNameAttribute',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'bool',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        4 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setDisableDefaultIdAttribute',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'self',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'disableDefaultIdAttribute',
+               'type' => 'bool',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => true,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        5 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'disableDefaultIdAttribute',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'bool',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+    )),
+  ),
   'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\InputGroup.php' => 
   array (
     0 => 
@@ -7507,6 +11221,17 @@ return [
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
                'name' => 'defaultThemeBag',
                'type' => 'Juaniquillo\\InputComponentAction\\Contracts\\ThemeBag|Juaniquillo\\InputComponentAction\\Contracts\\WrapperTheme|Juaniquillo\\InputComponentAction\\Contracts\\LabelTheme|Juaniquillo\\InputComponentAction\\Contracts\\ErrorTheme|Juaniquillo\\InputComponentAction\\Contracts\\HelpTextTheme|null|null',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => true,
+               'attributes' => 
+              array (
+              ),
+            )),
+            7 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'defaultComponentBag',
+               'type' => 'Juaniquillo\\InputComponentAction\\Contracts\\ComponentBag|Juaniquillo\\InputComponentAction\\Contracts\\WrapperComponent|Juaniquillo\\InputComponentAction\\Contracts\\LabelComponent|Juaniquillo\\InputComponentAction\\Contracts\\ErrorComponent|Juaniquillo\\InputComponentAction\\Contracts\\HelpTextComponent|null|null',
                'byRef' => false,
                'variadic' => false,
                'hasDefault' => true,
@@ -7630,11 +11355,11 @@ return [
       ),
     )),
   ),
-  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\LabelBuilder.php' => 
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\LabelComponent.php' => 
   array (
     0 => 
     \PHPStan\Dependency\ExportedNode\ExportedInterfaceNode::__set_state(array(
-       'name' => 'Juaniquillo\\InputComponentAction\\Contracts\\LabelBuilder',
+       'name' => 'Juaniquillo\\InputComponentAction\\Contracts\\LabelComponent',
        'phpDoc' => NULL,
        'extends' => 
       array (
@@ -7643,7 +11368,7 @@ return [
       array (
         0 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'setLabelBuilder',
+           'name' => 'setLabelComponent',
            'phpDoc' => NULL,
            'byRef' => false,
            'public' => true,
@@ -7656,8 +11381,8 @@ return [
           array (
             0 => 
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'labelBuilder',
-               'type' => 'Juaniquillo\\BackendComponents\\Contracts\\StaticBuilder',
+               'name' => 'labelComponent',
+               'type' => 'Closure|string',
                'byRef' => false,
                'variadic' => false,
                'hasDefault' => false,
@@ -7672,7 +11397,7 @@ return [
         )),
         1 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'getLabelBuilder',
+           'name' => 'getLabelComponent',
            'phpDoc' => NULL,
            'byRef' => false,
            'public' => true,
@@ -7680,7 +11405,115 @@ return [
            'abstract' => false,
            'final' => false,
            'static' => false,
-           'returnType' => '?Juaniquillo\\BackendComponents\\Contracts\\StaticBuilder',
+           'returnType' => 'Closure|string|null',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+    )),
+  ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\LabelDisable.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedInterfaceNode::__set_state(array(
+       'name' => 'Juaniquillo\\InputComponentAction\\Contracts\\LabelDisable',
+       'phpDoc' => NULL,
+       'extends' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setDisableLabel',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'self',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'disableLabel',
+               'type' => 'bool',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'disableLabel',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'bool',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        2 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setDisableDefaultForAttribute',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'self',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'disableDefaultForAttribute',
+               'type' => 'bool',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => true,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        3 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'disableDefaultForAttribute',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'bool',
            'parameters' => 
           array (
           ),
@@ -8058,11 +11891,11 @@ return [
       ),
     )),
   ),
-  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\WrapperBuilder.php' => 
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\WrapperComponent.php' => 
   array (
     0 => 
     \PHPStan\Dependency\ExportedNode\ExportedInterfaceNode::__set_state(array(
-       'name' => 'Juaniquillo\\InputComponentAction\\Contracts\\WrapperBuilder',
+       'name' => 'Juaniquillo\\InputComponentAction\\Contracts\\WrapperComponent',
        'phpDoc' => NULL,
        'extends' => 
       array (
@@ -8071,7 +11904,7 @@ return [
       array (
         0 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'setWrapperBuilder',
+           'name' => 'setWrapperComponent',
            'phpDoc' => NULL,
            'byRef' => false,
            'public' => true,
@@ -8084,8 +11917,8 @@ return [
           array (
             0 => 
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'wrapperBuilder',
-               'type' => 'Juaniquillo\\BackendComponents\\Contracts\\StaticBuilder',
+               'name' => 'wrapperComponent',
+               'type' => 'Closure|string',
                'byRef' => false,
                'variadic' => false,
                'hasDefault' => false,
@@ -8100,7 +11933,7 @@ return [
         )),
         1 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
-           'name' => 'getWrapperBuilder',
+           'name' => 'getWrapperComponent',
            'phpDoc' => NULL,
            'byRef' => false,
            'public' => true,
@@ -8108,7 +11941,68 @@ return [
            'abstract' => false,
            'final' => false,
            'static' => false,
-           'returnType' => '?Juaniquillo\\BackendComponents\\Contracts\\StaticBuilder',
+           'returnType' => 'Closure|string|null',
+           'parameters' => 
+          array (
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+      ),
+    )),
+  ),
+  'C:\\Users\\juani\\Code\\packages\\input-component-action\\src\\Contracts\\WrapperDisable.php' => 
+  array (
+    0 => 
+    \PHPStan\Dependency\ExportedNode\ExportedInterfaceNode::__set_state(array(
+       'name' => 'Juaniquillo\\InputComponentAction\\Contracts\\WrapperDisable',
+       'phpDoc' => NULL,
+       'extends' => 
+      array (
+      ),
+       'statements' => 
+      array (
+        0 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setDisableWrapper',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'self',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'disableWrapper',
+               'type' => 'bool',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => true,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        1 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'disableWrapper',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'bool',
            'parameters' => 
           array (
           ),
@@ -8352,6 +12246,17 @@ return [
               ),
             )),
             7 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'defaultComponentBag',
+               'type' => 'Juaniquillo\\InputComponentAction\\Contracts\\ComponentBag|Juaniquillo\\InputComponentAction\\Contracts\\WrapperComponent|Juaniquillo\\InputComponentAction\\Contracts\\LabelComponent|Juaniquillo\\InputComponentAction\\Contracts\\ErrorComponent|Juaniquillo\\InputComponentAction\\Contracts\\HelpTextComponent|null|null',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => true,
+               'attributes' => 
+              array (
+              ),
+            )),
+            8 => 
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
                'name' => 'parent',
                'type' => '?Juaniquillo\\CrudAssistant\\Contracts\\InputInterface',
@@ -8833,6 +12738,35 @@ return [
         )),
         6 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'setDefaultComponentBag',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => false,
+           'returnType' => 'static',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'defaultComponentBag',
+               'type' => 'Juaniquillo\\InputComponentAction\\Contracts\\ComponentBag|Juaniquillo\\InputComponentAction\\Contracts\\WrapperComponent|Juaniquillo\\InputComponentAction\\Contracts\\LabelComponent|Juaniquillo\\InputComponentAction\\Contracts\\ErrorComponent|Juaniquillo\\InputComponentAction\\Contracts\\HelpTextComponent',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        7 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'setModel',
            'phpDoc' => NULL,
            'byRef' => false,
@@ -8860,7 +12794,7 @@ return [
           array (
           ),
         )),
-        7 => 
+        8 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'setValueManager',
            'phpDoc' => NULL,
@@ -8889,7 +12823,7 @@ return [
           array (
           ),
         )),
-        8 => 
+        9 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'setErrorManager',
            'phpDoc' => NULL,
@@ -8918,7 +12852,7 @@ return [
           array (
           ),
         )),
-        9 => 
+        10 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'execute',
            'phpDoc' => NULL,
@@ -8947,7 +12881,7 @@ return [
           array (
           ),
         )),
-        10 => 
+        11 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'resolveInputs',
            'phpDoc' => NULL,
@@ -8976,7 +12910,7 @@ return [
           array (
           ),
         )),
-        11 => 
+        12 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'getInputGroup',
            'phpDoc' => NULL,
@@ -9005,7 +12939,7 @@ return [
           array (
           ),
         )),
-        12 => 
+        13 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'getWrapper',
            'phpDoc' => NULL,
@@ -9034,7 +12968,7 @@ return [
           array (
           ),
         )),
-        13 => 
+        14 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'getValueManager',
            'phpDoc' => NULL,
@@ -9063,7 +12997,7 @@ return [
           array (
           ),
         )),
-        14 => 
+        15 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'getErrorManager',
            'phpDoc' => NULL,
@@ -9092,7 +13026,7 @@ return [
           array (
           ),
         )),
-        15 => 
+        16 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'cleanup',
            'phpDoc' => NULL,
@@ -9437,7 +13371,8 @@ return [
       ),
        'usedTraits' => 
       array (
-        0 => 'Juaniquillo\\CrudAssistant\\Concerns\\IsRecipe',
+        0 => 'Juaniquillo\\InputComponentAction\\Concerns\\IsInputComponentRecipe',
+        1 => 'Juaniquillo\\CrudAssistant\\Concerns\\IsRecipe',
       ),
        'traitUseAdaptations' => 
       array (
@@ -9456,28 +13391,34 @@ return [
              'namespace' => 'Juaniquillo\\InputComponentAction\\Recipes',
              'uses' => 
             array (
+              'backedenum' => 'BackedEnum',
               'closure' => 'Closure',
               'thememanager' => 'Juaniquillo\\BackendComponents\\Contracts\\ThemeManager',
-              'componentenum' => 'Juaniquillo\\BackendComponents\\Enums\\ComponentEnum',
               'isrecipe' => 'Juaniquillo\\CrudAssistant\\Concerns\\IsRecipe',
               'recipeinterface' => 'Juaniquillo\\CrudAssistant\\Contracts\\RecipeInterface',
+              'isinputcomponentrecipe' => 'Juaniquillo\\InputComponentAction\\Concerns\\IsInputComponentRecipe',
               'attributebag' => 'Juaniquillo\\InputComponentAction\\Contracts\\AttributeBag',
               'componentbag' => 'Juaniquillo\\InputComponentAction\\Contracts\\ComponentBag',
+              'disablebag' => 'Juaniquillo\\InputComponentAction\\Contracts\\DisableBag',
               'errorattributes' => 'Juaniquillo\\InputComponentAction\\Contracts\\ErrorAttributes',
+              'errorcomponent' => 'Juaniquillo\\InputComponentAction\\Contracts\\ErrorComponent',
               'errorhook' => 'Juaniquillo\\InputComponentAction\\Contracts\\ErrorHook',
               'errormanager' => 'Juaniquillo\\InputComponentAction\\Contracts\\ErrorManager',
               'errortheme' => 'Juaniquillo\\InputComponentAction\\Contracts\\ErrorTheme',
               'helptextattributes' => 'Juaniquillo\\InputComponentAction\\Contracts\\HelpTextAttributes',
+              'helptextcomponent' => 'Juaniquillo\\InputComponentAction\\Contracts\\HelpTextComponent',
               'helptexthook' => 'Juaniquillo\\InputComponentAction\\Contracts\\HelpTextHook',
               'helptexttheme' => 'Juaniquillo\\InputComponentAction\\Contracts\\HelpTextTheme',
               'hookbag' => 'Juaniquillo\\InputComponentAction\\Contracts\\HookBag',
               'inputgroup' => 'Juaniquillo\\InputComponentAction\\Contracts\\InputGroup',
               'labelattributes' => 'Juaniquillo\\InputComponentAction\\Contracts\\LabelAttributes',
+              'labelcomponent' => 'Juaniquillo\\InputComponentAction\\Contracts\\LabelComponent',
               'labelhook' => 'Juaniquillo\\InputComponentAction\\Contracts\\LabelHook',
               'labeltheme' => 'Juaniquillo\\InputComponentAction\\Contracts\\LabelTheme',
               'themebag' => 'Juaniquillo\\InputComponentAction\\Contracts\\ThemeBag',
               'valuemanager' => 'Juaniquillo\\InputComponentAction\\Contracts\\ValueManager',
               'wrapperattributes' => 'Juaniquillo\\InputComponentAction\\Contracts\\WrapperAttributes',
+              'wrappercomponent' => 'Juaniquillo\\InputComponentAction\\Contracts\\WrapperComponent',
               'wrapperhook' => 'Juaniquillo\\InputComponentAction\\Contracts\\WrapperHook',
               'wrappertheme' => 'Juaniquillo\\InputComponentAction\\Contracts\\WrapperTheme',
               'inputcomponentaction' => 'Juaniquillo\\InputComponentAction\\InputComponentAction',
@@ -9542,7 +13483,7 @@ return [
             2 => 
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
                'name' => 'componentBag',
-               'type' => '?Juaniquillo\\InputComponentAction\\Contracts\\ComponentBag',
+               'type' => 'Juaniquillo\\InputComponentAction\\Contracts\\ComponentBag|Juaniquillo\\InputComponentAction\\Contracts\\WrapperComponent|Juaniquillo\\InputComponentAction\\Contracts\\LabelComponent|Juaniquillo\\InputComponentAction\\Contracts\\ErrorComponent|Juaniquillo\\InputComponentAction\\Contracts\\HelpTextComponent|null|null',
                'byRef' => false,
                'variadic' => false,
                'hasDefault' => true,
@@ -9607,8 +13548,8 @@ return [
             )),
             8 => 
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'inputValue',
-               'type' => 'string|int|Closure|null|null',
+               'name' => 'disableBag',
+               'type' => '?Juaniquillo\\InputComponentAction\\Contracts\\DisableBag',
                'byRef' => false,
                'variadic' => false,
                'hasDefault' => true,
@@ -9618,8 +13559,8 @@ return [
             )),
             9 => 
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'useParentValue',
-               'type' => 'bool',
+               'name' => 'inputValue',
+               'type' => 'string|int|Closure|null|null',
                'byRef' => false,
                'variadic' => false,
                'hasDefault' => true,
@@ -9651,8 +13592,8 @@ return [
             )),
             12 => 
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'labelAsInputContent',
-               'type' => 'bool',
+               'name' => 'wrapperType',
+               'type' => 'string|BackedEnum|null|null',
                'byRef' => false,
                'variadic' => false,
                'hasDefault' => true,
@@ -9662,8 +13603,8 @@ return [
             )),
             13 => 
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'emptyLabel',
-               'type' => 'bool',
+               'name' => 'labelType',
+               'type' => 'string|BackedEnum|null|null',
                'byRef' => false,
                'variadic' => false,
                'hasDefault' => true,
@@ -9673,8 +13614,8 @@ return [
             )),
             14 => 
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'valueAsInputContent',
-               'type' => 'bool',
+               'name' => 'inputType',
+               'type' => 'string|BackedEnum|null|null',
                'byRef' => false,
                'variadic' => false,
                'hasDefault' => true,
@@ -9684,8 +13625,8 @@ return [
             )),
             15 => 
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'helpText',
-               'type' => 'string|Closure|null|null',
+               'name' => 'errorType',
+               'type' => 'string|BackedEnum|null|null',
                'byRef' => false,
                'variadic' => false,
                'hasDefault' => true,
@@ -9695,8 +13636,8 @@ return [
             )),
             16 => 
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'disableInputValue',
-               'type' => 'bool',
+               'name' => 'helpTextType',
+               'type' => 'string|BackedEnum|null|null',
                'byRef' => false,
                'variadic' => false,
                'hasDefault' => true,
@@ -9706,7 +13647,7 @@ return [
             )),
             17 => 
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'disableDefaultNameAttribute',
+               'name' => 'useParentValue',
                'type' => 'bool',
                'byRef' => false,
                'variadic' => false,
@@ -9717,7 +13658,7 @@ return [
             )),
             18 => 
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'disableDefaultIdAttribute',
+               'name' => 'labelAsInputContent',
                'type' => 'bool',
                'byRef' => false,
                'variadic' => false,
@@ -9728,7 +13669,7 @@ return [
             )),
             19 => 
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'disableDefaultForAttribute',
+               'name' => 'emptyLabel',
                'type' => 'bool',
                'byRef' => false,
                'variadic' => false,
@@ -9739,7 +13680,7 @@ return [
             )),
             20 => 
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'disableWrapper',
+               'name' => 'valueAsInputContent',
                'type' => 'bool',
                'byRef' => false,
                'variadic' => false,
@@ -9750,8 +13691,8 @@ return [
             )),
             21 => 
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'disableLabel',
-               'type' => 'bool',
+               'name' => 'helpText',
+               'type' => 'string|Closure|null|null',
                'byRef' => false,
                'variadic' => false,
                'hasDefault' => true,
@@ -9760,83 +13701,6 @@ return [
               ),
             )),
             22 => 
-            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'disableError',
-               'type' => 'bool',
-               'byRef' => false,
-               'variadic' => false,
-               'hasDefault' => true,
-               'attributes' => 
-              array (
-              ),
-            )),
-            23 => 
-            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'disableHelpText',
-               'type' => 'bool',
-               'byRef' => false,
-               'variadic' => false,
-               'hasDefault' => true,
-               'attributes' => 
-              array (
-              ),
-            )),
-            24 => 
-            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'wrapperType',
-               'type' => 'string|Juaniquillo\\BackendComponents\\Enums\\ComponentEnum|null|null',
-               'byRef' => false,
-               'variadic' => false,
-               'hasDefault' => true,
-               'attributes' => 
-              array (
-              ),
-            )),
-            25 => 
-            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'labelType',
-               'type' => 'string|Juaniquillo\\BackendComponents\\Enums\\ComponentEnum|null|null',
-               'byRef' => false,
-               'variadic' => false,
-               'hasDefault' => true,
-               'attributes' => 
-              array (
-              ),
-            )),
-            26 => 
-            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'inputType',
-               'type' => 'string|Juaniquillo\\BackendComponents\\Enums\\ComponentEnum|null|null',
-               'byRef' => false,
-               'variadic' => false,
-               'hasDefault' => true,
-               'attributes' => 
-              array (
-              ),
-            )),
-            27 => 
-            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'errorType',
-               'type' => 'string|Juaniquillo\\BackendComponents\\Enums\\ComponentEnum|null|null',
-               'byRef' => false,
-               'variadic' => false,
-               'hasDefault' => true,
-               'attributes' => 
-              array (
-              ),
-            )),
-            28 => 
-            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
-               'name' => 'helpTextType',
-               'type' => 'string|Juaniquillo\\BackendComponents\\Enums\\ComponentEnum|null|null',
-               'byRef' => false,
-               'variadic' => false,
-               'hasDefault' => true,
-               'attributes' => 
-              array (
-              ),
-            )),
-            29 => 
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
                'name' => 'checkable',
                'type' => 'bool',
@@ -9847,7 +13711,7 @@ return [
               array (
               ),
             )),
-            30 => 
+            23 => 
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
                'name' => 'selectable',
                'type' => 'bool',
@@ -9934,7 +13798,7 @@ return [
             0 => 
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
                'name' => 'recipe',
-               'type' => 'Juaniquillo\\CrudAssistant\\Contracts\\RecipeInterface',
+               'type' => 'Juaniquillo\\CrudAssistant\\Contracts\\RecipeInterface|Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
                'byRef' => false,
                'variadic' => false,
                'hasDefault' => false,
@@ -9974,7 +13838,7 @@ return [
             0 => 
             \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
                'name' => 'recipe',
-               'type' => 'Juaniquillo\\CrudAssistant\\Contracts\\RecipeInterface',
+               'type' => 'Juaniquillo\\CrudAssistant\\Contracts\\RecipeInterface|Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
                'byRef' => false,
                'variadic' => false,
                'hasDefault' => false,
@@ -9999,6 +13863,108 @@ return [
           ),
         )),
         3 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'resolveComponentBag',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => true,
+           'returnType' => 'Juaniquillo\\InputComponentAction\\Contracts\\ComponentBag',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'recipe',
+               'type' => 'Juaniquillo\\CrudAssistant\\Contracts\\RecipeInterface|Juaniquillo\\InputComponentAction\\Recipes\\InputComponentRecipe',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+            1 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'defaultComponentBag',
+               'type' => 'Juaniquillo\\InputComponentAction\\Contracts\\ComponentBag|Juaniquillo\\InputComponentAction\\Contracts\\WrapperComponent|Juaniquillo\\InputComponentAction\\Contracts\\LabelComponent|Juaniquillo\\InputComponentAction\\Contracts\\ErrorComponent|Juaniquillo\\InputComponentAction\\Contracts\\HelpTextComponent|null|null',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => true,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        4 => 
+        \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
+           'name' => 'resolveComponent',
+           'phpDoc' => NULL,
+           'byRef' => false,
+           'public' => true,
+           'private' => false,
+           'abstract' => false,
+           'final' => false,
+           'static' => true,
+           'returnType' => 'mixed',
+           'parameters' => 
+          array (
+            0 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'component',
+               'type' => 'Closure|string|null',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+            1 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'type',
+               'type' => 'mixed',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+            2 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'themeManager',
+               'type' => 'Juaniquillo\\BackendComponents\\Contracts\\ThemeManager',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => false,
+               'attributes' => 
+              array (
+              ),
+            )),
+            3 => 
+            \PHPStan\Dependency\ExportedNode\ExportedParameterNode::__set_state(array(
+               'name' => 'default',
+               'type' => 'Closure|string|null|null',
+               'byRef' => false,
+               'variadic' => false,
+               'hasDefault' => true,
+               'attributes' => 
+              array (
+              ),
+            )),
+          ),
+           'attributes' => 
+          array (
+          ),
+        )),
+        5 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'isClosure',
            'phpDoc' => NULL,
@@ -10027,7 +13993,7 @@ return [
           array (
           ),
         )),
-        4 => 
+        6 => 
         \PHPStan\Dependency\ExportedNode\ExportedMethodNode::__set_state(array(
            'name' => 'getCollectionWrapper',
            'phpDoc' => NULL,

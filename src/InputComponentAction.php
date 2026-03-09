@@ -17,13 +17,18 @@ use Juaniquillo\CrudAssistant\DataContainer;
 use Juaniquillo\CrudAssistant\InputCollection;
 use Juaniquillo\InputComponentAction\Composers\WrapperComposer;
 use Juaniquillo\InputComponentAction\Containers\InputComponentOutput;
+use Juaniquillo\InputComponentAction\Contracts\ComponentBag;
+use Juaniquillo\InputComponentAction\Contracts\ErrorComponent;
 use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
 use Juaniquillo\InputComponentAction\Contracts\ErrorTheme;
+use Juaniquillo\InputComponentAction\Contracts\HelpTextComponent;
 use Juaniquillo\InputComponentAction\Contracts\HelpTextTheme;
 use Juaniquillo\InputComponentAction\Contracts\InputGroup;
+use Juaniquillo\InputComponentAction\Contracts\LabelComponent;
 use Juaniquillo\InputComponentAction\Contracts\LabelTheme;
 use Juaniquillo\InputComponentAction\Contracts\ThemeBag;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
+use Juaniquillo\InputComponentAction\Contracts\WrapperComponent;
 use Juaniquillo\InputComponentAction\Contracts\WrapperTheme;
 use Juaniquillo\InputComponentAction\Factories\InputGroupFactory;
 use Juaniquillo\InputComponentAction\Managers\DefaultErrorManager;
@@ -42,6 +47,8 @@ final class InputComponentAction implements ActionInterface
     private ?InputGroup $defaultInputGroup = null;
 
     private ThemeBag|WrapperTheme|LabelTheme|ErrorTheme|HelpTextTheme|null $defaultThemeBag = null;
+
+    private ComponentBag|WrapperComponent|LabelComponent|ErrorComponent|HelpTextComponent|null $defaultComponentBag = null;
 
     private ?object $model = null;
 
@@ -81,6 +88,13 @@ final class InputComponentAction implements ActionInterface
     public function setDefaultThemeBag(ThemeBag|WrapperTheme|LabelTheme|ErrorTheme|HelpTextTheme $defaultThemeBag): static
     {
         $this->defaultThemeBag = $defaultThemeBag;
+
+        return $this;
+    }
+
+    public function setDefaultComponentBag(ComponentBag|WrapperComponent|LabelComponent|ErrorComponent|HelpTextComponent $defaultComponentBag): static
+    {
+        $this->defaultComponentBag = $defaultComponentBag;
 
         return $this;
     }
@@ -163,6 +177,7 @@ final class InputComponentAction implements ActionInterface
             defaultThemeManager: $this->defaultThemeManager,
             defaultInputGroup: $this->defaultInputGroup,
             defaultThemeBag: $this->defaultThemeBag,
+            defaultComponentBag: $this->defaultComponentBag,
         );
 
     }
@@ -175,6 +190,7 @@ final class InputComponentAction implements ActionInterface
             input: $input,
             themeManager: Support::resolveThemeManager(recipe: $recipe, defaultThemeManager: $this->defaultThemeManager),
             themeBag: $this->defaultThemeBag,
+            componentBag: $this->defaultComponentBag,
         );
 
         return $composer->build();
