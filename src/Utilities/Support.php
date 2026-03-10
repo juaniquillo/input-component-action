@@ -9,6 +9,7 @@ use Juaniquillo\BackendComponents\Builders\ComponentBuilder;
 use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Contracts\CompoundComponent;
 use Juaniquillo\BackendComponents\Contracts\ContentComponent;
+use Juaniquillo\BackendComponents\Contracts\ThemeComponent;
 use Juaniquillo\BackendComponents\Contracts\ThemeManager;
 use Juaniquillo\BackendComponents\Enums\ComponentEnum;
 use Juaniquillo\BackendComponents\MainBackendComponent;
@@ -44,7 +45,7 @@ final class Support
         Closure|string|null $component,
         mixed $type,
         ThemeManager $themeManager,
-    ): CompoundComponent|BackendComponent {
+    ): BackendComponent|ContentComponent|ThemeComponent|CompoundComponent {
 
         if ($component instanceof Closure) {
             return $component($type, $themeManager);

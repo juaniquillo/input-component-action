@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\Unit;
 
+use BackedEnum;
 use Juaniquillo\BackendComponents\Contracts\ThemeManager;
 use Juaniquillo\BackendComponents\Enums\ComponentEnum;
 use Juaniquillo\BackendComponents\MainBackendComponent;
@@ -63,8 +64,15 @@ test('Support::resolveComponent handles different types', function () {
     expect($resolved)->toBeInstanceOf(MainBackendComponent::class);
 
     // 2. Closure resolution
-    $resolved = Support::resolveComponent(fn () => 'from closure', $type, $themeManager);
-    expect($resolved)->toBe('from closure');
+    $resolved = Support::resolveComponent(
+        component: function (string|BackedEnum $type, ThemeManager $manager) {
+            return new MainBackendComponent($type, $manager);
+        },
+        type: ComponentEnum::DIV,
+        themeManager: new DefaultThemeManager
+    );
+
+    expect($resolved)->toBeInstanceOf(MainBackendComponent::class);
 
     // 3. Class string resolution
     $resolved = Support::resolveComponent(MainBackendComponent::class, $type, $themeManager);

@@ -48,7 +48,7 @@ final class ErrorComposer implements ComponentComposer
         $themeManager = $this->themeManager;
         $recipeComponentBag = $recipe->getComponentBag();
         $defaultComponentBag = $this->componentBag;
-        
+
         $component = Support::resolveComponent(
             component: $recipeComponentBag?->getErrorComponent() ?? $defaultComponentBag->getErrorComponent(),
             type: $componentType,
