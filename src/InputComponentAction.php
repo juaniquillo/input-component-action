@@ -15,6 +15,8 @@ use Juaniquillo\CrudAssistant\Contracts\InputInterface;
 use Juaniquillo\CrudAssistant\CrudAssistant;
 use Juaniquillo\CrudAssistant\DataContainer;
 use Juaniquillo\CrudAssistant\InputCollection;
+use Juaniquillo\InputComponentAction\Bags\DefaultComponentBag;
+use Juaniquillo\InputComponentAction\Bags\DefaultThemeBag;
 use Juaniquillo\InputComponentAction\Composers\WrapperComposer;
 use Juaniquillo\InputComponentAction\Containers\InputComponentOutput;
 use Juaniquillo\InputComponentAction\Contracts\ComponentBag;
@@ -169,15 +171,15 @@ final class InputComponentAction implements ActionInterface
     {
         $recipe = Support::getRecipe($input);
 
-        return InputGroupFactory::initGroup(
+        return InputGroupFactory::init(
             input: $input,
             recipe: $recipe,
+            defaultThemeBag: $this->defaultThemeBag ?? new DefaultThemeBag,
             values: $this->getValueManager($recipe),
             errors: $this->getErrorManager($recipe),
+            defaultComponentBag: $this->defaultComponentBag,
             defaultThemeManager: $this->defaultThemeManager,
             defaultInputGroup: $this->defaultInputGroup,
-            defaultThemeBag: $this->defaultThemeBag,
-            defaultComponentBag: $this->defaultComponentBag,
         );
 
     }
@@ -189,8 +191,8 @@ final class InputComponentAction implements ActionInterface
         $composer = new WrapperComposer(
             input: $input,
             themeManager: Support::resolveThemeManager(recipe: $recipe, defaultThemeManager: $this->defaultThemeManager),
+            componentBag: $this->defaultComponentBag ?? new DefaultComponentBag,
             themeBag: $this->defaultThemeBag,
-            componentBag: $this->defaultComponentBag,
         );
 
         return $composer->build();

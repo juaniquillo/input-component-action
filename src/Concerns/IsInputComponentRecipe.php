@@ -11,11 +11,13 @@ use Juaniquillo\InputComponentAction\Contracts\AttributeBag;
 use Juaniquillo\InputComponentAction\Contracts\ComponentBag;
 use Juaniquillo\InputComponentAction\Contracts\DisableBag;
 use Juaniquillo\InputComponentAction\Contracts\ErrorAttributes;
+use Juaniquillo\InputComponentAction\Contracts\ErrorComponent;
 use Juaniquillo\InputComponentAction\Contracts\ErrorDisable;
 use Juaniquillo\InputComponentAction\Contracts\ErrorHook;
 use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
 use Juaniquillo\InputComponentAction\Contracts\ErrorTheme;
 use Juaniquillo\InputComponentAction\Contracts\HelpTextAttributes;
+use Juaniquillo\InputComponentAction\Contracts\HelpTextComponent;
 use Juaniquillo\InputComponentAction\Contracts\HelpTextDisable;
 use Juaniquillo\InputComponentAction\Contracts\HelpTextHook;
 use Juaniquillo\InputComponentAction\Contracts\HelpTextTheme;
@@ -23,12 +25,14 @@ use Juaniquillo\InputComponentAction\Contracts\HookBag;
 use Juaniquillo\InputComponentAction\Contracts\InputDisable;
 use Juaniquillo\InputComponentAction\Contracts\InputGroup;
 use Juaniquillo\InputComponentAction\Contracts\LabelAttributes;
+use Juaniquillo\InputComponentAction\Contracts\LabelComponent;
 use Juaniquillo\InputComponentAction\Contracts\LabelDisable;
 use Juaniquillo\InputComponentAction\Contracts\LabelHook;
 use Juaniquillo\InputComponentAction\Contracts\LabelTheme;
 use Juaniquillo\InputComponentAction\Contracts\ThemeBag;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
 use Juaniquillo\InputComponentAction\Contracts\WrapperAttributes;
+use Juaniquillo\InputComponentAction\Contracts\WrapperComponent;
 use Juaniquillo\InputComponentAction\Contracts\WrapperDisable;
 use Juaniquillo\InputComponentAction\Contracts\WrapperHook;
 use Juaniquillo\InputComponentAction\Contracts\WrapperTheme;
@@ -51,7 +55,7 @@ trait IsInputComponentRecipe
 
     private ?ErrorManager $errorBag = null;
 
-    private ?DisableBag $disableBag = null;
+    private DisableBag|WrapperDisable|LabelDisable|ErrorDisable|HelpTextDisable|InputDisable|null $disableBag = null;
 
     private string|int|Closure|null $inputValue = null;
 

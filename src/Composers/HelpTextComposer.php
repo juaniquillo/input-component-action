@@ -31,10 +31,10 @@ class HelpTextComposer
         private InputInterface $input,
         private InputComponentRecipe $recipe,
         private ThemeManager $themeManager,
+        private ComponentBag|WrapperComponent|LabelComponent|ErrorComponent|HelpTextComponent $componentBag,
         private ?ValueManager $values = null,
         private ?ErrorManager $errors = null,
         private ?HelpTextTheme $themeBag = null,
-        private ComponentBag|WrapperComponent|LabelComponent|ErrorComponent|HelpTextComponent|null $componentBag = null,
     ) {}
 
     public function build(): BackendComponent|ContentComponent|ThemeComponent

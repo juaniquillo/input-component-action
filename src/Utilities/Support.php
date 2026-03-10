@@ -13,7 +13,6 @@ use Juaniquillo\BackendComponents\Enums\ComponentEnum;
 use Juaniquillo\BackendComponents\MainBackendComponent;
 use Juaniquillo\BackendComponents\Themes\LocalThemeManager;
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
-use Juaniquillo\CrudAssistant\Contracts\RecipeInterface;
 use Juaniquillo\InputComponentAction\Bags\DefaultComponentBag;
 use Juaniquillo\InputComponentAction\Bags\DefaultThemeBag;
 use Juaniquillo\InputComponentAction\Contracts\ComponentBag;
@@ -36,17 +35,17 @@ final class Support
         return $input->getRecipes()[InputComponentAction::getIdentifier()] ?? new InputComponentRecipe;
     }
 
-    public static function resolveThemeManager(RecipeInterface|InputComponentRecipe $recipe, $defaultThemeManager = null): ThemeManager
+    public static function resolveThemeManager(InputComponentRecipe $recipe, $defaultThemeManager = null): ThemeManager
     {
         return $recipe->getThemeManager() ?? $defaultThemeManager ?? new LocalThemeManager;
     }
 
-    public static function resolveThemeBag(RecipeInterface|InputComponentRecipe $recipe, ThemeBag|WrapperTheme|LabelTheme|ErrorTheme|HelpTextTheme|null $defaultThemeBag = null): ThemeBag
+    public static function resolveThemeBag(InputComponentRecipe $recipe, ThemeBag|WrapperTheme|LabelTheme|ErrorTheme|HelpTextTheme|null $defaultThemeBag = null): ThemeBag
     {
         return $recipe->getThemeBag() ?? $defaultThemeBag ?? new DefaultThemeBag;
     }
 
-    public static function resolveComponentBag(RecipeInterface|InputComponentRecipe $recipe, ComponentBag|WrapperComponent|LabelComponent|ErrorComponent|HelpTextComponent|null $defaultComponentBag = null): ComponentBag
+    public static function resolveComponentBag(InputComponentRecipe $recipe, ComponentBag|WrapperComponent|LabelComponent|ErrorComponent|HelpTextComponent|null $defaultComponentBag = null): ComponentBag
     {
         return $recipe->getComponentBag() ?? $defaultComponentBag ?? new DefaultComponentBag;
     }

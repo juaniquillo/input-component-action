@@ -49,11 +49,11 @@ trait IsInputGroup
         InputInterface $input,
         InputComponentRecipe $recipe,
         ThemeManager $themeManager,
+        ComponentBag|WrapperComponent|LabelComponent|ErrorComponent|HelpTextComponent $defaultComponentBag,
         InputGroup $defaultInputGroup,
         ValueManager $values,
         ErrorManager $errors,
         ThemeBag|WrapperTheme|LabelTheme|ErrorTheme|HelpTextTheme|null $defaultThemeBag = null,
-        ComponentBag|WrapperComponent|LabelComponent|ErrorComponent|HelpTextComponent|null $defaultComponentBag = null,
     ): static {
         $this->input = $input;
         $this->recipe = $recipe;
@@ -80,11 +80,11 @@ trait IsInputGroup
             input: $this->input,
             recipe: $this->recipe,
             themeManager: $this->themeManager,
+            componentBag: $this->defaultComponentBag,
             defaultInputGroup: $this->defaultInputGroup,
             values: $this->values,
             errors: $this->errors,
             themeBag: $this->defaultThemeBag,
-            componentBag: $this->defaultComponentBag,
         );
 
         if ($this->parent) {

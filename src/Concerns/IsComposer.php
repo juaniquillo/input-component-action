@@ -10,7 +10,6 @@ use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Contracts\ContentComponent;
 use Juaniquillo\BackendComponents\Enums\ComponentEnum;
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
-use Juaniquillo\CrudAssistant\Contracts\RecipeInterface;
 use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
 use Juaniquillo\InputComponentAction\Recipes\InputComponentRecipe;
@@ -63,24 +62,24 @@ trait IsComposer
         return $attributes['id'] ?? $input->getName();
     }
 
-    private function resolveWrapperType(InputComponentRecipe|RecipeInterface|null $recipe): string|ComponentEnum
+    private function resolveWrapperType(?InputComponentRecipe $recipe): string|ComponentEnum
     {
-        return $recipe?->getWrapperType() ?? ComponentEnum::DIV;
+        return $recipe->getComponentBag()?->getWrapperType() ?? $this->componentBag->getWrapperType();
     }
 
-    private function resolveLabelType(InputComponentRecipe|RecipeInterface|null $recipe): string|ComponentEnum
+    private function resolveLabelType(?InputComponentRecipe $recipe): string|ComponentEnum
     {
-        return $recipe?->getLabelType() ?? ComponentEnum::LABEL;
+        return $recipe->getComponentBag()?->getLabelType() ?? $this->componentBag->getLabelType();
     }
 
-    private function resolveInputType(InputComponentRecipe|RecipeInterface|null $recipe): string|ComponentEnum
+    private function resolveInputType(?InputComponentRecipe $recipe): string|ComponentEnum
     {
-        return $recipe?->getInputType() ?? ComponentEnum::TEXT_INPUT;
+        return $recipe->getComponentBag()?->getInputType() ?? $this->componentBag->getInputType();
     }
 
     private function resolveErrorType(?InputComponentRecipe $recipe): string|ComponentEnum
     {
-        return $recipe?->getErrorType() ?? ComponentEnum::PARAGRAPH;
+        return $recipe->getComponentBag()?->getErrorType() ?? $this->componentBag->getErrorType();
     }
 
     private function resolveComponentHook(

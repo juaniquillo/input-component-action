@@ -38,10 +38,10 @@ final class InputComposer implements ComponentComposer
         private InputComponentRecipe $recipe,
         private InputGroup $defaultInputGroup,
         private ThemeManager $themeManager,
+        private ComponentBag|WrapperComponent|LabelComponent|ErrorComponent|HelpTextComponent $componentBag,
         private ?ValueManager $values,
         private ?ErrorManager $errors,
         private ThemeBag|WrapperTheme|LabelTheme|ErrorTheme|HelpTextTheme|null $themeBag = null,
-        private ComponentBag|WrapperComponent|LabelComponent|ErrorComponent|HelpTextComponent|null $componentBag = null,
     ) {}
 
     public function build(): BackendComponent|ContentComponent|ThemeComponent
@@ -194,7 +194,7 @@ final class InputComposer implements ComponentComposer
         InputGroup $defaultInputGroup,
         ?InputInterface $parent = null,
     ): BackendComponent {
-        return InputGroupFactory::initGroup(
+        return InputGroupFactory::init(
             input: $input,
             recipe: $recipe,
             values: $this->values,

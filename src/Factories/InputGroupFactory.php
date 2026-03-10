@@ -28,7 +28,7 @@ use Juaniquillo\InputComponentAction\Utilities\Support;
 
 final class InputGroupFactory
 {
-    public static function initGroup(
+    public static function init(
         InputInterface $input,
         InputComponentRecipe $recipe,
         ?ValueManager $values,

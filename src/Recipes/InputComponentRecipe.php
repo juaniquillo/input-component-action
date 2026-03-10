@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Juaniquillo\InputComponentAction\Recipes;
 
-use BackedEnum;
 use Closure;
 use Juaniquillo\BackendComponents\Contracts\ThemeManager;
 use Juaniquillo\CrudAssistant\Concerns\IsRecipe;
@@ -57,11 +56,6 @@ final class InputComponentRecipe implements RecipeInterface
         string|int|Closure|null $inputValue = null,
         string|Closure|null $inputError = null,
         string|Closure|null $label = null,
-        string|BackedEnum|null $wrapperType = null,
-        string|BackedEnum|null $labelType = null,
-        string|BackedEnum|null $inputType = null,
-        string|BackedEnum|null $errorType = null,
-        string|BackedEnum|null $helpTextType = null,
         bool $useParentValue = false,
         bool $labelAsInputContent = false,
         bool $emptyLabel = false,
@@ -87,11 +81,6 @@ final class InputComponentRecipe implements RecipeInterface
         $this->emptyLabel = $emptyLabel;
         $this->valueAsInputContent = $valueAsInputContent;
         $this->helpText = $helpText;
-        $this->wrapperType = $wrapperType;
-        $this->labelType = $labelType;
-        $this->inputType = $inputType;
-        $this->errorType = $errorType;
-        $this->helpTextType = $helpTextType;
         $this->checkable = $checkable;
         $this->selectable = $selectable;
     }
