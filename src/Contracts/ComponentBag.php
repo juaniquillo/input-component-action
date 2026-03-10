@@ -15,5 +15,5 @@ interface ComponentBag
 
     public function setInputType(string|BackedEnum $inputType): static;
 
-    public function getInputType(): string|BackedEnum;
+    public function getInputType(): string|BackedEnum|null;
 }

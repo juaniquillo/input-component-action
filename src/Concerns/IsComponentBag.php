@@ -6,13 +6,12 @@ namespace Juaniquillo\InputComponentAction\Concerns;
 
 use BackedEnum;
 use Closure;
-use Juaniquillo\BackendComponents\Enums\ComponentEnum;
 
 trait IsComponentBag
 {
     private Closure|string|null $inputComponent = null;
 
-    private string|BackedEnum $inputType = ComponentEnum::TEXT_INPUT;
+    private string|BackedEnum|null $inputType = null;
 
     public function setInputComponent(Closure|string $inputComponent): static
     {
@@ -33,7 +32,7 @@ trait IsComponentBag
         return $this;
     }
 
-    public function getInputType(): string|BackedEnum
+    public function getInputType(): string|BackedEnum|null
     {
         return $this->inputType;
     }

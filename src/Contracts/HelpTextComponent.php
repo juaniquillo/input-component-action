@@ -15,5 +15,5 @@ interface HelpTextComponent
 
     public function setHelpTextType(string|BackedEnum $helpTextType): static;
 
-    public function getHelpTextType(): string|BackedEnum;
+    public function getHelpTextType(): string|BackedEnum|null;
 }

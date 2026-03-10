@@ -8,7 +8,6 @@ use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Contracts\ThemeManager;
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
 use Juaniquillo\InputComponentAction\Bags\DefaultComponentBag;
-use Juaniquillo\InputComponentAction\Bags\DefaultThemeBag;
 use Juaniquillo\InputComponentAction\Contracts\ComponentBag;
 use Juaniquillo\InputComponentAction\Contracts\ErrorComponent;
 use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
@@ -52,11 +51,15 @@ final class InputGroupFactory
             themeManager: $defaultThemeManager ?? Support::resolveThemeManager($recipe),
 
             /**
-             * Other are resolved inside the composer, but we need to pass the default
+             * Default needed
              */
-            defaultInputGroup: $defaultInputGroup ?? new DefaultInputGroup,
-            defaultThemeBag: $defaultThemeBag ?? new DefaultThemeBag,
             defaultComponentBag: $defaultComponentBag ?? new DefaultComponentBag,
+            defaultInputGroup: $defaultInputGroup ?? new DefaultInputGroup,
+
+            /**
+             * No default needed
+             */
+            defaultThemeBag: $defaultThemeBag,
         );
 
         if ($parent) {

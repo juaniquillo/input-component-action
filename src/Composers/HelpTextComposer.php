@@ -56,10 +56,11 @@ class HelpTextComposer
         $helpText = $this->resolveStringClosure(input: $input, stringClosure: $helpText);
 
         $themeManager = $this->themeManager;
+        $recipeComponentBag = $recipe->getComponentBag();
+        $defaultComponentBag = $this->componentBag;
 
-        $bag = Support::resolveComponentBag($recipe, $this->componentBag);
         $component = Support::resolveComponent(
-            component: ($bag instanceof HelpTextComponent) ? $bag->getHelpTextComponent() : null,
+            component: $recipeComponentBag?->getHelpTextComponent() ?? $defaultComponentBag->getHelpTextComponent(),
             type: $componentType,
             themeManager: $themeManager
         );

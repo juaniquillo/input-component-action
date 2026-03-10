@@ -6,13 +6,12 @@ namespace Juaniquillo\InputComponentAction\Concerns;
 
 use BackedEnum;
 use Closure;
-use Juaniquillo\BackendComponents\Enums\ComponentEnum;
 
 trait HasErrorComponent
 {
     private Closure|string|null $errorComponent = null;
 
-    private string|BackedEnum $errorType = ComponentEnum::PARAGRAPH;
+    private string|BackedEnum|null $errorType = null;
 
     public function setErrorComponent(Closure|string $errorComponent): static
     {
@@ -33,7 +32,7 @@ trait HasErrorComponent
         return $this;
     }
 
-    public function getErrorType(): string|BackedEnum
+    public function getErrorType(): string|BackedEnum|null
     {
         return $this->errorType;
     }

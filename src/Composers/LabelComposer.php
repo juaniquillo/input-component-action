@@ -47,12 +47,13 @@ final class LabelComposer implements ComponentComposer
         $themeManager = $this->themeManager;
 
         $componentType = $this->resolveLabelType($recipe);
-
         $label = $this->resolveStringClosure($input, $label);
 
-        $bag = Support::resolveComponentBag($recipe, $this->componentBag);
+        $recipeComponentBag = $recipe->getComponentBag();
+        $defaultComponentBag = $this->componentBag;
+
         $component = Support::resolveComponent(
-            component: ($bag instanceof LabelComponent) ? $bag->getLabelComponent() : null,
+            component: $recipeComponentBag?->getLabelComponent() ?? $defaultComponentBag->getLabelComponent(),
             type: $componentType,
             themeManager: $themeManager
         );

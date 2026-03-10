@@ -42,9 +42,11 @@ final class WrapperComposer implements ComponentComposer
         $componentType = $this->resolveWrapperType($recipe);
         $themeManager = $this->themeManager;
 
-        $bag = Support::resolveComponentBag($recipe, $this->componentBag);
+        $recipeComponentBag = $recipe->getComponentBag();
+        $defaultComponentBag = $this->componentBag;
+
         $component = Support::resolveComponent(
-            component: ($bag instanceof WrapperComponent) ? $bag->getWrapperComponent() : null,
+            component: $recipeComponentBag?->getWrapperComponent() ?? $defaultComponentBag->getWrapperComponent(),
             type: $componentType,
             themeManager: $themeManager
         );

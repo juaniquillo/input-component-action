@@ -6,13 +6,12 @@ namespace Juaniquillo\InputComponentAction\Concerns;
 
 use BackedEnum;
 use Closure;
-use Juaniquillo\BackendComponents\Enums\ComponentEnum;
 
 trait HasHelpTextComponent
 {
     private Closure|string|null $helpTextComponent = null;
 
-    private string|BackedEnum $helpTextType = ComponentEnum::PARAGRAPH;
+    private string|BackedEnum|null $helpTextType = null;
 
     public function setHelpTextComponent(Closure|string $helpTextComponent): static
     {
@@ -33,7 +32,7 @@ trait HasHelpTextComponent
         return $this;
     }
 
-    public function getHelpTextType(): string|BackedEnum
+    public function getHelpTextType(): string|BackedEnum|null
     {
         return $this->helpTextType;
     }

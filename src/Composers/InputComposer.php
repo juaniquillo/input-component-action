@@ -56,10 +56,13 @@ final class InputComposer implements ComponentComposer
         $inputType = $this->resolveInputType($recipe);
         $themeManager = $this->themeManager;
         $valueResolver = $this->values;
+        $recipeComponentBag = $recipe->getComponentBag();
+        $defaultComponentBag = $this->componentBag;
 
-        $bag = Support::resolveComponentBag($recipe, $this->componentBag);
+        $currentComponent = $recipeComponentBag?->getInputComponent() ?? $defaultComponentBag->getInputComponent();
+
         $component = Support::resolveComponent(
-            component: $bag->getInputComponent(),
+            component: $currentComponent,
             type: $inputType,
             themeManager: $themeManager
         );

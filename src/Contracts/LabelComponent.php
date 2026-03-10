@@ -15,5 +15,5 @@ interface LabelComponent
 
     public function setLabelType(string|BackedEnum $labelType): static;
 
-    public function getLabelType(): string|BackedEnum;
+    public function getLabelType(): string|BackedEnum|null;
 }

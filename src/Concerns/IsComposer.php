@@ -12,6 +12,7 @@ use Juaniquillo\BackendComponents\Enums\ComponentEnum;
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
 use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
+use Juaniquillo\InputComponentAction\Defaults\InputTypes;
 use Juaniquillo\InputComponentAction\Recipes\InputComponentRecipe;
 use Juaniquillo\InputComponentAction\Utilities\Support;
 
@@ -35,7 +36,7 @@ trait IsComposer
         return $stringClosure;
     }
 
-    private static function resolveArrayClosure(array|Closure|null $value, InputInterface $input, BackedEnum $type): ?array
+    private static function resolveArrayClosure(array|Closure|null $value, InputInterface $input, string|BackedEnum $type): ?array
     {
         if ($input == null) {
             return null;
@@ -64,29 +65,29 @@ trait IsComposer
 
     private function resolveWrapperType(?InputComponentRecipe $recipe): string|ComponentEnum
     {
-        return $recipe->getComponentBag()?->getWrapperType() ?? $this->componentBag->getWrapperType();
+        return $recipe->getComponentBag()?->getWrapperType() ?? $this->componentBag->getWrapperType() ?? InputTypes::WRAPPER;
     }
 
     private function resolveLabelType(?InputComponentRecipe $recipe): string|ComponentEnum
     {
-        return $recipe->getComponentBag()?->getLabelType() ?? $this->componentBag->getLabelType();
+        return $recipe->getComponentBag()?->getLabelType() ?? $this->componentBag->getLabelType() ?? InputTypes::LABEL;
     }
 
     private function resolveInputType(?InputComponentRecipe $recipe): string|ComponentEnum
     {
-        return $recipe->getComponentBag()?->getInputType() ?? $this->componentBag->getInputType();
+        return $recipe->getComponentBag()?->getInputType() ?? $this->componentBag->getInputType() ?? InputTypes::INPUT;
     }
 
     private function resolveErrorType(?InputComponentRecipe $recipe): string|ComponentEnum
     {
-        return $recipe->getComponentBag()?->getErrorType() ?? $this->componentBag->getErrorType();
+        return $recipe->getComponentBag()?->getErrorType() ?? $this->componentBag->getErrorType() ?? InputTypes::HELP_TEXT;
     }
 
     private function resolveComponentHook(
         BackendComponent $component,
         ?Closure $closure,
         InputInterface $input,
-        BackedEnum $type,
+        string|BackedEnum $type,
         ?ValueManager $values = null,
         ?ErrorManager $errors = null,
     ): BackendComponent|ContentComponent {

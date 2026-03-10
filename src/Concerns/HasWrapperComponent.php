@@ -6,13 +6,12 @@ namespace Juaniquillo\InputComponentAction\Concerns;
 
 use BackedEnum;
 use Closure;
-use Juaniquillo\BackendComponents\Enums\ComponentEnum;
 
 trait HasWrapperComponent
 {
     private Closure|string|null $wrapperComponent = null;
 
-    private string|BackedEnum $wrapperType = ComponentEnum::DIV;
+    private string|BackedEnum|null $wrapperType = null;
 
     public function setWrapperComponent(Closure|string $wrapperComponent): static
     {
@@ -33,7 +32,7 @@ trait HasWrapperComponent
         return $this;
     }
 
-    public function getWrapperType(): string|BackedEnum
+    public function getWrapperType(): string|BackedEnum|null
     {
         return $this->wrapperType;
     }

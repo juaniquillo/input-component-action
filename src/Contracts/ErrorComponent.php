@@ -15,5 +15,5 @@ interface ErrorComponent
 
     public function setErrorType(string|BackedEnum $errorType): static;
 
-    public function getErrorType(): string|BackedEnum;
+    public function getErrorType(): string|BackedEnum|null;
 }

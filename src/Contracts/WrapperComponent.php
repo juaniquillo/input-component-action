@@ -15,5 +15,5 @@ interface WrapperComponent
 
     public function setWrapperType(string|BackedEnum $wrapperType): static;
 
-    public function getWrapperType(): string|BackedEnum;
+    public function getWrapperType(): string|BackedEnum|null;
 }

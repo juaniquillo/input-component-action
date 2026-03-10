@@ -6,13 +6,12 @@ namespace Juaniquillo\InputComponentAction\Concerns;
 
 use BackedEnum;
 use Closure;
-use Juaniquillo\BackendComponents\Enums\ComponentEnum;
 
 trait HasLabelComponent
 {
     private Closure|string|null $labelComponent = null;
 
-    private string|BackedEnum $labelType = ComponentEnum::LABEL;
+    private string|BackedEnum|null $labelType = null;
 
     public function setLabelComponent(Closure|string $labelComponent): static
     {
@@ -33,7 +32,7 @@ trait HasLabelComponent
         return $this;
     }
 
-    public function getLabelType(): string|BackedEnum
+    public function getLabelType(): string|BackedEnum|null
     {
         return $this->labelType;
     }
