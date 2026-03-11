@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Juaniquillo\InputComponentAction\Utilities;
 
+use BackedEnum;
 use Closure;
 use Juaniquillo\BackendComponents\Builders\ComponentBuilder;
 use Juaniquillo\BackendComponents\Contracts\BackendComponent;
@@ -41,6 +42,9 @@ final class Support
         return $recipe->getThemeBag() ?? $defaultThemeBag ?? new DefaultThemeBag;
     }
 
+    /**
+     * @param  class-string<BackendComponent|ContentComponent|ThemeComponent|CompoundComponent>|Closure(string|BackedEnum $type, ThemeManager $manager): (BackendComponent|ContentComponent|ThemeComponent|CompoundComponent)  $component
+     */
     public static function resolveComponent(
         Closure|string|null $component,
         mixed $type,
