@@ -204,6 +204,7 @@ final class InputComposer implements ComponentComposer
             errors: $this->errors,
             defaultThemeBag: $this->themeBag,
             defaultThemeManager: $this->themeManager,
+            defaultComponentBag: $this->componentBag,
             defaultInputGroup: $defaultInputGroup,
             parent: $parent,
         );
