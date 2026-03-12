@@ -8,11 +8,9 @@ use BackedEnum;
 use Closure;
 use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Contracts\ContentComponent;
-use Juaniquillo\BackendComponents\Enums\ComponentEnum;
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
 use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
-use Juaniquillo\InputComponentAction\Defaults\InputTypes;
 use Juaniquillo\InputComponentAction\Recipes\InputComponentRecipe;
 use Juaniquillo\InputComponentAction\Utilities\Support;
 
@@ -61,26 +59,6 @@ trait IsComposer
         $attributes ??= $recipe->getAttributeBag()?->getInputAttributes() ?? null;
 
         return $attributes['id'] ?? $input->getName();
-    }
-
-    private function resolveWrapperType(?InputComponentRecipe $recipe): string|ComponentEnum
-    {
-        return $recipe->getComponentBag()?->getWrapperType() ?? $this->componentBag->getWrapperType() ?? InputTypes::WRAPPER;
-    }
-
-    private function resolveLabelType(?InputComponentRecipe $recipe): string|ComponentEnum
-    {
-        return $recipe->getComponentBag()?->getLabelType() ?? $this->componentBag->getLabelType() ?? InputTypes::LABEL;
-    }
-
-    private function resolveInputType(?InputComponentRecipe $recipe): string|ComponentEnum
-    {
-        return $recipe->getComponentBag()?->getInputType() ?? $this->componentBag->getInputType() ?? InputTypes::INPUT;
-    }
-
-    private function resolveErrorType(?InputComponentRecipe $recipe): string|ComponentEnum
-    {
-        return $recipe->getComponentBag()?->getErrorType() ?? $this->componentBag->getErrorType() ?? InputTypes::HELP_TEXT;
     }
 
     private function resolveComponentHook(

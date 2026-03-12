@@ -13,13 +13,10 @@ use Juaniquillo\InputComponentAction\Bags\DefaultHookBag;
 use Juaniquillo\InputComponentAction\Concerns\IsComposer;
 use Juaniquillo\InputComponentAction\Contracts\ComponentBag;
 use Juaniquillo\InputComponentAction\Contracts\ComponentComposer;
-use Juaniquillo\InputComponentAction\Contracts\ErrorComponent;
 use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
-use Juaniquillo\InputComponentAction\Contracts\HelpTextComponent;
 use Juaniquillo\InputComponentAction\Contracts\LabelComponent;
 use Juaniquillo\InputComponentAction\Contracts\LabelTheme;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
-use Juaniquillo\InputComponentAction\Contracts\WrapperComponent;
 use Juaniquillo\InputComponentAction\Recipes\InputComponentRecipe;
 use Juaniquillo\InputComponentAction\Utilities\Support;
 
@@ -31,7 +28,7 @@ final class LabelComposer implements ComponentComposer
         private InputInterface $input,
         private InputComponentRecipe $recipe,
         private ThemeManager $themeManager,
-        private ComponentBag|WrapperComponent|LabelComponent|ErrorComponent|HelpTextComponent|null $componentBag,
+        private ComponentBag|LabelComponent $componentBag,
         private ?ValueManager $values = null,
         private ?ErrorManager $errors = null,
         private ?LabelTheme $themeBag = null,
@@ -46,19 +43,19 @@ final class LabelComposer implements ComponentComposer
         $label = $recipe->getLabel() ?? $input->getLabel();
         $themeManager = $this->themeManager;
 
-        $componentType = $this->resolveLabelType($recipe);
-        $label = $this->resolveStringClosure($input, $label);
-
         $recipeComponentBag = $recipe->getComponentBag();
         $defaultComponentBag = $this->componentBag;
+
+        $componentType = Support::resolveLabelType($recipe, $defaultComponentBag);
+        $inputType = Support::resolveInputType($recipe, $defaultComponentBag);
+
+        $label = $this->resolveStringClosure($input, $label);
 
         $component = Support::resolveComponent(
             component: $recipeComponentBag?->getLabelComponent() ?? $defaultComponentBag->getLabelComponent(),
             type: $componentType,
             themeManager: $themeManager
         );
-
-        $inputType = $this->resolveInputType($recipe);
 
         $attributes = $recipe->getAttributeBag()?->getLabelAttributes();
         $theme = $recipe->getThemeBag()?->getLabelTheme() ?? $this->themeBag?->getLabelTheme();

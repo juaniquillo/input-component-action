@@ -16,10 +16,7 @@ use Juaniquillo\InputComponentAction\Contracts\ComponentComposer;
 use Juaniquillo\InputComponentAction\Contracts\ErrorComponent;
 use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
 use Juaniquillo\InputComponentAction\Contracts\ErrorTheme;
-use Juaniquillo\InputComponentAction\Contracts\HelpTextComponent;
-use Juaniquillo\InputComponentAction\Contracts\LabelComponent;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
-use Juaniquillo\InputComponentAction\Contracts\WrapperComponent;
 use Juaniquillo\InputComponentAction\Recipes\InputComponentRecipe;
 use Juaniquillo\InputComponentAction\Utilities\Support;
 
@@ -31,7 +28,7 @@ final class ErrorComposer implements ComponentComposer
         private InputInterface $input,
         private InputComponentRecipe $recipe,
         private ThemeManager $themeManager,
-        private ComponentBag|WrapperComponent|LabelComponent|ErrorComponent|HelpTextComponent $componentBag,
+        private ComponentBag|ErrorComponent $componentBag,
         private ?ValueManager $values = null,
         private ?ErrorManager $errors = null,
         private ?ErrorTheme $themeBag = null,
@@ -44,18 +41,18 @@ final class ErrorComposer implements ComponentComposer
         $errorResolver = $this->errors;
         $callback = $recipe->getHookBag() ?? new DefaultHookBag;
 
-        $componentType = $this->resolveErrorType($recipe);
         $themeManager = $this->themeManager;
         $recipeComponentBag = $recipe->getComponentBag();
         $defaultComponentBag = $this->componentBag;
+
+        $componentType = Support::resolveErrorType($recipe, $defaultComponentBag);
+        $inputType = Support::resolveInputType($recipe, $defaultComponentBag);
 
         $component = Support::resolveComponent(
             component: $recipeComponentBag?->getErrorComponent() ?? $defaultComponentBag->getErrorComponent(),
             type: $componentType,
             themeManager: $themeManager
         );
-
-        $inputType = $this->resolveInputType($recipe);
 
         $theme = $recipe->getThemeBag()?->getErrorTheme() ?? $this->themeBag?->getErrorTheme();
         $themes = $this->resolveArrayClosure(value: $theme, input: $input, type: $componentType);

@@ -13,10 +13,7 @@ use Juaniquillo\InputComponentAction\Bags\DefaultHookBag;
 use Juaniquillo\InputComponentAction\Concerns\IsComposer;
 use Juaniquillo\InputComponentAction\Contracts\ComponentBag;
 use Juaniquillo\InputComponentAction\Contracts\ComponentComposer;
-use Juaniquillo\InputComponentAction\Contracts\ErrorComponent;
 use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
-use Juaniquillo\InputComponentAction\Contracts\HelpTextComponent;
-use Juaniquillo\InputComponentAction\Contracts\LabelComponent;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
 use Juaniquillo\InputComponentAction\Contracts\WrapperComponent;
 use Juaniquillo\InputComponentAction\Contracts\WrapperTheme;
@@ -29,7 +26,7 @@ final class WrapperComposer implements ComponentComposer
     public function __construct(
         private InputInterface $input,
         private ThemeManager $themeManager,
-        private ComponentBag|WrapperComponent|LabelComponent|ErrorComponent|HelpTextComponent $componentBag,
+        private ComponentBag|WrapperComponent $componentBag,
         private ?ValueManager $values = null,
         private ?ErrorManager $errors = null,
         private ?WrapperTheme $themeBag = null,
@@ -39,19 +36,19 @@ final class WrapperComposer implements ComponentComposer
     {
         $input = $this->input;
         $recipe = Support::getRecipe($input);
-        $componentType = $this->resolveWrapperType($recipe);
         $themeManager = $this->themeManager;
 
         $recipeComponentBag = $recipe->getComponentBag();
         $defaultComponentBag = $this->componentBag;
+
+        $componentType = Support::resolveWrapperType($recipe, $defaultComponentBag);
+        $inputType = Support::resolveInputType($recipe, $defaultComponentBag);
 
         $component = Support::resolveComponent(
             component: $recipeComponentBag?->getWrapperComponent() ?? $defaultComponentBag->getWrapperComponent(),
             type: $componentType,
             themeManager: $themeManager
         );
-
-        $inputType = $this->resolveInputType($recipe);
 
         $attributes = $recipe->getAttributeBag()?->getInputAttributes() ?? null;
         $theme = $recipe->getThemeBag()?->getWrapperTheme() ?? $this->themeBag?->getWrapperTheme();
