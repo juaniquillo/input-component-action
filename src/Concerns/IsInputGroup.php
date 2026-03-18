@@ -17,19 +17,19 @@ use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
 use Juaniquillo\InputComponentAction\Contracts\ErrorTheme;
 use Juaniquillo\InputComponentAction\Contracts\HelpTextComponent;
 use Juaniquillo\InputComponentAction\Contracts\HelpTextTheme;
+use Juaniquillo\InputComponentAction\Contracts\InputComponentRecipeInterface;
 use Juaniquillo\InputComponentAction\Contracts\LabelComponent;
 use Juaniquillo\InputComponentAction\Contracts\LabelTheme;
 use Juaniquillo\InputComponentAction\Contracts\ThemeBag;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
 use Juaniquillo\InputComponentAction\Contracts\WrapperComponent;
 use Juaniquillo\InputComponentAction\Contracts\WrapperTheme;
-use Juaniquillo\InputComponentAction\Recipes\InputComponentRecipe;
 
 trait IsInputGroup
 {
     private InputInterface $input;
 
-    private InputComponentRecipe $recipe;
+    private InputComponentRecipeInterface $recipe;
 
     private ThemeManager $themeManager;
 
@@ -47,7 +47,7 @@ trait IsInputGroup
 
     public function inject(
         InputInterface $input,
-        InputComponentRecipe $recipe,
+        InputComponentRecipeInterface $recipe,
         ThemeManager $themeManager,
         ComponentBag|WrapperComponent|LabelComponent|ErrorComponent|HelpTextComponent $defaultComponentBag,
         string|Closure $defaultInputGroup,

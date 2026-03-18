@@ -6,7 +6,7 @@ namespace Juaniquillo\InputComponentAction\Managers;
 
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
 use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
-use Juaniquillo\InputComponentAction\Recipes\InputComponentRecipe;
+use Juaniquillo\InputComponentAction\Contracts\InputComponentRecipeInterface;
 use Juaniquillo\InputComponentAction\Utilities\Support;
 
 final class DefaultErrorManager implements ErrorManager
@@ -20,7 +20,7 @@ final class DefaultErrorManager implements ErrorManager
         return $this;
     }
 
-    public function resolve(InputInterface $input, InputComponentRecipe $recipe): ?string
+    public function resolve(InputInterface $input, InputComponentRecipeInterface $recipe): ?string
     {
 
         $errors = $this->errors;

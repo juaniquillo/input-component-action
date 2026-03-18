@@ -10,8 +10,8 @@ use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Contracts\ContentComponent;
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
 use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
+use Juaniquillo\InputComponentAction\Contracts\InputComponentRecipeInterface;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
-use Juaniquillo\InputComponentAction\Recipes\InputComponentRecipe;
 use Juaniquillo\InputComponentAction\Utilities\Support;
 
 trait IsComposer
@@ -47,14 +47,14 @@ trait IsComposer
         return $value;
     }
 
-    private static function resolveInputName(InputInterface $input, InputComponentRecipe $recipe, ?array $attributes = null): ?string
+    private static function resolveInputName(InputInterface $input, InputComponentRecipeInterface $recipe, ?array $attributes = null): ?string
     {
         $attributes ??= $recipe->getAttributeBag()?->getInputAttributes() ?? null;
 
         return $attributes['name'] ?? $input->getName();
     }
 
-    private static function resolveInputId(InputInterface $input, InputComponentRecipe $recipe, ?array $attributes = null): ?string
+    private static function resolveInputId(InputInterface $input, InputComponentRecipeInterface $recipe, ?array $attributes = null): ?string
     {
         $attributes ??= $recipe->getAttributeBag()?->getInputAttributes() ?? null;
 

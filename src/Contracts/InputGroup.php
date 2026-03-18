@@ -9,13 +9,12 @@ use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Contracts\ContentComponent;
 use Juaniquillo\BackendComponents\Contracts\ThemeManager;
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
-use Juaniquillo\InputComponentAction\Recipes\InputComponentRecipe;
 
 interface InputGroup
 {
     public function inject(
         InputInterface $input,
-        InputComponentRecipe $recipe,
+        InputComponentRecipeInterface $recipe,
         ThemeManager $themeManager,
         ComponentBag|WrapperComponent|LabelComponent|ErrorComponent|HelpTextComponent $defaultComponentBag,
         string|Closure $defaultInputGroup,

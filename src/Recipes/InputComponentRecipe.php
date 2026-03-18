@@ -22,6 +22,7 @@ use Juaniquillo\InputComponentAction\Contracts\HelpTextComponent;
 use Juaniquillo\InputComponentAction\Contracts\HelpTextHook;
 use Juaniquillo\InputComponentAction\Contracts\HelpTextTheme;
 use Juaniquillo\InputComponentAction\Contracts\HookBag;
+use Juaniquillo\InputComponentAction\Contracts\InputComponentRecipeInterface;
 use Juaniquillo\InputComponentAction\Contracts\InputGroup;
 use Juaniquillo\InputComponentAction\Contracts\LabelAttributes;
 use Juaniquillo\InputComponentAction\Contracts\LabelComponent;
@@ -35,7 +36,7 @@ use Juaniquillo\InputComponentAction\Contracts\WrapperHook;
 use Juaniquillo\InputComponentAction\Contracts\WrapperTheme;
 use Juaniquillo\InputComponentAction\InputComponentAction;
 
-final class InputComponentRecipe implements RecipeInterface
+final class InputComponentRecipe implements InputComponentRecipeInterface, RecipeInterface
 {
     use IsInputComponentRecipe;
     use IsRecipe;

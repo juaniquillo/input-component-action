@@ -15,6 +15,7 @@ use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
 use Juaniquillo\InputComponentAction\Contracts\ErrorTheme;
 use Juaniquillo\InputComponentAction\Contracts\HelpTextComponent;
 use Juaniquillo\InputComponentAction\Contracts\HelpTextTheme;
+use Juaniquillo\InputComponentAction\Contracts\InputComponentRecipeInterface;
 use Juaniquillo\InputComponentAction\Contracts\InputGroup;
 use Juaniquillo\InputComponentAction\Contracts\LabelComponent;
 use Juaniquillo\InputComponentAction\Contracts\LabelTheme;
@@ -23,7 +24,6 @@ use Juaniquillo\InputComponentAction\Contracts\ValueManager;
 use Juaniquillo\InputComponentAction\Contracts\WrapperComponent;
 use Juaniquillo\InputComponentAction\Contracts\WrapperTheme;
 use Juaniquillo\InputComponentAction\Groups\DefaultInputGroup;
-use Juaniquillo\InputComponentAction\Recipes\InputComponentRecipe;
 use Juaniquillo\InputComponentAction\Utilities\Support;
 
 final class InputGroupFactory
@@ -33,7 +33,7 @@ final class InputGroupFactory
      */
     public static function init(
         InputInterface $input,
-        InputComponentRecipe $recipe,
+        InputComponentRecipeInterface $recipe,
         ?ValueManager $values,
         ?ErrorManager $errors,
         ?ThemeManager $defaultThemeManager = null,

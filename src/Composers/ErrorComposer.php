@@ -16,8 +16,8 @@ use Juaniquillo\InputComponentAction\Contracts\ComponentComposer;
 use Juaniquillo\InputComponentAction\Contracts\ErrorComponent;
 use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
 use Juaniquillo\InputComponentAction\Contracts\ErrorTheme;
+use Juaniquillo\InputComponentAction\Contracts\InputComponentRecipeInterface;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
-use Juaniquillo\InputComponentAction\Recipes\InputComponentRecipe;
 use Juaniquillo\InputComponentAction\Utilities\Support;
 
 final class ErrorComposer implements ComponentComposer
@@ -26,7 +26,7 @@ final class ErrorComposer implements ComponentComposer
 
     public function __construct(
         private InputInterface $input,
-        private InputComponentRecipe $recipe,
+        private InputComponentRecipeInterface $recipe,
         private ThemeManager $themeManager,
         private ComponentBag|ErrorComponent $componentBag,
         private ?ValueManager $values = null,

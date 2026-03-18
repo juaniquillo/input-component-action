@@ -14,10 +14,10 @@ use Juaniquillo\InputComponentAction\Concerns\IsComposer;
 use Juaniquillo\InputComponentAction\Contracts\ComponentBag;
 use Juaniquillo\InputComponentAction\Contracts\ComponentComposer;
 use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
+use Juaniquillo\InputComponentAction\Contracts\InputComponentRecipeInterface;
 use Juaniquillo\InputComponentAction\Contracts\LabelComponent;
 use Juaniquillo\InputComponentAction\Contracts\LabelTheme;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
-use Juaniquillo\InputComponentAction\Recipes\InputComponentRecipe;
 use Juaniquillo\InputComponentAction\Utilities\Support;
 
 final class LabelComposer implements ComponentComposer
@@ -26,7 +26,7 @@ final class LabelComposer implements ComponentComposer
 
     public function __construct(
         private InputInterface $input,
-        private InputComponentRecipe $recipe,
+        private InputComponentRecipeInterface $recipe,
         private ThemeManager $themeManager,
         private ComponentBag|LabelComponent $componentBag,
         private ?ValueManager $values = null,

@@ -15,8 +15,8 @@ use Juaniquillo\InputComponentAction\Contracts\ComponentBag;
 use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
 use Juaniquillo\InputComponentAction\Contracts\HelpTextComponent;
 use Juaniquillo\InputComponentAction\Contracts\HelpTextTheme;
+use Juaniquillo\InputComponentAction\Contracts\InputComponentRecipeInterface;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
-use Juaniquillo\InputComponentAction\Recipes\InputComponentRecipe;
 use Juaniquillo\InputComponentAction\Utilities\Support;
 
 class HelpTextComposer
@@ -25,7 +25,7 @@ class HelpTextComposer
 
     public function __construct(
         private InputInterface $input,
-        private InputComponentRecipe $recipe,
+        private InputComponentRecipeInterface $recipe,
         private ThemeManager $themeManager,
         private ComponentBag|HelpTextComponent $componentBag,
         private ?ValueManager $values = null,

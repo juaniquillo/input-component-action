@@ -26,6 +26,7 @@ use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
 use Juaniquillo\InputComponentAction\Contracts\ErrorTheme;
 use Juaniquillo\InputComponentAction\Contracts\HelpTextComponent;
 use Juaniquillo\InputComponentAction\Contracts\HelpTextTheme;
+use Juaniquillo\InputComponentAction\Contracts\InputComponentRecipeInterface;
 use Juaniquillo\InputComponentAction\Contracts\LabelComponent;
 use Juaniquillo\InputComponentAction\Contracts\LabelTheme;
 use Juaniquillo\InputComponentAction\Contracts\ThemeBag;
@@ -35,7 +36,6 @@ use Juaniquillo\InputComponentAction\Contracts\WrapperTheme;
 use Juaniquillo\InputComponentAction\Factories\InputGroupFactory;
 use Juaniquillo\InputComponentAction\Managers\DefaultErrorManager;
 use Juaniquillo\InputComponentAction\Managers\DefaultValueManager;
-use Juaniquillo\InputComponentAction\Recipes\InputComponentRecipe;
 use Juaniquillo\InputComponentAction\Utilities\Support;
 
 final class InputComponentAction implements ActionInterface
@@ -198,7 +198,7 @@ final class InputComponentAction implements ActionInterface
         return $composer->build();
     }
 
-    public function getValueManager(?InputComponentRecipe $recipe): ValueManager
+    public function getValueManager(?InputComponentRecipeInterface $recipe): ValueManager
     {
         $bag = $recipe?->getValueBag() ?? $this->valueBag ?? new DefaultValueManager;
 
@@ -206,7 +206,7 @@ final class InputComponentAction implements ActionInterface
             ->setModel($this->model);
     }
 
-    public function getErrorManager(?InputComponentRecipe $recipe): ErrorManager
+    public function getErrorManager(?InputComponentRecipeInterface $recipe): ErrorManager
     {
         $bag = $recipe?->getErrorBag() ?? $this->errorBag ?? new DefaultErrorManager;
 

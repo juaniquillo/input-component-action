@@ -22,6 +22,7 @@ use Juaniquillo\InputComponentAction\Contracts\ErrorComponent;
 use Juaniquillo\InputComponentAction\Contracts\ErrorTheme;
 use Juaniquillo\InputComponentAction\Contracts\HelpTextComponent;
 use Juaniquillo\InputComponentAction\Contracts\HelpTextTheme;
+use Juaniquillo\InputComponentAction\Contracts\InputComponentRecipeInterface;
 use Juaniquillo\InputComponentAction\Contracts\InputGroup;
 use Juaniquillo\InputComponentAction\Contracts\LabelComponent;
 use Juaniquillo\InputComponentAction\Contracts\LabelTheme;
@@ -35,42 +36,42 @@ use Juaniquillo\InputComponentAction\Recipes\InputComponentRecipe;
 
 final class Support
 {
-    public static function getRecipe(InputInterface $input): InputComponentRecipe
+    public static function getRecipe(InputInterface $input): InputComponentRecipeInterface
     {
         return $input->getRecipes()[InputComponentAction::getIdentifier()] ?? new InputComponentRecipe;
     }
 
-    public static function resolveThemeManager(InputComponentRecipe $recipe, $defaultThemeManager = null): ThemeManager
+    public static function resolveThemeManager(InputComponentRecipeInterface $recipe, $defaultThemeManager = null): ThemeManager
     {
         return $recipe->getThemeManager() ?? $defaultThemeManager ?? new LocalThemeManager;
     }
 
-    public static function resolveThemeBag(InputComponentRecipe $recipe, ThemeBag|WrapperTheme|LabelTheme|ErrorTheme|HelpTextTheme|null $defaultThemeBag = null): ThemeBag
+    public static function resolveThemeBag(InputComponentRecipeInterface $recipe, ThemeBag|WrapperTheme|LabelTheme|ErrorTheme|HelpTextTheme|null $defaultThemeBag = null): ThemeBag
     {
         return $recipe->getThemeBag() ?? $defaultThemeBag ?? new DefaultThemeBag;
     }
 
-    public static function resolveWrapperType(?InputComponentRecipe $recipe, WrapperComponent $componentBag): string|ComponentEnum
+    public static function resolveWrapperType(?InputComponentRecipeInterface $recipe, WrapperComponent $componentBag): string|ComponentEnum
     {
         return $recipe->getComponentBag()?->getWrapperType() ?? $componentBag->getWrapperType() ?? InputTypes::WRAPPER;
     }
 
-    public static function resolveLabelType(?InputComponentRecipe $recipe, LabelComponent $componentBag): string|ComponentEnum
+    public static function resolveLabelType(?InputComponentRecipeInterface $recipe, LabelComponent $componentBag): string|ComponentEnum
     {
         return $recipe->getComponentBag()?->getLabelType() ?? $componentBag->getLabelType() ?? InputTypes::LABEL;
     }
 
-    public static function resolveInputType(?InputComponentRecipe $recipe, ComponentBag $componentBag): string|ComponentEnum
+    public static function resolveInputType(?InputComponentRecipeInterface $recipe, ComponentBag $componentBag): string|ComponentEnum
     {
         return $recipe->getComponentBag()?->getInputType() ?? $componentBag->getInputType() ?? InputTypes::INPUT;
     }
 
-    public static function resolveErrorType(?InputComponentRecipe $recipe, ErrorComponent $componentBag): string|ComponentEnum
+    public static function resolveErrorType(?InputComponentRecipeInterface $recipe, ErrorComponent $componentBag): string|ComponentEnum
     {
         return $recipe->getComponentBag()?->getErrorType() ?? $componentBag->getErrorType() ?? InputTypes::HELP_TEXT;
     }
 
-    public static function resolveHelpTextType(?InputComponentRecipe $recipe, HelpTextComponent $componentBag): string|ComponentEnum
+    public static function resolveHelpTextType(?InputComponentRecipeInterface $recipe, HelpTextComponent $componentBag): string|ComponentEnum
     {
         return $recipe->getComponentBag()?->getErrorType() ?? $componentBag->getHelpTextType() ?? InputTypes::HELP_TEXT;
     }

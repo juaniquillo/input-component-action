@@ -15,10 +15,10 @@ use Juaniquillo\InputComponentAction\Concerns\IsComposer;
 use Juaniquillo\InputComponentAction\Contracts\ComponentBag;
 use Juaniquillo\InputComponentAction\Contracts\ComponentComposer;
 use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
+use Juaniquillo\InputComponentAction\Contracts\InputComponentRecipeInterface;
 use Juaniquillo\InputComponentAction\Contracts\ThemeBag;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
 use Juaniquillo\InputComponentAction\Factories\InputGroupFactory;
-use Juaniquillo\InputComponentAction\Recipes\InputComponentRecipe;
 use Juaniquillo\InputComponentAction\Utilities\Support;
 
 final class InputComposer implements ComponentComposer
@@ -27,7 +27,7 @@ final class InputComposer implements ComponentComposer
 
     public function __construct(
         private InputInterface $input,
-        private InputComponentRecipe $recipe,
+        private InputComponentRecipeInterface $recipe,
         private string|Closure $defaultInputGroup,
         private ThemeManager $themeManager,
         private ComponentBag $componentBag,
@@ -137,7 +137,7 @@ final class InputComposer implements ComponentComposer
         return $component;
     }
 
-    public function buildSubComponentGroup(InputComponentRecipe $recipe): ?array
+    public function buildSubComponentGroup(InputComponentRecipeInterface $recipe): ?array
     {
         $input = $this->input;
 
@@ -161,7 +161,7 @@ final class InputComposer implements ComponentComposer
         return $components;
     }
 
-    public function addCheckableAndSelectableAttribute(InputInterface $input, InputComponentRecipe $recipe, BackendComponent $component, ValueManager $valueResolver, ?string $value = null): void
+    public function addCheckableAndSelectableAttribute(InputInterface $input, InputComponentRecipeInterface $recipe, BackendComponent $component, ValueManager $valueResolver, ?string $value = null): void
     {
         if ($recipe->isCheckable() || $recipe->isSelectable()) {
 
@@ -186,7 +186,7 @@ final class InputComposer implements ComponentComposer
 
     private function resolveGroup(
         InputInterface $input,
-        InputComponentRecipe $recipe,
+        InputComponentRecipeInterface $recipe,
         string|Closure $defaultInputGroup,
         ?InputInterface $parent = null,
     ): BackendComponent {

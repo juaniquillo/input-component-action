@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Juaniquillo\InputComponentAction\Managers;
 
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
+use Juaniquillo\InputComponentAction\Contracts\InputComponentRecipeInterface;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
-use Juaniquillo\InputComponentAction\Recipes\InputComponentRecipe;
 use Juaniquillo\InputComponentAction\Utilities\Support;
 
 /**
@@ -35,7 +35,7 @@ final class DefaultValueManager implements ValueManager
         return $this;
     }
 
-    public function resolve(InputInterface $input, InputComponentRecipe $recipe, bool $ignoreRecipeValue = false): string|int|array|null
+    public function resolve(InputInterface $input, InputComponentRecipeInterface $recipe, bool $ignoreRecipeValue = false): string|int|array|null
     {
         $values = $this->values;
         $model = $this->model;
