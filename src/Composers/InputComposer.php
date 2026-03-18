@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Juaniquillo\InputComponentAction\Composers;
 
+use Closure;
 use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Contracts\ContentComponent;
 use Juaniquillo\BackendComponents\Contracts\ThemeComponent;
@@ -14,7 +15,6 @@ use Juaniquillo\InputComponentAction\Concerns\IsComposer;
 use Juaniquillo\InputComponentAction\Contracts\ComponentBag;
 use Juaniquillo\InputComponentAction\Contracts\ComponentComposer;
 use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
-use Juaniquillo\InputComponentAction\Contracts\InputGroup;
 use Juaniquillo\InputComponentAction\Contracts\ThemeBag;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
 use Juaniquillo\InputComponentAction\Factories\InputGroupFactory;
@@ -28,7 +28,7 @@ final class InputComposer implements ComponentComposer
     public function __construct(
         private InputInterface $input,
         private InputComponentRecipe $recipe,
-        private InputGroup $defaultInputGroup,
+        private string|Closure $defaultInputGroup,
         private ThemeManager $themeManager,
         private ComponentBag $componentBag,
         private ?ValueManager $values,
@@ -187,7 +187,7 @@ final class InputComposer implements ComponentComposer
     private function resolveGroup(
         InputInterface $input,
         InputComponentRecipe $recipe,
-        InputGroup $defaultInputGroup,
+        string|Closure $defaultInputGroup,
         ?InputInterface $parent = null,
     ): BackendComponent {
         return InputGroupFactory::init(

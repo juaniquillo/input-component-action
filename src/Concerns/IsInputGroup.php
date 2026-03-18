@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Juaniquillo\InputComponentAction\Concerns;
 
+use Closure;
 use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Contracts\ContentComponent;
 use Juaniquillo\BackendComponents\Contracts\ThemeComponent;
@@ -16,7 +17,6 @@ use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
 use Juaniquillo\InputComponentAction\Contracts\ErrorTheme;
 use Juaniquillo\InputComponentAction\Contracts\HelpTextComponent;
 use Juaniquillo\InputComponentAction\Contracts\HelpTextTheme;
-use Juaniquillo\InputComponentAction\Contracts\InputGroup;
 use Juaniquillo\InputComponentAction\Contracts\LabelComponent;
 use Juaniquillo\InputComponentAction\Contracts\LabelTheme;
 use Juaniquillo\InputComponentAction\Contracts\ThemeBag;
@@ -33,7 +33,7 @@ trait IsInputGroup
 
     private ThemeManager $themeManager;
 
-    private InputGroup $defaultInputGroup;
+    private string|Closure $defaultInputGroup;
 
     private ValueManager $values;
 
@@ -50,7 +50,7 @@ trait IsInputGroup
         InputComponentRecipe $recipe,
         ThemeManager $themeManager,
         ComponentBag|WrapperComponent|LabelComponent|ErrorComponent|HelpTextComponent $defaultComponentBag,
-        InputGroup $defaultInputGroup,
+        string|Closure $defaultInputGroup,
         ValueManager $values,
         ErrorManager $errors,
         ThemeBag|WrapperTheme|LabelTheme|ErrorTheme|HelpTextTheme|null $defaultThemeBag = null,

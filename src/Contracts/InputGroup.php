@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Juaniquillo\InputComponentAction\Contracts;
 
+use Closure;
 use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Contracts\ContentComponent;
 use Juaniquillo\BackendComponents\Contracts\ThemeManager;
@@ -17,7 +18,7 @@ interface InputGroup
         InputComponentRecipe $recipe,
         ThemeManager $themeManager,
         ComponentBag|WrapperComponent|LabelComponent|ErrorComponent|HelpTextComponent $defaultComponentBag,
-        InputGroup $defaultInputGroup,
+        string|Closure $defaultInputGroup,
         ValueManager $values,
         ErrorManager $errors,
         ThemeBag|WrapperTheme|LabelTheme|ErrorTheme|HelpTextTheme|null $defaultThemeBag = null,

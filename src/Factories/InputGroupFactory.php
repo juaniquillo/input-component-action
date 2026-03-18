@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Juaniquillo\InputComponentAction\Factories;
 
+use Closure;
 use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Contracts\ThemeManager;
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
@@ -27,18 +28,22 @@ use Juaniquillo\InputComponentAction\Utilities\Support;
 
 final class InputGroupFactory
 {
+    /**
+     * @param  class-string<InputGroup>|Closure|null  $defaultInputGroup
+     */
     public static function init(
         InputInterface $input,
         InputComponentRecipe $recipe,
         ?ValueManager $values,
         ?ErrorManager $errors,
         ?ThemeManager $defaultThemeManager = null,
-        ?InputGroup $defaultInputGroup = null,
+        string|Closure|null $defaultInputGroup = null,
         ThemeBag|WrapperTheme|LabelTheme|ErrorTheme|HelpTextTheme|null $defaultThemeBag = null,
         ComponentBag|WrapperComponent|LabelComponent|ErrorComponent|HelpTextComponent|null $defaultComponentBag = null,
         ?InputInterface $parent = null): BackendComponent
     {
-        $group = $recipe->getInputGroup() ?? $defaultInputGroup ?? new DefaultInputGroup;
+        /** @var InputGroup group */
+        $group = $recipe->getInputGroup() ?? Support::resolveInputGroup($defaultInputGroup);
 
         $group = $group->inject(
             input: $input,
@@ -54,7 +59,7 @@ final class InputGroupFactory
              * Default needed
              */
             defaultComponentBag: $defaultComponentBag ?? new DefaultComponentBag,
-            defaultInputGroup: $defaultInputGroup ?? new DefaultInputGroup,
+            defaultInputGroup: $defaultInputGroup ?? DefaultInputGroup::class,
 
             /**
              * No default needed

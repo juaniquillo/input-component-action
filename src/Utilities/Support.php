@@ -22,12 +22,14 @@ use Juaniquillo\InputComponentAction\Contracts\ErrorComponent;
 use Juaniquillo\InputComponentAction\Contracts\ErrorTheme;
 use Juaniquillo\InputComponentAction\Contracts\HelpTextComponent;
 use Juaniquillo\InputComponentAction\Contracts\HelpTextTheme;
+use Juaniquillo\InputComponentAction\Contracts\InputGroup;
 use Juaniquillo\InputComponentAction\Contracts\LabelComponent;
 use Juaniquillo\InputComponentAction\Contracts\LabelTheme;
 use Juaniquillo\InputComponentAction\Contracts\ThemeBag;
 use Juaniquillo\InputComponentAction\Contracts\WrapperComponent;
 use Juaniquillo\InputComponentAction\Contracts\WrapperTheme;
 use Juaniquillo\InputComponentAction\Defaults\InputTypes;
+use Juaniquillo\InputComponentAction\Groups\DefaultInputGroup;
 use Juaniquillo\InputComponentAction\InputComponentAction;
 use Juaniquillo\InputComponentAction\Recipes\InputComponentRecipe;
 
@@ -71,6 +73,24 @@ final class Support
     public static function resolveHelpTextType(?InputComponentRecipe $recipe, HelpTextComponent $componentBag): string|ComponentEnum
     {
         return $recipe->getComponentBag()?->getErrorType() ?? $componentBag->getHelpTextType() ?? InputTypes::HELP_TEXT;
+    }
+
+    /**
+     * @param  class-string<InputGroup>|Closure  $group
+     */
+    public static function resolveInputGroup(
+        string|Closure|null $group,
+
+    ): InputGroup {
+        if ($group instanceof Closure) {
+            return $group();
+        }
+
+        if (is_string($group) && class_exists($group)) {
+            return new $group;
+        }
+
+        return new DefaultInputGroup;
     }
 
     /**

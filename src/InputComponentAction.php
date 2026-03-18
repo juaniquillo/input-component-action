@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Juaniquillo\InputComponentAction;
 
+use Closure;
 use Exception;
 use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Contracts\ContentComponent;
@@ -25,7 +26,6 @@ use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
 use Juaniquillo\InputComponentAction\Contracts\ErrorTheme;
 use Juaniquillo\InputComponentAction\Contracts\HelpTextComponent;
 use Juaniquillo\InputComponentAction\Contracts\HelpTextTheme;
-use Juaniquillo\InputComponentAction\Contracts\InputGroup;
 use Juaniquillo\InputComponentAction\Contracts\LabelComponent;
 use Juaniquillo\InputComponentAction\Contracts\LabelTheme;
 use Juaniquillo\InputComponentAction\Contracts\ThemeBag;
@@ -46,7 +46,7 @@ final class InputComponentAction implements ActionInterface
 
     private ?ThemeManager $defaultThemeManager = null;
 
-    private ?InputGroup $defaultInputGroup = null;
+    private string|Closure|null $defaultInputGroup = null;
 
     private ThemeBag|WrapperTheme|LabelTheme|ErrorTheme|HelpTextTheme|null $defaultThemeBag = null;
 
@@ -80,7 +80,7 @@ final class InputComponentAction implements ActionInterface
         return $this;
     }
 
-    public function setDefaultInputGroup(InputGroup $defaultInputGroup): static
+    public function setDefaultInputGroup(string|Closure|null $defaultInputGroup): static
     {
         $this->defaultInputGroup = $defaultInputGroup;
 
