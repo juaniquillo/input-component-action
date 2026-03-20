@@ -8,7 +8,6 @@ use Closure;
 use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Contracts\ContentComponent;
 use Juaniquillo\BackendComponents\Contracts\ThemeComponent;
-use Juaniquillo\BackendComponents\Contracts\ThemeManager;
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
 use Juaniquillo\CrudAssistant\CrudAssistant;
 use Juaniquillo\CrudAssistant\InputCollection;
@@ -35,7 +34,7 @@ use Juaniquillo\InputComponentAction\Utilities\Support;
 
 trait IsInputComponentAction
 {
-    private ?ThemeManager $defaultThemeManager = null;
+    private string|Closure|null $defaultThemeManager = null;
 
     private string|Closure|null $defaultInputGroup = null;
 
@@ -49,7 +48,7 @@ trait IsInputComponentAction
 
     private ?ErrorManager $errorBag = null;
 
-    public function setThemeManager(ThemeManager $defaultThemeManager): static
+    public function setThemeManager(string|Closure|null $defaultThemeManager): static
     {
         $this->defaultThemeManager = $defaultThemeManager;
 
@@ -149,7 +148,7 @@ trait IsInputComponentAction
 
         $composer = new WrapperComposer(
             input: $input,
-            themeManager: Support::resolveThemeManager(recipe: $recipe, defaultThemeManager: $this->defaultThemeManager),
+            themeManager: $recipe->getThemeManager() ?? Support::resolveThemeManager($this->defaultThemeManager),
             componentBag: $this->defaultComponentBag ?? new DefaultComponentBag,
             themeBag: $this->defaultThemeBag,
         );

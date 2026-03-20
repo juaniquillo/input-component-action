@@ -6,7 +6,6 @@ namespace Juaniquillo\InputComponentAction\Factories;
 
 use Closure;
 use Juaniquillo\BackendComponents\Contracts\BackendComponent;
-use Juaniquillo\BackendComponents\Contracts\ThemeManager;
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
 use Juaniquillo\InputComponentAction\Bags\DefaultComponentBag;
 use Juaniquillo\InputComponentAction\Contracts\ComponentBag;
@@ -36,7 +35,7 @@ final class InputGroupFactory
         InputComponentRecipeInterface $recipe,
         ?ValueManager $values,
         ?ErrorManager $errors,
-        ?ThemeManager $defaultThemeManager = null,
+        string|Closure|null $defaultThemeManager = null,
         string|Closure|null $defaultInputGroup = null,
         ThemeBag|WrapperTheme|LabelTheme|ErrorTheme|HelpTextTheme|null $defaultThemeBag = null,
         ComponentBag|WrapperComponent|LabelComponent|ErrorComponent|HelpTextComponent|null $defaultComponentBag = null,
@@ -53,7 +52,9 @@ final class InputGroupFactory
             /**
              * Resolve Theme Manager once
              */
-            themeManager: $defaultThemeManager ?? Support::resolveThemeManager($recipe),
+            themeManager: $recipe->getThemeManager() ?? Support::resolveThemeManager($defaultThemeManager),
+
+            defaultThemeManager: $defaultThemeManager,
 
             /**
              * Default needed

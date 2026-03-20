@@ -33,6 +33,8 @@ trait IsInputGroup
 
     private ThemeManager $themeManager;
 
+    private string|Closure|null $defaultThemeManager;
+
     private string|Closure $defaultInputGroup;
 
     private ValueManager $values;
@@ -49,6 +51,7 @@ trait IsInputGroup
         InputInterface $input,
         InputComponentRecipeInterface $recipe,
         ThemeManager $themeManager,
+        string|Closure|null $defaultThemeManager,
         ComponentBag|WrapperComponent|LabelComponent|ErrorComponent|HelpTextComponent $defaultComponentBag,
         string|Closure $defaultInputGroup,
         ValueManager $values,
@@ -58,6 +61,7 @@ trait IsInputGroup
         $this->input = $input;
         $this->recipe = $recipe;
         $this->themeManager = $themeManager;
+        $this->defaultThemeManager = $defaultThemeManager;
         $this->defaultInputGroup = $defaultInputGroup;
         $this->values = $values;
         $this->errors = $errors;
@@ -80,6 +84,7 @@ trait IsInputGroup
             input: $this->input,
             recipe: $this->recipe,
             themeManager: $this->themeManager,
+            defaultThemeManager: $this->defaultThemeManager,
             componentBag: $this->defaultComponentBag,
             defaultInputGroup: $this->defaultInputGroup,
             values: $this->values,

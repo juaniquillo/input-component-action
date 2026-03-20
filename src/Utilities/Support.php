@@ -41,11 +41,6 @@ final class Support
         return $input->getRecipes()[InputComponentAction::getIdentifier()] ?? new InputComponentRecipe;
     }
 
-    public static function resolveThemeManager(InputComponentRecipeInterface $recipe, $defaultThemeManager = null): ThemeManager
-    {
-        return $recipe->getThemeManager() ?? $defaultThemeManager ?? new LocalThemeManager;
-    }
-
     public static function resolveThemeBag(InputComponentRecipeInterface $recipe, ThemeBag|WrapperTheme|LabelTheme|ErrorTheme|HelpTextTheme|null $defaultThemeBag = null): ThemeBag
     {
         return $recipe->getThemeBag() ?? $defaultThemeBag ?? new DefaultThemeBag;
@@ -76,19 +71,31 @@ final class Support
         return $recipe->getComponentBag()?->getErrorType() ?? $componentBag->getHelpTextType() ?? InputTypes::HELP_TEXT;
     }
 
+    public static function resolveThemeManager(string|Closure|null $manager): ThemeManager
+    {
+        if (is_string($manager) && class_exists($manager)) {
+            return new $manager;
+        }
+
+        if ($manager instanceof Closure) {
+            return $manager();
+        }
+
+        return new LocalThemeManager;
+    }
+
     /**
      * @param  class-string<InputGroup>|Closure  $group
      */
-    public static function resolveInputGroup(
-        string|Closure|null $group,
-
-    ): InputGroup {
-        if ($group instanceof Closure) {
-            return $group();
-        }
+    public static function resolveInputGroup(string|Closure|null $group): InputGroup
+    {
 
         if (is_string($group) && class_exists($group)) {
             return new $group;
+        }
+
+        if ($group instanceof Closure) {
+            return $group();
         }
 
         return new DefaultInputGroup;
@@ -103,12 +110,12 @@ final class Support
         ThemeManager $themeManager,
     ): BackendComponent|ContentComponent|ThemeComponent|CompoundComponent {
 
-        if ($component instanceof Closure) {
-            return $component($type, $themeManager);
-        }
-
         if (is_string($component) && class_exists($component)) {
             return new $component($type, $themeManager);
+        }
+
+        if ($component instanceof Closure) {
+            return $component($type, $themeManager);
         }
 
         return new MainBackendComponent($type, $themeManager);

@@ -8,13 +8,12 @@ use Closure;
 use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Contracts\ContentComponent;
 use Juaniquillo\BackendComponents\Contracts\ThemeComponent;
-use Juaniquillo\BackendComponents\Contracts\ThemeManager;
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
 use Juaniquillo\CrudAssistant\InputCollection;
 
 interface InputComponentActionInterface
 {
-    public function setThemeManager(ThemeManager $defaultThemeManager): static;
+    public function setThemeManager(string|Closure|null $defaultThemeManager): static;
 
     public function setDefaultInputGroup(string|Closure|null $defaultInputGroup): static;
 
