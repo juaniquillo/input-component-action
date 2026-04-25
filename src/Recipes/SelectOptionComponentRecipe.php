@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Juaniquillo\InputComponentAction\Recipes;
 
 use Closure;
@@ -38,7 +40,6 @@ use Juaniquillo\InputComponentAction\Contracts\WrapperTheme;
 use Juaniquillo\InputComponentAction\Groups\SoleInputGroup;
 use Juaniquillo\InputComponentAction\InputComponentAction;
 
-
 final class SelectOptionComponentRecipe implements InputComponentRecipeInterface, RecipeInterface
 {
     use IsInputComponentRecipe;
@@ -64,20 +65,20 @@ final class SelectOptionComponentRecipe implements InputComponentRecipeInterface
         bool $valueAsInputContent = false,
         string|Closure|null $helpText = null,
     ) {
-        
+
         /**
          * Defaults for the options
          */
         $this->useParentValue = true;
         $this->selectable = true;
         $this->labelAsInputContent = true;
-        $this->inputGroup = $inputGroup ?? new SoleInputGroup();
+        $this->inputGroup = $inputGroup ?? new SoleInputGroup;
         $this->componentBag = $componentBag ?? (new DefaultComponentBag)
             ->setInputType(ComponentEnum::OPTION);
         $this->disableBag = $disableBag ?? (new DefaultDisableBag)
             ->setDisableWrapper()
             ->setDisableDefaultNameAttribute();
-        
+
         /**
          * Same as default recipe
          */
@@ -95,5 +96,4 @@ final class SelectOptionComponentRecipe implements InputComponentRecipeInterface
         $this->helpText = $helpText;
 
     }
-
 }
