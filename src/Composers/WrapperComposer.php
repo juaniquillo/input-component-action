@@ -50,12 +50,16 @@ final class WrapperComposer implements ComponentComposer
             themeManager: $themeManager
         );
 
-        $attributes = $recipe->getAttributeBag()?->getInputAttributes() ?? null;
+        $attributes = $recipe->getAttributeBag()?->getWrapperAttributes() ?? null;
         $theme = $recipe->getThemeBag()?->getWrapperTheme() ?? $this->themeBag?->getWrapperTheme();
         $callback = $recipe->getHookBag() ?? new DefaultHookBag;
 
         $attributes = $this->resolveArrayClosure(value: $attributes, input: $input, type: $inputType);
         $theme = $this->resolveArrayClosure($theme, input: $input, type: $inputType);
+
+        if ($attributes) {
+            $component->setAttributes($attributes);
+        }
 
         if ($theme) {
             $component->setThemes($theme);
