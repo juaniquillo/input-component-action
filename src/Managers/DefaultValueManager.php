@@ -8,6 +8,7 @@ use Juaniquillo\CrudAssistant\Contracts\InputInterface;
 use Juaniquillo\InputComponentAction\Contracts\InputComponentRecipeInterface;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
 use Juaniquillo\InputComponentAction\Utilities\Support;
+use Stringable;
 
 /**
  * Priorities:
@@ -35,7 +36,7 @@ final class DefaultValueManager implements ValueManager
         return $this;
     }
 
-    public function resolve(InputInterface $input, InputComponentRecipeInterface $recipe, bool $ignoreRecipeValue = false): string|int|array|null
+    public function resolve(InputInterface $input, InputComponentRecipeInterface $recipe, bool $ignoreRecipeValue = false): Stringable|string|int|array|null
     {
         $values = $this->values;
         $model = $this->model;
