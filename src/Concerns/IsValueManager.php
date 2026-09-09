@@ -1,6 +1,8 @@
 <?php
 
-namespace Concerns;
+declare(strict_types=1);
+
+namespace Juaniquillo\InputComponentAction\Concerns;
 
 trait IsValueManager
 {
@@ -31,5 +33,4 @@ trait IsValueManager
     {
         return $this->model;
     }
-
 }

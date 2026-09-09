@@ -9,7 +9,7 @@ use Stringable;
 
 interface ValueManager
 {
-     /** @param array<string|int, string|int|array<string|int|null>|null> $values */
+    /** @param array<string|int, string|int|array<string|int|null>|null> $values */
     public function setValues(array $values): static;
 
     /** @return array<string|int, string|int|array<string|int|null>|null> */

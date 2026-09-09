@@ -1,6 +1,8 @@
 <?php
 
-namespace Concerns;
+declare(strict_types=1);
+
+namespace Juaniquillo\InputComponentAction\Concerns;
 
 trait IsErrorManager
 {
@@ -12,5 +14,4 @@ trait IsErrorManager
 
         return $this;
     }
-
 }

@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Juaniquillo\InputComponentAction\Managers;
 
-use Concerns\IsValueManager;
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
+use Juaniquillo\InputComponentAction\Concerns\IsValueManager;
 use Juaniquillo\InputComponentAction\Contracts\InputComponentRecipeInterface;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
 use Juaniquillo\InputComponentAction\Utilities\Support;
@@ -20,7 +20,7 @@ use Stringable;
 final class DefaultValueManager implements ValueManager
 {
     use IsValueManager;
-    
+
     public function resolve(InputInterface $input, InputComponentRecipeInterface $recipe, bool $ignoreRecipeValue = false): Stringable|string|int|array|null
     {
         $values = $this->values;
