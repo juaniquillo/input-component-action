@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Juaniquillo\InputComponentAction\Managers;
 
+use Concerns\IsValueManager;
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
 use Juaniquillo\InputComponentAction\Contracts\InputComponentRecipeInterface;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
@@ -18,24 +19,8 @@ use Stringable;
  */
 final class DefaultValueManager implements ValueManager
 {
-    private array $values = [];
-
-    private ?object $model = null;
-
-    public function setValues(array $values): static
-    {
-        $this->values = $values;
-
-        return $this;
-    }
-
-    public function setModel(?object $model): static
-    {
-        $this->model = $model;
-
-        return $this;
-    }
-
+    use IsValueManager;
+    
     public function resolve(InputInterface $input, InputComponentRecipeInterface $recipe, bool $ignoreRecipeValue = false): Stringable|string|int|array|null
     {
         $values = $this->values;

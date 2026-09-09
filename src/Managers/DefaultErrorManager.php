@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Juaniquillo\InputComponentAction\Managers;
 
+use Concerns\IsErrorManager;
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
 use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
 use Juaniquillo\InputComponentAction\Contracts\InputComponentRecipeInterface;
@@ -11,15 +12,8 @@ use Juaniquillo\InputComponentAction\Utilities\Support;
 
 final class DefaultErrorManager implements ErrorManager
 {
-    private array $errors = [];
-
-    public function setErrors(array $errors): static
-    {
-        $this->errors = $errors;
-
-        return $this;
-    }
-
+    use IsErrorManager;
+    
     public function resolve(InputInterface $input, InputComponentRecipeInterface $recipe): ?string
     {
 
