@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "juaniquillo/crud-assistant": "^0.1.0",
+        "juaniquillo/crud-assistant": "^0.2.0",
         "juaniquillo/laravel-backend-component": "@dev",
         "spatie/laravel-package-tools": "^1.92"
     },
