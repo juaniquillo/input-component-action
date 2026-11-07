@@ -50,7 +50,7 @@ test('it builds the default input group structure', function (): void {
             'value' => 'Alice',
         ])
         ->and($children[1]['contents'])->toBe([])
-        ->and($children[2]['type'])->toBe(ComponentEnum::DIV->value)
+        ->and($children[2]['type'])->toBe(ComponentEnum::PARAGRAPH->value)
         ->and($children[2]['contents'])->toBe(['Too short']);
 });
 
@@ -124,6 +124,25 @@ test('it can render an empty label', function (): void {
         ->and(ComponentTree::of($label)['contents'])->toBe([]);
 });
 
+test('it handles inputs without a label', function (): void {
+    $input = new class('name') extends DefaultInput
+    {
+        public function getLabel(): ?string
+        {
+            return null;
+        }
+    };
+    $input->setRecipe(new InputComponentRecipe(labelAsInputContent: true));
+
+    $component = ActionFactory::component(CrudAssistant::make([$input]), 'name');
+    $label = ComponentTree::find($component, ComponentEnum::LABEL->value);
+    $inputComponent = ComponentTree::find($component, ComponentEnum::TEXT_INPUT->value);
+
+    expect($label)->not->toBeNull()
+        ->and(ComponentTree::of($label)['contents'])->toBe([])
+        ->and(ComponentTree::of($inputComponent)['contents'])->toBe([]);
+});
+
 test('it applies recipe attributes over the defaults', function (): void {
     $input = new DefaultInput('name', 'Name');
     $input->setRecipe(new InputComponentRecipe(
@@ -145,7 +164,7 @@ test('it applies recipe attributes over the defaults', function (): void {
     $children = array_values(ComponentTree::of($component)['contents']);
 
     expect(ComponentTree::of($component)['attributes'])->toBe(['class' => 'wrapper'])
-        ->and($children)->toHaveCount(4)
+        ->and($children)->toHaveCount(3)
         ->and($children[0]['attributes'])->toBe(['for' => 'name', 'class' => 'label'])
         ->and($children[1]['attributes'])->toBe(['class' => 'help'])
         ->and($children[2]['attributes'])->toBe([
@@ -345,6 +364,83 @@ test('it uses the recipe theme manager over the action default', function (): vo
     $inputComponent = ComponentTree::find($component, ComponentEnum::TEXT_INPUT->value);
 
     expect($inputComponent->getThemeManager())->toBeInstanceOf(LocalThemeManager::class);
+});
+
+test('it resolves closure input attributes before the default name and id', function (): void {
+    $input = new DefaultInput('name', 'Name');
+    $input->setRecipe(new InputComponentRecipe(
+        attributeBag: (new DefaultAttributeBag)->setInputAttributes(
+            static fn (InputInterface $input, mixed $type): array => [
+                'name' => 'closure-name',
+                'id' => 'closure-id',
+                'placeholder' => 'Type here',
+            ],
+        ),
+    ));
+
+    $component = ActionFactory::component(CrudAssistant::make([$input]), 'name');
+    $inputComponent = ComponentTree::find($component, ComponentEnum::TEXT_INPUT->value);
+
+    expect($inputComponent->getAttributes())->toBe([
+        'name' => 'closure-name',
+        'id' => 'closure-id',
+        'value' => '',
+        'placeholder' => 'Type here',
+    ]);
+});
+
+test('it does not render array values as attributes or content', function (): void {
+    $input = new DefaultInput('name', 'Name');
+    $input->setRecipe(new InputComponentRecipe);
+
+    $component = ActionFactory::component(
+        CrudAssistant::make([$input]),
+        'name',
+        ActionFactory::make(['name' => ['a', 'b']]),
+    );
+    $inputComponent = ComponentTree::find($component, ComponentEnum::TEXT_INPUT->value);
+
+    expect($inputComponent->getAttribute('value'))->toBeNull()
+        ->and(ComponentTree::of($inputComponent)['contents'])->toBe([]);
+
+    $input->setRecipe(new InputComponentRecipe(valueAsInputContent: true));
+
+    $component = ActionFactory::component(
+        CrudAssistant::make([$input]),
+        'name',
+        ActionFactory::make(['name' => ['a', 'b']]),
+    );
+    $inputComponent = ComponentTree::find($component, ComponentEnum::TEXT_INPUT->value);
+
+    expect($inputComponent->getAttribute('value'))->toBeNull()
+        ->and(ComponentTree::of($inputComponent)['contents'])->toBe([]);
+});
+
+test('it applies error attributes', function (): void {
+    $input = new DefaultInput('name', 'Name');
+    $input->setRecipe(new InputComponentRecipe(
+        attributeBag: (new DefaultAttributeBag)->setErrorAttributes(
+            static fn (InputInterface $input, mixed $type): array => [
+                'class' => 'error',
+                'data-error' => $input->getName(),
+                'data-type' => $type instanceof BackedEnum ? $type->value : $type,
+            ],
+        ),
+    ));
+
+    $component = ActionFactory::component(
+        CrudAssistant::make([$input]),
+        'name',
+        ActionFactory::make(errors: ['name' => 'Too short']),
+    );
+    $children = array_values(ComponentTree::of($component)['contents']);
+
+    expect($children[2]['type'])->toBe(ComponentEnum::PARAGRAPH->value)
+        ->and($children[2]['attributes'])->toBe([
+            'class' => 'error',
+            'data-error' => 'name',
+            'data-type' => ComponentEnum::TEXT_INPUT->value,
+        ]);
 });
 
 test('it applies closure attributes to the wrapper, label and help text', function (): void {

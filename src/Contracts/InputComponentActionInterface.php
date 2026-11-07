@@ -27,7 +27,7 @@ interface InputComponentActionInterface
 
     public function setErrorManager(ErrorManager $errorBag): static;
 
-    public function resolveInputs(InputCollectionInterface|InputInterface $input): array|BackendComponent|ContentComponent;
+    public function resolveInputs(InputCollectionInterface|InputInterface $input): BackendComponent|ContentComponent;
 
     public function getInputGroup(InputInterface $input): BackendComponent;
 

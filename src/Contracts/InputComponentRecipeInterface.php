@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Juaniquillo\InputComponentAction\Contracts;
 
-use BackedEnum;
 use Closure;
 use Juaniquillo\BackendComponents\Contracts\ThemeManager;
 
@@ -79,26 +78,6 @@ interface InputComponentRecipeInterface
     public function getDisableBag(): DisableBag|WrapperDisable|LabelDisable|ErrorDisable|HelpTextDisable|InputDisable|null;
 
     public function setDisableBag(DisableBag|WrapperDisable|LabelDisable|ErrorDisable|HelpTextDisable|InputDisable|null $disableBag): self;
-
-    public function getWrapperType(): string|BackedEnum|null;
-
-    public function setWrapperType(string|BackedEnum|null $wrapperType): self;
-
-    public function getLabelType(): string|BackedEnum|null;
-
-    public function setLabelType(string|BackedEnum|null $labelType): self;
-
-    public function getInputType(): string|BackedEnum|null;
-
-    public function setInputType(string|BackedEnum|null $inputType): self;
-
-    public function getErrorType(): string|BackedEnum|null;
-
-    public function setErrorType(string|BackedEnum|null $errorType): self;
-
-    public function getHelpTextType(): string|BackedEnum|null;
-
-    public function setHelpTextType(string|BackedEnum|null $helpTextType): self;
 
     public function isCheckable(): bool;
 

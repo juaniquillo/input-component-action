@@ -64,7 +64,7 @@ final class InputComposer implements ComponentComposer
         /**
          * SubComponents
          */
-        $subComponents = $this->buildSubComponentGroup($recipe);
+        $subComponents = $this->buildSubComponentGroup($input);
 
         /**
          * Access
@@ -73,15 +73,16 @@ final class InputComposer implements ComponentComposer
         $theme = $recipe->getThemeBag()?->getInputTheme() ?? $this->themeBag?->getInputTheme();
         $callback = $recipe->getHookBag()?->getInputHook() ?? null;
 
-        $value = (string) $valueResolver->resolve($input, $recipe);
-        $name = $this->resolveInputName($input, $recipe);
-        $id = $this->resolveInputId($input, $recipe);
+        $value = $valueResolver->resolve($input, $recipe);
 
         /**
          * Resolve closures
          */
         $attributes = $this->resolveArrayClosure(value: $attributes, input: $input, type: $inputType);
         $theme = $this->resolveArrayClosure(value: $theme, input: $input, type: $inputType);
+
+        $name = $attributes['name'] ?? $input->getName();
+        $id = $attributes['id'] ?? $input->getName();
 
         /**
          * Default attributes
@@ -98,7 +99,7 @@ final class InputComposer implements ComponentComposer
             $component->setThemes($theme);
         }
 
-        if ($recipe->labelAsInputContent()) {
+        if ($recipe->labelAsInputContent() && $input->getLabel() !== null) {
             $component->setContent($input->getLabel());
         }
 
@@ -106,11 +107,11 @@ final class InputComposer implements ComponentComposer
             $component->setContents($subComponents);
         }
 
-        if (! $recipe->getDisableBag()?->disableInputValue()) {
+        if (! $recipe->getDisableBag()?->disableInputValue() && ! \is_array($value)) {
             if ($recipe->valueAsInputContent()) {
-                $component->setContent($value);
+                $component->setContent((string) $value);
             } else {
-                $component->setAttribute('value', $value);
+                $component->setAttribute('value', (string) $value);
             }
         }
 
@@ -138,10 +139,8 @@ final class InputComposer implements ComponentComposer
         return $component;
     }
 
-    public function buildSubComponentGroup(InputComponentRecipeInterface $recipe): ?array
+    public function buildSubComponentGroup(InputInterface $input): ?array
     {
-        $input = $this->input;
-
         $subElements = $input->getSubElements();
         $components = [];
 
@@ -162,17 +161,16 @@ final class InputComposer implements ComponentComposer
         return $components;
     }
 
-    public function addCheckableAndSelectableAttribute(InputInterface $input, InputComponentRecipeInterface $recipe, BackendComponent $component, ValueManager $valueResolver, ?string $value = null): void
+    public function addCheckableAndSelectableAttribute(InputInterface $input, InputComponentRecipeInterface $recipe, BackendComponent $component, ValueManager $valueResolver, mixed $value = null): void
     {
         if ($recipe->isCheckable() || $recipe->isSelectable()) {
-
             $isSelected = false;
 
             if ($recipe->useParentValue() && $this->parent) {
                 $parentValue = $valueResolver->resolve($this->parent, Support::getRecipe($this->parent));
-                $isSelected = $value == $parentValue;
+                $isSelected = $this->valueMatches($value, $parentValue);
             } else {
-                $isSelected = $valueResolver->resolve($input, $recipe, true);
+                $isSelected = (bool) $valueResolver->resolve($input, $recipe, true);
             }
 
             if ($recipe->isSelectable() && $isSelected) {
@@ -183,6 +181,22 @@ final class InputComposer implements ComponentComposer
                 $component->setAttribute('checked', 'checked');
             }
         }
+    }
+
+    private function valueMatches(mixed $value, mixed $parentValue): bool
+    {
+        $values = \is_array($value) ? $value : [$value];
+        $parents = \is_array($parentValue) ? $parentValue : [$parentValue];
+
+        foreach ($values as $candidate) {
+            foreach ($parents as $parent) {
+                if ($candidate == $parent) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 
     private function resolveGroup(

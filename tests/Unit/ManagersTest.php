@@ -121,12 +121,7 @@ test('the default error manager falls back to the errors array', function (): vo
     expect($manager->resolve($input, $recipe))->toBe('array-error');
 });
 
-/**
- * Current behavior: array_reverse() + array_pop() returns the first entry.
- * Phase 1 will change this to the last entry — the intent of the original
- * "if multiple errors" branch.
- */
-test('the default error manager currently uses the first error from an error array', function (): void {
+test('the default error manager uses the last error from an error array', function (): void {
     $input = new DefaultInput('name');
     $recipe = new InputComponentRecipe;
 
@@ -134,7 +129,7 @@ test('the default error manager currently uses the first error from an error arr
         'name' => ['first-error', 'second-error', 'last-error'],
     ]);
 
-    expect($manager->resolve($input, $recipe))->toBe('first-error');
+    expect($manager->resolve($input, $recipe))->toBe('last-error');
 });
 
 test('the default error manager resolves recipe closures with the input and errors', function (): void {

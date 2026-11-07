@@ -8,13 +8,12 @@ use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Contracts\ContentComponent;
 use Juaniquillo\BackendComponents\Contracts\ThemeComponent;
 use Juaniquillo\InputComponentAction\Composers\LabelComposer;
-use Juaniquillo\InputComponentAction\Utilities\Support;
 
 trait HasLabel
 {
     private function getLabelComponent(): BackendComponent|ContentComponent|ThemeComponent|null
     {
-        $recipe = Support::getRecipe($this->input);
+        $recipe = $this->recipe;
 
         if ($recipe->getDisableBag()?->disableLabel()) {
             return null;

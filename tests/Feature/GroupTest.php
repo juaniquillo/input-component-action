@@ -36,7 +36,7 @@ test('the default input group renders label, input and error', function (): void
         ->and(array_column($children, 'type'))->toBe([
             ComponentEnum::LABEL->value,
             ComponentEnum::TEXT_INPUT->value,
-            ComponentEnum::DIV->value,
+            ComponentEnum::PARAGRAPH->value,
         ]);
 });
 
@@ -54,7 +54,7 @@ test('the input label error group renders input, label and error', function (): 
     expect(array_column($children, 'type'))->toBe([
         ComponentEnum::TEXT_INPUT->value,
         ComponentEnum::LABEL->value,
-        ComponentEnum::DIV->value,
+        ComponentEnum::PARAGRAPH->value,
     ]);
 });
 
@@ -71,7 +71,7 @@ test('the input error group renders input and error', function (): void {
 
     expect(array_column($children, 'type'))->toBe([
         ComponentEnum::TEXT_INPUT->value,
-        ComponentEnum::DIV->value,
+        ComponentEnum::PARAGRAPH->value,
     ]);
 });
 
@@ -93,7 +93,7 @@ test('the label help text input error group renders every slot in order', functi
         ComponentEnum::LABEL->value,
         ComponentEnum::DIV->value,
         ComponentEnum::TEXT_INPUT->value,
-        ComponentEnum::DIV->value,
+        ComponentEnum::PARAGRAPH->value,
     ])->and($children[1]['contents'])->toBe(['Some help'])
         ->and($children[3]['contents'])->toBe(['Too short']);
 });
@@ -112,7 +112,7 @@ test('the label help text input error group skips a missing help text', function
     expect(array_column($children, 'type'))->toBe([
         ComponentEnum::LABEL->value,
         ComponentEnum::TEXT_INPUT->value,
-        ComponentEnum::DIV->value,
+        ComponentEnum::PARAGRAPH->value,
     ]);
 });
 
@@ -153,7 +153,7 @@ test('the no wrap input group renders label, input and error inside a collection
         ->and(array_column($children, 'type'))->toBe([
             ComponentEnum::LABEL->value,
             ComponentEnum::TEXT_INPUT->value,
-            ComponentEnum::DIV->value,
+            ComponentEnum::PARAGRAPH->value,
         ]);
 });
 
@@ -172,7 +172,7 @@ test('the label container group wraps the input inside the label', function (): 
     expect($component->getName())->toBe(ComponentEnum::DIV->value)
         ->and(array_column($children, 'type'))->toBe([
             ComponentEnum::LABEL->value,
-            ComponentEnum::DIV->value,
+            ComponentEnum::PARAGRAPH->value,
         ])
         ->and($label['contents']['input']['type'] ?? null)->toBe(ComponentEnum::TEXT_INPUT->value);
 });
@@ -206,11 +206,11 @@ test('a wrapping group falls back to a collection when the wrapper is disabled',
         ->and(array_column($children, 'type'))->toBe([
             ComponentEnum::LABEL->value,
             ComponentEnum::TEXT_INPUT->value,
-            ComponentEnum::DIV->value,
+            ComponentEnum::PARAGRAPH->value,
         ]);
 });
 
-test('it currently renders an empty error component when there is no error', function (): void {
+test('it omits the error component when there is no error', function (): void {
     $input = new DefaultInput('name', 'Name');
     $input->setRecipe(new InputComponentRecipe(inputGroup: new DefaultInputGroup));
 
@@ -220,6 +220,5 @@ test('it currently renders an empty error component when there is no error', fun
     expect(array_column($children, 'type'))->toBe([
         ComponentEnum::LABEL->value,
         ComponentEnum::TEXT_INPUT->value,
-        ComponentEnum::DIV->value,
-    ])->and($children[2]['contents'])->toBe([]);
+    ]);
 });

@@ -16,19 +16,13 @@ use Juaniquillo\BackendComponents\Enums\ComponentEnum;
 use Juaniquillo\BackendComponents\MainBackendComponent;
 use Juaniquillo\BackendComponents\Themes\LocalThemeManager;
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
-use Juaniquillo\InputComponentAction\Bags\DefaultThemeBag;
 use Juaniquillo\InputComponentAction\Contracts\ComponentBag;
 use Juaniquillo\InputComponentAction\Contracts\ErrorComponent;
-use Juaniquillo\InputComponentAction\Contracts\ErrorTheme;
 use Juaniquillo\InputComponentAction\Contracts\HelpTextComponent;
-use Juaniquillo\InputComponentAction\Contracts\HelpTextTheme;
 use Juaniquillo\InputComponentAction\Contracts\InputComponentRecipeInterface;
 use Juaniquillo\InputComponentAction\Contracts\InputGroup;
 use Juaniquillo\InputComponentAction\Contracts\LabelComponent;
-use Juaniquillo\InputComponentAction\Contracts\LabelTheme;
-use Juaniquillo\InputComponentAction\Contracts\ThemeBag;
 use Juaniquillo\InputComponentAction\Contracts\WrapperComponent;
-use Juaniquillo\InputComponentAction\Contracts\WrapperTheme;
 use Juaniquillo\InputComponentAction\Defaults\InputTypes;
 use Juaniquillo\InputComponentAction\Groups\DefaultInputGroup;
 use Juaniquillo\InputComponentAction\InputComponentAction;
@@ -47,34 +41,29 @@ final class Support
         return new InputComponentRecipe;
     }
 
-    public static function resolveThemeBag(InputComponentRecipeInterface $recipe, ThemeBag|WrapperTheme|LabelTheme|ErrorTheme|HelpTextTheme|null $defaultThemeBag = null): ThemeBag
-    {
-        return $recipe->getThemeBag() ?? $defaultThemeBag ?? new DefaultThemeBag;
-    }
-
     public static function resolveWrapperType(?InputComponentRecipeInterface $recipe, WrapperComponent $componentBag): string|BackedEnum
     {
-        return $recipe->getComponentBag()?->getWrapperType() ?? $componentBag->getWrapperType() ?? InputTypes::WRAPPER;
+        return $recipe?->getComponentBag()?->getWrapperType() ?? $componentBag->getWrapperType() ?? InputTypes::WRAPPER;
     }
 
     public static function resolveLabelType(?InputComponentRecipeInterface $recipe, LabelComponent $componentBag): string|BackedEnum
     {
-        return $recipe->getComponentBag()?->getLabelType() ?? $componentBag->getLabelType() ?? InputTypes::LABEL;
+        return $recipe?->getComponentBag()?->getLabelType() ?? $componentBag->getLabelType() ?? InputTypes::LABEL;
     }
 
     public static function resolveInputType(?InputComponentRecipeInterface $recipe, ComponentBag $componentBag): string|BackedEnum
     {
-        return $recipe->getComponentBag()?->getInputType() ?? $componentBag->getInputType() ?? InputTypes::INPUT;
+        return $recipe?->getComponentBag()?->getInputType() ?? $componentBag->getInputType() ?? InputTypes::INPUT;
     }
 
     public static function resolveErrorType(?InputComponentRecipeInterface $recipe, ErrorComponent $componentBag): string|BackedEnum
     {
-        return $recipe->getComponentBag()?->getErrorType() ?? $componentBag->getErrorType() ?? InputTypes::HELP_TEXT;
+        return $recipe?->getComponentBag()?->getErrorType() ?? $componentBag->getErrorType() ?? InputTypes::ERROR;
     }
 
     public static function resolveHelpTextType(?InputComponentRecipeInterface $recipe, HelpTextComponent $componentBag): string|BackedEnum
     {
-        return $recipe->getComponentBag()?->getErrorType() ?? $componentBag->getHelpTextType() ?? InputTypes::HELP_TEXT;
+        return $recipe?->getComponentBag()?->getHelpTextType() ?? $componentBag->getHelpTextType() ?? InputTypes::HELP_TEXT;
     }
 
     public static function resolveThemeManager(string|Closure|null $manager): ThemeManager

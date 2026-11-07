@@ -7,7 +7,6 @@ namespace Juaniquillo\InputComponentAction;
 use Exception;
 use Juaniquillo\CrudAssistant\Concerns\IsAction;
 use Juaniquillo\CrudAssistant\Contracts\ActionInterface;
-use Juaniquillo\CrudAssistant\Contracts\DataContainerInterface;
 use Juaniquillo\CrudAssistant\Contracts\InputCollectionInterface;
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
 use Juaniquillo\CrudAssistant\DataContainer;
@@ -43,16 +42,6 @@ final class InputComponentAction implements ActionInterface, InputComponentActio
         }
 
         return $this;
-    }
-
-    public function getOutput(): InputComponentOutput|DataContainerInterface
-    {
-        $this->initOutput();
-
-        /** @var InputComponentOutput $output */
-        $output = $this->output;
-
-        return $output;
     }
 
     public function execute(InputCollectionInterface|InputInterface $input): void

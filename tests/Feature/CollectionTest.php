@@ -8,6 +8,7 @@ use Exception;
 use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Enums\ComponentEnum;
 use Juaniquillo\CrudAssistant\Actions\FilterAction;
+use Juaniquillo\CrudAssistant\Contracts\InputInterface;
 use Juaniquillo\CrudAssistant\CrudAssistant;
 use Juaniquillo\CrudAssistant\InputCollection;
 use Juaniquillo\CrudAssistant\Inputs\DefaultInput;
@@ -15,7 +16,10 @@ use Juaniquillo\InputComponentAction\Bags\DefaultAttributeBag;
 use Juaniquillo\InputComponentAction\Bags\DefaultComponentBag;
 use Juaniquillo\InputComponentAction\Bags\DefaultHookBag;
 use Juaniquillo\InputComponentAction\Bags\DefaultThemeBag;
+use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
+use Juaniquillo\InputComponentAction\Contracts\ValueManager;
 use Juaniquillo\InputComponentAction\Recipes\InputComponentRecipe;
+use Juaniquillo\InputComponentAction\Utilities\Support;
 use Tests\Support\ActionFactory;
 use Tests\Support\ComponentTree;
 
@@ -77,6 +81,37 @@ test('it applies wrapper hooks to a nested collection', function (): void {
     expect($group->getAttribute('data-group-hook'))->toBe('yes');
 });
 
+test('it passes values and errors to nested collection wrapper hooks', function (): void {
+    $nested = new InputCollection('group');
+    $nested->setInputs([new DefaultInput('a', 'A')]);
+    $nested->setRecipe(new InputComponentRecipe(
+        hookBag: (new DefaultHookBag)->setWrapperHook(
+            static function (
+                BackendComponent $component,
+                InputInterface $input,
+                mixed $type,
+                ?ValueManager $values,
+                ?ErrorManager $errors,
+            ): BackendComponent {
+                $error = $errors?->resolve($input, Support::getRecipe($input));
+
+                return $component
+                    ->setAttribute('data-value', (string) $values?->getValues()['top'])
+                    ->setAttribute('data-error', $error ?? '');
+            },
+        ),
+    ));
+
+    $output = ActionFactory::output(
+        CrudAssistant::make([$nested]),
+        ActionFactory::make(['top' => 'value'], ['group' => 'Group error']),
+    );
+    $group = $output->inputs->get('group');
+
+    expect($group->getAttribute('data-value'))->toBe('value')
+        ->and($group->getAttribute('data-error'))->toBe('Group error');
+});
+
 test('it skips ignored inputs at the top level', function (): void {
     $ignored = new DefaultInput('ignored', 'Ignored');
     $ignored->setRecipe((new InputComponentRecipe)->ignore());
@@ -101,11 +136,7 @@ test('it skips inputs scoped to another action', function (): void {
     expect(array_keys($output->inputs->toArray()))->toBe(['kept']);
 });
 
-/**
- * Current behavior: the action iterates nested collections itself and does
- * not consult the ignore flag. Phase 1 will make recursion honor it.
- */
-test('it currently renders ignored inputs inside nested collections', function (): void {
+test('it skips ignored inputs inside nested collections', function (): void {
     $ignored = new DefaultInput('ignored', 'Ignored');
     $ignored->setRecipe((new InputComponentRecipe)->ignore());
 
@@ -118,14 +149,10 @@ test('it currently renders ignored inputs inside nested collections', function (
     $output = ActionFactory::output(CrudAssistant::make([$nested]));
     $group = $output->inputs->get('group');
 
-    expect(ComponentTree::rawContents($group))->toHaveCount(2);
+    expect(ComponentTree::rawContents($group))->toHaveCount(1);
 });
 
-/**
- * Current behavior: the action iterates nested collections itself and does
- * not consult onlyFor(). Phase 1 will make recursion honor it.
- */
-test('it currently renders inputs scoped to another action inside nested collections', function (): void {
+test('it skips inputs scoped to another action inside nested collections', function (): void {
     $filtered = new DefaultInput('filtered', 'Filtered');
     $filtered->onlyFor([FilterAction::class]);
 
@@ -138,7 +165,7 @@ test('it currently renders inputs scoped to another action inside nested collect
     $output = ActionFactory::output(CrudAssistant::make([$nested]));
     $group = $output->inputs->get('group');
 
-    expect(ComponentTree::rawContents($group))->toHaveCount(2);
+    expect(ComponentTree::rawContents($group))->toHaveCount(1);
 });
 
 test('it requires nested collections to have a name', function (): void {

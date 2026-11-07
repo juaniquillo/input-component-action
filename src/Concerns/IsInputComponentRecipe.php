@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Juaniquillo\InputComponentAction\Concerns;
 
-use BackedEnum;
 use Closure;
 use Juaniquillo\BackendComponents\Contracts\ThemeManager;
 use Juaniquillo\InputComponentAction\Contracts\AttributeBag;
@@ -73,16 +72,6 @@ trait IsInputComponentRecipe
 
     private string|Closure|null $helpText = null;
 
-    private string|BackedEnum|null $wrapperType = null;
-
-    private string|BackedEnum|null $labelType = null;
-
-    private string|BackedEnum|null $inputType = null;
-
-    private string|BackedEnum|null $errorType = null;
-
-    private string|BackedEnum|null $helpTextType = null;
-
     /**
      * Select menu, checkbox of radiobox
      */
@@ -92,7 +81,7 @@ trait IsInputComponentRecipe
 
     public static function make(): self
     {
-        return new self;
+        return new static;
     }
 
     public function getInputGroup(): ?InputGroup
@@ -295,66 +284,6 @@ trait IsInputComponentRecipe
     public function setDisableBag(DisableBag|WrapperDisable|LabelDisable|ErrorDisable|HelpTextDisable|InputDisable|null $disableBag): self
     {
         $this->disableBag = $disableBag;
-
-        return $this;
-    }
-
-    public function getWrapperType(): string|BackedEnum|null
-    {
-        return $this->wrapperType;
-    }
-
-    public function setWrapperType(string|BackedEnum|null $wrapperType): self
-    {
-        $this->wrapperType = $wrapperType;
-
-        return $this;
-    }
-
-    public function getLabelType(): string|BackedEnum|null
-    {
-        return $this->labelType;
-    }
-
-    public function setLabelType(string|BackedEnum|null $labelType): self
-    {
-        $this->labelType = $labelType;
-
-        return $this;
-    }
-
-    public function getInputType(): string|BackedEnum|null
-    {
-        return $this->inputType;
-    }
-
-    public function setInputType(string|BackedEnum|null $inputType): self
-    {
-        $this->inputType = $inputType;
-
-        return $this;
-    }
-
-    public function getErrorType(): string|BackedEnum|null
-    {
-        return $this->errorType;
-    }
-
-    public function setErrorType(string|BackedEnum|null $errorType): self
-    {
-        $this->errorType = $errorType;
-
-        return $this;
-    }
-
-    public function getHelpTextType(): string|BackedEnum|null
-    {
-        return $this->helpTextType;
-    }
-
-    public function setHelpTextType(string|BackedEnum|null $helpTextType): self
-    {
-        $this->helpTextType = $helpTextType;
 
         return $this;
     }

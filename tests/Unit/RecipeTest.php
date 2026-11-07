@@ -103,7 +103,8 @@ test('it can be initialized with every bag and flag', function (): void {
 });
 
 test('it can be created with make', function (): void {
-    expect(InputComponentRecipe::make())->toBeInstanceOf(InputComponentRecipe::class);
+    expect(InputComponentRecipe::make())->toBeInstanceOf(InputComponentRecipe::class)
+        ->and(SelectOptionComponentRecipe::make())->toBeInstanceOf(SelectOptionComponentRecipe::class);
 });
 
 test('the select option recipe applies its defaults', function (): void {
@@ -170,6 +171,33 @@ test('it renders select options and marks the matching option as selected', func
         ->and($options[1]->getAttribute('value'))->toBe('b')
         ->and($options[1]->getAttribute('selected'))->toBeNull()
         ->and($options[1]->getContent(0))->toBe('B');
+});
+
+test('it marks every matching option as selected when the parent value is an array', function (): void {
+    $select = new SelectInput('choice', 'Choice');
+    $select->setRecipe(new InputComponentRecipe(
+        componentBag: (new DefaultComponentBag)->setInputType(ComponentEnum::SELECT),
+    ));
+
+    $select->setSubElements(CrudAssistant::make([
+        (new OptionInput('a', 'A'))->setRecipe(new SelectOptionComponentRecipe(inputValue: 'a')),
+        (new OptionInput('b', 'B'))->setRecipe(new SelectOptionComponentRecipe(inputValue: 'b')),
+        (new OptionInput('c', 'C'))->setRecipe(new SelectOptionComponentRecipe(inputValue: 'c')),
+    ]));
+
+    $component = ActionFactory::component(
+        CrudAssistant::make([$select]),
+        'choice',
+        ActionFactory::make(['choice' => ['a', 'c']]),
+    );
+    $selectComponent = ComponentTree::find($component, ComponentEnum::SELECT->value);
+    $options = ComponentTree::findAll($selectComponent, ComponentEnum::OPTION->value);
+
+    expect($options)->toHaveCount(3)
+        ->and($options[0]->getAttribute('selected'))->toBe('selected')
+        ->and($options[1]->getAttribute('selected'))->toBeNull()
+        ->and($options[2]->getAttribute('selected'))->toBe('selected')
+        ->and($selectComponent->getAttribute('value'))->toBeNull();
 });
 
 test('it marks the matching radio as checked from the parent value', function (): void {

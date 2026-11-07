@@ -8,15 +8,20 @@ use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Contracts\ContentComponent;
 use Juaniquillo\BackendComponents\Contracts\ThemeComponent;
 use Juaniquillo\InputComponentAction\Composers\ErrorComposer;
-use Juaniquillo\InputComponentAction\Utilities\Support;
 
 trait HasError
 {
     private function getErrorComponent(): BackendComponent|ContentComponent|ThemeComponent|null
     {
-        $recipe = Support::getRecipe($this->input);
+        $recipe = $this->recipe;
 
         if ($recipe->getDisableBag()?->disableError()) {
+            return null;
+        }
+
+        $error = $this->errors->resolve($this->input, $recipe);
+
+        if ($error === null || $error === '') {
             return null;
         }
 
@@ -28,6 +33,7 @@ trait HasError
             values: $this->values,
             errors: $this->errors,
             themeBag: $this->defaultThemeBag,
+            resolvedError: $error,
         );
 
         if ($this->parent) {

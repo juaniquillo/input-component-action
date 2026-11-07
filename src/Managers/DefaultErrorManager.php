@@ -32,11 +32,12 @@ final class DefaultErrorManager implements ErrorManager
         }
 
         /**
-         * If multiple errors
+         * If multiple errors, the latest one wins.
          */
         if (is_array($errorDefault)) {
-            $reversed = array_reverse(array: $errorDefault);
-            $errorDefault = array_pop(array: $reversed);
+            $errorDefault = $errorDefault === []
+                ? null
+                : $errorDefault[array_key_last($errorDefault)];
         }
 
         return $error ?? $errorDefault ?? null;

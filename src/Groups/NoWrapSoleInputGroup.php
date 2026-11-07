@@ -6,15 +6,13 @@ namespace Juaniquillo\InputComponentAction\Groups;
 
 use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Contracts\ContentComponent;
-use Juaniquillo\InputComponentAction\Concerns\HasWrapper;
 use Juaniquillo\InputComponentAction\Concerns\IsInputGroup;
 use Juaniquillo\InputComponentAction\Contracts\InputGroup;
 use Juaniquillo\InputComponentAction\Utilities\Support;
 
 class NoWrapSoleInputGroup implements InputGroup
 {
-    use HasWrapper,
-        IsInputGroup;
+    use IsInputGroup;
 
     public function getGroup(): BackendComponent|ContentComponent
     {

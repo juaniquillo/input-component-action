@@ -8,13 +8,12 @@ use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Contracts\ContentComponent;
 use Juaniquillo\BackendComponents\Contracts\ThemeComponent;
 use Juaniquillo\InputComponentAction\Composers\HelpTextComposer;
-use Juaniquillo\InputComponentAction\Utilities\Support;
 
 trait HasHelpText
 {
     private function getHelpTextComponent(): BackendComponent|ContentComponent|ThemeComponent|null
     {
-        $recipe = Support::getRecipe($this->input);
+        $recipe = $this->recipe;
 
         if ($recipe->getDisableBag()?->disableHelpText() || $recipe->getHelpText() === null) {
             return null;

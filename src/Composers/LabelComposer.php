@@ -63,7 +63,7 @@ final class LabelComposer implements ComponentComposer
         $attributes = $this->resolveArrayClosure(value: $attributes, input: $input, type: $inputType);
         $themes = $this->resolveArrayClosure(value: $theme, input: $input, type: $inputType);
 
-        if (! $recipe->isEmptyLabel()) {
+        if (! $recipe->isEmptyLabel() && $label !== null) {
             $component->setContent($label);
         }
 

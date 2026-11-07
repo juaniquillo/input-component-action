@@ -23,30 +23,24 @@ final class DefaultValueManager implements ValueManager
 
     public function resolve(InputInterface $input, InputComponentRecipeInterface $recipe, bool $ignoreRecipeValue = false): Stringable|string|int|array|null
     {
-        $values = $this->values;
-        $model = $this->model;
-
         $name = $input->getName();
 
-        if (array_key_exists(key: $name, array: $values)) {
-            return $values[$name];
+        if (array_key_exists(key: $name, array: $this->values)) {
+            return $this->values[$name];
         }
 
-        $recipeValue = $recipe->getInputValue();
-        $modelValue = null;
-
-        $modelValue = $model->{$name} ?? null;
-
-        $recipeValueProcessed = null;
-
         if (! $ignoreRecipeValue) {
-            if (Support::isClosure($recipeValue)) {
-                $recipeValueProcessed = $recipeValue($input, $values, $model);
-            } else {
-                $recipeValueProcessed = $recipeValue;
+            $recipeValue = $recipe->getInputValue();
+
+            $recipeValue = Support::isClosure($recipeValue)
+                ? $recipeValue($input, $this->values, $this->model)
+                : $recipeValue;
+
+            if ($recipeValue !== null) {
+                return $recipeValue;
             }
         }
 
-        return $recipeValueProcessed ?? $modelValue ?? null;
+        return $this->model->{$name} ?? null;
     }
 }

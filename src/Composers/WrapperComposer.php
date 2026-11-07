@@ -65,7 +65,7 @@ final class WrapperComposer implements ComponentComposer
             $component->setThemes($theme);
         }
 
-        if ($recipe->labelAsInputContent()) {
+        if ($recipe->labelAsInputContent() && $input->getLabel() !== null) {
             $component->setContent($input->getLabel());
         }
 

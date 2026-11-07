@@ -15,7 +15,7 @@ interface ValueManager
     /** @return array<string|int, string|int|array<string|int|null>|null> */
     public function getValues(): array;
 
-    public function setModel(object $model): static;
+    public function setModel(?object $model): static;
 
     public function getModel(): ?object;
 

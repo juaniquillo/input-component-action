@@ -97,7 +97,7 @@ trait IsInputComponentAction
         return $this;
     }
 
-    public function resolveInputs(InputCollectionInterface|InputInterface $input): array|BackendComponent|ContentComponent
+    public function resolveInputs(InputCollectionInterface|InputInterface $input): BackendComponent|ContentComponent
     {
         /**
          * Recursively resolve inputs
@@ -105,8 +105,13 @@ trait IsInputComponentAction
          */
         if (InputHelper::isCollection($input) && $this->controlsRecursion()) {
             $wrapper = $this->getWrapper($input);
+            $identifier = static::getIdentifier();
 
             foreach ($input as $item) {
+                if (! $this->shouldResolve($item, $identifier)) {
+                    continue;
+                }
+
                 $wrapper->setContent($this->resolveInputs($item));
             }
 
@@ -116,13 +121,21 @@ trait IsInputComponentAction
         $inputGroup = $this->getInputGroup($input);
 
         /** Modifiers on the whole input group component */
-        $component = $this->modifiers(
+        return $this->modifiers(
             value: $inputGroup,
             input: $input,
         );
+    }
 
-        return $component;
+    private function shouldResolve(InputInterface $input, string $identifier): bool
+    {
+        $recipe = $input->getRecipe($identifier);
 
+        if ($recipe && $recipe->isIgnored()) {
+            return false;
+        }
+
+        return $input->isFor($identifier);
     }
 
     public function getInputGroup(InputInterface $input): BackendComponent
@@ -150,6 +163,8 @@ trait IsInputComponentAction
             input: $input,
             themeManager: $recipe->getThemeManager() ?? Support::resolveThemeManager($this->defaultThemeManager),
             componentBag: $this->defaultComponentBag ?? new DefaultComponentBag,
+            values: $this->getValueManager($recipe),
+            errors: $this->getErrorManager($recipe),
             themeBag: $this->defaultThemeBag,
         );
 

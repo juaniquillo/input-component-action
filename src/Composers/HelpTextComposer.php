@@ -40,7 +40,6 @@ class HelpTextComposer
         $recipe = $this->recipe;
 
         $helpText = $recipe->getHelpText();
-        $callback = $recipe->getHookBag()?->getInputHook() ?? null;
 
         $attributes = $recipe->getAttributeBag()?->getHelpTextAttributes() ?? null;
         $theme = $recipe->getThemeBag()?->getHelpTextTheme() ?? $this->themeBag?->getHelpTextTheme();

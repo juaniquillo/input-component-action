@@ -32,6 +32,7 @@ final class ErrorComposer implements ComponentComposer
         private ?ValueManager $values = null,
         private ?ErrorManager $errors = null,
         private ?ErrorTheme $themeBag = null,
+        private ?string $resolvedError = null,
     ) {}
 
     public function build(): BackendComponent|ContentComponent|ThemeComponent
@@ -54,12 +55,19 @@ final class ErrorComposer implements ComponentComposer
             themeManager: $themeManager
         );
 
+        $attributes = $recipe->getAttributeBag()?->getErrorAttributes() ?? null;
         $theme = $recipe->getThemeBag()?->getErrorTheme() ?? $this->themeBag?->getErrorTheme();
-        $themes = $this->resolveArrayClosure(value: $theme, input: $input, type: $componentType);
 
-        $error = $errorResolver->resolve($input, $recipe);
-        if ($error) {
+        $attributes = $this->resolveArrayClosure(value: $attributes, input: $input, type: $inputType);
+        $themes = $this->resolveArrayClosure(value: $theme, input: $input, type: $inputType);
+
+        $error = $this->resolvedError ?? $errorResolver->resolve($input, $recipe);
+        if ($error !== null && $error !== '') {
             $component->setContent($error);
+        }
+
+        if ($attributes) {
+            $component->setAttributes($attributes);
         }
 
         if ($themes) {
