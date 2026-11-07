@@ -14,9 +14,8 @@ use Juaniquillo\InputComponentAction\Concerns\IsComposer;
 use Juaniquillo\InputComponentAction\Contracts\ComponentBag;
 use Juaniquillo\InputComponentAction\Contracts\ComponentComposer;
 use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
+use Juaniquillo\InputComponentAction\Contracts\ThemeBag;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
-use Juaniquillo\InputComponentAction\Contracts\WrapperComponent;
-use Juaniquillo\InputComponentAction\Contracts\WrapperTheme;
 use Juaniquillo\InputComponentAction\Utilities\Support;
 
 final class WrapperComposer implements ComponentComposer
@@ -26,10 +25,10 @@ final class WrapperComposer implements ComponentComposer
     public function __construct(
         private InputInterface $input,
         private ThemeManager $themeManager,
-        private ComponentBag|WrapperComponent $componentBag,
+        private ComponentBag $componentBag,
         private ?ValueManager $values = null,
         private ?ErrorManager $errors = null,
-        private ?WrapperTheme $themeBag = null,
+        private ?ThemeBag $themeBag = null,
     ) {}
 
     public function build(): BackendComponent|ContentComponent|ThemeComponent

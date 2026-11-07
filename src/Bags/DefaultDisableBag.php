@@ -6,13 +6,8 @@ namespace Juaniquillo\InputComponentAction\Bags;
 
 use Juaniquillo\InputComponentAction\Concerns\IsDisableBag;
 use Juaniquillo\InputComponentAction\Contracts\DisableBag;
-use Juaniquillo\InputComponentAction\Contracts\ErrorDisable;
-use Juaniquillo\InputComponentAction\Contracts\HelpTextDisable;
-use Juaniquillo\InputComponentAction\Contracts\InputDisable;
-use Juaniquillo\InputComponentAction\Contracts\LabelDisable;
-use Juaniquillo\InputComponentAction\Contracts\WrapperDisable;
 
-final class DefaultDisableBag implements DisableBag, ErrorDisable, HelpTextDisable, InputDisable, LabelDisable, WrapperDisable
+final class DefaultDisableBag implements DisableBag
 {
     use IsDisableBag;
 }

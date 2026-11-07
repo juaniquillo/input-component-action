@@ -15,18 +15,10 @@ use Juaniquillo\InputComponentAction\Bags\DefaultComponentBag;
 use Juaniquillo\InputComponentAction\Bags\DefaultThemeBag;
 use Juaniquillo\InputComponentAction\Composers\WrapperComposer;
 use Juaniquillo\InputComponentAction\Contracts\ComponentBag;
-use Juaniquillo\InputComponentAction\Contracts\ErrorComponent;
 use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
-use Juaniquillo\InputComponentAction\Contracts\ErrorTheme;
-use Juaniquillo\InputComponentAction\Contracts\HelpTextComponent;
-use Juaniquillo\InputComponentAction\Contracts\HelpTextTheme;
 use Juaniquillo\InputComponentAction\Contracts\InputComponentRecipeInterface;
-use Juaniquillo\InputComponentAction\Contracts\LabelComponent;
-use Juaniquillo\InputComponentAction\Contracts\LabelTheme;
 use Juaniquillo\InputComponentAction\Contracts\ThemeBag;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
-use Juaniquillo\InputComponentAction\Contracts\WrapperComponent;
-use Juaniquillo\InputComponentAction\Contracts\WrapperTheme;
 use Juaniquillo\InputComponentAction\Factories\InputGroupFactory;
 use Juaniquillo\InputComponentAction\Managers\DefaultErrorManager;
 use Juaniquillo\InputComponentAction\Managers\DefaultValueManager;
@@ -38,9 +30,9 @@ trait IsInputComponentAction
 
     private string|Closure|null $defaultInputGroup = null;
 
-    private ThemeBag|WrapperTheme|LabelTheme|ErrorTheme|HelpTextTheme|null $defaultThemeBag = null;
+    private ?ThemeBag $defaultThemeBag = null;
 
-    private ComponentBag|WrapperComponent|LabelComponent|ErrorComponent|HelpTextComponent|null $defaultComponentBag = null;
+    private ?ComponentBag $defaultComponentBag = null;
 
     private ?object $model = null;
 
@@ -62,14 +54,14 @@ trait IsInputComponentAction
         return $this;
     }
 
-    public function setDefaultThemeBag(ThemeBag|WrapperTheme|LabelTheme|ErrorTheme|HelpTextTheme $defaultThemeBag): static
+    public function setDefaultThemeBag(ThemeBag $defaultThemeBag): static
     {
         $this->defaultThemeBag = $defaultThemeBag;
 
         return $this;
     }
 
-    public function setDefaultComponentBag(ComponentBag|WrapperComponent|LabelComponent|ErrorComponent|HelpTextComponent $defaultComponentBag): static
+    public function setDefaultComponentBag(ComponentBag $defaultComponentBag): static
     {
         $this->defaultComponentBag = $defaultComponentBag;
 

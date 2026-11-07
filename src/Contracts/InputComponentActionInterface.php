@@ -17,9 +17,9 @@ interface InputComponentActionInterface
 
     public function setDefaultInputGroup(string|Closure|null $defaultInputGroup): static;
 
-    public function setDefaultThemeBag(ThemeBag|WrapperTheme|LabelTheme|ErrorTheme|HelpTextTheme $defaultThemeBag): static;
+    public function setDefaultThemeBag(ThemeBag $defaultThemeBag): static;
 
-    public function setDefaultComponentBag(ComponentBag|WrapperComponent|LabelComponent|ErrorComponent|HelpTextComponent $defaultComponentBag): static;
+    public function setDefaultComponentBag(ComponentBag $defaultComponentBag): static;
 
     public function setModel(?object $model = null): static;
 

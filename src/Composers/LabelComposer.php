@@ -15,8 +15,7 @@ use Juaniquillo\InputComponentAction\Contracts\ComponentBag;
 use Juaniquillo\InputComponentAction\Contracts\ComponentComposer;
 use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
 use Juaniquillo\InputComponentAction\Contracts\InputComponentRecipeInterface;
-use Juaniquillo\InputComponentAction\Contracts\LabelComponent;
-use Juaniquillo\InputComponentAction\Contracts\LabelTheme;
+use Juaniquillo\InputComponentAction\Contracts\ThemeBag;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
 use Juaniquillo\InputComponentAction\Utilities\Support;
 
@@ -28,10 +27,10 @@ final class LabelComposer implements ComponentComposer
         private InputInterface $input,
         private InputComponentRecipeInterface $recipe,
         private ThemeManager $themeManager,
-        private ComponentBag|LabelComponent $componentBag,
+        private ComponentBag $componentBag,
         private ?ValueManager $values = null,
         private ?ErrorManager $errors = null,
-        private ?LabelTheme $themeBag = null,
+        private ?ThemeBag $themeBag = null,
     ) {}
 
     public function build(): BackendComponent|ContentComponent|ThemeComponent

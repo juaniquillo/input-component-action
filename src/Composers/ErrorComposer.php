@@ -13,10 +13,9 @@ use Juaniquillo\InputComponentAction\Bags\DefaultHookBag;
 use Juaniquillo\InputComponentAction\Concerns\IsComposer;
 use Juaniquillo\InputComponentAction\Contracts\ComponentBag;
 use Juaniquillo\InputComponentAction\Contracts\ComponentComposer;
-use Juaniquillo\InputComponentAction\Contracts\ErrorComponent;
 use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
-use Juaniquillo\InputComponentAction\Contracts\ErrorTheme;
 use Juaniquillo\InputComponentAction\Contracts\InputComponentRecipeInterface;
+use Juaniquillo\InputComponentAction\Contracts\ThemeBag;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
 use Juaniquillo\InputComponentAction\Utilities\Support;
 
@@ -28,10 +27,10 @@ final class ErrorComposer implements ComponentComposer
         private InputInterface $input,
         private InputComponentRecipeInterface $recipe,
         private ThemeManager $themeManager,
-        private ComponentBag|ErrorComponent $componentBag,
+        private ComponentBag $componentBag,
         private ?ValueManager $values = null,
         private ?ErrorManager $errors = null,
-        private ?ErrorTheme $themeBag = null,
+        private ?ThemeBag $themeBag = null,
         private ?string $resolvedError = null,
     ) {}
 

@@ -12,18 +12,10 @@ use Juaniquillo\BackendComponents\Contracts\ThemeManager;
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
 use Juaniquillo\InputComponentAction\Composers\InputComposer;
 use Juaniquillo\InputComponentAction\Contracts\ComponentBag;
-use Juaniquillo\InputComponentAction\Contracts\ErrorComponent;
 use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
-use Juaniquillo\InputComponentAction\Contracts\ErrorTheme;
-use Juaniquillo\InputComponentAction\Contracts\HelpTextComponent;
-use Juaniquillo\InputComponentAction\Contracts\HelpTextTheme;
 use Juaniquillo\InputComponentAction\Contracts\InputComponentRecipeInterface;
-use Juaniquillo\InputComponentAction\Contracts\LabelComponent;
-use Juaniquillo\InputComponentAction\Contracts\LabelTheme;
 use Juaniquillo\InputComponentAction\Contracts\ThemeBag;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
-use Juaniquillo\InputComponentAction\Contracts\WrapperComponent;
-use Juaniquillo\InputComponentAction\Contracts\WrapperTheme;
 
 trait IsInputGroup
 {
@@ -41,9 +33,9 @@ trait IsInputGroup
 
     private ErrorManager $errors;
 
-    private ThemeBag|WrapperTheme|LabelTheme|ErrorTheme|HelpTextTheme|null $defaultThemeBag = null;
+    private ?ThemeBag $defaultThemeBag = null;
 
-    private ComponentBag|WrapperComponent|LabelComponent|ErrorComponent|HelpTextComponent|null $defaultComponentBag = null;
+    private ComponentBag $defaultComponentBag;
 
     private ?InputInterface $parent = null;
 
@@ -52,11 +44,11 @@ trait IsInputGroup
         InputComponentRecipeInterface $recipe,
         ThemeManager $themeManager,
         string|Closure|null $defaultThemeManager,
-        ComponentBag|WrapperComponent|LabelComponent|ErrorComponent|HelpTextComponent $defaultComponentBag,
+        ComponentBag $defaultComponentBag,
         string|Closure $defaultInputGroup,
         ValueManager $values,
         ErrorManager $errors,
-        ThemeBag|WrapperTheme|LabelTheme|ErrorTheme|HelpTextTheme|null $defaultThemeBag = null,
+        ?ThemeBag $defaultThemeBag = null,
     ): static {
         $this->input = $input;
         $this->recipe = $recipe;

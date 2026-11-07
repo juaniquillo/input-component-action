@@ -11,20 +11,12 @@ use Juaniquillo\BackendComponents\MainBackendComponent;
 use Juaniquillo\BackendComponents\Themes\DefaultThemeManager;
 use Juaniquillo\InputComponentAction\Bags\DefaultComponentBag;
 use Juaniquillo\InputComponentAction\Contracts\ComponentBag;
-use Juaniquillo\InputComponentAction\Contracts\ErrorComponent;
-use Juaniquillo\InputComponentAction\Contracts\HelpTextComponent;
-use Juaniquillo\InputComponentAction\Contracts\LabelComponent;
-use Juaniquillo\InputComponentAction\Contracts\WrapperComponent;
 use Juaniquillo\InputComponentAction\Utilities\Support;
 
-test('DefaultComponentBag implements all component interfaces', function () {
+test('DefaultComponentBag implements the component bag contract', function () {
     $bag = new DefaultComponentBag;
 
-    expect($bag)->toBeInstanceOf(ComponentBag::class)
-        ->toBeInstanceOf(WrapperComponent::class)
-        ->toBeInstanceOf(LabelComponent::class)
-        ->toBeInstanceOf(ErrorComponent::class)
-        ->toBeInstanceOf(HelpTextComponent::class);
+    expect($bag)->toBeInstanceOf(ComponentBag::class);
 });
 
 test('DefaultComponentBag can set and get all components', function () {

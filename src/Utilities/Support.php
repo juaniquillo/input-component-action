@@ -17,12 +17,8 @@ use Juaniquillo\BackendComponents\MainBackendComponent;
 use Juaniquillo\BackendComponents\Themes\LocalThemeManager;
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
 use Juaniquillo\InputComponentAction\Contracts\ComponentBag;
-use Juaniquillo\InputComponentAction\Contracts\ErrorComponent;
-use Juaniquillo\InputComponentAction\Contracts\HelpTextComponent;
 use Juaniquillo\InputComponentAction\Contracts\InputComponentRecipeInterface;
 use Juaniquillo\InputComponentAction\Contracts\InputGroup;
-use Juaniquillo\InputComponentAction\Contracts\LabelComponent;
-use Juaniquillo\InputComponentAction\Contracts\WrapperComponent;
 use Juaniquillo\InputComponentAction\Defaults\InputTypes;
 use Juaniquillo\InputComponentAction\Groups\DefaultInputGroup;
 use Juaniquillo\InputComponentAction\InputComponentAction;
@@ -41,12 +37,12 @@ final class Support
         return new InputComponentRecipe;
     }
 
-    public static function resolveWrapperType(?InputComponentRecipeInterface $recipe, WrapperComponent $componentBag): string|BackedEnum
+    public static function resolveWrapperType(?InputComponentRecipeInterface $recipe, ComponentBag $componentBag): string|BackedEnum
     {
         return $recipe?->getComponentBag()?->getWrapperType() ?? $componentBag->getWrapperType() ?? InputTypes::WRAPPER;
     }
 
-    public static function resolveLabelType(?InputComponentRecipeInterface $recipe, LabelComponent $componentBag): string|BackedEnum
+    public static function resolveLabelType(?InputComponentRecipeInterface $recipe, ComponentBag $componentBag): string|BackedEnum
     {
         return $recipe?->getComponentBag()?->getLabelType() ?? $componentBag->getLabelType() ?? InputTypes::LABEL;
     }
@@ -56,12 +52,12 @@ final class Support
         return $recipe?->getComponentBag()?->getInputType() ?? $componentBag->getInputType() ?? InputTypes::INPUT;
     }
 
-    public static function resolveErrorType(?InputComponentRecipeInterface $recipe, ErrorComponent $componentBag): string|BackedEnum
+    public static function resolveErrorType(?InputComponentRecipeInterface $recipe, ComponentBag $componentBag): string|BackedEnum
     {
         return $recipe?->getComponentBag()?->getErrorType() ?? $componentBag->getErrorType() ?? InputTypes::ERROR;
     }
 
-    public static function resolveHelpTextType(?InputComponentRecipeInterface $recipe, HelpTextComponent $componentBag): string|BackedEnum
+    public static function resolveHelpTextType(?InputComponentRecipeInterface $recipe, ComponentBag $componentBag): string|BackedEnum
     {
         return $recipe?->getComponentBag()?->getHelpTextType() ?? $componentBag->getHelpTextType() ?? InputTypes::HELP_TEXT;
     }

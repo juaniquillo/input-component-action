@@ -17,11 +17,11 @@ interface InputGroup
         InputComponentRecipeInterface $recipe,
         ThemeManager $themeManager,
         string|Closure|null $defaultThemeManager,
-        ComponentBag|WrapperComponent|LabelComponent|ErrorComponent|HelpTextComponent $defaultComponentBag,
+        ComponentBag $defaultComponentBag,
         string|Closure $defaultInputGroup,
         ValueManager $values,
         ErrorManager $errors,
-        ThemeBag|WrapperTheme|LabelTheme|ErrorTheme|HelpTextTheme|null $defaultThemeBag = null,
+        ?ThemeBag $defaultThemeBag = null,
     ): static;
 
     public function getGroup(): BackendComponent|ContentComponent;

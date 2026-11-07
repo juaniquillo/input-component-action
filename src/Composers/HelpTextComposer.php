@@ -13,9 +13,8 @@ use Juaniquillo\InputComponentAction\Bags\DefaultHookBag;
 use Juaniquillo\InputComponentAction\Concerns\IsComposer;
 use Juaniquillo\InputComponentAction\Contracts\ComponentBag;
 use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
-use Juaniquillo\InputComponentAction\Contracts\HelpTextComponent;
-use Juaniquillo\InputComponentAction\Contracts\HelpTextTheme;
 use Juaniquillo\InputComponentAction\Contracts\InputComponentRecipeInterface;
+use Juaniquillo\InputComponentAction\Contracts\ThemeBag;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
 use Juaniquillo\InputComponentAction\Utilities\Support;
 
@@ -27,10 +26,10 @@ class HelpTextComposer
         private InputInterface $input,
         private InputComponentRecipeInterface $recipe,
         private ThemeManager $themeManager,
-        private ComponentBag|HelpTextComponent $componentBag,
+        private ComponentBag $componentBag,
         private ?ValueManager $values = null,
         private ?ErrorManager $errors = null,
-        private ?HelpTextTheme $themeBag = null,
+        private ?ThemeBag $themeBag = null,
     ) {}
 
     public function build(): BackendComponent|ContentComponent|ThemeComponent
