@@ -7,7 +7,8 @@ namespace Juaniquillo\InputComponentAction\Concerns;
 use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Contracts\ContentComponent;
 use Juaniquillo\BackendComponents\Contracts\ThemeComponent;
-use Juaniquillo\InputComponentAction\Composers\WrapperComposer;
+use Juaniquillo\InputComponentAction\Composers\SlotComposer;
+use Juaniquillo\InputComponentAction\Enums\Slot;
 
 trait HasWrapper
 {
@@ -19,8 +20,10 @@ trait HasWrapper
             return null;
         }
 
-        $composer = new WrapperComposer(
+        $composer = new SlotComposer(
+            slot: Slot::WRAPPER,
             input: $this->input,
+            recipe: $this->recipe,
             themeManager: $this->themeManager,
             componentBag: $this->defaultComponentBag,
             values: $this->values,

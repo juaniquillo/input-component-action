@@ -19,7 +19,7 @@ use Juaniquillo\CrudAssistant\Contracts\InputInterface;
 use Juaniquillo\InputComponentAction\Contracts\ComponentBag;
 use Juaniquillo\InputComponentAction\Contracts\InputComponentRecipeInterface;
 use Juaniquillo\InputComponentAction\Contracts\InputGroup;
-use Juaniquillo\InputComponentAction\Defaults\InputTypes;
+use Juaniquillo\InputComponentAction\Enums\Slot;
 use Juaniquillo\InputComponentAction\Groups\DefaultInputGroup;
 use Juaniquillo\InputComponentAction\InputComponentAction;
 use Juaniquillo\InputComponentAction\Recipes\InputComponentRecipe;
@@ -37,29 +37,54 @@ final class Support
         return new InputComponentRecipe;
     }
 
+    public static function resolveType(?InputComponentRecipeInterface $recipe, Slot $slot, ComponentBag $componentBag): string|BackedEnum
+    {
+        $recipeType = match ($slot) {
+            Slot::WRAPPER => $recipe?->getComponentBag()?->getWrapperType(),
+            Slot::LABEL => $recipe?->getComponentBag()?->getLabelType(),
+            Slot::INPUT => $recipe?->getComponentBag()?->getInputType(),
+            Slot::ERROR => $recipe?->getComponentBag()?->getErrorType(),
+            Slot::HELP_TEXT => $recipe?->getComponentBag()?->getHelpTextType(),
+        };
+
+        if ($recipeType !== null) {
+            return $recipeType;
+        }
+
+        $defaultType = match ($slot) {
+            Slot::WRAPPER => $componentBag->getWrapperType(),
+            Slot::LABEL => $componentBag->getLabelType(),
+            Slot::INPUT => $componentBag->getInputType(),
+            Slot::ERROR => $componentBag->getErrorType(),
+            Slot::HELP_TEXT => $componentBag->getHelpTextType(),
+        };
+
+        return $defaultType ?? $slot->defaultType();
+    }
+
     public static function resolveWrapperType(?InputComponentRecipeInterface $recipe, ComponentBag $componentBag): string|BackedEnum
     {
-        return $recipe?->getComponentBag()?->getWrapperType() ?? $componentBag->getWrapperType() ?? InputTypes::WRAPPER;
+        return self::resolveType($recipe, Slot::WRAPPER, $componentBag);
     }
 
     public static function resolveLabelType(?InputComponentRecipeInterface $recipe, ComponentBag $componentBag): string|BackedEnum
     {
-        return $recipe?->getComponentBag()?->getLabelType() ?? $componentBag->getLabelType() ?? InputTypes::LABEL;
+        return self::resolveType($recipe, Slot::LABEL, $componentBag);
     }
 
     public static function resolveInputType(?InputComponentRecipeInterface $recipe, ComponentBag $componentBag): string|BackedEnum
     {
-        return $recipe?->getComponentBag()?->getInputType() ?? $componentBag->getInputType() ?? InputTypes::INPUT;
+        return self::resolveType($recipe, Slot::INPUT, $componentBag);
     }
 
     public static function resolveErrorType(?InputComponentRecipeInterface $recipe, ComponentBag $componentBag): string|BackedEnum
     {
-        return $recipe?->getComponentBag()?->getErrorType() ?? $componentBag->getErrorType() ?? InputTypes::ERROR;
+        return self::resolveType($recipe, Slot::ERROR, $componentBag);
     }
 
     public static function resolveHelpTextType(?InputComponentRecipeInterface $recipe, ComponentBag $componentBag): string|BackedEnum
     {
-        return $recipe?->getComponentBag()?->getHelpTextType() ?? $componentBag->getHelpTextType() ?? InputTypes::HELP_TEXT;
+        return self::resolveType($recipe, Slot::HELP_TEXT, $componentBag);
     }
 
     public static function resolveThemeManager(string|Closure|null $manager): ThemeManager

@@ -7,7 +7,8 @@ namespace Juaniquillo\InputComponentAction\Concerns;
 use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Contracts\ContentComponent;
 use Juaniquillo\BackendComponents\Contracts\ThemeComponent;
-use Juaniquillo\InputComponentAction\Composers\LabelComposer;
+use Juaniquillo\InputComponentAction\Composers\SlotComposer;
+use Juaniquillo\InputComponentAction\Enums\Slot;
 
 trait HasLabel
 {
@@ -19,11 +20,12 @@ trait HasLabel
             return null;
         }
 
-        $composer = new LabelComposer(
+        $composer = new SlotComposer(
+            slot: Slot::LABEL,
             input: $this->input,
             recipe: $this->recipe,
-            componentBag: $this->defaultComponentBag,
             themeManager: $this->themeManager,
+            componentBag: $this->defaultComponentBag,
             values: $this->values,
             errors: $this->errors,
             themeBag: $this->defaultThemeBag,

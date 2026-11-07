@@ -13,12 +13,13 @@ use Juaniquillo\CrudAssistant\Contracts\InputInterface;
 use Juaniquillo\CrudAssistant\Support\InputHelper;
 use Juaniquillo\InputComponentAction\Bags\DefaultComponentBag;
 use Juaniquillo\InputComponentAction\Bags\DefaultThemeBag;
-use Juaniquillo\InputComponentAction\Composers\WrapperComposer;
+use Juaniquillo\InputComponentAction\Composers\SlotComposer;
 use Juaniquillo\InputComponentAction\Contracts\ComponentBag;
 use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
 use Juaniquillo\InputComponentAction\Contracts\InputComponentRecipeInterface;
 use Juaniquillo\InputComponentAction\Contracts\ThemeBag;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
+use Juaniquillo\InputComponentAction\Enums\Slot;
 use Juaniquillo\InputComponentAction\Factories\InputGroupFactory;
 use Juaniquillo\InputComponentAction\Managers\DefaultErrorManager;
 use Juaniquillo\InputComponentAction\Managers\DefaultValueManager;
@@ -151,8 +152,10 @@ trait IsInputComponentAction
     {
         $recipe = Support::getRecipe($input);
 
-        $composer = new WrapperComposer(
+        $composer = new SlotComposer(
+            slot: Slot::WRAPPER,
             input: $input,
+            recipe: $recipe,
             themeManager: $recipe->getThemeManager() ?? Support::resolveThemeManager($this->defaultThemeManager),
             componentBag: $this->defaultComponentBag ?? new DefaultComponentBag,
             values: $this->getValueManager($recipe),

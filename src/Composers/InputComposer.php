@@ -13,15 +13,15 @@ use Juaniquillo\CrudAssistant\Contracts\InputCollectionInterface;
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
 use Juaniquillo\InputComponentAction\Concerns\IsComposer;
 use Juaniquillo\InputComponentAction\Contracts\ComponentBag;
-use Juaniquillo\InputComponentAction\Contracts\ComponentComposer;
 use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
 use Juaniquillo\InputComponentAction\Contracts\InputComponentRecipeInterface;
 use Juaniquillo\InputComponentAction\Contracts\ThemeBag;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
+use Juaniquillo\InputComponentAction\Enums\Slot;
 use Juaniquillo\InputComponentAction\Factories\InputGroupFactory;
 use Juaniquillo\InputComponentAction\Utilities\Support;
 
-final class InputComposer implements ComponentComposer
+final class InputComposer
 {
     use IsComposer;
 
@@ -51,7 +51,7 @@ final class InputComposer implements ComponentComposer
         $recipeComponentBag = $recipe->getComponentBag();
         $defaultComponentBag = $this->componentBag;
 
-        $inputType = Support::resolveInputType($recipe, $defaultComponentBag);
+        $inputType = Support::resolveType($recipe, Slot::INPUT, $defaultComponentBag);
 
         $currentComponent = $recipeComponentBag?->getInputComponent() ?? $defaultComponentBag->getInputComponent();
 

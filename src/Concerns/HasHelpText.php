@@ -7,7 +7,8 @@ namespace Juaniquillo\InputComponentAction\Concerns;
 use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Contracts\ContentComponent;
 use Juaniquillo\BackendComponents\Contracts\ThemeComponent;
-use Juaniquillo\InputComponentAction\Composers\HelpTextComposer;
+use Juaniquillo\InputComponentAction\Composers\SlotComposer;
+use Juaniquillo\InputComponentAction\Enums\Slot;
 
 trait HasHelpText
 {
@@ -19,7 +20,8 @@ trait HasHelpText
             return null;
         }
 
-        $composer = new HelpTextComposer(
+        $composer = new SlotComposer(
+            slot: Slot::HELP_TEXT,
             input: $this->input,
             recipe: $this->recipe,
             themeManager: $this->themeManager,

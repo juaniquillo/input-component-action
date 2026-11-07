@@ -7,7 +7,8 @@ namespace Juaniquillo\InputComponentAction\Concerns;
 use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Contracts\ContentComponent;
 use Juaniquillo\BackendComponents\Contracts\ThemeComponent;
-use Juaniquillo\InputComponentAction\Composers\ErrorComposer;
+use Juaniquillo\InputComponentAction\Composers\SlotComposer;
+use Juaniquillo\InputComponentAction\Enums\Slot;
 
 trait HasError
 {
@@ -25,7 +26,8 @@ trait HasError
             return null;
         }
 
-        $composer = new ErrorComposer(
+        $composer = new SlotComposer(
+            slot: Slot::ERROR,
             input: $this->input,
             recipe: $this->recipe,
             themeManager: $this->themeManager,

@@ -13,6 +13,7 @@ use Juaniquillo\BackendComponents\Themes\LocalThemeManager;
 use Juaniquillo\CrudAssistant\Inputs\DefaultInput;
 use Juaniquillo\CrudAssistant\Recipes\FilterRecipe;
 use Juaniquillo\InputComponentAction\Bags\DefaultComponentBag;
+use Juaniquillo\InputComponentAction\Enums\Slot;
 use Juaniquillo\InputComponentAction\Groups\DefaultInputGroup;
 use Juaniquillo\InputComponentAction\Groups\SoleInputGroup;
 use Juaniquillo\InputComponentAction\Recipes\InputComponentRecipe;
@@ -157,6 +158,31 @@ test('it uses the default component bag when the recipe has no component bag', f
         ->and(Support::resolveInputType($recipe, $defaultBag))->toBe(ComponentEnum::TEXTAREA)
         ->and(Support::resolveErrorType($recipe, $defaultBag))->toBe(ComponentEnum::PARAGRAPH)
         ->and(Support::resolveHelpTextType($recipe, $defaultBag))->toBe(ComponentEnum::SMALL);
+});
+
+test('it resolves every slot through the generic type resolver', function (): void {
+    $bag = (new DefaultComponentBag)
+        ->setWrapperType(ComponentEnum::FIELDSET)
+        ->setLabelType(ComponentEnum::LEGEND)
+        ->setInputType(ComponentEnum::TEXTAREA)
+        ->setErrorType(ComponentEnum::SPAN)
+        ->setHelpTextType(ComponentEnum::SMALL);
+
+    $recipe = new InputComponentRecipe;
+
+    expect(Support::resolveType($recipe, Slot::WRAPPER, $bag))->toBe(ComponentEnum::FIELDSET)
+        ->and(Support::resolveType($recipe, Slot::LABEL, $bag))->toBe(ComponentEnum::LEGEND)
+        ->and(Support::resolveType($recipe, Slot::INPUT, $bag))->toBe(ComponentEnum::TEXTAREA)
+        ->and(Support::resolveType($recipe, Slot::ERROR, $bag))->toBe(ComponentEnum::SPAN)
+        ->and(Support::resolveType($recipe, Slot::HELP_TEXT, $bag))->toBe(ComponentEnum::SMALL);
+});
+
+test('the slot enum exposes its default component types', function (): void {
+    expect(Slot::WRAPPER->defaultType())->toBe(ComponentEnum::DIV)
+        ->and(Slot::LABEL->defaultType())->toBe(ComponentEnum::LABEL)
+        ->and(Slot::INPUT->defaultType())->toBe(ComponentEnum::TEXT_INPUT)
+        ->and(Slot::ERROR->defaultType())->toBe(ComponentEnum::PARAGRAPH)
+        ->and(Slot::HELP_TEXT->defaultType())->toBe(ComponentEnum::DIV);
 });
 
 test('it resolves the help text type from the recipe component bag', function (): void {
