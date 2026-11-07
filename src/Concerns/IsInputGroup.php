@@ -16,6 +16,7 @@ use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
 use Juaniquillo\InputComponentAction\Contracts\InputComponentRecipeInterface;
 use Juaniquillo\InputComponentAction\Contracts\ThemeBag;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
+use Juaniquillo\InputComponentAction\Groups\GroupContext;
 
 trait IsInputGroup
 {
@@ -39,33 +40,18 @@ trait IsInputGroup
 
     private ?InputInterface $parent = null;
 
-    public function inject(
-        InputInterface $input,
-        InputComponentRecipeInterface $recipe,
-        ThemeManager $themeManager,
-        string|Closure|null $defaultThemeManager,
-        ComponentBag $defaultComponentBag,
-        string|Closure $defaultInputGroup,
-        ValueManager $values,
-        ErrorManager $errors,
-        ?ThemeBag $defaultThemeBag = null,
-    ): static {
-        $this->input = $input;
-        $this->recipe = $recipe;
-        $this->themeManager = $themeManager;
-        $this->defaultThemeManager = $defaultThemeManager;
-        $this->defaultInputGroup = $defaultInputGroup;
-        $this->values = $values;
-        $this->errors = $errors;
-        $this->defaultThemeBag = $defaultThemeBag;
-        $this->defaultComponentBag = $defaultComponentBag;
-
-        return $this;
-    }
-
-    public function setParent(InputInterface $parent): static
+    public function inject(GroupContext $context): static
     {
-        $this->parent = $parent;
+        $this->input = $context->input;
+        $this->recipe = $context->recipe;
+        $this->themeManager = $context->themeManager;
+        $this->defaultThemeManager = $context->defaultThemeManager;
+        $this->defaultInputGroup = $context->defaultInputGroup;
+        $this->values = $context->values;
+        $this->errors = $context->errors;
+        $this->defaultThemeBag = $context->defaultThemeBag;
+        $this->defaultComponentBag = $context->defaultComponentBag;
+        $this->parent = $context->parent;
 
         return $this;
     }

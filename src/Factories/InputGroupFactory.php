@@ -4,68 +4,16 @@ declare(strict_types=1);
 
 namespace Juaniquillo\InputComponentAction\Factories;
 
-use Closure;
 use Juaniquillo\BackendComponents\Contracts\BackendComponent;
-use Juaniquillo\CrudAssistant\Contracts\InputInterface;
-use Juaniquillo\InputComponentAction\Bags\DefaultComponentBag;
-use Juaniquillo\InputComponentAction\Contracts\ComponentBag;
-use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
-use Juaniquillo\InputComponentAction\Contracts\InputComponentRecipeInterface;
-use Juaniquillo\InputComponentAction\Contracts\InputGroup;
-use Juaniquillo\InputComponentAction\Contracts\ThemeBag;
-use Juaniquillo\InputComponentAction\Contracts\ValueManager;
-use Juaniquillo\InputComponentAction\Groups\DefaultInputGroup;
+use Juaniquillo\InputComponentAction\Groups\GroupContext;
 use Juaniquillo\InputComponentAction\Utilities\Support;
 
 final class InputGroupFactory
 {
-    /**
-     * @param  class-string<InputGroup>|Closure|null  $defaultInputGroup
-     */
-    public static function init(
-        InputInterface $input,
-        InputComponentRecipeInterface $recipe,
-        ?ValueManager $values,
-        ?ErrorManager $errors,
-        string|Closure|null $defaultThemeManager = null,
-        string|Closure|null $defaultInputGroup = null,
-        ?ThemeBag $defaultThemeBag = null,
-        ?ComponentBag $defaultComponentBag = null,
-        ?InputInterface $parent = null): BackendComponent
+    public static function init(GroupContext $context): BackendComponent
     {
-        /** @var InputGroup $group */
-        $group = $recipe->getInputGroup() ?? Support::resolveInputGroup($defaultInputGroup);
+        $group = $context->recipe->getInputGroup() ?? Support::resolveInputGroup($context->defaultInputGroup);
 
-        $group = $group->inject(
-            input: $input,
-            recipe: $recipe,
-            values: $values,
-            errors: $errors,
-            /**
-             * Resolve Theme Manager once
-             */
-            themeManager: $recipe->getThemeManager() ?? Support::resolveThemeManager($defaultThemeManager),
-
-            defaultThemeManager: $defaultThemeManager,
-
-            /**
-             * Default needed
-             */
-            defaultComponentBag: $defaultComponentBag ?? new DefaultComponentBag,
-            defaultInputGroup: $defaultInputGroup ?? DefaultInputGroup::class,
-
-            /**
-             * No default needed
-             */
-            defaultThemeBag: $defaultThemeBag,
-        );
-
-        if ($parent) {
-
-            $group->setParent($parent);
-        }
-
-        return $group->getGroup();
-
+        return $group->inject($context)->getGroup();
     }
 }

@@ -21,6 +21,8 @@ use Juaniquillo\InputComponentAction\Contracts\ThemeBag;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
 use Juaniquillo\InputComponentAction\Enums\Slot;
 use Juaniquillo\InputComponentAction\Factories\InputGroupFactory;
+use Juaniquillo\InputComponentAction\Groups\DefaultInputGroup;
+use Juaniquillo\InputComponentAction\Groups\GroupContext;
 use Juaniquillo\InputComponentAction\Managers\DefaultErrorManager;
 use Juaniquillo\InputComponentAction\Managers\DefaultValueManager;
 use Juaniquillo\InputComponentAction\Utilities\Support;
@@ -135,17 +137,19 @@ trait IsInputComponentAction
     {
         $recipe = Support::getRecipe($input);
 
-        return InputGroupFactory::init(
+        $context = new GroupContext(
             input: $input,
             recipe: $recipe,
-            defaultThemeBag: $this->defaultThemeBag ?? new DefaultThemeBag,
+            themeManager: $recipe->getThemeManager() ?? Support::resolveThemeManager($this->defaultThemeManager),
+            defaultThemeManager: $this->defaultThemeManager,
+            defaultComponentBag: $this->defaultComponentBag ?? new DefaultComponentBag,
+            defaultInputGroup: $this->defaultInputGroup ?? DefaultInputGroup::class,
             values: $this->getValueManager($recipe),
             errors: $this->getErrorManager($recipe),
-            defaultComponentBag: $this->defaultComponentBag,
-            defaultThemeManager: $this->defaultThemeManager,
-            defaultInputGroup: $this->defaultInputGroup,
+            defaultThemeBag: $this->defaultThemeBag ?? new DefaultThemeBag,
         );
 
+        return InputGroupFactory::init($context);
     }
 
     public function getWrapper(InputInterface $input): BackendComponent|ContentComponent|ThemeComponent

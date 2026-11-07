@@ -4,40 +4,11 @@ declare(strict_types=1);
 
 namespace Juaniquillo\InputComponentAction\Groups;
 
-use Juaniquillo\BackendComponents\Contracts\BackendComponent;
-use Juaniquillo\BackendComponents\Contracts\ContentComponent;
-use Juaniquillo\InputComponentAction\Concerns\HasError;
-use Juaniquillo\InputComponentAction\Concerns\HasLabel;
-use Juaniquillo\InputComponentAction\Concerns\IsInputGroup;
-use Juaniquillo\InputComponentAction\Contracts\InputGroup;
-use Juaniquillo\InputComponentAction\Utilities\Support;
+use Juaniquillo\InputComponentAction\Enums\Slot;
 
-final class NoWrapInputGroup implements InputGroup
+final class NoWrapInputGroup extends AbstractInputGroup
 {
-    use HasError,
-        HasLabel,
-        IsInputGroup;
+    protected array $slots = [Slot::LABEL, Slot::INPUT, Slot::ERROR];
 
-    public function getGroup(): BackendComponent|ContentComponent
-    {
-        $wrapper = Support::getCollectionWrapper();
-        $label = $this->getLabelComponent();
-        $input = $this->getInputComponent();
-        $error = $this->getErrorComponent();
-
-        $components = [];
-
-        if ($label) {
-            $components['label'] = $label;
-        }
-
-        $components['input'] = $input;
-
-        if ($error) {
-            $components['error'] = $error;
-        }
-
-        return $wrapper->setContents($components);
-
-    }
+    protected bool $wrap = false;
 }

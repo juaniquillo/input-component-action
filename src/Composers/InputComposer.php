@@ -19,6 +19,9 @@ use Juaniquillo\InputComponentAction\Contracts\ThemeBag;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
 use Juaniquillo\InputComponentAction\Enums\Slot;
 use Juaniquillo\InputComponentAction\Factories\InputGroupFactory;
+use Juaniquillo\InputComponentAction\Groups\GroupContext;
+use Juaniquillo\InputComponentAction\Managers\DefaultErrorManager;
+use Juaniquillo\InputComponentAction\Managers\DefaultValueManager;
 use Juaniquillo\InputComponentAction\Utilities\Support;
 
 final class InputComposer
@@ -205,17 +208,19 @@ final class InputComposer
         string|Closure $defaultInputGroup,
         ?InputInterface $parent = null,
     ): BackendComponent {
-        return InputGroupFactory::init(
+        $context = new GroupContext(
             input: $input,
             recipe: $recipe,
-            values: $this->values,
-            errors: $this->errors,
-            defaultThemeBag: $this->themeBag,
+            themeManager: $recipe->getThemeManager() ?? Support::resolveThemeManager($this->defaultThemeManager),
             defaultThemeManager: $this->defaultThemeManager,
             defaultComponentBag: $this->componentBag,
             defaultInputGroup: $defaultInputGroup,
+            values: $this->values ?? new DefaultValueManager,
+            errors: $this->errors ?? new DefaultErrorManager,
+            defaultThemeBag: $this->themeBag,
             parent: $parent,
         );
 
+        return InputGroupFactory::init($context);
     }
 }
