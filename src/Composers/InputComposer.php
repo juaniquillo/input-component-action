@@ -18,8 +18,8 @@ use Juaniquillo\InputComponentAction\Contracts\InputComponentRecipeInterface;
 use Juaniquillo\InputComponentAction\Contracts\ThemeBag;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
 use Juaniquillo\InputComponentAction\Enums\Slot;
-use Juaniquillo\InputComponentAction\Factories\InputGroupFactory;
-use Juaniquillo\InputComponentAction\Groups\GroupContext;
+use Juaniquillo\InputComponentAction\Resolvers\ChildInputResolver;
+use Juaniquillo\InputComponentAction\Resolvers\InputEligibility;
 use Juaniquillo\InputComponentAction\Utilities\Support;
 
 final class InputComposer
@@ -29,6 +29,7 @@ final class InputComposer
     public function __construct(
         private InputInterface $input,
         private InputComponentRecipeInterface $recipe,
+        private InputEligibility $eligibility,
         private string|Closure $defaultInputGroup,
         private ThemeManager $themeManager,
         private string|Closure|null $defaultThemeManager,
@@ -145,24 +146,13 @@ final class InputComposer
      */
     public function buildSubComponentGroup(InputInterface $input): ?array
     {
-        $subElements = $input->getSubElements();
-        $components = [];
+        $resolver = $this->childResolver();
 
-        if (! $subElements) {
+        if (! $resolver->hasResolvableSubElements($input)) {
             return null;
         }
 
-        foreach ($subElements->getInputs() as $element) {
-            $elementRecipe = Support::getRecipe($element);
-            $components[] = $this->resolveGroup(
-                input: $element,
-                recipe: $elementRecipe,
-                defaultInputGroup: $this->defaultInputGroup,
-                parent: $input,
-            );
-        }
-
-        return $components;
+        return $resolver->resolveChildren($input);
     }
 
     public function addCheckableAndSelectableAttribute(InputInterface $input, InputComponentRecipeInterface $recipe, BackendComponent&ContentComponent&ThemeComponent $component, ValueManager $valueResolver, mixed $value = null): void
@@ -203,25 +193,16 @@ final class InputComposer
         return false;
     }
 
-    private function resolveGroup(
-        InputInterface $input,
-        InputComponentRecipeInterface $recipe,
-        string|Closure $defaultInputGroup,
-        ?InputInterface $parent = null,
-    ): BackendComponent&ContentComponent {
-        $context = new GroupContext(
-            input: $input,
-            recipe: $recipe,
-            themeManager: $recipe->getThemeManager() ?? Support::resolveThemeManager($this->defaultThemeManager),
-            defaultThemeManager: $this->defaultThemeManager,
-            defaultComponentBag: $this->componentBag,
-            defaultInputGroup: $defaultInputGroup,
+    private function childResolver(): ChildInputResolver
+    {
+        return new ChildInputResolver(
+            eligibility: $this->eligibility,
             values: $this->values,
             errors: $this->errors,
-            defaultThemeBag: $this->themeBag,
-            parent: $parent,
+            componentBag: $this->componentBag,
+            defaultInputGroup: $this->defaultInputGroup,
+            defaultThemeManager: $this->defaultThemeManager,
+            themeBag: $this->themeBag,
         );
-
-        return InputGroupFactory::init($context);
     }
 }

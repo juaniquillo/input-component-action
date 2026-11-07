@@ -17,12 +17,15 @@ use Juaniquillo\InputComponentAction\Contracts\InputComponentRecipeInterface;
 use Juaniquillo\InputComponentAction\Contracts\ThemeBag;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
 use Juaniquillo\InputComponentAction\Groups\GroupContext;
+use Juaniquillo\InputComponentAction\Resolvers\InputEligibility;
 
 trait IsInputGroup
 {
     private InputInterface $input;
 
     private InputComponentRecipeInterface $recipe;
+
+    private InputEligibility $eligibility;
 
     private ThemeManager $themeManager;
 
@@ -44,6 +47,7 @@ trait IsInputGroup
     {
         $this->input = $context->input;
         $this->recipe = $context->recipe;
+        $this->eligibility = $context->eligibility;
         $this->themeManager = $context->themeManager;
         $this->defaultThemeManager = $context->defaultThemeManager;
         $this->defaultInputGroup = $context->defaultInputGroup;
@@ -61,6 +65,7 @@ trait IsInputGroup
         $composer = new InputComposer(
             input: $this->input,
             recipe: $this->recipe,
+            eligibility: $this->eligibility,
             themeManager: $this->themeManager,
             defaultThemeManager: $this->defaultThemeManager,
             componentBag: $this->defaultComponentBag,

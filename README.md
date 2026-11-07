@@ -74,7 +74,9 @@ Render it in Blade:
    - input
    - error
 4. Each slot is built by `SlotComposer` (or `InputComposer` for the input slot).
-5. The result is a `MainBackendComponent` tree ready for Blade.
+5. Sub-elements are built by `ChildInputResolver`, which skips inputs excluded
+   by `ignore()` or `onlyFor()`.
+6. The result is a `MainBackendComponent` tree ready for Blade.
 
 ## Recipes
 

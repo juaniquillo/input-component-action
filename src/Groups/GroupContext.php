@@ -12,12 +12,14 @@ use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
 use Juaniquillo\InputComponentAction\Contracts\InputComponentRecipeInterface;
 use Juaniquillo\InputComponentAction\Contracts\ThemeBag;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
+use Juaniquillo\InputComponentAction\Resolvers\InputEligibility;
 
 final class GroupContext
 {
     public function __construct(
         public readonly InputInterface $input,
         public readonly InputComponentRecipeInterface $recipe,
+        public readonly InputEligibility $eligibility,
         public readonly ThemeManager $themeManager,
         public readonly string|Closure|null $defaultThemeManager,
         public readonly ComponentBag $defaultComponentBag,

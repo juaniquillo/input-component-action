@@ -145,6 +145,7 @@ $group->inject(
 $group->inject(new GroupContext(
     input: $input,
     recipe: $recipe,
+    eligibility: new InputEligibility(InputComponentAction::getIdentifier()),
     themeManager: $manager,
     defaultThemeManager: null,
     defaultComponentBag: $componentBag,
@@ -158,6 +159,12 @@ $group->inject(new GroupContext(
 `setParent()` was removed from the group contract; the parent travels in
 `GroupContext`. Custom groups built with `IsInputGroup` do not need changes.
 Groups that override `inject()` must update the signature.
+
+Eligibility (`ignore()` / `onlyFor()`) is now centralized in
+`Resolvers\InputEligibility`. The action uses it while walking collections, and
+`Resolvers\ChildInputResolver` uses it for sub-elements. `GroupContext`
+carries the eligibility instance so nested groups resolve with the same action
+identifier.
 
 A new `AbstractInputGroup` is available. It owns the slot order, wrapping,
 label-container and required-label behavior, so a custom group can be just:
@@ -259,6 +266,8 @@ satisfies all three. Invalid results throw a clear exception or fall back to
 - Closure-based input attributes are resolved before deriving `name`/`id`.
 - Null labels no longer cause a `TypeError`.
 - Recursive resolution honors `ignore()` and `onlyFor()`.
+- Sub-elements honor `ignore()` and `onlyFor()` too; ineligible sub-elements
+  are skipped and an empty result omits the input contents.
 - Collection wrapper hooks receive the value and error managers.
 - Help text `'0'` is rendered.
 

@@ -26,10 +26,13 @@ use Juaniquillo\InputComponentAction\Groups\DefaultInputGroup;
 use Juaniquillo\InputComponentAction\Groups\GroupContext;
 use Juaniquillo\InputComponentAction\Managers\DefaultErrorManager;
 use Juaniquillo\InputComponentAction\Managers\DefaultValueManager;
+use Juaniquillo\InputComponentAction\Resolvers\InputEligibility;
 use Juaniquillo\InputComponentAction\Utilities\Support;
 
 trait IsInputComponentAction
 {
+    private ?InputEligibility $eligibility = null;
+
     private string|Closure|null $defaultThemeManager = null;
 
     private string|Closure|null $defaultInputGroup = null;
@@ -101,10 +104,9 @@ trait IsInputComponentAction
          */
         if (InputHelper::isCollection($input) && $this->controlsRecursion()) {
             $wrapper = $this->getWrapper($input);
-            $identifier = static::getIdentifier();
 
             foreach ($input as $item) {
-                if (! $this->shouldResolve($item, $identifier)) {
+                if (! $this->eligibility()->isResolvable($item)) {
                     continue;
                 }
 
@@ -129,15 +131,9 @@ trait IsInputComponentAction
         return $component;
     }
 
-    private function shouldResolve(InputInterface $input, string $identifier): bool
+    private function eligibility(): InputEligibility
     {
-        $recipe = $input->getRecipe($identifier);
-
-        if ($recipe && $recipe->isIgnored()) {
-            return false;
-        }
-
-        return $input->isFor($identifier);
+        return $this->eligibility ??= new InputEligibility(static::getIdentifier());
     }
 
     public function getInputGroup(InputInterface $input): BackendComponent
@@ -147,6 +143,7 @@ trait IsInputComponentAction
         $context = new GroupContext(
             input: $input,
             recipe: $recipe,
+            eligibility: $this->eligibility(),
             themeManager: $recipe->getThemeManager() ?? Support::resolveThemeManager($this->defaultThemeManager),
             defaultThemeManager: $this->defaultThemeManager,
             defaultComponentBag: $this->defaultComponentBag ?? new DefaultComponentBag,
