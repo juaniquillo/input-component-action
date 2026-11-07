@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Tests;
 
+use Juaniquillo\CrudAssistant\Contracts\InputCollectionInterface;
 use Juaniquillo\CrudAssistant\CrudAssistant;
-use Juaniquillo\CrudAssistant\InputCollection;
 use Juaniquillo\CrudAssistant\Inputs\DefaultInput;
 
 class Collections
 {
-    public static function simple(): InputCollection
+    public static function simple(): InputCollectionInterface
     {
         return CrudAssistant::make([
             new DefaultInput('name', 'Name'),
