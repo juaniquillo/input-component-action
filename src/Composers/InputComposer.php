@@ -20,8 +20,6 @@ use Juaniquillo\InputComponentAction\Contracts\ValueManager;
 use Juaniquillo\InputComponentAction\Enums\Slot;
 use Juaniquillo\InputComponentAction\Factories\InputGroupFactory;
 use Juaniquillo\InputComponentAction\Groups\GroupContext;
-use Juaniquillo\InputComponentAction\Managers\DefaultErrorManager;
-use Juaniquillo\InputComponentAction\Managers\DefaultValueManager;
 use Juaniquillo\InputComponentAction\Utilities\Support;
 
 final class InputComposer
@@ -35,17 +33,17 @@ final class InputComposer
         private ThemeManager $themeManager,
         private string|Closure|null $defaultThemeManager,
         private ComponentBag $componentBag,
-        private ?ValueManager $values,
-        private ?ErrorManager $errors,
+        private ValueManager $values,
+        private ErrorManager $errors,
         private ?ThemeBag $themeBag = null,
     ) {}
 
-    public function build(): BackendComponent|ContentComponent|ThemeComponent
+    public function build(): BackendComponent&ContentComponent&ThemeComponent
     {
         return $this->buildInputComponent($this->input);
     }
 
-    public function buildInputComponent(InputInterface|InputCollectionInterface $input): BackendComponent|ContentComponent
+    public function buildInputComponent(InputInterface|InputCollectionInterface $input): BackendComponent&ContentComponent&ThemeComponent
     {
 
         $recipe = $this->recipe;
@@ -142,6 +140,9 @@ final class InputComposer
         return $component;
     }
 
+    /**
+     * @return array<int, BackendComponent&ContentComponent>|null
+     */
     public function buildSubComponentGroup(InputInterface $input): ?array
     {
         $subElements = $input->getSubElements();
@@ -164,7 +165,7 @@ final class InputComposer
         return $components;
     }
 
-    public function addCheckableAndSelectableAttribute(InputInterface $input, InputComponentRecipeInterface $recipe, BackendComponent $component, ValueManager $valueResolver, mixed $value = null): void
+    public function addCheckableAndSelectableAttribute(InputInterface $input, InputComponentRecipeInterface $recipe, BackendComponent&ContentComponent&ThemeComponent $component, ValueManager $valueResolver, mixed $value = null): void
     {
         if ($recipe->isCheckable() || $recipe->isSelectable()) {
             $isSelected = false;
@@ -207,7 +208,7 @@ final class InputComposer
         InputComponentRecipeInterface $recipe,
         string|Closure $defaultInputGroup,
         ?InputInterface $parent = null,
-    ): BackendComponent {
+    ): BackendComponent&ContentComponent {
         $context = new GroupContext(
             input: $input,
             recipe: $recipe,
@@ -215,8 +216,8 @@ final class InputComposer
             defaultThemeManager: $this->defaultThemeManager,
             defaultComponentBag: $this->componentBag,
             defaultInputGroup: $defaultInputGroup,
-            values: $this->values ?? new DefaultValueManager,
-            errors: $this->errors ?? new DefaultErrorManager,
+            values: $this->values,
+            errors: $this->errors,
             defaultThemeBag: $this->themeBag,
             parent: $parent,
         );

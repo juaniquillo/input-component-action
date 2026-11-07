@@ -12,7 +12,7 @@ use Juaniquillo\InputComponentAction\Enums\Slot;
 
 trait HasError
 {
-    private function getErrorComponent(): BackendComponent|ContentComponent|ThemeComponent|null
+    private function getErrorComponent(): (BackendComponent&ContentComponent&ThemeComponent)|null
     {
         $recipe = $this->recipe;
 

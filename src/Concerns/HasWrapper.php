@@ -12,7 +12,7 @@ use Juaniquillo\InputComponentAction\Enums\Slot;
 
 trait HasWrapper
 {
-    private function getWrapperComponent(): BackendComponent|ContentComponent|ThemeComponent|null
+    private function getWrapperComponent(): (BackendComponent&ContentComponent&ThemeComponent)|null
     {
         $recipe = $this->recipe;
 

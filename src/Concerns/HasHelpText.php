@@ -12,7 +12,7 @@ use Juaniquillo\InputComponentAction\Enums\Slot;
 
 trait HasHelpText
 {
-    private function getHelpTextComponent(): BackendComponent|ContentComponent|ThemeComponent|null
+    private function getHelpTextComponent(): (BackendComponent&ContentComponent&ThemeComponent)|null
     {
         $recipe = $this->recipe;
 

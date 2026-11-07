@@ -9,8 +9,6 @@ use Juaniquillo\BackendComponents\Contracts\ThemeManager;
 
 interface InputComponentRecipeInterface
 {
-    public static function make(): self;
-
     public function getInputGroup(): ?InputGroup;
 
     public function setInputGroup(?InputGroup $inputGroup): self;

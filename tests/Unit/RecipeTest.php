@@ -102,11 +102,6 @@ test('it can be initialized with every bag and flag', function (): void {
         ->and($recipe->getIdentifier())->toBe(InputComponentAction::getIdentifier());
 });
 
-test('it can be created with make', function (): void {
-    expect(InputComponentRecipe::make())->toBeInstanceOf(InputComponentRecipe::class)
-        ->and(SelectOptionComponentRecipe::make())->toBeInstanceOf(SelectOptionComponentRecipe::class);
-});
-
 test('the select option recipe applies its defaults', function (): void {
     $recipe = new SelectOptionComponentRecipe;
 

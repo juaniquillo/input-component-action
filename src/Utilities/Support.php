@@ -6,9 +6,7 @@ namespace Juaniquillo\InputComponentAction\Utilities;
 
 use BackedEnum;
 use Closure;
-use Juaniquillo\BackendComponents\Builders\ComponentBuilder;
 use Juaniquillo\BackendComponents\Contracts\BackendComponent;
-use Juaniquillo\BackendComponents\Contracts\CompoundComponent;
 use Juaniquillo\BackendComponents\Contracts\ContentComponent;
 use Juaniquillo\BackendComponents\Contracts\ThemeComponent;
 use Juaniquillo\BackendComponents\Contracts\ThemeManager;
@@ -62,88 +60,66 @@ final class Support
         return $defaultType ?? $slot->defaultType();
     }
 
-    public static function resolveWrapperType(?InputComponentRecipeInterface $recipe, ComponentBag $componentBag): string|BackedEnum
-    {
-        return self::resolveType($recipe, Slot::WRAPPER, $componentBag);
-    }
-
-    public static function resolveLabelType(?InputComponentRecipeInterface $recipe, ComponentBag $componentBag): string|BackedEnum
-    {
-        return self::resolveType($recipe, Slot::LABEL, $componentBag);
-    }
-
-    public static function resolveInputType(?InputComponentRecipeInterface $recipe, ComponentBag $componentBag): string|BackedEnum
-    {
-        return self::resolveType($recipe, Slot::INPUT, $componentBag);
-    }
-
-    public static function resolveErrorType(?InputComponentRecipeInterface $recipe, ComponentBag $componentBag): string|BackedEnum
-    {
-        return self::resolveType($recipe, Slot::ERROR, $componentBag);
-    }
-
-    public static function resolveHelpTextType(?InputComponentRecipeInterface $recipe, ComponentBag $componentBag): string|BackedEnum
-    {
-        return self::resolveType($recipe, Slot::HELP_TEXT, $componentBag);
-    }
-
     public static function resolveThemeManager(string|Closure|null $manager): ThemeManager
     {
-        if (is_string($manager) && class_exists($manager)) {
+        if (is_string($manager) && is_a($manager, ThemeManager::class, true)) {
             return new $manager;
         }
 
         if ($manager instanceof Closure) {
-            return $manager();
+            $themeManager = $manager();
+
+            if ($themeManager instanceof ThemeManager) {
+                return $themeManager;
+            }
         }
 
         return new LocalThemeManager;
     }
 
-    /**
-     * @param  class-string<InputGroup>|Closure  $group
-     */
     public static function resolveInputGroup(string|Closure|null $group): InputGroup
     {
-
-        if (is_string($group) && class_exists($group)) {
+        if (is_string($group) && is_a($group, InputGroup::class, true)) {
             return new $group;
         }
 
         if ($group instanceof Closure) {
-            return $group();
+            $inputGroup = $group();
+
+            if ($inputGroup instanceof InputGroup) {
+                return $inputGroup;
+            }
         }
 
         return new DefaultInputGroup;
     }
 
-    /**
-     * @param  class-string<BackendComponent|ContentComponent|ThemeComponent|CompoundComponent>|Closure(string|BackedEnum $type, ThemeManager $manager): (BackendComponent|ContentComponent|ThemeComponent|CompoundComponent)  $component
-     */
     public static function resolveComponent(
         Closure|string|null $component,
-        mixed $type,
+        string|BackedEnum $type,
         ThemeManager $themeManager,
-    ): BackendComponent|ContentComponent|ThemeComponent|CompoundComponent {
+    ): BackendComponent&ContentComponent&ThemeComponent {
+        if (is_string($component) && is_a($component, BackendComponent::class, true)) {
+            $instance = new $component($type, $themeManager);
 
-        if (is_string($component) && class_exists($component)) {
-            return new $component($type, $themeManager);
+            if ($instance instanceof ContentComponent && $instance instanceof ThemeComponent) {
+                return $instance;
+            }
         }
 
         if ($component instanceof Closure) {
-            return $component($type, $themeManager);
+            $instance = $component($type, $themeManager);
+
+            if ($instance instanceof BackendComponent && $instance instanceof ContentComponent && $instance instanceof ThemeComponent) {
+                return $instance;
+            }
         }
 
         return new MainBackendComponent($type, $themeManager);
     }
 
-    public static function isClosure(mixed $value): bool
+    public static function getCollectionWrapper(): BackendComponent&ContentComponent&ThemeComponent
     {
-        return $value instanceof Closure;
-    }
-
-    public static function getCollectionWrapper(): BackendComponent|ContentComponent
-    {
-        return ComponentBuilder::make(ComponentEnum::COLLECTION);
+        return new MainBackendComponent(ComponentEnum::COLLECTION);
     }
 }

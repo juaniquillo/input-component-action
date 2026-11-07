@@ -56,7 +56,7 @@ trait IsInputGroup
         return $this;
     }
 
-    private function getInputComponent(): BackendComponent|ContentComponent|ThemeComponent
+    private function getInputComponent(): BackendComponent&ContentComponent&ThemeComponent
     {
         $composer = new InputComposer(
             input: $this->input,

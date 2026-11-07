@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Juaniquillo\InputComponentAction\Concerns;
 
 use Closure;
+use Exception;
 use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Contracts\ContentComponent;
 use Juaniquillo\BackendComponents\Contracts\ThemeComponent;
@@ -92,7 +93,7 @@ trait IsInputComponentAction
         return $this;
     }
 
-    public function resolveInputs(InputCollectionInterface|InputInterface $input): BackendComponent|ContentComponent
+    public function resolveInputs(InputCollectionInterface|InputInterface $input): BackendComponent&ContentComponent&ThemeComponent
     {
         /**
          * Recursively resolve inputs
@@ -116,10 +117,16 @@ trait IsInputComponentAction
         $inputGroup = $this->getInputGroup($input);
 
         /** Modifiers on the whole input group component */
-        return $this->modifiers(
+        $component = $this->modifiers(
             value: $inputGroup,
             input: $input,
         );
+
+        if (! $component instanceof BackendComponent || ! $component instanceof ContentComponent || ! $component instanceof ThemeComponent) {
+            throw new Exception('Modifiers must return a renderable backend component.', 500);
+        }
+
+        return $component;
     }
 
     private function shouldResolve(InputInterface $input, string $identifier): bool
@@ -152,7 +159,7 @@ trait IsInputComponentAction
         return InputGroupFactory::init($context);
     }
 
-    public function getWrapper(InputInterface $input): BackendComponent|ContentComponent|ThemeComponent
+    public function getWrapper(InputInterface $input): BackendComponent&ContentComponent&ThemeComponent
     {
         $recipe = Support::getRecipe($input);
 

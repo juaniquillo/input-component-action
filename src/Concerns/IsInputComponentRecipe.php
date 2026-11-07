@@ -58,11 +58,6 @@ trait IsInputComponentRecipe
 
     private bool $selectable = false;
 
-    public static function make(): self
-    {
-        return new static;
-    }
-
     public function getInputGroup(): ?InputGroup
     {
         return $this->inputGroup;

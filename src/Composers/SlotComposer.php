@@ -40,7 +40,7 @@ final class SlotComposer
         }
     }
 
-    public function build(): BackendComponent|ContentComponent|ThemeComponent
+    public function build(): BackendComponent&ContentComponent&ThemeComponent
     {
         $input = $this->input;
         $recipe = $this->recipe;
@@ -89,6 +89,9 @@ final class SlotComposer
         };
     }
 
+    /**
+     * @return array<string, int|string|null>|Closure|null
+     */
     private function resolveAttributes(): Closure|array|null
     {
         $bag = $this->recipe->getAttributeBag();
@@ -102,6 +105,9 @@ final class SlotComposer
         };
     }
 
+    /**
+     * @return array<string, string|array<int|string, string>>|Closure|null
+     */
     private function resolveTheme(): Closure|array|null
     {
         $recipeTheme = match ($this->slot) {
@@ -138,7 +144,7 @@ final class SlotComposer
         };
     }
 
-    private function applyContent(BackendComponent|ContentComponent|ThemeComponent $component): void
+    private function applyContent(BackendComponent&ContentComponent&ThemeComponent $component): void
     {
         switch ($this->slot) {
             case Slot::WRAPPER:
@@ -158,14 +164,14 @@ final class SlotComposer
         }
     }
 
-    private function applyWrapperContent(BackendComponent|ContentComponent|ThemeComponent $component): void
+    private function applyWrapperContent(BackendComponent&ContentComponent&ThemeComponent $component): void
     {
         if ($this->recipe->labelAsInputContent() && $this->input->getLabel() !== null) {
             $component->setContent($this->input->getLabel());
         }
     }
 
-    private function applyLabelContent(BackendComponent|ContentComponent|ThemeComponent $component): void
+    private function applyLabelContent(BackendComponent&ContentComponent&ThemeComponent $component): void
     {
         $label = $this->resolveStringClosure(
             $this->input,
@@ -181,7 +187,7 @@ final class SlotComposer
         }
     }
 
-    private function applyErrorContent(BackendComponent|ContentComponent|ThemeComponent $component): void
+    private function applyErrorContent(BackendComponent&ContentComponent&ThemeComponent $component): void
     {
         $error = $this->resolvedError ?? $this->errors?->resolve($this->input, $this->recipe);
 
@@ -190,7 +196,7 @@ final class SlotComposer
         }
     }
 
-    private function applyHelpTextContent(BackendComponent|ContentComponent|ThemeComponent $component): void
+    private function applyHelpTextContent(BackendComponent&ContentComponent&ThemeComponent $component): void
     {
         $helpText = $this->resolveStringClosure($this->input, $this->recipe->getHelpText());
 

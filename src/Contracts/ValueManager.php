@@ -19,5 +19,6 @@ interface ValueManager
 
     public function getModel(): ?object;
 
+    /** @return Stringable|string|int|array<string|int|null>|null */
     public function resolve(InputInterface $input, InputComponentRecipeInterface $recipe, bool $ignoreRecipeValue = false): Stringable|string|int|array|null;
 }

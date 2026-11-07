@@ -137,10 +137,10 @@ test('it resolves slot types with recipe, default bag and global fallbacks', fun
         ->setErrorType(ComponentEnum::PARAGRAPH)
         ->setHelpTextType(ComponentEnum::DIV);
 
-    expect(Support::resolveWrapperType($recipe, $defaultBag))->toBe(ComponentEnum::FIELDSET)
-        ->and(Support::resolveLabelType($recipe, $defaultBag))->toBe(ComponentEnum::LEGEND)
-        ->and(Support::resolveInputType($recipe, $defaultBag))->toBe(ComponentEnum::TEXTAREA)
-        ->and(Support::resolveErrorType($recipe, $defaultBag))->toBe(ComponentEnum::SPAN);
+    expect(Support::resolveType($recipe, Slot::WRAPPER, $defaultBag))->toBe(ComponentEnum::FIELDSET)
+        ->and(Support::resolveType($recipe, Slot::LABEL, $defaultBag))->toBe(ComponentEnum::LEGEND)
+        ->and(Support::resolveType($recipe, Slot::INPUT, $defaultBag))->toBe(ComponentEnum::TEXTAREA)
+        ->and(Support::resolveType($recipe, Slot::ERROR, $defaultBag))->toBe(ComponentEnum::SPAN);
 });
 
 test('it uses the default component bag when the recipe has no component bag', function (): void {
@@ -153,11 +153,11 @@ test('it uses the default component bag when the recipe has no component bag', f
 
     $recipe = new InputComponentRecipe;
 
-    expect(Support::resolveWrapperType($recipe, $defaultBag))->toBe(ComponentEnum::FIELDSET)
-        ->and(Support::resolveLabelType($recipe, $defaultBag))->toBe(ComponentEnum::LEGEND)
-        ->and(Support::resolveInputType($recipe, $defaultBag))->toBe(ComponentEnum::TEXTAREA)
-        ->and(Support::resolveErrorType($recipe, $defaultBag))->toBe(ComponentEnum::PARAGRAPH)
-        ->and(Support::resolveHelpTextType($recipe, $defaultBag))->toBe(ComponentEnum::SMALL);
+    expect(Support::resolveType($recipe, Slot::WRAPPER, $defaultBag))->toBe(ComponentEnum::FIELDSET)
+        ->and(Support::resolveType($recipe, Slot::LABEL, $defaultBag))->toBe(ComponentEnum::LEGEND)
+        ->and(Support::resolveType($recipe, Slot::INPUT, $defaultBag))->toBe(ComponentEnum::TEXTAREA)
+        ->and(Support::resolveType($recipe, Slot::ERROR, $defaultBag))->toBe(ComponentEnum::PARAGRAPH)
+        ->and(Support::resolveType($recipe, Slot::HELP_TEXT, $defaultBag))->toBe(ComponentEnum::SMALL);
 });
 
 test('it resolves every slot through the generic type resolver', function (): void {
@@ -191,28 +191,28 @@ test('it resolves the help text type from the recipe component bag', function ()
         ->setHelpTextType(ComponentEnum::SMALL));
     $defaultBag = (new DefaultComponentBag)->setHelpTextType(ComponentEnum::DIV);
 
-    expect(Support::resolveHelpTextType($recipe, $defaultBag))->toBe(ComponentEnum::SMALL);
+    expect(Support::resolveType($recipe, Slot::HELP_TEXT, $defaultBag))->toBe(ComponentEnum::SMALL);
 });
 
 test('it falls back to the global slot types', function (): void {
     $bag = new DefaultComponentBag;
     $recipe = new InputComponentRecipe;
 
-    expect(Support::resolveWrapperType($recipe, $bag))->toBe(ComponentEnum::DIV)
-        ->and(Support::resolveLabelType($recipe, $bag))->toBe(ComponentEnum::LABEL)
-        ->and(Support::resolveInputType($recipe, $bag))->toBe(ComponentEnum::TEXT_INPUT)
-        ->and(Support::resolveErrorType($recipe, $bag))->toBe(ComponentEnum::PARAGRAPH)
-        ->and(Support::resolveHelpTextType($recipe, $bag))->toBe(ComponentEnum::DIV);
+    expect(Support::resolveType($recipe, Slot::WRAPPER, $bag))->toBe(ComponentEnum::DIV)
+        ->and(Support::resolveType($recipe, Slot::LABEL, $bag))->toBe(ComponentEnum::LABEL)
+        ->and(Support::resolveType($recipe, Slot::INPUT, $bag))->toBe(ComponentEnum::TEXT_INPUT)
+        ->and(Support::resolveType($recipe, Slot::ERROR, $bag))->toBe(ComponentEnum::PARAGRAPH)
+        ->and(Support::resolveType($recipe, Slot::HELP_TEXT, $bag))->toBe(ComponentEnum::DIV);
 });
 
 test('it resolves slot types without a recipe', function (): void {
     $bag = new DefaultComponentBag;
 
-    expect(Support::resolveWrapperType(null, $bag))->toBe(ComponentEnum::DIV)
-        ->and(Support::resolveLabelType(null, $bag))->toBe(ComponentEnum::LABEL)
-        ->and(Support::resolveInputType(null, $bag))->toBe(ComponentEnum::TEXT_INPUT)
-        ->and(Support::resolveErrorType(null, $bag))->toBe(ComponentEnum::PARAGRAPH)
-        ->and(Support::resolveHelpTextType(null, $bag))->toBe(ComponentEnum::DIV);
+    expect(Support::resolveType(null, Slot::WRAPPER, $bag))->toBe(ComponentEnum::DIV)
+        ->and(Support::resolveType(null, Slot::LABEL, $bag))->toBe(ComponentEnum::LABEL)
+        ->and(Support::resolveType(null, Slot::INPUT, $bag))->toBe(ComponentEnum::TEXT_INPUT)
+        ->and(Support::resolveType(null, Slot::ERROR, $bag))->toBe(ComponentEnum::PARAGRAPH)
+        ->and(Support::resolveType(null, Slot::HELP_TEXT, $bag))->toBe(ComponentEnum::DIV);
 });
 
 test('it builds a collection wrapper', function (): void {

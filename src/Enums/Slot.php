@@ -4,8 +4,7 @@ declare(strict_types=1);
 
 namespace Juaniquillo\InputComponentAction\Enums;
 
-use BackedEnum;
-use Juaniquillo\InputComponentAction\Defaults\InputTypes;
+use Juaniquillo\BackendComponents\Enums\ComponentEnum;
 
 enum Slot: string
 {
@@ -19,14 +18,14 @@ enum Slot: string
 
     case HELP_TEXT = 'helpText';
 
-    public function defaultType(): BackedEnum
+    public function defaultType(): ComponentEnum
     {
         return match ($this) {
-            self::WRAPPER => InputTypes::WRAPPER,
-            self::LABEL => InputTypes::LABEL,
-            self::INPUT => InputTypes::INPUT,
-            self::ERROR => InputTypes::ERROR,
-            self::HELP_TEXT => InputTypes::HELP_TEXT,
+            self::WRAPPER => ComponentEnum::DIV,
+            self::LABEL => ComponentEnum::LABEL,
+            self::INPUT => ComponentEnum::TEXT_INPUT,
+            self::ERROR => ComponentEnum::PARAGRAPH,
+            self::HELP_TEXT => ComponentEnum::DIV,
         };
     }
 }

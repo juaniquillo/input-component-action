@@ -20,7 +20,7 @@ use Juaniquillo\InputComponentAction\Contracts\ThemeBag;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
 use Juaniquillo\InputComponentAction\InputComponentAction;
 
-final class InputComponentRecipe implements InputComponentRecipeInterface, RecipeInterface
+class InputComponentRecipe implements InputComponentRecipeInterface, RecipeInterface
 {
     use IsInputComponentRecipe;
     use IsRecipe;
@@ -66,5 +66,9 @@ final class InputComponentRecipe implements InputComponentRecipeInterface, Recip
         $this->helpText = $helpText;
         $this->checkable = $checkable;
         $this->selectable = $selectable;
+
+        $this->configure();
     }
+
+    protected function configure(): void {}
 }

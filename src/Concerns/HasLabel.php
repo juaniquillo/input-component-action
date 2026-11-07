@@ -12,7 +12,7 @@ use Juaniquillo\InputComponentAction\Enums\Slot;
 
 trait HasLabel
 {
-    private function getLabelComponent(): BackendComponent|ContentComponent|ThemeComponent|null
+    private function getLabelComponent(): (BackendComponent&ContentComponent&ThemeComponent)|null
     {
         $recipe = $this->recipe;
 

@@ -27,11 +27,11 @@ interface InputComponentActionInterface
 
     public function setErrorManager(ErrorManager $errorBag): static;
 
-    public function resolveInputs(InputCollectionInterface|InputInterface $input): BackendComponent|ContentComponent;
+    public function resolveInputs(InputCollectionInterface|InputInterface $input): BackendComponent&ContentComponent&ThemeComponent;
 
     public function getInputGroup(InputInterface $input): BackendComponent;
 
-    public function getWrapper(InputInterface $input): BackendComponent|ContentComponent|ThemeComponent;
+    public function getWrapper(InputInterface $input): BackendComponent&ContentComponent&ThemeComponent;
 
     public function getValueManager(?InputComponentRecipeInterface $recipe): ValueManager;
 
