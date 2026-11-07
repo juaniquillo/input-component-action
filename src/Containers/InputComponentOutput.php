@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace Juaniquillo\InputComponentAction\Containers;
 
-use ArrayAccess;
-use Countable;
-use IteratorAggregate;
 use Juaniquillo\CrudAssistant\Concerns\IsDataContainer;
 use Juaniquillo\CrudAssistant\Contracts\DataContainerInterface;
 use Juaniquillo\CrudAssistant\DataContainer;
 
-final class InputComponentOutput implements ArrayAccess, Countable, DataContainerInterface, IteratorAggregate
+/**
+ * @implements DataContainerInterface<mixed>
+ */
+final class InputComponentOutput implements DataContainerInterface
 {
     use IsDataContainer;
 

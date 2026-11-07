@@ -45,9 +45,6 @@ final class SelectOptionComponentRecipe implements InputComponentRecipeInterface
     use IsInputComponentRecipe;
     use IsRecipe;
 
-    /** @var class-string */
-    protected $action = InputComponentAction::class;
-
     public function __construct(
         ?InputGroup $inputGroup = null,
         ?ThemeManager $themeManager = null,
@@ -65,6 +62,7 @@ final class SelectOptionComponentRecipe implements InputComponentRecipeInterface
         bool $valueAsInputContent = false,
         string|Closure|null $helpText = null,
     ) {
+        $this->action = InputComponentAction::class;
 
         /**
          * Defaults for the options

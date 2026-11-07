@@ -41,9 +41,6 @@ final class InputComponentRecipe implements InputComponentRecipeInterface, Recip
     use IsInputComponentRecipe;
     use IsRecipe;
 
-    /** @var class-string */
-    protected $action = InputComponentAction::class;
-
     public function __construct(
         ?InputGroup $inputGroup = null,
         ?ThemeManager $themeManager = null,
@@ -65,6 +62,7 @@ final class InputComponentRecipe implements InputComponentRecipeInterface, Recip
         bool $checkable = false,
         bool $selectable = false,
     ) {
+        $this->action = InputComponentAction::class;
         $this->inputGroup = $inputGroup;
         $this->themeManager = $themeManager;
         $this->componentBag = $componentBag;

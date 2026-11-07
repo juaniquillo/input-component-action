@@ -38,7 +38,13 @@ final class Support
 {
     public static function getRecipe(InputInterface $input): InputComponentRecipeInterface
     {
-        return $input->getRecipes()[InputComponentAction::getIdentifier()] ?? new InputComponentRecipe;
+        $recipe = $input->getRecipe(InputComponentAction::getIdentifier());
+
+        if ($recipe instanceof InputComponentRecipeInterface) {
+            return $recipe;
+        }
+
+        return new InputComponentRecipe;
     }
 
     public static function resolveThemeBag(InputComponentRecipeInterface $recipe, ThemeBag|WrapperTheme|LabelTheme|ErrorTheme|HelpTextTheme|null $defaultThemeBag = null): ThemeBag

@@ -8,8 +8,8 @@ use Closure;
 use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Contracts\ContentComponent;
 use Juaniquillo\BackendComponents\Contracts\ThemeComponent;
+use Juaniquillo\CrudAssistant\Contracts\InputCollectionInterface;
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
-use Juaniquillo\CrudAssistant\InputCollection;
 
 interface InputComponentActionInterface
 {
@@ -27,7 +27,7 @@ interface InputComponentActionInterface
 
     public function setErrorManager(ErrorManager $errorBag): static;
 
-    public function resolveInputs(InputCollection|InputInterface|\IteratorAggregate $input): array|BackendComponent|ContentComponent;
+    public function resolveInputs(InputCollectionInterface|InputInterface $input): array|BackendComponent|ContentComponent;
 
     public function getInputGroup(InputInterface $input): BackendComponent;
 

@@ -8,9 +8,9 @@ use Closure;
 use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Contracts\ContentComponent;
 use Juaniquillo\BackendComponents\Contracts\ThemeComponent;
+use Juaniquillo\CrudAssistant\Contracts\InputCollectionInterface;
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
-use Juaniquillo\CrudAssistant\CrudAssistant;
-use Juaniquillo\CrudAssistant\InputCollection;
+use Juaniquillo\CrudAssistant\Support\InputHelper;
 use Juaniquillo\InputComponentAction\Bags\DefaultComponentBag;
 use Juaniquillo\InputComponentAction\Bags\DefaultThemeBag;
 use Juaniquillo\InputComponentAction\Composers\WrapperComposer;
@@ -97,13 +97,13 @@ trait IsInputComponentAction
         return $this;
     }
 
-    public function resolveInputs(InputCollection|InputInterface|\IteratorAggregate $input): array|BackendComponent|ContentComponent
+    public function resolveInputs(InputCollectionInterface|InputInterface $input): array|BackendComponent|ContentComponent
     {
         /**
          * Recursively resolve inputs
          * and input collections.
          */
-        if (CrudAssistant::isInputCollection($input) && $this->controlsRecursion()) {
+        if (InputHelper::isCollection($input) && $this->controlsRecursion()) {
             $wrapper = $this->getWrapper($input);
 
             foreach ($input as $item) {
