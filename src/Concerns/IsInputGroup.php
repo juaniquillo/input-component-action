@@ -12,24 +12,20 @@ use Juaniquillo\BackendComponents\Contracts\ThemeManager;
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
 use Juaniquillo\InputComponentAction\Composers\InputComposer;
 use Juaniquillo\InputComponentAction\Contracts\ComponentBag;
-use Juaniquillo\InputComponentAction\Contracts\ErrorComponent;
 use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
-use Juaniquillo\InputComponentAction\Contracts\ErrorTheme;
-use Juaniquillo\InputComponentAction\Contracts\HelpTextComponent;
-use Juaniquillo\InputComponentAction\Contracts\HelpTextTheme;
 use Juaniquillo\InputComponentAction\Contracts\InputComponentRecipeInterface;
-use Juaniquillo\InputComponentAction\Contracts\LabelComponent;
-use Juaniquillo\InputComponentAction\Contracts\LabelTheme;
 use Juaniquillo\InputComponentAction\Contracts\ThemeBag;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
-use Juaniquillo\InputComponentAction\Contracts\WrapperComponent;
-use Juaniquillo\InputComponentAction\Contracts\WrapperTheme;
+use Juaniquillo\InputComponentAction\Groups\GroupContext;
+use Juaniquillo\InputComponentAction\Resolvers\InputEligibility;
 
 trait IsInputGroup
 {
     private InputInterface $input;
 
     private InputComponentRecipeInterface $recipe;
+
+    private InputEligibility $eligibility;
 
     private ThemeManager $themeManager;
 
@@ -41,48 +37,35 @@ trait IsInputGroup
 
     private ErrorManager $errors;
 
-    private ThemeBag|WrapperTheme|LabelTheme|ErrorTheme|HelpTextTheme|null $defaultThemeBag = null;
+    private ?ThemeBag $defaultThemeBag = null;
 
-    private ComponentBag|WrapperComponent|LabelComponent|ErrorComponent|HelpTextComponent|null $defaultComponentBag = null;
+    private ComponentBag $defaultComponentBag;
 
     private ?InputInterface $parent = null;
 
-    public function inject(
-        InputInterface $input,
-        InputComponentRecipeInterface $recipe,
-        ThemeManager $themeManager,
-        string|Closure|null $defaultThemeManager,
-        ComponentBag|WrapperComponent|LabelComponent|ErrorComponent|HelpTextComponent $defaultComponentBag,
-        string|Closure $defaultInputGroup,
-        ValueManager $values,
-        ErrorManager $errors,
-        ThemeBag|WrapperTheme|LabelTheme|ErrorTheme|HelpTextTheme|null $defaultThemeBag = null,
-    ): static {
-        $this->input = $input;
-        $this->recipe = $recipe;
-        $this->themeManager = $themeManager;
-        $this->defaultThemeManager = $defaultThemeManager;
-        $this->defaultInputGroup = $defaultInputGroup;
-        $this->values = $values;
-        $this->errors = $errors;
-        $this->defaultThemeBag = $defaultThemeBag;
-        $this->defaultComponentBag = $defaultComponentBag;
-
-        return $this;
-    }
-
-    public function setParent(InputInterface $parent): static
+    public function inject(GroupContext $context): static
     {
-        $this->parent = $parent;
+        $this->input = $context->input;
+        $this->recipe = $context->recipe;
+        $this->eligibility = $context->eligibility;
+        $this->themeManager = $context->themeManager;
+        $this->defaultThemeManager = $context->defaultThemeManager;
+        $this->defaultInputGroup = $context->defaultInputGroup;
+        $this->values = $context->values;
+        $this->errors = $context->errors;
+        $this->defaultThemeBag = $context->defaultThemeBag;
+        $this->defaultComponentBag = $context->defaultComponentBag;
+        $this->parent = $context->parent;
 
         return $this;
     }
 
-    private function getInputComponent(): BackendComponent|ContentComponent|ThemeComponent
+    private function getInputComponent(): BackendComponent&ContentComponent&ThemeComponent
     {
         $composer = new InputComposer(
             input: $this->input,
             recipe: $this->recipe,
+            eligibility: $this->eligibility,
             themeManager: $this->themeManager,
             defaultThemeManager: $this->defaultThemeManager,
             componentBag: $this->defaultComponentBag,

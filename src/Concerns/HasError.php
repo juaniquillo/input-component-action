@@ -7,20 +7,27 @@ namespace Juaniquillo\InputComponentAction\Concerns;
 use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Contracts\ContentComponent;
 use Juaniquillo\BackendComponents\Contracts\ThemeComponent;
-use Juaniquillo\InputComponentAction\Composers\ErrorComposer;
-use Juaniquillo\InputComponentAction\Utilities\Support;
+use Juaniquillo\InputComponentAction\Composers\SlotComposer;
+use Juaniquillo\InputComponentAction\Enums\Slot;
 
 trait HasError
 {
-    private function getErrorComponent(): BackendComponent|ContentComponent|ThemeComponent|null
+    private function getErrorComponent(): (BackendComponent&ContentComponent&ThemeComponent)|null
     {
-        $recipe = Support::getRecipe($this->input);
+        $recipe = $this->recipe;
 
         if ($recipe->getDisableBag()?->disableError()) {
             return null;
         }
 
-        $composer = new ErrorComposer(
+        $error = $this->errors->resolve($this->input, $recipe);
+
+        if ($error === null || $error === '') {
+            return null;
+        }
+
+        $composer = new SlotComposer(
+            slot: Slot::ERROR,
             input: $this->input,
             recipe: $this->recipe,
             themeManager: $this->themeManager,
@@ -28,6 +35,7 @@ trait HasError
             values: $this->values,
             errors: $this->errors,
             themeBag: $this->defaultThemeBag,
+            resolvedError: $error,
         );
 
         if ($this->parent) {

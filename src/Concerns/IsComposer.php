@@ -6,13 +6,13 @@ namespace Juaniquillo\InputComponentAction\Concerns;
 
 use BackedEnum;
 use Closure;
+use Exception;
 use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Contracts\ContentComponent;
+use Juaniquillo\BackendComponents\Contracts\ThemeComponent;
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
 use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
-use Juaniquillo\InputComponentAction\Contracts\InputComponentRecipeInterface;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
-use Juaniquillo\InputComponentAction\Utilities\Support;
 
 trait IsComposer
 {
@@ -25,51 +25,37 @@ trait IsComposer
         return $this;
     }
 
-    private static function resolveStringClosure(InputInterface $input, string|Closure|null $stringClosure, ?string $value = null, ?string $error = null): string
+    private static function resolveStringClosure(InputInterface $input, string|Closure|null $stringClosure, ?string $value = null, ?string $error = null): ?string
     {
-        if (Support::isClosure($stringClosure)) {
+        if ($stringClosure instanceof Closure) {
             $stringClosure = $stringClosure($input, $value, $error);
         }
 
         return $stringClosure;
     }
 
+    /**
+     * @param  array<string, mixed>|Closure|null  $value
+     * @return array<string, mixed>|null
+     */
     private static function resolveArrayClosure(array|Closure|null $value, InputInterface $input, string|BackedEnum $type): ?array
     {
-        if ($input == null) {
-            return null;
-        }
-
-        if (Support::isClosure($value)) {
+        if ($value instanceof Closure) {
             return $value($input, $type);
         }
 
         return $value;
     }
 
-    private static function resolveInputName(InputInterface $input, InputComponentRecipeInterface $recipe, ?array $attributes = null): ?string
-    {
-        $attributes ??= $recipe->getAttributeBag()?->getInputAttributes() ?? null;
-
-        return $attributes['name'] ?? $input->getName();
-    }
-
-    private static function resolveInputId(InputInterface $input, InputComponentRecipeInterface $recipe, ?array $attributes = null): ?string
-    {
-        $attributes ??= $recipe->getAttributeBag()?->getInputAttributes() ?? null;
-
-        return $attributes['id'] ?? $input->getName();
-    }
-
     private function resolveComponentHook(
-        BackendComponent $component,
+        BackendComponent&ContentComponent&ThemeComponent $component,
         ?Closure $closure,
         InputInterface $input,
         string|BackedEnum $type,
         ?ValueManager $values = null,
         ?ErrorManager $errors = null,
-    ): BackendComponent|ContentComponent {
-        if (Support::isClosure($closure)) {
+    ): BackendComponent&ContentComponent&ThemeComponent {
+        if ($closure instanceof Closure) {
             $result = $closure(
                 $component,
                 $input,
@@ -78,7 +64,11 @@ trait IsComposer
                 $errors
             );
 
-            return $result;
+            if ($result instanceof BackendComponent && $result instanceof ContentComponent && $result instanceof ThemeComponent) {
+                return $result;
+            }
+
+            throw new Exception('Component hooks must return a renderable backend component.', 500);
         }
 
         return $component;

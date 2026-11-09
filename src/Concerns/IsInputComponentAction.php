@@ -5,42 +5,41 @@ declare(strict_types=1);
 namespace Juaniquillo\InputComponentAction\Concerns;
 
 use Closure;
+use Exception;
 use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Contracts\ContentComponent;
 use Juaniquillo\BackendComponents\Contracts\ThemeComponent;
+use Juaniquillo\CrudAssistant\Contracts\InputCollectionInterface;
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
-use Juaniquillo\CrudAssistant\CrudAssistant;
-use Juaniquillo\CrudAssistant\InputCollection;
+use Juaniquillo\CrudAssistant\Support\InputHelper;
 use Juaniquillo\InputComponentAction\Bags\DefaultComponentBag;
 use Juaniquillo\InputComponentAction\Bags\DefaultThemeBag;
-use Juaniquillo\InputComponentAction\Composers\WrapperComposer;
+use Juaniquillo\InputComponentAction\Composers\SlotComposer;
 use Juaniquillo\InputComponentAction\Contracts\ComponentBag;
-use Juaniquillo\InputComponentAction\Contracts\ErrorComponent;
 use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
-use Juaniquillo\InputComponentAction\Contracts\ErrorTheme;
-use Juaniquillo\InputComponentAction\Contracts\HelpTextComponent;
-use Juaniquillo\InputComponentAction\Contracts\HelpTextTheme;
 use Juaniquillo\InputComponentAction\Contracts\InputComponentRecipeInterface;
-use Juaniquillo\InputComponentAction\Contracts\LabelComponent;
-use Juaniquillo\InputComponentAction\Contracts\LabelTheme;
 use Juaniquillo\InputComponentAction\Contracts\ThemeBag;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
-use Juaniquillo\InputComponentAction\Contracts\WrapperComponent;
-use Juaniquillo\InputComponentAction\Contracts\WrapperTheme;
+use Juaniquillo\InputComponentAction\Enums\Slot;
 use Juaniquillo\InputComponentAction\Factories\InputGroupFactory;
+use Juaniquillo\InputComponentAction\Groups\DefaultInputGroup;
+use Juaniquillo\InputComponentAction\Groups\GroupContext;
 use Juaniquillo\InputComponentAction\Managers\DefaultErrorManager;
 use Juaniquillo\InputComponentAction\Managers\DefaultValueManager;
+use Juaniquillo\InputComponentAction\Resolvers\InputEligibility;
 use Juaniquillo\InputComponentAction\Utilities\Support;
 
 trait IsInputComponentAction
 {
+    private ?InputEligibility $eligibility = null;
+
     private string|Closure|null $defaultThemeManager = null;
 
     private string|Closure|null $defaultInputGroup = null;
 
-    private ThemeBag|WrapperTheme|LabelTheme|ErrorTheme|HelpTextTheme|null $defaultThemeBag = null;
+    private ?ThemeBag $defaultThemeBag = null;
 
-    private ComponentBag|WrapperComponent|LabelComponent|ErrorComponent|HelpTextComponent|null $defaultComponentBag = null;
+    private ?ComponentBag $defaultComponentBag = null;
 
     private ?object $model = null;
 
@@ -62,14 +61,14 @@ trait IsInputComponentAction
         return $this;
     }
 
-    public function setDefaultThemeBag(ThemeBag|WrapperTheme|LabelTheme|ErrorTheme|HelpTextTheme $defaultThemeBag): static
+    public function setDefaultThemeBag(ThemeBag $defaultThemeBag): static
     {
         $this->defaultThemeBag = $defaultThemeBag;
 
         return $this;
     }
 
-    public function setDefaultComponentBag(ComponentBag|WrapperComponent|LabelComponent|ErrorComponent|HelpTextComponent $defaultComponentBag): static
+    public function setDefaultComponentBag(ComponentBag $defaultComponentBag): static
     {
         $this->defaultComponentBag = $defaultComponentBag;
 
@@ -97,16 +96,20 @@ trait IsInputComponentAction
         return $this;
     }
 
-    public function resolveInputs(InputCollection|InputInterface|\IteratorAggregate $input): array|BackendComponent|ContentComponent
+    public function resolveInputs(InputCollectionInterface|InputInterface $input): BackendComponent&ContentComponent&ThemeComponent
     {
         /**
          * Recursively resolve inputs
          * and input collections.
          */
-        if (CrudAssistant::isInputCollection($input) && $this->controlsRecursion()) {
+        if (InputHelper::isCollection($input) && $this->controlsRecursion()) {
             $wrapper = $this->getWrapper($input);
 
             foreach ($input as $item) {
+                if (! $this->eligibility()->isResolvable($item)) {
+                    continue;
+                }
+
                 $wrapper->setContent($this->resolveInputs($item));
             }
 
@@ -121,35 +124,50 @@ trait IsInputComponentAction
             input: $input,
         );
 
-        return $component;
+        if (! $component instanceof BackendComponent || ! $component instanceof ContentComponent || ! $component instanceof ThemeComponent) {
+            throw new Exception('Modifiers must return a renderable backend component.', 500);
+        }
 
+        return $component;
+    }
+
+    private function eligibility(): InputEligibility
+    {
+        return $this->eligibility ??= new InputEligibility(static::getIdentifier());
     }
 
     public function getInputGroup(InputInterface $input): BackendComponent
     {
         $recipe = Support::getRecipe($input);
 
-        return InputGroupFactory::init(
+        $context = new GroupContext(
             input: $input,
             recipe: $recipe,
-            defaultThemeBag: $this->defaultThemeBag ?? new DefaultThemeBag,
+            eligibility: $this->eligibility(),
+            themeManager: $recipe->getThemeManager() ?? Support::resolveThemeManager($this->defaultThemeManager),
+            defaultThemeManager: $this->defaultThemeManager,
+            defaultComponentBag: $this->defaultComponentBag ?? new DefaultComponentBag,
+            defaultInputGroup: $this->defaultInputGroup ?? DefaultInputGroup::class,
             values: $this->getValueManager($recipe),
             errors: $this->getErrorManager($recipe),
-            defaultComponentBag: $this->defaultComponentBag,
-            defaultThemeManager: $this->defaultThemeManager,
-            defaultInputGroup: $this->defaultInputGroup,
+            defaultThemeBag: $this->defaultThemeBag ?? new DefaultThemeBag,
         );
 
+        return InputGroupFactory::init($context);
     }
 
-    public function getWrapper(InputInterface $input): BackendComponent|ContentComponent|ThemeComponent
+    public function getWrapper(InputInterface $input): BackendComponent&ContentComponent&ThemeComponent
     {
         $recipe = Support::getRecipe($input);
 
-        $composer = new WrapperComposer(
+        $composer = new SlotComposer(
+            slot: Slot::WRAPPER,
             input: $input,
+            recipe: $recipe,
             themeManager: $recipe->getThemeManager() ?? Support::resolveThemeManager($this->defaultThemeManager),
             componentBag: $this->defaultComponentBag ?? new DefaultComponentBag,
+            values: $this->getValueManager($recipe),
+            errors: $this->getErrorManager($recipe),
             themeBag: $this->defaultThemeBag,
         );
 

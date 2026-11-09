@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Juaniquillo\InputComponentAction\Managers;
 
+use Closure;
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
 use Juaniquillo\InputComponentAction\Concerns\IsValueManager;
 use Juaniquillo\InputComponentAction\Contracts\InputComponentRecipeInterface;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
-use Juaniquillo\InputComponentAction\Utilities\Support;
 use Stringable;
 
 /**
@@ -21,32 +21,31 @@ final class DefaultValueManager implements ValueManager
 {
     use IsValueManager;
 
+    /** @return Stringable|string|int|array<string|int|null>|null */
     public function resolve(InputInterface $input, InputComponentRecipeInterface $recipe, bool $ignoreRecipeValue = false): Stringable|string|int|array|null
     {
-        $values = $this->values;
-        $model = $this->model;
-
         $name = $input->getName();
 
-        if (array_key_exists(key: $name, array: $values)) {
-            return $values[$name];
+        if ($name === null) {
+            return null;
         }
 
-        $recipeValue = $recipe->getInputValue();
-        $modelValue = null;
-
-        $modelValue = $model->{$name} ?? null;
-
-        $recipeValueProcessed = null;
+        if (array_key_exists(key: $name, array: $this->values)) {
+            return $this->values[$name];
+        }
 
         if (! $ignoreRecipeValue) {
-            if (Support::isClosure($recipeValue)) {
-                $recipeValueProcessed = $recipeValue($input, $values, $model);
-            } else {
-                $recipeValueProcessed = $recipeValue;
+            $recipeValue = $recipe->getInputValue();
+
+            $recipeValue = $recipeValue instanceof Closure
+                ? $recipeValue($input, $this->values, $this->model)
+                : $recipeValue;
+
+            if ($recipeValue !== null) {
+                return $recipeValue;
             }
         }
 
-        return $recipeValueProcessed ?? $modelValue ?? null;
+        return $this->model->{$name} ?? null;
     }
 }

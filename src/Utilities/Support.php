@@ -6,9 +6,7 @@ namespace Juaniquillo\InputComponentAction\Utilities;
 
 use BackedEnum;
 use Closure;
-use Juaniquillo\BackendComponents\Builders\ComponentBuilder;
 use Juaniquillo\BackendComponents\Contracts\BackendComponent;
-use Juaniquillo\BackendComponents\Contracts\CompoundComponent;
 use Juaniquillo\BackendComponents\Contracts\ContentComponent;
 use Juaniquillo\BackendComponents\Contracts\ThemeComponent;
 use Juaniquillo\BackendComponents\Contracts\ThemeManager;
@@ -16,20 +14,10 @@ use Juaniquillo\BackendComponents\Enums\ComponentEnum;
 use Juaniquillo\BackendComponents\MainBackendComponent;
 use Juaniquillo\BackendComponents\Themes\LocalThemeManager;
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
-use Juaniquillo\InputComponentAction\Bags\DefaultThemeBag;
 use Juaniquillo\InputComponentAction\Contracts\ComponentBag;
-use Juaniquillo\InputComponentAction\Contracts\ErrorComponent;
-use Juaniquillo\InputComponentAction\Contracts\ErrorTheme;
-use Juaniquillo\InputComponentAction\Contracts\HelpTextComponent;
-use Juaniquillo\InputComponentAction\Contracts\HelpTextTheme;
 use Juaniquillo\InputComponentAction\Contracts\InputComponentRecipeInterface;
 use Juaniquillo\InputComponentAction\Contracts\InputGroup;
-use Juaniquillo\InputComponentAction\Contracts\LabelComponent;
-use Juaniquillo\InputComponentAction\Contracts\LabelTheme;
-use Juaniquillo\InputComponentAction\Contracts\ThemeBag;
-use Juaniquillo\InputComponentAction\Contracts\WrapperComponent;
-use Juaniquillo\InputComponentAction\Contracts\WrapperTheme;
-use Juaniquillo\InputComponentAction\Defaults\InputTypes;
+use Juaniquillo\InputComponentAction\Enums\Slot;
 use Juaniquillo\InputComponentAction\Groups\DefaultInputGroup;
 use Juaniquillo\InputComponentAction\InputComponentAction;
 use Juaniquillo\InputComponentAction\Recipes\InputComponentRecipe;
@@ -38,96 +26,100 @@ final class Support
 {
     public static function getRecipe(InputInterface $input): InputComponentRecipeInterface
     {
-        return $input->getRecipes()[InputComponentAction::getIdentifier()] ?? new InputComponentRecipe;
+        $recipe = $input->getRecipe(InputComponentAction::getIdentifier());
+
+        if ($recipe instanceof InputComponentRecipeInterface) {
+            return $recipe;
+        }
+
+        return new InputComponentRecipe;
     }
 
-    public static function resolveThemeBag(InputComponentRecipeInterface $recipe, ThemeBag|WrapperTheme|LabelTheme|ErrorTheme|HelpTextTheme|null $defaultThemeBag = null): ThemeBag
+    public static function resolveType(?InputComponentRecipeInterface $recipe, Slot $slot, ComponentBag $componentBag): string|BackedEnum
     {
-        return $recipe->getThemeBag() ?? $defaultThemeBag ?? new DefaultThemeBag;
-    }
+        $recipeType = match ($slot) {
+            Slot::WRAPPER => $recipe?->getComponentBag()?->getWrapperType(),
+            Slot::LABEL => $recipe?->getComponentBag()?->getLabelType(),
+            Slot::INPUT => $recipe?->getComponentBag()?->getInputType(),
+            Slot::ERROR => $recipe?->getComponentBag()?->getErrorType(),
+            Slot::HELP_TEXT => $recipe?->getComponentBag()?->getHelpTextType(),
+        };
 
-    public static function resolveWrapperType(?InputComponentRecipeInterface $recipe, WrapperComponent $componentBag): string|BackedEnum
-    {
-        return $recipe->getComponentBag()?->getWrapperType() ?? $componentBag->getWrapperType() ?? InputTypes::WRAPPER;
-    }
+        if ($recipeType !== null) {
+            return $recipeType;
+        }
 
-    public static function resolveLabelType(?InputComponentRecipeInterface $recipe, LabelComponent $componentBag): string|BackedEnum
-    {
-        return $recipe->getComponentBag()?->getLabelType() ?? $componentBag->getLabelType() ?? InputTypes::LABEL;
-    }
+        $defaultType = match ($slot) {
+            Slot::WRAPPER => $componentBag->getWrapperType(),
+            Slot::LABEL => $componentBag->getLabelType(),
+            Slot::INPUT => $componentBag->getInputType(),
+            Slot::ERROR => $componentBag->getErrorType(),
+            Slot::HELP_TEXT => $componentBag->getHelpTextType(),
+        };
 
-    public static function resolveInputType(?InputComponentRecipeInterface $recipe, ComponentBag $componentBag): string|BackedEnum
-    {
-        return $recipe->getComponentBag()?->getInputType() ?? $componentBag->getInputType() ?? InputTypes::INPUT;
-    }
-
-    public static function resolveErrorType(?InputComponentRecipeInterface $recipe, ErrorComponent $componentBag): string|BackedEnum
-    {
-        return $recipe->getComponentBag()?->getErrorType() ?? $componentBag->getErrorType() ?? InputTypes::HELP_TEXT;
-    }
-
-    public static function resolveHelpTextType(?InputComponentRecipeInterface $recipe, HelpTextComponent $componentBag): string|BackedEnum
-    {
-        return $recipe->getComponentBag()?->getErrorType() ?? $componentBag->getHelpTextType() ?? InputTypes::HELP_TEXT;
+        return $defaultType ?? $slot->defaultType();
     }
 
     public static function resolveThemeManager(string|Closure|null $manager): ThemeManager
     {
-        if (is_string($manager) && class_exists($manager)) {
+        if (is_string($manager) && is_a($manager, ThemeManager::class, true)) {
             return new $manager;
         }
 
         if ($manager instanceof Closure) {
-            return $manager();
+            $themeManager = $manager();
+
+            if ($themeManager instanceof ThemeManager) {
+                return $themeManager;
+            }
         }
 
         return new LocalThemeManager;
     }
 
-    /**
-     * @param  class-string<InputGroup>|Closure  $group
-     */
     public static function resolveInputGroup(string|Closure|null $group): InputGroup
     {
-
-        if (is_string($group) && class_exists($group)) {
+        if (is_string($group) && is_a($group, InputGroup::class, true)) {
             return new $group;
         }
 
         if ($group instanceof Closure) {
-            return $group();
+            $inputGroup = $group();
+
+            if ($inputGroup instanceof InputGroup) {
+                return $inputGroup;
+            }
         }
 
         return new DefaultInputGroup;
     }
 
-    /**
-     * @param  class-string<BackendComponent|ContentComponent|ThemeComponent|CompoundComponent>|Closure(string|BackedEnum $type, ThemeManager $manager): (BackendComponent|ContentComponent|ThemeComponent|CompoundComponent)  $component
-     */
     public static function resolveComponent(
         Closure|string|null $component,
-        mixed $type,
+        string|BackedEnum $type,
         ThemeManager $themeManager,
-    ): BackendComponent|ContentComponent|ThemeComponent|CompoundComponent {
+    ): BackendComponent&ContentComponent&ThemeComponent {
+        if (is_string($component) && is_a($component, BackendComponent::class, true)) {
+            $instance = new $component($type, $themeManager);
 
-        if (is_string($component) && class_exists($component)) {
-            return new $component($type, $themeManager);
+            if ($instance instanceof ContentComponent && $instance instanceof ThemeComponent) {
+                return $instance;
+            }
         }
 
         if ($component instanceof Closure) {
-            return $component($type, $themeManager);
+            $instance = $component($type, $themeManager);
+
+            if ($instance instanceof BackendComponent && $instance instanceof ContentComponent && $instance instanceof ThemeComponent) {
+                return $instance;
+            }
         }
 
         return new MainBackendComponent($type, $themeManager);
     }
 
-    public static function isClosure(mixed $value): bool
+    public static function getCollectionWrapper(): BackendComponent&ContentComponent&ThemeComponent
     {
-        return $value instanceof Closure;
-    }
-
-    public static function getCollectionWrapper(): BackendComponent|ContentComponent
-    {
-        return ComponentBuilder::make(ComponentEnum::COLLECTION);
+        return new MainBackendComponent(ComponentEnum::COLLECTION);
     }
 }

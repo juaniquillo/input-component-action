@@ -10,7 +10,8 @@
         }
     ],
     "require": {
-        "juaniquillo/crud-assistant": "^0.2.0",
+        "php": "^8.3",
+        "juaniquillo/crud-assistant": "^0.3.0",
         "juaniquillo/laravel-backend-component": "@dev",
         "spatie/laravel-package-tools": "^1.92"
     },
@@ -38,9 +39,15 @@
         "test": "vendor/bin/pest",
         "test-coverage": "vendor/bin/pest --coverage",
         "format": "vendor/bin/pint",
+        "format:check": "vendor/bin/pint --test",
         "qa": [
             "@composer run format",
             "@composer run analyse",
+            "@composer run test"
+        ],
+        "qa:ci": [
+            "@composer run analyse",
+            "@composer run format:check",
             "@composer run test"
         ]
     },

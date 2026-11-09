@@ -7,9 +7,9 @@ namespace Juaniquillo\InputComponentAction;
 use Exception;
 use Juaniquillo\CrudAssistant\Concerns\IsAction;
 use Juaniquillo\CrudAssistant\Contracts\ActionInterface;
+use Juaniquillo\CrudAssistant\Contracts\InputCollectionInterface;
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
 use Juaniquillo\CrudAssistant\DataContainer;
-use Juaniquillo\CrudAssistant\InputCollection;
 use Juaniquillo\InputComponentAction\Concerns\IsInputComponentAction;
 use Juaniquillo\InputComponentAction\Containers\InputComponentOutput;
 use Juaniquillo\InputComponentAction\Contracts\InputComponentActionInterface;
@@ -19,27 +19,43 @@ final class InputComponentAction implements ActionInterface, InputComponentActio
     use IsAction,
         IsInputComponentAction;
 
-    protected $controlsRecursion = true;
-
+    /**
+     * @param  array<string|int, string|int|array<string|int|null>|null>  $values
+     * @param  array<string, string|array<int, string>|null>  $errors
+     */
     public function __construct(
         private array $values = [],
         private array $errors = [],
     ) {
-        $this->output = new InputComponentOutput;
-
-        $this->output->inputs = new DataContainer;
-        $this->output->meta = new DataContainer;
+        $this->controlsRecursion = true;
+        $this->initOutput();
     }
 
+    /**
+     * @param  array<string|int, string|int|array<string|int|null>|null>  $values
+     * @param  array<string, string|array<int, string>|null>  $errors
+     */
     public static function make(array $values = [], array $errors = []): static
     {
         return new self(values: $values, errors: $errors);
     }
 
-    public function execute(InputCollection|InputInterface|\IteratorAggregate $input)
+    public function initOutput(): static
+    {
+        if (! $this->output instanceof InputComponentOutput) {
+            $this->output = new InputComponentOutput;
+
+            $this->output->inputs = new DataContainer;
+            $this->output->meta = new DataContainer;
+        }
+
+        return $this;
+    }
+
+    public function execute(InputCollectionInterface|InputInterface $input): void
     {
         /** @var InputComponentOutput $output */
-        $output = $this->output;
+        $output = $this->getOutput();
         $inputs = $output->inputs;
 
         $name = $input->getName();
@@ -49,7 +65,5 @@ final class InputComponentAction implements ActionInterface, InputComponentActio
         }
 
         $inputs->set($name, $this->resolveInputs($input));
-
-        return $this->output;
     }
 }

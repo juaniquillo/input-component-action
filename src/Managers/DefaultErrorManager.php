@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Juaniquillo\InputComponentAction\Managers;
 
+use Closure;
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
 use Juaniquillo\InputComponentAction\Concerns\IsErrorManager;
 use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
 use Juaniquillo\InputComponentAction\Contracts\InputComponentRecipeInterface;
-use Juaniquillo\InputComponentAction\Utilities\Support;
 
 final class DefaultErrorManager implements ErrorManager
 {
@@ -25,18 +25,19 @@ final class DefaultErrorManager implements ErrorManager
         $errorDefault = $errors[$name] ?? null;
         $error = null;
 
-        if (Support::isClosure($recipeError)) {
+        if ($recipeError instanceof Closure) {
             $error = $recipeError($input, $errors);
         } else {
             $error = $recipeError;
         }
 
         /**
-         * If multiple errors
+         * If multiple errors, the latest one wins.
          */
         if (is_array($errorDefault)) {
-            $reversed = array_reverse(array: $errorDefault);
-            $errorDefault = array_pop(array: $reversed);
+            $errorDefault = $errorDefault === []
+                ? null
+                : $errorDefault[array_key_last($errorDefault)];
         }
 
         return $error ?? $errorDefault ?? null;

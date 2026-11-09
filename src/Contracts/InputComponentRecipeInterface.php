@@ -4,14 +4,11 @@ declare(strict_types=1);
 
 namespace Juaniquillo\InputComponentAction\Contracts;
 
-use BackedEnum;
 use Closure;
 use Juaniquillo\BackendComponents\Contracts\ThemeManager;
 
 interface InputComponentRecipeInterface
 {
-    public static function make(): self;
-
     public function getInputGroup(): ?InputGroup;
 
     public function setInputGroup(?InputGroup $inputGroup): self;
@@ -20,21 +17,21 @@ interface InputComponentRecipeInterface
 
     public function setThemeManager(?ThemeManager $themeManager): self;
 
-    public function getComponentBag(): ComponentBag|WrapperComponent|LabelComponent|ErrorComponent|HelpTextComponent|null;
+    public function getComponentBag(): ?ComponentBag;
 
-    public function setComponentBag(ComponentBag|WrapperComponent|LabelComponent|ErrorComponent|HelpTextComponent|null $componentBag): self;
+    public function setComponentBag(?ComponentBag $componentBag): self;
 
-    public function getAttributeBag(): AttributeBag|WrapperAttributes|LabelAttributes|ErrorAttributes|HelpTextAttributes|null;
+    public function getAttributeBag(): ?AttributeBag;
 
-    public function setAttributeBag(AttributeBag|WrapperAttributes|LabelAttributes|ErrorAttributes|HelpTextAttributes|null $attributeBag): self;
+    public function setAttributeBag(?AttributeBag $attributeBag): self;
 
-    public function getThemeBag(): ThemeBag|WrapperTheme|LabelTheme|ErrorTheme|HelpTextTheme|null;
+    public function getThemeBag(): ?ThemeBag;
 
-    public function setThemeBag(ThemeBag|WrapperTheme|LabelTheme|ErrorTheme|HelpTextTheme|null $themeBag): self;
+    public function setThemeBag(?ThemeBag $themeBag): self;
 
-    public function getHookBag(): HookBag|WrapperHook|LabelHook|ErrorHook|HelpTextHook|null;
+    public function getHookBag(): ?HookBag;
 
-    public function setHookBag(HookBag|WrapperHook|LabelHook|ErrorHook|HelpTextHook|null $hookBag): self;
+    public function setHookBag(?HookBag $hookBag): self;
 
     public function getValueBag(): ?ValueManager;
 
@@ -76,29 +73,9 @@ interface InputComponentRecipeInterface
 
     public function setHelpText(string|Closure|null $helpText): self;
 
-    public function getDisableBag(): DisableBag|WrapperDisable|LabelDisable|ErrorDisable|HelpTextDisable|InputDisable|null;
+    public function getDisableBag(): ?DisableBag;
 
-    public function setDisableBag(DisableBag|WrapperDisable|LabelDisable|ErrorDisable|HelpTextDisable|InputDisable|null $disableBag): self;
-
-    public function getWrapperType(): string|BackedEnum|null;
-
-    public function setWrapperType(string|BackedEnum|null $wrapperType): self;
-
-    public function getLabelType(): string|BackedEnum|null;
-
-    public function setLabelType(string|BackedEnum|null $labelType): self;
-
-    public function getInputType(): string|BackedEnum|null;
-
-    public function setInputType(string|BackedEnum|null $inputType): self;
-
-    public function getErrorType(): string|BackedEnum|null;
-
-    public function setErrorType(string|BackedEnum|null $errorType): self;
-
-    public function getHelpTextType(): string|BackedEnum|null;
-
-    public function setHelpTextType(string|BackedEnum|null $helpTextType): self;
+    public function setDisableBag(?DisableBag $disableBag): self;
 
     public function isCheckable(): bool;
 

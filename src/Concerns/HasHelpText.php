@@ -7,20 +7,21 @@ namespace Juaniquillo\InputComponentAction\Concerns;
 use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Contracts\ContentComponent;
 use Juaniquillo\BackendComponents\Contracts\ThemeComponent;
-use Juaniquillo\InputComponentAction\Composers\HelpTextComposer;
-use Juaniquillo\InputComponentAction\Utilities\Support;
+use Juaniquillo\InputComponentAction\Composers\SlotComposer;
+use Juaniquillo\InputComponentAction\Enums\Slot;
 
 trait HasHelpText
 {
-    private function getHelpTextComponent(): BackendComponent|ContentComponent|ThemeComponent|null
+    private function getHelpTextComponent(): (BackendComponent&ContentComponent&ThemeComponent)|null
     {
-        $recipe = Support::getRecipe($this->input);
+        $recipe = $this->recipe;
 
         if ($recipe->getDisableBag()?->disableHelpText() || $recipe->getHelpText() === null) {
             return null;
         }
 
-        $composer = new HelpTextComposer(
+        $composer = new SlotComposer(
+            slot: Slot::HELP_TEXT,
             input: $this->input,
             recipe: $this->recipe,
             themeManager: $this->themeManager,

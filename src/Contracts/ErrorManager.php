@@ -8,6 +8,7 @@ use Juaniquillo\CrudAssistant\Contracts\InputInterface;
 
 interface ErrorManager
 {
+    /** @param array<string, string|array<int, string>|null> $errors */
     public function setErrors(array $errors): static;
 
     public function resolve(InputInterface $input, InputComponentRecipeInterface $recipe): ?string;

@@ -13,36 +13,38 @@ use Juaniquillo\CrudAssistant\Contracts\InputCollectionInterface;
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
 use Juaniquillo\InputComponentAction\Concerns\IsComposer;
 use Juaniquillo\InputComponentAction\Contracts\ComponentBag;
-use Juaniquillo\InputComponentAction\Contracts\ComponentComposer;
 use Juaniquillo\InputComponentAction\Contracts\ErrorManager;
 use Juaniquillo\InputComponentAction\Contracts\InputComponentRecipeInterface;
 use Juaniquillo\InputComponentAction\Contracts\ThemeBag;
 use Juaniquillo\InputComponentAction\Contracts\ValueManager;
-use Juaniquillo\InputComponentAction\Factories\InputGroupFactory;
+use Juaniquillo\InputComponentAction\Enums\Slot;
+use Juaniquillo\InputComponentAction\Resolvers\ChildInputResolver;
+use Juaniquillo\InputComponentAction\Resolvers\InputEligibility;
 use Juaniquillo\InputComponentAction\Utilities\Support;
 
-final class InputComposer implements ComponentComposer
+final class InputComposer
 {
     use IsComposer;
 
     public function __construct(
         private InputInterface $input,
         private InputComponentRecipeInterface $recipe,
+        private InputEligibility $eligibility,
         private string|Closure $defaultInputGroup,
         private ThemeManager $themeManager,
         private string|Closure|null $defaultThemeManager,
         private ComponentBag $componentBag,
-        private ?ValueManager $values,
-        private ?ErrorManager $errors,
+        private ValueManager $values,
+        private ErrorManager $errors,
         private ?ThemeBag $themeBag = null,
     ) {}
 
-    public function build(): BackendComponent|ContentComponent|ThemeComponent
+    public function build(): BackendComponent&ContentComponent&ThemeComponent
     {
         return $this->buildInputComponent($this->input);
     }
 
-    public function buildInputComponent(InputInterface|InputCollectionInterface $input): BackendComponent|ContentComponent
+    public function buildInputComponent(InputInterface|InputCollectionInterface $input): BackendComponent&ContentComponent&ThemeComponent
     {
 
         $recipe = $this->recipe;
@@ -51,7 +53,7 @@ final class InputComposer implements ComponentComposer
         $recipeComponentBag = $recipe->getComponentBag();
         $defaultComponentBag = $this->componentBag;
 
-        $inputType = Support::resolveInputType($recipe, $defaultComponentBag);
+        $inputType = Support::resolveType($recipe, Slot::INPUT, $defaultComponentBag);
 
         $currentComponent = $recipeComponentBag?->getInputComponent() ?? $defaultComponentBag->getInputComponent();
 
@@ -64,7 +66,7 @@ final class InputComposer implements ComponentComposer
         /**
          * SubComponents
          */
-        $subComponents = $this->buildSubComponentGroup($recipe);
+        $subComponents = $this->buildSubComponentGroup($input);
 
         /**
          * Access
@@ -73,15 +75,16 @@ final class InputComposer implements ComponentComposer
         $theme = $recipe->getThemeBag()?->getInputTheme() ?? $this->themeBag?->getInputTheme();
         $callback = $recipe->getHookBag()?->getInputHook() ?? null;
 
-        $value = (string) $valueResolver->resolve($input, $recipe);
-        $name = $this->resolveInputName($input, $recipe);
-        $id = $this->resolveInputId($input, $recipe);
+        $value = $valueResolver->resolve($input, $recipe);
 
         /**
          * Resolve closures
          */
         $attributes = $this->resolveArrayClosure(value: $attributes, input: $input, type: $inputType);
         $theme = $this->resolveArrayClosure(value: $theme, input: $input, type: $inputType);
+
+        $name = $attributes['name'] ?? $input->getName();
+        $id = $attributes['id'] ?? $input->getName();
 
         /**
          * Default attributes
@@ -98,7 +101,7 @@ final class InputComposer implements ComponentComposer
             $component->setThemes($theme);
         }
 
-        if ($recipe->labelAsInputContent()) {
+        if ($recipe->labelAsInputContent() && $input->getLabel() !== null) {
             $component->setContent($input->getLabel());
         }
 
@@ -106,11 +109,11 @@ final class InputComposer implements ComponentComposer
             $component->setContents($subComponents);
         }
 
-        if (! $recipe->getDisableBag()?->disableInputValue()) {
+        if (! $recipe->getDisableBag()?->disableInputValue() && ! \is_array($value)) {
             if ($recipe->valueAsInputContent()) {
-                $component->setContent($value);
+                $component->setContent((string) $value);
             } else {
-                $component->setAttribute('value', $value);
+                $component->setAttribute('value', (string) $value);
             }
         }
 
@@ -138,41 +141,30 @@ final class InputComposer implements ComponentComposer
         return $component;
     }
 
-    public function buildSubComponentGroup(InputComponentRecipeInterface $recipe): ?array
+    /**
+     * @return array<int, BackendComponent&ContentComponent>|null
+     */
+    public function buildSubComponentGroup(InputInterface $input): ?array
     {
-        $input = $this->input;
+        $resolver = $this->childResolver();
 
-        $subElements = $input->getSubElements();
-        $components = [];
-
-        if (! $subElements) {
+        if (! $resolver->hasResolvableSubElements($input)) {
             return null;
         }
 
-        foreach ($subElements->getInputs() as $element) {
-            $elementRecipe = Support::getRecipe($element);
-            $components[] = $this->resolveGroup(
-                input: $element,
-                recipe: $elementRecipe,
-                defaultInputGroup: $this->defaultInputGroup,
-                parent: $input,
-            );
-        }
-
-        return $components;
+        return $resolver->resolveChildren($input);
     }
 
-    public function addCheckableAndSelectableAttribute(InputInterface $input, InputComponentRecipeInterface $recipe, BackendComponent $component, ValueManager $valueResolver, ?string $value = null): void
+    public function addCheckableAndSelectableAttribute(InputInterface $input, InputComponentRecipeInterface $recipe, BackendComponent&ContentComponent&ThemeComponent $component, ValueManager $valueResolver, mixed $value = null): void
     {
         if ($recipe->isCheckable() || $recipe->isSelectable()) {
-
             $isSelected = false;
 
             if ($recipe->useParentValue() && $this->parent) {
                 $parentValue = $valueResolver->resolve($this->parent, Support::getRecipe($this->parent));
-                $isSelected = $value == $parentValue;
+                $isSelected = $this->valueMatches($value, $parentValue);
             } else {
-                $isSelected = $valueResolver->resolve($input, $recipe, true);
+                $isSelected = (bool) $valueResolver->resolve($input, $recipe, true);
             }
 
             if ($recipe->isSelectable() && $isSelected) {
@@ -185,23 +177,32 @@ final class InputComposer implements ComponentComposer
         }
     }
 
-    private function resolveGroup(
-        InputInterface $input,
-        InputComponentRecipeInterface $recipe,
-        string|Closure $defaultInputGroup,
-        ?InputInterface $parent = null,
-    ): BackendComponent {
-        return InputGroupFactory::init(
-            input: $input,
-            recipe: $recipe,
+    private function valueMatches(mixed $value, mixed $parentValue): bool
+    {
+        $values = \is_array($value) ? $value : [$value];
+        $parents = \is_array($parentValue) ? $parentValue : [$parentValue];
+
+        foreach ($values as $candidate) {
+            foreach ($parents as $parent) {
+                if ($candidate == $parent) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    private function childResolver(): ChildInputResolver
+    {
+        return new ChildInputResolver(
+            eligibility: $this->eligibility,
             values: $this->values,
             errors: $this->errors,
-            defaultThemeBag: $this->themeBag,
+            componentBag: $this->componentBag,
+            defaultInputGroup: $this->defaultInputGroup,
             defaultThemeManager: $this->defaultThemeManager,
-            defaultComponentBag: $this->componentBag,
-            defaultInputGroup: $defaultInputGroup,
-            parent: $parent,
+            themeBag: $this->themeBag,
         );
-
     }
 }

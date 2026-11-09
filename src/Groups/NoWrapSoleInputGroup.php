@@ -4,24 +4,11 @@ declare(strict_types=1);
 
 namespace Juaniquillo\InputComponentAction\Groups;
 
-use Juaniquillo\BackendComponents\Contracts\BackendComponent;
-use Juaniquillo\BackendComponents\Contracts\ContentComponent;
-use Juaniquillo\InputComponentAction\Concerns\HasWrapper;
-use Juaniquillo\InputComponentAction\Concerns\IsInputGroup;
-use Juaniquillo\InputComponentAction\Contracts\InputGroup;
-use Juaniquillo\InputComponentAction\Utilities\Support;
+use Juaniquillo\InputComponentAction\Enums\Slot;
 
-class NoWrapSoleInputGroup implements InputGroup
+final class NoWrapSoleInputGroup extends AbstractInputGroup
 {
-    use HasWrapper,
-        IsInputGroup;
+    protected array $slots = [Slot::INPUT];
 
-    public function getGroup(): BackendComponent|ContentComponent
-    {
-        $wrapper = Support::getCollectionWrapper();
-
-        $input = $this->getInputComponent();
-
-        return $wrapper->setContent($input);
-    }
+    protected bool $wrap = false;
 }
