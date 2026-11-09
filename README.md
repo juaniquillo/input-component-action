@@ -1,5 +1,7 @@
 # Input Component Action
 
+[![CI](https://github.com/juaniquillo/input-component-action/actions/workflows/ci.yml/badge.svg)](https://github.com/juaniquillo/input-component-action/actions/workflows/ci.yml)
+
 Turn [CrudAssistant](https://github.com/juaniquillo/crud-assistant) inputs into
 renderable [Laravel Backend Components](https://github.com/juaniquillo/laravel-backend-component).
 
@@ -130,6 +132,8 @@ $input->setRecipe(new InputComponentRecipe(
 | `helpText` | Help text or closure |
 | `checkable` | Add `checked` when selected |
 | `selectable` | Add `selected` when selected |
+| `useParentName` | Inherit the parent input's `name` attribute |
+| `useInputNameAsValue` | Fall back to the input name when no value is resolved |
 
 ### Select options
 
@@ -160,6 +164,41 @@ $select->setSubElements(CrudAssistant::make([
 
 When the action receives `['language' => ['php', 'js']]`, both options are
 marked selected.
+
+### Radio and checkbox options
+
+`RadioComponentRecipe` and `CheckboxComponentRecipe` configure a single choice
+inside a group. They inherit the parent input's `name`, take the input name as
+the value by default, and mark the option `checked` when it matches the parent
+value:
+
+```php
+use Juaniquillo\BackendComponents\Enums\ComponentEnum;
+use Juaniquillo\CrudAssistant\CrudAssistant;
+use Juaniquillo\CrudAssistant\Inputs\DefaultInput;
+use Juaniquillo\CrudAssistant\Inputs\RadioGroupInput;
+use Juaniquillo\InputComponentAction\Bags\DefaultComponentBag;
+use Juaniquillo\InputComponentAction\Recipes\InputComponentRecipe;
+use Juaniquillo\InputComponentAction\Recipes\RadioComponentRecipe;
+
+$group = new RadioGroupInput('choice', 'Choice');
+$group->setRecipe(new InputComponentRecipe(
+    componentBag: (new DefaultComponentBag)->setInputType(ComponentEnum::DIV),
+));
+
+$group->setSubElements(CrudAssistant::make([
+    (new DefaultInput('a', 'A'))->setRecipe(new RadioComponentRecipe),
+    (new DefaultInput('b', 'B'))->setRecipe(new RadioComponentRecipe),
+]));
+```
+
+Use `CheckboxComponentRecipe` the same way for checkbox groups, or on its own for
+a single checkbox. Both recipes only fill in defaults: a supplied component bag,
+group, or disable bag is kept, so custom components (such as a switch) and
+label/error groups keep working.
+
+`SelectOptionComponentRecipe`, `RadioComponentRecipe`, and
+`CheckboxComponentRecipe` share the `ChoiceComponentRecipe` base.
 
 ## Bags
 
