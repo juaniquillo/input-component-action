@@ -45,6 +45,8 @@ class InputComponentRecipe implements InputComponentRecipeInterface, RecipeInter
         string|Closure|null $helpText = null,
         bool $checkable = false,
         bool $selectable = false,
+        bool $useParentName = false,
+        bool $useInputNameAsValue = false,
     ) {
         $this->action = InputComponentAction::class;
         $this->inputGroup = $inputGroup;
@@ -66,6 +68,8 @@ class InputComponentRecipe implements InputComponentRecipeInterface, RecipeInter
         $this->helpText = $helpText;
         $this->checkable = $checkable;
         $this->selectable = $selectable;
+        $this->useParentName = $useParentName;
+        $this->useInputNameAsValue = $useInputNameAsValue;
 
         $this->configure();
     }

@@ -11,14 +11,15 @@
     ],
     "require": {
         "php": "^8.3",
+        "illuminate/support": "^12.0||^13.0",
         "juaniquillo/crud-assistant": "^0.3.0",
-        "juaniquillo/laravel-backend-component": "@dev",
-        "spatie/laravel-package-tools": "^1.92"
+        "juaniquillo/laravel-backend-component": "^0.10.0"
     },
     "require-dev": {
+        "larastan/larastan": "^3.9",
+        "laravel/pao": "^1.1",
         "laravel/pint": "^1.27",
         "orchestra/testbench": "^10.9",
-        "larastan/larastan": "^3.9",
         "pestphp/pest": "^4.4"
     },
     "autoload": {
@@ -64,7 +65,5 @@
                 "Juaniquillo\\InputComponentAction\\InputComponentActionServiceProvider"
             ]
         }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+    }
 }

@@ -39,6 +39,10 @@ trait IsInputComponentRecipe
 
     private bool $useParentValue = false;
 
+    private bool $useParentName = false;
+
+    private bool $useInputNameAsValue = false;
+
     private string|Closure|null $inputError = null;
 
     private string|Closure|null $label = null;
@@ -174,6 +178,30 @@ trait IsInputComponentRecipe
     public function setUseParentValue(bool $useParentValue): self
     {
         $this->useParentValue = $useParentValue;
+
+        return $this;
+    }
+
+    public function useParentName(): bool
+    {
+        return $this->useParentName;
+    }
+
+    public function setUseParentName(bool $useParentName): self
+    {
+        $this->useParentName = $useParentName;
+
+        return $this;
+    }
+
+    public function useInputNameAsValue(): bool
+    {
+        return $this->useInputNameAsValue;
+    }
+
+    public function setUseInputNameAsValue(bool $useInputNameAsValue): self
+    {
+        $this->useInputNameAsValue = $useInputNameAsValue;
 
         return $this;
     }

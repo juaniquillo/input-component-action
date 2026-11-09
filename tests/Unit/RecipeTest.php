@@ -20,6 +20,7 @@ use Juaniquillo\InputComponentAction\InputComponentAction;
 use Juaniquillo\InputComponentAction\Managers\DefaultErrorManager;
 use Juaniquillo\InputComponentAction\Managers\DefaultValueManager;
 use Juaniquillo\InputComponentAction\Recipes\InputComponentRecipe;
+use Juaniquillo\InputComponentAction\Recipes\RadioComponentRecipe;
 use Juaniquillo\InputComponentAction\Recipes\SelectOptionComponentRecipe;
 use Tests\Support\ActionFactory;
 use Tests\Support\ComponentTree;
@@ -202,28 +203,8 @@ test('it marks the matching radio as checked from the parent value', function ()
     ));
 
     $group->setSubElements(CrudAssistant::make([
-        (new DefaultInput('a', 'A'))->setRecipe(new InputComponentRecipe(
-            inputGroup: new SoleInputGroup,
-            componentBag: (new DefaultComponentBag)->setInputType(ComponentEnum::RADIO_INPUT),
-            disableBag: (new DefaultDisableBag)
-                ->setDisableWrapper()
-                ->setDisableDefaultNameAttribute(),
-            inputValue: 'a',
-            labelAsInputContent: true,
-            checkable: true,
-            useParentValue: true,
-        )),
-        (new DefaultInput('b', 'B'))->setRecipe(new InputComponentRecipe(
-            inputGroup: new SoleInputGroup,
-            componentBag: (new DefaultComponentBag)->setInputType(ComponentEnum::RADIO_INPUT),
-            disableBag: (new DefaultDisableBag)
-                ->setDisableWrapper()
-                ->setDisableDefaultNameAttribute(),
-            inputValue: 'b',
-            labelAsInputContent: true,
-            checkable: true,
-            useParentValue: true,
-        )),
+        (new DefaultInput('a', 'A'))->setRecipe(new RadioComponentRecipe),
+        (new DefaultInput('b', 'B'))->setRecipe(new RadioComponentRecipe),
     ]));
 
     $component = ActionFactory::component(
@@ -248,13 +229,9 @@ test('it does not use the parent value when checkable inputs disable it', functi
     ));
 
     $group->setSubElements(CrudAssistant::make([
-        (new DefaultInput('a', 'A'))->setRecipe(new InputComponentRecipe(
-            inputGroup: new SoleInputGroup,
-            componentBag: (new DefaultComponentBag)->setInputType(ComponentEnum::RADIO_INPUT),
-            inputValue: 'a',
-            checkable: true,
-            useParentValue: false,
-        )),
+        (new DefaultInput('a', 'A'))->setRecipe(
+            (new RadioComponentRecipe)->setUseParentValue(false),
+        ),
     ]));
 
     $component = ActionFactory::component(

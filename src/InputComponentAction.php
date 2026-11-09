@@ -20,7 +20,7 @@ final class InputComponentAction implements ActionInterface, InputComponentActio
         IsInputComponentAction;
 
     /**
-     * @param  array<string|int, string|int|array<string|int|null>|null>  $values
+     * @param  array<string|int, string|int|bool|array<string|int|bool|null>|null>  $values
      * @param  array<string, string|array<int, string>|null>  $errors
      */
     public function __construct(
@@ -32,7 +32,7 @@ final class InputComponentAction implements ActionInterface, InputComponentActio
     }
 
     /**
-     * @param  array<string|int, string|int|array<string|int|null>|null>  $values
+     * @param  array<string|int, string|int|bool|array<string|int|bool|null>|null>  $values
      * @param  array<string, string|array<int, string>|null>  $errors
      */
     public static function make(array $values = [], array $errors = []): static

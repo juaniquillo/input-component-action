@@ -21,8 +21,8 @@ final class DefaultValueManager implements ValueManager
 {
     use IsValueManager;
 
-    /** @return Stringable|string|int|array<string|int|null>|null */
-    public function resolve(InputInterface $input, InputComponentRecipeInterface $recipe, bool $ignoreRecipeValue = false): Stringable|string|int|array|null
+    /** @return Stringable|string|int|bool|array<string|int|bool|null>|null */
+    public function resolve(InputInterface $input, InputComponentRecipeInterface $recipe, bool $ignoreRecipeValue = false): Stringable|string|int|bool|array|null
     {
         $name = $input->getName();
 
