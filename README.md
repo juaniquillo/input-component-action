@@ -6,6 +6,13 @@ renderable [Laravel Backend Components](https://github.com/juaniquillo/laravel-b
 The action walks an input tree and produces wrapped, label, input, error and
 help-text components, using recipes to customize every slot.
 
+> [!TIP]
+> #### Laravel Boost Skill
+> If you use [Laravel Boost](https://laravel.com/docs/boost), install the AI skill:
+> ```bash
+> php artisan boost:add-skill https://github.com/juaniquillo/input-component-action
+> ```
+
 ## Requirements
 
 - PHP `^8.3`
