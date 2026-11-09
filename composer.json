@@ -39,9 +39,15 @@
         "test": "vendor/bin/pest",
         "test-coverage": "vendor/bin/pest --coverage",
         "format": "vendor/bin/pint",
+        "format:check": "vendor/bin/pint --test",
         "qa": [
             "@composer run format",
             "@composer run analyse",
+            "@composer run test"
+        ],
+        "qa:ci": [
+            "@composer run analyse",
+            "@composer run format:check",
             "@composer run test"
         ]
     },
