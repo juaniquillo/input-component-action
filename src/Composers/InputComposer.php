@@ -77,13 +77,22 @@ final class InputComposer
 
         $value = $valueResolver->resolve($input, $recipe);
 
+        if ($value === null && $recipe->useInputNameAsValue()) {
+            $value = $input->getName();
+        }
+
         /**
          * Resolve closures
          */
         $attributes = $this->resolveArrayClosure(value: $attributes, input: $input, type: $inputType);
         $theme = $this->resolveArrayClosure(value: $theme, input: $input, type: $inputType);
 
-        $name = $attributes['name'] ?? $input->getName();
+        $parentName = $this->parent?->getName();
+        $defaultName = $recipe->useParentName() && $parentName !== null
+            ? $parentName
+            : $input->getName();
+
+        $name = $attributes['name'] ?? $defaultName;
         $id = $attributes['id'] ?? $input->getName();
 
         /**

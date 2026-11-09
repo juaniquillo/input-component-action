@@ -49,6 +49,14 @@ interface InputComponentRecipeInterface
 
     public function setUseParentValue(bool $useParentValue): self;
 
+    public function useParentName(): bool;
+
+    public function setUseParentName(bool $useParentName): self;
+
+    public function useInputNameAsValue(): bool;
+
+    public function setUseInputNameAsValue(bool $useInputNameAsValue): self;
+
     public function getInputError(): string|Closure|null;
 
     public function setInputError(string|Closure|null $inputError): self;

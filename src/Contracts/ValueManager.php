@@ -9,16 +9,16 @@ use Stringable;
 
 interface ValueManager
 {
-    /** @param array<string|int, string|int|array<string|int|null>|null> $values */
+    /** @param array<string|int, string|int|bool|array<string|int|bool|null>|null> $values */
     public function setValues(array $values): static;
 
-    /** @return array<string|int, string|int|array<string|int|null>|null> */
+    /** @return array<string|int, string|int|bool|array<string|int|bool|null>|null> */
     public function getValues(): array;
 
     public function setModel(?object $model): static;
 
     public function getModel(): ?object;
 
-    /** @return Stringable|string|int|array<string|int|null>|null */
-    public function resolve(InputInterface $input, InputComponentRecipeInterface $recipe, bool $ignoreRecipeValue = false): Stringable|string|int|array|null;
+    /** @return Stringable|string|int|bool|array<string|int|bool|null>|null */
+    public function resolve(InputInterface $input, InputComponentRecipeInterface $recipe, bool $ignoreRecipeValue = false): Stringable|string|int|bool|array|null;
 }

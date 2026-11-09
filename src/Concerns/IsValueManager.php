@@ -6,12 +6,12 @@ namespace Juaniquillo\InputComponentAction\Concerns;
 
 trait IsValueManager
 {
-    /** @var array<string|int, string|int|array<string|int|null>|null> */
+    /** @var array<string|int, string|int|bool|array<string|int|bool|null>|null> */
     private array $values = [];
 
     private ?object $model = null;
 
-    /** @param array<string|int, string|int|array<string|int|null>|null> $values */
+    /** @param array<string|int, string|int|bool|array<string|int|bool|null>|null> $values */
     public function setValues(array $values): static
     {
         $this->values = $values;
@@ -26,7 +26,7 @@ trait IsValueManager
         return $this;
     }
 
-    /** @return array<string|int, string|int|array<string|int|null>|null> */
+    /** @return array<string|int, string|int|bool|array<string|int|bool|null>|null> */
     public function getValues(): array
     {
         return $this->values;

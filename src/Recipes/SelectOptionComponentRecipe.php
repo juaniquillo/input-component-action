@@ -5,34 +5,22 @@ declare(strict_types=1);
 namespace Juaniquillo\InputComponentAction\Recipes;
 
 use Juaniquillo\BackendComponents\Enums\ComponentEnum;
-use Juaniquillo\InputComponentAction\Bags\DefaultComponentBag;
-use Juaniquillo\InputComponentAction\Bags\DefaultDisableBag;
-use Juaniquillo\InputComponentAction\Groups\SoleInputGroup;
 
-final class SelectOptionComponentRecipe extends InputComponentRecipe
+final class SelectOptionComponentRecipe extends ChoiceComponentRecipe
 {
+    protected function choiceType(): ComponentEnum
+    {
+        return ComponentEnum::OPTION;
+    }
+
     protected function configure(): void
     {
-        if ($this->getInputGroup() === null) {
-            $this->setInputGroup(new SoleInputGroup);
-        }
+        parent::configure();
 
-        if ($this->getComponentBag() === null) {
-            $this->setComponentBag(
-                (new DefaultComponentBag)->setInputType(ComponentEnum::OPTION),
-            );
-        }
-
-        if ($this->getDisableBag() === null) {
-            $this->setDisableBag(
-                (new DefaultDisableBag)
-                    ->setDisableWrapper()
-                    ->setDisableDefaultNameAttribute(),
-            );
-        }
-
-        $this->setUseParentValue(true)
-            ->setSelectable(true)
+        $this->setSelectable(true)
             ->setLabelAsInputContent(true);
+
+        $this->disableWrapper();
+        $this->disableDefaultName();
     }
 }
