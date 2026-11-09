@@ -343,7 +343,7 @@ test('it uses custom components from the component bag', function (): void {
     $input = new DefaultInput('name', 'Name');
     $action = ActionFactory::make()->setDefaultComponentBag(
         (new DefaultComponentBag)->setInputComponent(
-            static fn (string|BackedEnum $type, ThemeManager $manager): BackendComponent => new MainBackendComponent(ComponentEnum::TEXTAREA, $manager)->setAttribute('data-custom', 'yes'),
+            static fn (string|BackedEnum $type, ThemeManager $manager): BackendComponent => (new MainBackendComponent(ComponentEnum::TEXTAREA, $manager))->setAttribute('data-custom', 'yes'),
         ),
     );
 
