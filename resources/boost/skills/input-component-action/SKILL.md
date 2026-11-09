@@ -486,6 +486,9 @@ composer format     # Pint
 composer qa         # format -> analyse -> test
 ```
 
+`laravel/pao` (dev) returns compact JSON when running inside an AI agent and
+normal output otherwise.
+
 ## Upgrading
 
 See `UPGRADE.md` in the package for the full pre-1.0 migration guide, including

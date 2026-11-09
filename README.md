@@ -432,6 +432,10 @@ composer format     # Pint
 composer qa         # format → analyse → test
 ```
 
+[Laravel PAO](https://github.com/laravel/pao) is installed as a dev
+dependency. Inside an AI agent it replaces the output with compact JSON; in a
+normal terminal the output is unchanged.
+
 ## Upgrade
 
 See [UPGRADE.md](UPGRADE.md) for the pre-1.0 breaking changes, including the
