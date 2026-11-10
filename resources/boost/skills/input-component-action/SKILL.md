@@ -438,14 +438,12 @@ $action = (new InputComponentAction($values, $errors))
 $output = $crud->execute($action);
 
 $component = $output->inputs->get('name'); // BackendComponent
-$meta = $output->meta->toArray();
+$meta = $output->meta->all();
 ```
 
 - `inputs` is keyed by input name.
 - `meta` is free-form action metadata.
 - Components implement `Htmlable`; render with `{{ $component }}`.
-- Serialization belongs to `laravel-backend-component`:
-  `$component->toArray()` and `ComponentFactory::fromArray(...)`.
 
 ## Theming
 

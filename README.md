@@ -19,7 +19,7 @@ help-text components, using recipes to customize every slot.
 
 - PHP `^8.3`
 - `juaniquillo/crud-assistant` `^0.3.0`
-- `juaniquillo/laravel-backend-component`
+- `juaniquillo/laravel-backend-component` `^0.11.0`
 - Laravel (for rendering)
 
 ## Install
@@ -404,13 +404,6 @@ Default priority:
 
 A recipe `errorBag` overrides the action error manager; the action error
 manager overrides `DefaultErrorManager`.
-
-## Models and serialization
-
-`MainBackendComponent` can be rendered directly, serialized with
-`toArray()`, or restored with the backend-components factory. The action
-output only contains components; serialization is handled by the consuming
-application.
 
 ## Theming
 

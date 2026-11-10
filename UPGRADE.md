@@ -6,6 +6,10 @@ changes in the current rewrite.
 > **Dependency note:** this version targets `juaniquillo/crud-assistant`
 > `^0.3.0`. If your app is still on `0.2.x`, upgrade CrudAssistant first and
 > follow its own upgrade guide.
+>
+> It also requires `juaniquillo/laravel-backend-component` `^0.11.0`, where the
+> former builders are now factories. This package does not wrap those classes;
+> follow the upstream upgrade guide if your app uses them directly.
 
 ## 1. Per-slot bag contracts and traits removed
 
