@@ -43,7 +43,7 @@ test('it resolves nested collections into a wrapper component', function (): voi
     $group = $output->inputs->get('group');
     $children = array_values(ComponentTree::contentsOf($group));
 
-    expect(array_keys($output->inputs->toArray()))->toBe(['top', 'group'])
+    expect(array_keys($output->inputs->all()))->toBe(['top', 'group'])
         ->and($group)->toBeInstanceOf(BackendComponent::class)
         ->and($group->getAttributes())->toBe(['class' => 'group'])
         ->and($group->getThemes())->toBe(['margin' => 'top-sm'])
@@ -121,7 +121,7 @@ test('it skips ignored inputs at the top level', function (): void {
         $ignored,
     ]));
 
-    expect(array_keys($output->inputs->toArray()))->toBe(['kept']);
+    expect(array_keys($output->inputs->all()))->toBe(['kept']);
 });
 
 test('it skips inputs scoped to another action', function (): void {
@@ -133,7 +133,7 @@ test('it skips inputs scoped to another action', function (): void {
         $filtered,
     ]));
 
-    expect(array_keys($output->inputs->toArray()))->toBe(['kept']);
+    expect(array_keys($output->inputs->all()))->toBe(['kept']);
 });
 
 test('it skips ignored inputs inside nested collections', function (): void {
@@ -188,5 +188,5 @@ test('it can disable recursion and resolve nested inputs individually', function
 
     $output = ActionFactory::output($root, $action);
 
-    expect(array_keys($output->inputs->toArray()))->toBe(['a', 'b']);
+    expect(array_keys($output->inputs->all()))->toBe(['a', 'b']);
 });
