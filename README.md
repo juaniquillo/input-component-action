@@ -19,7 +19,8 @@ help-text components, using recipes to customize every slot.
 
 - PHP `^8.3`
 - `juaniquillo/crud-assistant` `^0.3.0`
-- `juaniquillo/laravel-backend-component` `^0.11.0`
+- `juaniquillo/laravel-backend-component` `^0.12.0`
+- `juaniquillo/base-backend-component` `^0.1.0`
 - Laravel (for rendering)
 
 ## Install
@@ -220,6 +221,8 @@ $bag = (new DefaultComponentBag)
 Custom component classes or closures:
 
 ```php
+use Juaniquillo\BaseBackendComponent\Contracts\ThemeManager;
+
 $bag->setInputComponent(
     fn (string|BackedEnum $type, ThemeManager $manager) => new MyInput($type, $manager),
 );
@@ -261,6 +264,8 @@ Every slot accepts an array or a closure:
 Hooks receive the built component and can replace or mutate it:
 
 ```php
+use Juaniquillo\BaseBackendComponent\Contracts\BackendComponent;
+
 (new DefaultHookBag)->setInputHook(
     function (BackendComponent $component, InputInterface $input): BackendComponent {
         return $component->setAttribute('data-hook', 'yes');
@@ -348,6 +353,9 @@ Or implement `InputGroup` with `IsInputGroup` and the `Has*` traits for full
 control:
 
 ```php
+use Juaniquillo\BaseBackendComponent\Contracts\BackendComponent;
+use Juaniquillo\BaseBackendComponent\Contracts\ContentComponent;
+
 final class LabelGroup implements InputGroup
 {
     use HasLabel, HasWrapper, IsInputGroup;
