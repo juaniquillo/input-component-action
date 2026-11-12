@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\Support;
 
-use Juaniquillo\BackendComponents\Contracts\BackendComponent;
+use Juaniquillo\BaseBackendComponent\Contracts\BackendComponent;
 use Juaniquillo\CrudAssistant\Contracts\InputCollectionInterface;
 use Juaniquillo\InputComponentAction\Containers\InputComponentOutput;
 use Juaniquillo\InputComponentAction\InputComponentAction;
