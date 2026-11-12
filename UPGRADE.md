@@ -7,9 +7,39 @@ changes in the current rewrite.
 > `^0.3.0`. If your app is still on `0.2.x`, upgrade CrudAssistant first and
 > follow its own upgrade guide.
 >
-> It also requires `juaniquillo/laravel-backend-component` `^0.11.0`, where the
-> former builders are now factories. This package does not wrap those classes;
+> It also requires `juaniquillo/laravel-backend-component` `^0.12.0` (which itself
+> requires `juaniquillo/base-backend-component` `^0.1.0`), where
+> the former builders are now factories. This package does not wrap those classes;
 > follow the upstream upgrade guide if your app uses them directly.
+
+## 0.12.0. Framework-agnostic contracts moved to Base Backend Component
+
+`laravel-backend-component` `0.12.0` moved its state contracts to
+`juaniquillo/base-backend-component`. This package follows that move.
+No behavior change.
+
+**Changed imports:**
+
+| Old | New |
+| --- | --- |
+| `Juaniquillo\BackendComponents\Contracts\BackendComponent` | `Juaniquillo\BaseBackendComponent\Contracts\BackendComponent` |
+| `Juaniquillo\BackendComponents\Contracts\ContentComponent` | `Juaniquillo\BaseBackendComponent\Contracts\ContentComponent` |
+| `Juaniquillo\BackendComponents\Contracts\ThemeComponent` | `Juaniquillo\BaseBackendComponent\Contracts\ThemeComponent` |
+| `Juaniquillo\BackendComponents\Contracts\ThemeManager` | `Juaniquillo\BaseBackendComponent\Contracts\ThemeManager` |
+
+Unchanged: `MainBackendComponent`, `Enums\ComponentEnum`,
+`Themes\DefaultThemeManager`, `Themes\LocalThemeManager` still come from
+`juaniquillo/laravel-backend-component`.
+
+**Migration:**
+
+```bash
+composer require juaniquillo/laravel-backend-component:^0.12.0 juaniquillo/base-backend-component:^0.1.0
+grep -rn "BackendComponents\\\\Contracts\\\\BackendComponent\|BackendComponents\\\\Contracts\\\\ContentComponent\|BackendComponents\\\\Contracts\\\\ThemeComponent\|BackendComponents\\\\Contracts\\\\ThemeManager" app src
+```
+
+Replace the four imports above. Custom components, hooks, and groups that
+type-hint those contracts only need the new `use` lines.
 
 ## 1. Per-slot bag contracts and traits removed
 

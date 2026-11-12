@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Juaniquillo\InputComponentAction\Groups;
 
 use Closure;
-use Juaniquillo\BackendComponents\Contracts\ThemeManager;
+use Juaniquillo\BaseBackendComponent\Contracts\ThemeManager;
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
 use Juaniquillo\InputComponentAction\Contracts\ComponentBag;
 use Juaniquillo\InputComponentAction\Contracts\ErrorManager;

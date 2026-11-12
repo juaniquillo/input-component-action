@@ -5,12 +5,12 @@ declare(strict_types=1);
 namespace Tests\Feature;
 
 use BackedEnum;
-use Juaniquillo\BackendComponents\Contracts\BackendComponent;
-use Juaniquillo\BackendComponents\Contracts\ThemeManager;
 use Juaniquillo\BackendComponents\Enums\ComponentEnum;
 use Juaniquillo\BackendComponents\MainBackendComponent;
 use Juaniquillo\BackendComponents\Themes\DefaultThemeManager;
 use Juaniquillo\BackendComponents\Themes\LocalThemeManager;
+use Juaniquillo\BaseBackendComponent\Contracts\BackendComponent;
+use Juaniquillo\BaseBackendComponent\Contracts\ThemeManager;
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
 use Juaniquillo\CrudAssistant\CrudAssistant;
 use Juaniquillo\CrudAssistant\Inputs\DefaultInput;

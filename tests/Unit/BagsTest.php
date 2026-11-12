@@ -5,10 +5,10 @@ declare(strict_types=1);
 namespace Tests\Unit;
 
 use Closure;
-use Juaniquillo\BackendComponents\Contracts\BackendComponent;
 use Juaniquillo\BackendComponents\Enums\ComponentEnum;
 use Juaniquillo\BackendComponents\MainBackendComponent;
 use Juaniquillo\BackendComponents\Themes\DefaultThemeManager;
+use Juaniquillo\BaseBackendComponent\Contracts\BackendComponent;
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
 use Juaniquillo\InputComponentAction\Bags\DefaultAttributeBag;
 use Juaniquillo\InputComponentAction\Bags\DefaultComponentBag;

@@ -6,13 +6,13 @@ namespace Juaniquillo\InputComponentAction\Utilities;
 
 use BackedEnum;
 use Closure;
-use Juaniquillo\BackendComponents\Contracts\BackendComponent;
-use Juaniquillo\BackendComponents\Contracts\ContentComponent;
-use Juaniquillo\BackendComponents\Contracts\ThemeComponent;
-use Juaniquillo\BackendComponents\Contracts\ThemeManager;
 use Juaniquillo\BackendComponents\Enums\ComponentEnum;
 use Juaniquillo\BackendComponents\MainBackendComponent;
 use Juaniquillo\BackendComponents\Themes\LocalThemeManager;
+use Juaniquillo\BaseBackendComponent\Contracts\BackendComponent;
+use Juaniquillo\BaseBackendComponent\Contracts\ContentComponent;
+use Juaniquillo\BaseBackendComponent\Contracts\ThemeComponent;
+use Juaniquillo\BaseBackendComponent\Contracts\ThemeManager;
 use Juaniquillo\CrudAssistant\Contracts\InputInterface;
 use Juaniquillo\InputComponentAction\Contracts\ComponentBag;
 use Juaniquillo\InputComponentAction\Contracts\InputComponentRecipeInterface;

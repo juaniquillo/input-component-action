@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Juaniquillo\InputComponentAction\Contracts;
 
 use Closure;
-use Juaniquillo\BackendComponents\Contracts\ThemeManager;
+use Juaniquillo\BaseBackendComponent\Contracts\ThemeManager;
 
 interface InputComponentRecipeInterface
 {

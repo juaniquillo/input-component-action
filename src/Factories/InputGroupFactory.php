@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace Juaniquillo\InputComponentAction\Factories;
 
 use Exception;
-use Juaniquillo\BackendComponents\Contracts\BackendComponent;
-use Juaniquillo\BackendComponents\Contracts\ContentComponent;
+use Juaniquillo\BaseBackendComponent\Contracts\BackendComponent;
+use Juaniquillo\BaseBackendComponent\Contracts\ContentComponent;
 use Juaniquillo\InputComponentAction\Groups\GroupContext;
 use Juaniquillo\InputComponentAction\Utilities\Support;
 

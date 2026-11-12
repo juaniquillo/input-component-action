@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Tests\Support;
 
-use Juaniquillo\BackendComponents\Contracts\BackendComponent;
-use Juaniquillo\BackendComponents\Contracts\ContentComponent;
-use Juaniquillo\BackendComponents\Contracts\ThemeComponent;
+use Juaniquillo\BaseBackendComponent\Contracts\BackendComponent;
+use Juaniquillo\BaseBackendComponent\Contracts\ContentComponent;
+use Juaniquillo\BaseBackendComponent\Contracts\ThemeComponent;
 
 final class ComponentTree
 {
