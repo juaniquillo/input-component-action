@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Juaniquillo\InputComponentAction\Recipes;
 
 use Closure;
-use Juaniquillo\BackendComponents\Contracts\ThemeManager;
+use Juaniquillo\BaseBackendComponent\Contracts\ThemeManager;
 use Juaniquillo\CrudAssistant\Concerns\IsRecipe;
 use Juaniquillo\CrudAssistant\Contracts\RecipeInterface;
 use Juaniquillo\InputComponentAction\Concerns\IsInputComponentRecipe;

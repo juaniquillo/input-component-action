@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Juaniquillo\InputComponentAction\Concerns;
 
 use Closure;
-use Juaniquillo\BackendComponents\Contracts\ThemeManager;
+use Juaniquillo\BaseBackendComponent\Contracts\ThemeManager;
 use Juaniquillo\InputComponentAction\Contracts\AttributeBag;
 use Juaniquillo\InputComponentAction\Contracts\ComponentBag;
 use Juaniquillo\InputComponentAction\Contracts\DisableBag;
